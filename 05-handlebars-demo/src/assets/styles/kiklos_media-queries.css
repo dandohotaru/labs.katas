@@ -1,0 +1,187 @@
+/**
+ * ABOUT
+ * Title................media_queries.css
+ * Author...............Peter De Cock
+ * Creation Date........20160615
+ * Summary..............makes sure KIKLOS looks good on handheld devices
+ *
+ */
+ 
+ /**
+ * COLOUR SCHEME 
+ 
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+ 
+ /**
+ * CONTENTS
+ * #media-queries.......opinions on the homepage
+
+
+
+/*----------------------------------------
+  #media-queries
+----------------------------------------*/
+@media (max-width: 800px)
+{
+	/* main nav - without badges */
+	.navbar-collapse.collapse.in li.divider {
+		background-color: #4278A0 !important; /* med blue */
+	}
+	.navbar-collapse.collapse.in h6 {
+		color:#fff;
+	}
+	/* homepage */
+	p.lead {
+		font-size:1.1em !important;
+		padding:15px 15px 0 15px;
+	}
+	h3 {
+		font-size:1.4em !important;
+	}
+	h5 {
+		font-size:1em !important;
+	}
+	h1 {
+		font-size:2em !important;
+		margin:0 30px !important;
+	}
+	.ribbon_m-grey {
+		display: none;
+	}
+	/* individual cards */
+	.cor_card {
+		margin:0 15px;
+	}
+	/* title  */
+	.col-sm-12 h5 {
+		margin:0 30px;
+	}
+	/* hide print button */
+	.row .col-sm-2  {
+		display: none;
+	}
+	/* modal window */
+	.modal-title {
+		font-size:1.2em !important;
+		margin:0;
+		padding:0;
+	}
+}
+@media (max-width: 600px)
+{
+	/* main nav - without badges */
+	.nav.nav-pills.nav-justified .badge {
+		display: none;
+	}
+	.navbar-collapse.collapse.in li.divider {
+		background-color: #4278A0 !important; /* med blue */
+	}
+	.navbar-collapse.collapse.in h6 {
+		color:#fff;
+	}
+	/* homepage */
+	p.lead {
+		font-size:1em !important;
+		padding:15px 15px 0 15px;
+	}
+	h3 {
+		font-size:1.4em !important;
+	}
+	h5 {
+		font-size:1em !important;
+	}
+	h1 {
+		font-size:1.5em !important;
+	}
+	.ribbon_m-grey {
+		display: none;
+	}
+	/* footer */
+	footer p {
+		text-align:center;
+	}
+	footer .text-right {
+		font-size:0.85em;
+		text-align:center;
+	}
+	/* opinion details */
+	.cor_card .cor_card-heading .col-md-8 h3 {
+		font-size:1.2em !important;
+		text-align:center !important;
+	}
+	.cor_card.details h3 span.icon-big {
+		display: none;
+	}
+	/* opinion details - panels */
+	.cor_card.details .col-sm-8 {
+		text-align:center;
+	}
+	.cor_card.details .panel-heading .col-sm-1 {
+		display: none;
+	}
+	.cor_card.details .panel-heading .col-sm-4 h4{
+		margin-top:0 !important;
+		padding-top:0 !important;
+		text-align:center;
+	}
+	.cor_card.details .panel-heading .col-sm-6 {
+		text-align:center;
+	}
+	.cor_card.details .list-group-item {
+		text-align:center;
+	}
+	/* icons on circles */
+	/* opinion detail */
+	.circle-icoooooooooon {
+		font-size:2em !important;
+		margin: 5px 20px 0 20px;
+		padding: 5px 0px;
+	}
+	/* title  */
+	.col-sm-12 h5 {
+		margin:0 30px;
+	}
+	/* title  */
+	.col-sm-12 h2 {
+		font-size:2em !important;
+	}
+	/* buttons  */
+	.col-sm-12 button{
+		text-align:center !important;
+		margin:0 15px 5px 15px;
+		width: 100%;
+	}
+	/* individual cards */
+	.cor_card {
+		margin:0 15px;
+	}
+	/* ENVE on each card */
+	.cor_card .cor_card-heading h3 {
+		font-size:1.2em !important;
+	}
+	/* h1 */
+	.col-sm-10 h1 {
+		text-align:center !important;
+	}
+	/* hide print button */
+	.row .col-sm-2  {
+		display: none;
+	}
+	/* modal window */
+	.modal-title {
+		font-size:1.2em !important;
+		margin:0;
+		padding:0;
+	}
+	/* timeline-local */
+	.timeline-local {
+		margin:5px;
+		padding:0;
+	}
+}

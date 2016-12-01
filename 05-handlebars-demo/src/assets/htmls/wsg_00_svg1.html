@@ -1,0 +1,407 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="ico/favicon.ico">
+		<title>KIKLOS -  SVG Animation</title>
+		
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Bootstrap Theme - Web Style Guide -->
+		<link href="css-theme-web-style-guide/web-style-guide.css" rel="stylesheet">
+		
+		<!-- Bootstrap Theme - Kiklos CSS -->
+		<link href="css-kiklos/kiklos_bootstrap.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_brand.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_layout.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_modules.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_transit.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_typography.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_media-queries.css" rel="stylesheet">
+<!-- Bootstrap Theme - font awesome -->
+		<link href="css/font-awesome.css" rel="stylesheet">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- techday -->
+<!-- START techday 
+ * COLOUR SCHEME 
+ 
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+-->
+<style type="text/css">
+.peter {
+	border-radius: 4px;
+	background:#ee3853; /* red */
+	color:#fff;
+	margin:3px;
+	padding:6px;
+	
+	
+z-index: 2;
+  position: relative;
+  height: 100%;
+  -webkit-transition: transform .7s ease-in-out;
+  -moz-transition: transform .7s ease-in-out;
+  -ms-transition: transform .7s ease-in-out;
+  -o-transition: transform .7s ease-in-out;
+  transition: transform .7s ease-in-out;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+/* =Colors */
+$red: #EA4335;
+$green: #34A853;
+$blue: #4285F4;
+$yellow: #FBBC05;
+
+body {
+  overflow: hidden;
+}
+
+#GoogleLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+#controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 310px;
+  transform: translate(-50%, 120px);
+  /* visibility: hidden; */
+}
+.circle,
+#gLine,
+#gLineAnim {
+  opacity: 0;
+}  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</style>
+<!-- END techday -->
+			
+			
+	</head>
+
+	<body>
+	
+		<div class="container-fluid wsg_light">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text-center">
+						<br />
+						<a class="btn btn-default" href="wsg_00_techday.html">
+							&lt;&lt; Back to Techday
+						</a>
+					</div>
+				</div>
+				<div class="col-md-9 col-md-offset-3">
+					<p>SVG Animation</p>
+					<a href="https://css-tricks.com/recreating-the-google-logo-animation-with-svg-and-greensock/">link</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+		
+			<br />
+
+			<!-- START row -->
+			<div class="row">
+			
+				<!-- START col -->
+				<div class="col-md-6 col-md-offset-3 ">
+					<!-- START techday -->
+					
+					
+					
+					
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="GoogleLogo" x="0" y="0" viewBox="0 0 642 466" enable-background="new 0 0 642 466" xml:space="preserve" width="642" height="466">
+  <defs>
+    <clipPath id="cut-off-gline">
+      <rect id="gLineMask" x="287.2" y="225.9" width="102.2" height="28.9"/>
+    </clipPath>
+  </defs>
+  <g id="circles">
+    <path id="blueG" class="circle" fill="none" stroke="#4285F4" stroke-width="28" d="M318 182.9c-32 0-57 30.8-57 57.5s20 57.5 57 57.5 57.9-26.7 57.9-57.5S350.2 182.9 318 182.9z"/>
+    <path id="greenG" class="circle" fill="none" stroke="#34A853" stroke-width="28" d="M318 182.9c-32 0-57 30.8-57 57.5s20 57.5 57 57.5 57.9-26.7 57.9-57.5S350.2 182.9 318 182.9z"/>
+    <path id="redG" class="circle" fill="none" stroke="#EA4335" stroke-width="28" d="M318 182.9c-32 0-57 30.8-57 57.5s20 57.5 57 57.5 57.9-26.7 57.9-57.5S350.2 182.9 318 182.9z"/>
+    <path id="redGb" class="circle" fill="none" stroke="#EA4335" stroke-width="28" d="M318 182.9c-32 0-57 30.8-57 57.5s20 57.5 57 57.5 57.9-26.7 57.9-57.5S350.2 182.9 318 182.9z"/>
+    <path id="yellowG" class="circle" fill="none" stroke="#FBBC05" stroke-width="28" d="M318 182.9c-32 0-57 30.8-57 57.5s20 57.5 57 57.5 57.9-26.7 57.9-57.5S350.2 182.9 318 182.9z"/>
+  </g>
+  <g id="helpers" display="none">
+    <circle display="inline" fill="none" stroke="#000000" stroke-miterlimit="10" cx="318" cy="240.4" r="71.5"/>
+    <circle display="inline" fill="none" stroke="#000000" cx="319" cy="240.4" r="43.6"/>
+    <line display="inline" fill="none" stroke="#000000" x1="318.6" y1="196.8" x2="318.6" y2="168.9"/>
+    <line display="inline" fill="none" stroke="#000000" x1="318.6" y1="311.8" x2="318.6" y2="283.9"/>
+    <line display="inline" fill="none" stroke="#000000" x1="362.4" y1="240.4" x2="389.4" y2="240.4"/>
+    <line display="inline" fill="none" stroke="#000000" x1="246.5" y1="240.4" x2="275.4" y2="240.4"/>
+    <g id="spacersW" display="inline">
+      <circle id="spacer5" fill="none" cx="447.2" cy="240.4" r="14.5"/>
+      <circle id="spacer4" fill="none" cx="389.4" cy="240.4" r="14.5"/>
+      <circle id="spacer3" fill="none" cx="331.6" cy="240.4" r="14.5"/>
+      <circle id="spacer2" fill="none" cx="273.8" cy="240.4" r="14.5"/>
+      <circle id="spacer1" fill="none" cx="216" cy="240.4" r="14.5"/>
+    </g>
+    <g id="spacersH" display="inline">
+      <circle id="spacer5_1_" fill="none" cx="331.6" cy="356" r="14.5"/>
+      <circle id="spacer4_1_" fill="none" cx="331.6" cy="298.2" r="14.5"/>
+      <circle id="spacer3_1_" fill="none" cx="331.6" cy="240.4" r="14.5"/>
+      <circle id="spacer2_1_" fill="none" cx="331.6" cy="182.5" r="14.5"/>
+      <circle id="spacer1_1_" fill="none" cx="331.6" cy="124.7" r="14.5"/>
+    </g>
+    <rect id="squareOutline" x="246.5" y="168.9" display="inline" fill="none" width="142.9" height="142.9"/>
+  </g>
+  <polygon id="gMask" fill="#ffffff" points="326.4 225.9 390.4 225.9 379.7 192 368.5 183.9 "/>
+  <g id="dots">
+    <circle class="dot dotBlue" fill="#4285F4" cx="244.9" cy="240.4" r="14.5"/>
+    <circle class="dot dotRed" fill="#EA4335" cx="302.7" cy="240.4" r="14.5"/>
+    <circle class="dot dotYellow" fill="#FBBC05" cx="360.5" cy="240.4" r="14.5"/>
+    <circle class="dot dotGreen" fill="#34A853" cx="418.3" cy="240.4" r="14.5"/>
+  </g>
+  <g id="gLineGroup" clip-path="url(#cut-off-gline)">
+    <path id="gLine" display="inline" fill="none" stroke="#4285F4" stroke-width="28.91" d="M319 240.4h68"/>
+    <path id="gLineAnim" fill="#4285F4" d="M388.7 254.8H319v-28.9h69.7c0 0 13.6 1.3 13.6 14.5C402.3 253.5 388.7 254.8 388.7 254.8z"/>
+  </g>
+</svg>
+
+<div id="controls">
+  <div id="slider"></div>
+</div>					
+					
+					
+					
+					
+					
+					
+					
+					
+					<!-- END techday -->
+				</div>
+				<!-- END col -->
+			</div>
+			<!-- END row -->
+							
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+<script>
+/* Moving parts*/
+var $circles = $('.circle'),
+    $dots = $('.dot'),
+    $dotBlue = $('.dotBlue'),
+    $dotRed = $('.dotRed'),
+    $dotYellow = $('.dotYellow'),
+    $dotGreen = $('.dotGreen'),
+    $gBlue = $('#blueG'),
+    $gRed = $('#redG'),
+    $gRedb = $('#redGb'),
+    $gYellow = $('#yellowG'),
+    $gGreen = $('#greenG'),
+    $gLine = $('#gLine'),
+    $gLineAnim = $('#gLineAnim'),
+    $gLineMask = $('#gLineMask'),
+    $gMask = $('#gMask'),
+    $bcg = $('.logoBcg'),
+    pathRed = [{x: 0, y: -1},{x: 31, y: -51},{x: 74, y: -1}],
+    pathYellow = [{x: -41, y: 46},{x: -76, y: 0},{x: -35, y: -46},{x: 14, y: 1}],
+    pathGreen = [{x: -67, y: 82},{x: -145, y: 0},{x: -100, y: -46},{x: -43, y: 3}],
+    pathBlueBack = [{x: 51, y: 53}, {x: 15, y: 25},{x: 0, y: 0}],
+    pathRedBack = [{x: 60, y: -37}, {x: 50, y: 40},{x: 0, y: 0}],
+    pathYellowBack = [{x: -5, y: -44}, {x: 3, y: -24},{x: 0, y: 0}],
+    pathGreenBack = [{x: -108, y: -56}, {x: -27, y: -47},{x: 0, y: 0}],
+    tl = new TimelineMax({onUpdate: updateSlider, repeat: 1});
+
+/* Init */
+function init(){
+  TweenLite.set([$gLine,$circles], {autoAlpha: 0});
+  TweenLite.set($gBlue, {drawSVG:"61% 78%"}); /* start at 71% 78% */
+  TweenLite.set($gGreen, {drawSVG:"36% 61%"});
+  TweenLite.set($gYellow, {drawSVG:"17% 36%"});
+  TweenLite.set($gRed, {drawSVG:"0% 26%"});
+  TweenLite.set($gRedb, {drawSVG:"78% 100%", transformOrigin: 'center center'});
+  TweenLite.set($gLineAnim, {autoAlpha: 0});
+}
+init();
+
+/* Dots wave */
+function getDotsWaveTl(){
+  var dotsWaveTl = new TimelineMax();
+      
+  $dots.each(function(index, element){
+    
+    var dotWaveTl = new TimelineMax(),
+        delay = 0.15;
+    
+    dotWaveTl
+      .to(element, 0.4, {y: -7, ease:Power1.easeOut})
+      .to(element, 0.8, {y: 7, ease:Power1.easeInOut})
+      .to(element, 0.4, {y: 0, ease:Power1.easeIn})
+      .to(element, 0.4, {y: -7, ease:Power1.easeOut})
+      .to(element, 0.8, {y: 7, ease:Power1.easeInOut})
+      .to(element, 0.4, {y: 0, ease:Power1.easeIn});
+    
+    dotsWaveTl.add(dotWaveTl, delay*index);
+    
+  });
+  
+  return dotsWaveTl;
+}
+
+/* Dots rotation */
+function getDotsRotateTl(){
+  var dotsRotateTl = new TimelineMax();
+  
+  dotsRotateTl
+    .to($dotRed, 0.9, {bezier:{curviness: 1.5, values: pathRed, ease:Power2.easeInOut}}, 'move')
+    .to($dotYellow, 1.2, {bezier:{curviness: 1, values: pathYellow, ease:Power2.easeInOut}}, 'move')
+    .to($dotGreen, 1.5, {bezier:{curviness: 1, values: pathGreen, ease:Power2.easeInOut}}, 'move');
+  
+  return dotsRotateTl;
+} 
+
+/* Draw G */
+function getDrawGTl(){
+  var drawGTl = new TimelineMax();
+  
+  drawGTl
+    .to($dotBlue, 0.6, {x: 47, ease:Power2.easeIn})
+    .set($gLineAnim, {autoAlpha: 1, immediateRender: false})
+    .set($dotBlue, {autoAlpha: 0, immediateRender: false}, '+=0.1')
+    .from($gLineAnim, 0.8, {x: -120, ease:Power2.easeOut}, '-=0.2')
+    /* draw red part */
+    .add('startDrawingG', 1)
+    .set($gRed, {autoAlpha: 1, immediateRender: false}, 'startDrawingG')
+    .fromTo($gRed, 0.5, {drawSVG:"71% 88%"}, {drawSVG:"0% 26%", ease:Power1.easeOut}, '-=0.2')
+    .set($dotRed, {autoAlpha: 0, immediateRender: false}, 'startDrawingG')
+    /* draw yellow part */
+    .set($gYellow, {autoAlpha: 1, immediateRender: false}, 'startDrawingG+=0.1')
+    .fromTo($gYellow, 0.6, {drawSVG:"71% 88%"}, {drawSVG:"17% 36%", ease:Power2.easeOut}, '-=0.45')
+    .set($dotYellow, {autoAlpha: 0, immediateRender: false}, 'startDrawingG+=0.1')
+    /* draw green part */
+    .set($gGreen, {autoAlpha: 1, immediateRender: false}, 'startDrawingG+=0.1')
+    .fromTo($gGreen, 0.55, {drawSVG:"71% 88%"}, {drawSVG:"36% 61%", ease:Power2.easeOut}, '-=0.6')
+    .set($dotGreen, {autoAlpha: 0, immediateRender: false}, 'startDrawingG+=0.4')
+    /* draw blue part */
+    .set($gLineAnim, {autoAlpha: 0, immediateRender: false}, 'startDrawingG+=0.3')
+    .set($gLine, {autoAlpha: 1, immediateRender: false}, 'startDrawingG+=0.3')
+    .set($gBlue, {autoAlpha: 1, immediateRender: false}, 'startDrawingG+=0.3')
+    .fromTo($gBlue, 0.55, {drawSVG:"71% 88%"}, {drawSVG:"61% 78%", ease:Power2.easeOut}, '-=0.55')
+    /* draw ending red part */
+    .set($gRedb, {autoAlpha: 1, immediateRender: false}, 'startDrawingG+=0.25')
+    .fromTo($gRedb, 0.7, {rotation: '-10', drawSVG:"100% 100%"}, {rotation: '0',drawSVG:"80% 100%", ease:Power2.easeOut}, '-=0.22');
+  
+  return drawGTl;
+}
+
+/* Back to dots */
+function getBackToDotsTl(){
+  var backToDotsTl = new TimelineMax();
+
+  backToDotsTl
+    /* blue straight line out */
+    .to($gLineMask, 0.3, {attr: {x: 365}, transformOrigin: 'right center', ease:Power0.easeNone})
+    .set([$gLineMask, $gLine], {autoAlpha: 0})
+  
+    /* start moving colored segments (circles) */
+    .add('rotateG')
+    .to($gBlue, 0.3, {drawSVG:"56% 78%", ease:Power0.easeNone}, 'rotateG-=0.3')
+    .to($gGreen, 0.3, {drawSVG:"31% 56%", ease:Power0.easeNone}, 'rotateG-=0.3')
+    .to($gYellow, 0.3, {drawSVG:"12% 31%", ease:Power0.easeNone}, 'rotateG-=0.3')
+    .to($gRed, 0.3, {drawSVG:"0% 21%", ease:Power0.easeNone}, 'rotateG-=0.3')
+  
+    /* start rotating colored segments (circles) */
+    .add('rotateCircles')
+    .to([$gBlue, $gRed, $gGreen], 0.4, {rotation:"+=50", transformOrigin: 'center center', ease:Power0.easeNone}, 'rotateCircles')
+  
+    .to($gGreen, 0.4, {drawSVG:"10% 20%", ease:Power0.easeNone}, 'rotateCircles')
+    .to($gYellow, 0.4, {rotation:"+=40", transformOrigin: 'center center', drawSVG:"0% 10%", ease:Power0.easeNone}, 'rotateCircles')
+    .to($gBlue, 0.4, {drawSVG:"50% 60%", ease:Power0.easeNone}, 'rotateCircles')
+    .to($gRed, 0.1, {drawSVG:"0% 0%", ease:Power0.easeNone}, 'rotateCircles')
+    .to($gRedb, 0.3, {rotation:"+=50", drawSVG:"80% 90%", ease:Power2.easeInOut}, 'rotateCircles')
+    
+    /* show red dot */
+    .set($dotRed, {autoAlpha: 1, x: 60, y: -37}, 'rotateCircles+=0.1')
+    .set($gRedb, {autoAlpha: 0}, 'rotateCircles+=0.1')
+    .to($dotRed, 0.9, {bezier:{curviness: 1.5, values: pathRedBack, ease:Power2.easeOut}}, 'rotateCircles+=0.1')
+    
+    /* show blue dot */
+    .set($dotBlue, {autoAlpha: 1, x: 51, y: 53}, 'rotateCircles+=0.3')
+    .set($gBlue, {autoAlpha: 0}, 'rotateCircles+=0.3')
+    .to($dotBlue, 0.6, {bezier:{curviness: 1.5, values: pathBlueBack, ease:Power2.easeOut}}, 'rotateCircles+=0.3')
+
+    /* show yellow dot */
+    .set($dotYellow, {autoAlpha: 1, x: -5, y: -44}, 'rotateCircles+=0.4')
+    .set($gYellow, {autoAlpha: 0}, 'rotateCircles+=0.4')
+    .to($dotYellow, 0.7, {bezier:{curviness: 1.5, values: pathYellowBack, ease:Power2.easeOut}}, 'rotateCircles+=0.4')
+
+    /* show green dot */
+    .set($dotGreen, {autoAlpha: 1, x: -108, y: -56}, 'rotateCircles+=0.4')
+    .set($gGreen, {autoAlpha: 0}, 'rotateCircles+=0.4')
+    .to($dotGreen, 0.6, {bezier:{curviness: 1.5, values: pathGreenBack, ease:Power2.easeOut}}, 'rotateCircles+=0.4')
+  
+    .to($gMask, 0.3, {rotation:"+=60", transformOrigin: '-9 58', ease:Power2.easeInOut}, 'rotateCircles');
+  
+  return backToDotsTl;
+}
+  
+/* Main timeline */
+tl.add(getDotsWaveTl())
+  .add(getDotsRotateTl(), '-=0.35')
+  .add(getDrawGTl(), '-=1.6')
+  .add(getBackToDotsTl(), '+=2');
+
+tl.timeScale(1.8);
+
+$("#slider").slider({
+  range: false,
+  min: 0,
+  max: 100,
+  step:.1,
+  slide: function ( event, ui ) {
+    tl.pause();
+    //adjust the timeline�s progress() based on slider value
+    tl.progress( ui.value/100 );
+    }
+});
+
+function updateSlider() {
+  $("#slider").slider("value", tl.progress() *100);
+}
+</script>
+		
+		</body>
+	</html>

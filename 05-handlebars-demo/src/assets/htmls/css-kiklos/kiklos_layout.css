@@ -1,0 +1,241 @@
+/**
+ * ABOUT
+ * Title................kiklos_layout.css
+ * Author...............Peter De Cock
+ * Creation Date........20160615
+ * Summary..............everything related to the layout of KIKLOS
+ *
+ */
+ 
+ /**
+ * COLOUR SCHEME 
+ 
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+ 
+ /**
+ * CONTENTS
+ * #homepage-panels.....opinions on the homepage
+ * #subtheme_selector...this is styled dark by default
+ * #kik-logo............the KIKLOS logo in the header
+ * #sticky-footer.......the footer is pushed to the bottom
+ * #slab................additional styles
+
+
+ 
+ 
+/*----------------------------------------
+  #homepage-panels
+----------------------------------------*/
+
+#kiklos-homepage-panels	.panel.panel-default .panel-heading a {
+	color:#fff;
+}
+#kiklos-homepage-panels h5 small {
+	margin:0;
+	padding:0;
+}
+#kiklos-homepage-panels h5 {
+	margin:5px 0;
+	padding:0;
+}
+
+
+
+
+/*----------------------------------------
+  #subtheme_selector
+----------------------------------------*/
+
+.subtheme_selector a.btn.btn-sm {
+	background-color: #1D3751; /* dark blue */
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px #b7b7b7;
+	color: #fff;
+	padding: 5px 8px;
+	border: none;
+	line-height: 1.8em;
+	margin: 5px 0;
+}
+/* subthemes selector: they have numeric badges on the right */
+.subtheme_selector a.btn.btn-sm .badge {
+	background: #fff; 
+	color:#333;
+}
+/* subthemes selector: a selected subtheme */
+.subtheme_selector a.btn.btn-sm.active {
+	background: #ee3853; /* red */
+	color:#fff;
+}
+.subtheme_selector a.btn.btn-sm.active:hover {
+	background: #ff4569; /* red hover */
+	color:#fff;
+}
+/* subthemes selector: the nueric badges on the right */
+.subtheme_selector a.btn.btn-sm.active .badge {
+	background: #fff; 
+	color:#333;
+}
+/* content type selector */
+.subtheme_selector a.btn.btn-default.checked {
+	background-color: #1D3751; /* dark blue */
+	color:#fff;
+}
+
+/*----------------------------------------
+  #subtheme_selector_neutral
+----------------------------------------*/
+
+.subtheme_selector_neutral a.btn.btn-sm {
+	background: #fff; 
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px #b7b7b7;
+	color: #333;
+	padding: 5px 8px;
+	border: none;
+	line-height: 1.8em;
+	margin: 5px 0;
+}
+/* subthemes selector: they have numeric badges on the right */
+.subtheme_selector_neutral a.btn.btn-sm .badge {
+	background: #e8e8e8; 
+	color:#333;
+}
+/* subthemes selector: a selected subtheme */
+.subtheme_selector_neutral a.btn.btn-sm.active {
+	background-color:#ee3853; /* red */
+	color: #fff;
+}
+.subtheme_selector_neutral a.btn.btn-sm.active:hover {
+	background-color:#ff4569; /* red hover */
+	color:#fff; 
+}
+/* subthemes selector: the nueric badges on the right */
+.subtheme_selector_neutral a.btn.btn-sm.active .badge {
+	background: #fff; 
+	color:#333;
+}
+/* content type selector */
+.subtheme_selector_neutral a.btn.btn-default.checked {
+	color:#fff;
+}
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+
+
+
+
+/*----------------------------------------
+  #kik-logo
+----------------------------------------*/
+.navbar-header.kik-logo a img{
+	margin-top: 5px;
+}
+
+
+
+
+/*----------------------------------------
+  #sticky-footer
+----------------------------------------*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+	background:#f4f4f4; /* white */ 
+	/*margin-bottom: 60px;*/
+}
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+}
+	.footer p {
+	  line-height: 1.2em;
+	}
+
+
+
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+
+/*----------------------------------------
+  #slab
+----------------------------------------*/
+.btn-slab {
+	background: #fff;
+	color: #4278A0; /* med blue */
+	margin:0 0 15px 0;
+	padding:15px;
+}
+.btn-slab:hover a,
+.btn-slab:hover p,
+.btn-slab:hover h1,
+.btn-slab:hover h2,
+.btn-slab:hover h3,
+.btn-slab:hover h4,
+.btn-slab:hover h5,
+.btn-slab:hover h6{
+	color: #6BBAE7; /* light blue */
+}
+	.btn-slab a {
+		color: #4278A0; /* med blue */
+	}
+	.btn-slab p {
+		color: #4278A0; /* med blue */
+		margin:10px;
+		padding:0;
+	}
+	.btn-slab h2, .btn-slab h3, .btn-slab h4 {
+		color: #4278A0; /* med blue */
+		font-weight:bold;
+		margin:10px;
+		padding:0;
+	}
+	.btn-slab h6 {
+		margin:10px 10px 0 10px;
+		padding:5px 0 0 0;
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

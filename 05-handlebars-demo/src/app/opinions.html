@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+
+    <!-- Packages -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
+
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/lodash/lodash.min.js"></script>
+    <script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="/node_modules/colcade/colcade.js"></script>
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="/assets/styles/kiklos_bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/kiklos_brand.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/kiklos_layout.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/kiklos_modules.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/kiklos_transit.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/kiklos_typography.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/kiklos_media-queries.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/web-style-guide.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/colcade.css" rel="stylesheet">
+
+    <!-- Specific -->
+    <link rel="stylesheet" href="./opinions.css" rel="stylesheet">
+    <script src="./opinions.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div id="header">Header</div>
+    <div id="menu">Menu</div>
+    <div id="content" class="container-fluid">
+
+        <div class="row">
+
+            <div class="custom-nav-fixed col-xs-5 col-sm-4 col-md-3">
+
+                <div class="text-center">
+                    <i class="circle-icon fa fa fa-archive"></i>
+                    <h5>Opinions</h5>
+                </div>
+
+                <div id="filters">Filters</div>
+
+            </div>
+            
+            <div class="custom-nav-relative col-xs-5 col-sm-4 col-md-3">
+            </div> 
+
+            <div class="custom-content col-xs-7 col-sm-8 col-md-9">
+                <p>
+                    Use this paragraph to briefly explain what this page is all about. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Donec iaculis consequat mi. Vestibulum lobortis augue ex, a ullamcorper arcu dictum in. 
+                    Nullam et auctor libero. Ut id risus eget tortor tincidunt interdum. Mauris lacinia dapibus purus eget sagittis. 
+                    Pellentesque magna nisl, cursus vitae magna eu, sodales finibus orci. 
+                    Nullam semper posuere ex quis consectetur. 
+                </p>
+
+                <div id="cards"></div>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">Footer</div>
+</body>
+
+</html>
+
+<script id="opinion-card-template" type="text/x-handlebars-template">
+  
+    <div class="grid">
+
+        <div class="grid-col grid-col--1"></div>
+        <div class="grid-col grid-col--2"></div>
+        <div class="grid-col grid-col--3"></div>
+        <div class="grid-col grid-col--4"></div>
+
+        {{#each cards}}
+
+        <div class="grid-item">
+            <div class="cor_card">
+                
+                <a href="details_01_1.html">
+                    <div class="cor_card-heading turquoise">
+                        <h3>
+                            <i class="fa fa-gavel"></i>
+                            {{folder}}
+                        </h3>
+                    </div>
+                    <div class="ribbon_l-grey">
+                        <h5>
+                            Responsible: 
+                            <strong>{{responsible}}</strong>
+                        </h5>
+                    </div>
+                    <div class="cor_card-body">
+                        <p>{{title}}</p>
+                    </div>
+                    <div class="ribbon_l-grey">
+                        <h5>
+                            Rapporteur: 
+                            <strong>{{rapporteur}}</strong> 
+                            ({{group}})
+                        </h5>
+                    </div>
+                    <div class="cor_card-footer">
+                        <table class="table">
+                            <tr>
+                                <td class="cor_card-date">
+                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 
+                                    {{adoption}}
+                                </td>
+                                <td class="cor_card-status text-right">
+                                    {{status}} 
+                                    <span class="glyphicon glyphicon-flag" aria-hidden="true">
+                                </span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        {{/each}}
+
+    </div>
+
+</script>
+
+<script id="themes-filters-template" type="text/x-handlebars-template">
+
+    <div class="global_timeline_filter">
+        <ul class="nav nav-pills nav-stacked">
+
+            {{#each themes}}
+
+            <li class="dropdown turquoise">
+                <a role="button" data-toggle="collapse" href="#theme_{{id}}" aria-expanded="false" aria-controls="collapseExample" class="collapsed">
+                    <div class="row">
+                        <div class="col-xs-9 col-sm-10 col-md-10 ">
+                            <i class="fa fa-leaf"></i>
+                            {{name}}
+                        </div>
+                        <div class="col-xs-3 col-sm-2 col-md-2 text-right">
+                            <i class="fa fa-check-circle"></i>
+                        </div>
+                    </div>
+                </a>
+                <div class="collapse" id="theme_{{id}}" aria-expanded="false" style="height: 0px;">
+                    <ul>
+
+                        {{#each subthemes}}
+
+                        <li>
+                            <a>
+                                <div class="row">
+                                    <div class="col-xs-9 col-md-10">
+                                        {{name}}
+                                    </div>
+                                    <div class="col-xs-3 col-md-2 text-right">
+                                        <i class="fa fa-check-circle"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                        {{/each}}
+
+                    </ul>
+                </div>
+            </li>
+
+            {{/each}}
+
+        </ul>
+    </div>
+
+</script>
+
+

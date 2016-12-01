@@ -1,0 +1,649 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+	<title>KIKLOS - Homepage</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Bootstrap Theme - Web Style Guide -->
+	<link href="css-theme-web-style-guide/web-style-guide.css" rel="stylesheet">
+    
+	<!-- Bootstrap Theme - Kiklos CSS -->
+	<link href="css-kiklos/kiklos_bootstrap.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_brand.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_layout.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_modules.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_transit.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_typography.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_media-queries.css" rel="stylesheet">
+<!-- Bootstrap Theme - font awesome -->
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<style type="text/css">
+
+
+
+
+
+
+
+ /* COLOUR SCHEME 
+ 
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	overflow-x: hidden;
+	/*padding-bottom: 50px;*/
+}
+
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul {
+	background: #1d3751; /* dark blue */
+	/*padding: 50px 0;*/
+}
+
+.timeline ul li {
+	color:#fff;
+	list-style-type: none;
+	position: relative;
+	width: 2px;
+	margin: 0 auto;
+	/*padding-top: 50px;*/
+	padding-top: 30px;
+	background: #fff;
+}
+
+/* the circles */
+.timeline ul li::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: inherit;
+}
+
+.timeline ul li div {
+	position: relative;
+	bottom: 0;
+	/*width: 400px;*/
+	width: 180px;
+	padding: 15px;
+	background: #ee3853; /* red */
+}
+
+.timeline ul li div::before {
+	content: '';
+	position: absolute;
+	bottom: 7px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div {
+	left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+	left: -15px;
+	border-width: 8px 16px 8px 0;
+	border-color: transparent #ee3853 transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+	/*left: -439px;*/
+	left: -220px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+	right: -15px;
+	border-width: 8px 0 8px 16px;
+	border-color: transparent transparent transparent #ee3853; /* red */
+}
+
+time {
+	display: block;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+	transition: background .5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+	background: #ee3853; /* red */
+}
+
+.timeline ul li div {
+	visibility: hidden;
+	opacity: 0;
+	transition: all .5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+	transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+	transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+	transform: none;
+	visibility: visible;
+	opacity: 1;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 250px;
+  }
+  .timeline ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+  .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #F45B69 transparent transparent;
+  }
+}
+
+    </style>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+</head>
+<body>
+
+    <div class="container-fluid">
+    	<div class="very-dark-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                        <!-- START top navigation -->
+                        <nav class="navbar navbar-inverse">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header kik-logo">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="index.html"><img src="img_kiklos/kiklos_logo_4.jpg" alt="kiklos logo"></a>
+                            </div>
+                        
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        <a href="communications_overview.html" role="button">
+                                            Comm Plan
+                                        </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Opinions <!--<span class="badge">2</span> <span class="caret"></span>-->
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Opinion #123</a></li>
+                                            <li><a href="#">Opinion #456</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">View all Opinions</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Notifications <span class="badge">5</span> <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">NAT-VI/004: Objective added</a></li>
+                                            <li><a href="#">ECON-VI/008: New Activity</a></li>
+                                            <li><a href="#">ECON-V/005: Document uploaded</a></li>
+                                            <li><a href="#">ECON-VI/001: New Meeting</a></li>
+                                            <li><a href="#">ECON-VI/003: New Activity</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="notifications.html">View all Notifications</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Tools <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="https://agora.ces-cdr.eu.int:8443/agora/login.do">Agora</a></li>
+                                            <li><a href="http://www.toad.cor.europa.eu/">Members' Portal</a></li>
+                                            <li><a href="http://mycor.cor.europa.eu">myCoR</a></li>
+                                            <li><a href="http://mycor.europa.eu">CoR</a></li>
+                                            <li><a href="http://eur-lex.europa.eu/en/index.htm">EUR-Lex</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-user"></i> <strong>Athanasios Kaskamanidis</strong> <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="profile.html">Profile</a></li>
+                                            <li><a href="#">Logout</a></li>
+                                        </ul>
+                                    </li>
+								</ul>
+                            </div><!-- /.navbar-collapse -->
+                        </nav>    
+                        <!-- END top navigation -->
+                    </div><!-- END col -->
+							
+                    <div class="col-md-2 global_search_box">
+						<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+							Search&nbsp;<i class="fa fa-search" aria-hidden="true"></i>
+						</a>
+                    </div><!-- END col -->
+                </div><!-- END row -->
+				
+                <div class="row">
+					<div class="col-md-12">
+						<div class="collapse" id="collapseExample">
+						
+							<div class="row">
+								<div class="col-md-10">
+									<form>
+										<div class="form-group">
+											<!--<label for="foo"></i>Search the KIKLOS website</label>-->
+											<input type="text" class="form-control" id="foo" placeholder="Enter your search term...">
+										</div>
+										<!--
+										<div class="form-group">
+											<p class="help-block">Example block-level help text here.</p>
+										</div>
+										-->
+									</form>
+								</div>
+								<div class="col-md-2">
+									<a class="btn btn-primary" role="button" href="search_results_wt_meetings.html">Search</a>
+									<button type="submit" class="btn btn-default"><i class="fa fa-times" aria-hidden="true"></i></button>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+                </div><!-- END row -->
+            </div><!-- END container -->
+		</div><!-- END dark blue -->
+    </div><!-- END container-fluid -->
+      
+	<!-- START Main Navigation -->
+    <div class="container-fluid">
+    	<div class="dark-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+        
+                        <nav class="nav nav-pills nav-justified text-center">
+                            <div class="container-fluid">
+                            
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                        
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                <table align="center">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="badge">
+                                                                <i class="fa fa-tags"></i>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            	Themes <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="theme_01.html">Agriculture & maritime and consumer policies <span class="badge">8</span></a></li>
+                                                <li><a href="theme_02.html">Cohesion policy <span class="badge">7</span></a></li>
+                                                <li><a href="theme_03.html">Constitutional & institutional affairs <span class="badge">2</span></a></li>
+                                                <li><a href="theme_04.html">Economics & Finance <span class="badge">4</span></a></li>
+                                                <li><a href="theme_05.html">Education and Culture <span class="badge">4</span></a></li>
+                                                <li><a href="theme_06.html">Energy <span class="badge">6</span></a></li>
+                                                <li><a href="theme_07.html">Enterprises & Industries <span class="badge">11</span></a></li>
+												<li><a href="theme_08.html">Environment <span class="badge">7</span></a></li>
+                                                <li><a href="theme_09.html">External Relations, enlargement and neighbourhood policy <span class="badge">6</span></a></li>
+                                                <li><a href="theme_10.html">Justice & Home Affairs <span class="badge">3</span></a></li>
+                                                <li><a href="theme_11.html">Employment and Social policies <span class="badge">7</span></a></li>
+												<li><a href="theme_12.html">Transport <span class="badge">1</span></a></li>
+												<li role="separator" class="divider"></li>
+                                                <li><a href="themes.html">View all Themes</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                <table align="center">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="badge">
+                                                                <i class="fa fa-institution"></i>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            	Commissions <span class="caret"></span>
+											</a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                <a href="comm_01.html">CIVEX <span class="badge">7</span></a></li>
+                                                <li><a href="comm_02.html">COTER <span class="badge">3</span></a></li>
+                                                <li><a href="comm_03.html">ECON <span class="badge">5</span></a></li>
+                                                <li><a href="comm_04.html">ENVE <span class="badge">2</span></a></li>
+                                                <li><a href="comm_05.html">NAT <span class="badge">6</span></a></li>
+                                                <li><a href="comm_06.html">SEDEC <span class="badge">8</span></a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="commissions.html">View all Commissions</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="timeline.html">
+                                                <table align="center">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="badge">
+                                                                <i class="fa fa-clock-o"></i>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            	Timeline
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>        
+        
+                    </div><!-- END col -->
+                </div><!-- END row -->
+            </div><!-- END container -->
+     	</div><!-- END dark blue -->
+    </div><!-- END container-fluid -->
+	<!-- END Main Navigation -->
+
+    <!-- START ribbon-l-blue -->
+    <div class="container-fluid">
+            
+        <div class="ribbon_m-grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ol class="breadcrumb">
+                            <li class="active">Home</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ribbon_grey">
+            <div class="container">
+
+
+
+
+
+
+
+
+
+<!--
+<section class="intro">
+  <div class="container">
+    <h1>Vertical Timeline &darr;</h1>
+  </div>
+</section>
+-->
+<section class="timeline">
+  <ul>
+    <li>
+      <div>
+        <time>09/05/2016 - 12/05/2016</time>EP Plenary
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>18/05/2016</time>EC Adopts Country-Specific Recommendations (CSRs)
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>01/06/2016</time>EC publishes Mid-Term Review of the Investment Plan
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>18/05/2016</time>EC Adopts Country-Specific Recommendations (CSRs)
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>15/06/2016 - 16/06/2016</time>118th Plenary Session of the Committee of the Regions
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>13/06/2016 - 14/06/2016</time>EP ECON Meeting
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>20/05/2016</time>(tbc): Launch of EU2020MP survey of LRAs on obstacles to investments , results early 
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>24/05/2016 - 25/05/2016</time>EP Plenary
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>25/05/2016 - 26/05/2016</time>EP Plenary
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>28/06/2016</time>Annual workshop of the Europe 2020 Monitoring Platform, in cooperation with EIB (focusing on obstacles to investments)
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>30/06/2016</time>ECON study on obstacles to investments at regional and local level
+      </div>
+    </li>
+    <li>
+      <div>
+        <time>2005</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+      </div>
+    </li>
+  </ul>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+            <!-- END container -->
+        </div>
+        <!-- END ribbon_grey -->
+        
+    </div>
+    <!-- END ribbon-l-blue -->	<footer class="footer">
+		<div class="container">
+        	<div class="row">
+            	<div class="col-sm-4">
+<p class="text-muted">                        <a href="about.html">About Kiklos</a>&nbsp;&verbar;&nbsp;
+                        <a href="glossary.html">Glossary</a>&nbsp;&verbar;&nbsp;
+<a href="mailto:kiklos@cor.europa.eu?Subject=Hello%20KIKLOS team" target="_top">Contact us</a>&nbsp;&verbar;&nbsp;
+                    </p>
+                </div>
+            	<div class="col-sm-8 text-right">
+                    <p class="text-muted text-right">
+                        Last update: 11/08/2016 &nbsp;&verbar;&nbsp;Powered by the European Committee of the Regions &copy;2016
+                    </p>
+                </div>
+            </div>
+		</div>
+	</footer>
+
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	
+	
+<script>
+$(function () {
+        // Remove Search if user Resets Form or hits Escape!
+		$('body, .navbar-collapse form[role="search"] button[type="reset"]').on('click keyup', function(event) {
+			console.log(event.currentTarget);
+			if (event.which == 27 && $('.navbar-collapse form[role="search"]').hasClass('active') ||
+				$(event.currentTarget).attr('type') == 'reset') {
+				closeSearch();
+			}
+		});
+
+		function closeSearch() {
+            var $form = $('.navbar-collapse form[role="search"].active')
+    		$form.find('input').val('');
+			$form.removeClass('active');
+		}
+
+		// Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
+		$(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
+			event.preventDefault();
+			var $form = $(this).closest('form'),
+				$input = $form.find('input');
+			$form.addClass('active');
+			$input.focus();
+
+		});
+		// ONLY FOR DEMO // Please use $('form').submit(function(event)) to track from submission
+		// if your form is ajax remember to call `closeSearch()` to close the search container
+		$(document).on('click', '.navbar-collapse form[role="search"].active button[type="submit"]', function(event) {
+			event.preventDefault();
+			var $form = $(this).closest('form'),
+				$input = $form.find('input');
+			$('#showSearchTerm').text($input.val());
+            closeSearch()
+		});
+    });
+    
+    
+    
+(function() {
+
+  'use strict';
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+
+})();    
+    </script>
+    
+    
+  </body>
+</html>

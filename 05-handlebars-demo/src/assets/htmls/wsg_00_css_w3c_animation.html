@@ -1,0 +1,166 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="ico/favicon.ico">
+		<title>KIKLOS -  CSS Animation</title>
+		
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Bootstrap Theme - Web Style Guide -->
+		<link href="css-theme-web-style-guide/web-style-guide.css" rel="stylesheet">
+		
+		<!-- Bootstrap Theme - Kiklos CSS -->
+		<link href="css-kiklos/kiklos_bootstrap.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_brand.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_layout.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_modules.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_transit.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_typography.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_media-queries.css" rel="stylesheet">
+<!-- Bootstrap Theme - font awesome -->
+		<link href="css/font-awesome.css" rel="stylesheet">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- techday -->
+
+			
+<!-- START techday 
+ * COLOUR SCHEME 
+ 
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+-->
+<style type="text/css">
+div.test1 {
+	border-radius: 4px;
+	color:#fff;
+    background: #ee3853; /* red */
+	padding:5px;
+
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}}
+</style>			
+			
+	</head>
+
+	<body>
+	
+		<div class="container-fluid wsg_light">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text-center">
+						<br />
+						<a class="btn btn-default" href="wsg_00_techday.html">
+							&lt;&lt; Back to Techday
+						</a>
+					</div>
+				</div>
+				<div class="col-md-9 col-md-offset-3 ">
+					<h2>CSS3 Animations</h2>
+					<p>CSS3 animations allows animation of most HTML elements without using JavaScript or Flash!.</p>				
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+		
+			<br />
+
+			<!-- START row -->
+			<div class="row">
+			
+				<!-- START col -->
+				<div class="col-md-6 col-md-offset-3 ">
+				
+					<!-- START techday -->
+					<p><a href="http://www.w3schools.com/css/css3_animations.asp">link to W3Schools</a></p>
+					
+					<h4>Example 1</h4>
+<code>
+div {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;width: 100px;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;height: 100px;<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;background: #ee3853; /* red */<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<strong>-webkit-animation-name: example; /* Chrome, Safari, Opera */</strong><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<strong>-webkit-animation-duration: 4s; /* Chrome, Safari, Opera */</strong><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<strong>animation-name: example;</strong><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<strong>animation-duration: 4s;</strong><br />
+	
+	
+}		<br /><br />			
+/* Chrome, Safari, Opera */<br />
+@-webkit-keyframes example {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;0%   {background-color: red;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;25%  {background-color: yellow;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;50%  {background-color: blue;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;25%  100% {background-color: green;}<br />
+}<br />
+<br />
+/* Standard syntax */<br />
+@keyframes example {<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;0%   {background-color: red;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;25%  {background-color: yellow;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;50%  {background-color: blue;}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;25%  100% {background-color: green;}<br />
+}
+</code>
+
+					<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+					<div class="test1"></div>
+
+					
+					<h4>More examples</h4>
+					<a href="http://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_count" target="_blank">Set How Many Times an Animation Should Run</a>
+					
+					
+					
+					<!-- END techday -->
+				</div>
+				<!-- END col -->
+			</div>
+			<!-- END row -->
+							
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+	</body>
+</html>

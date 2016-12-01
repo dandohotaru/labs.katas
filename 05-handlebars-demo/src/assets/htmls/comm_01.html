@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+	<title>KIKLOS -Commission CIVEX</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Bootstrap Theme - Web Style Guide -->
+	<link href="css-theme-web-style-guide/web-style-guide.css" rel="stylesheet">
+    
+	<!-- Bootstrap Theme - Kiklos CSS -->
+	<link href="css-kiklos/kiklos_bootstrap.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_brand.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_layout.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_modules.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_transit.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_typography.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_media-queries.css" rel="stylesheet">
+<!-- Bootstrap Theme - font awesome -->
+	<link href="css/font-awesome.css" rel="stylesheet">
+    
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+a.morelink {
+	text-decoration:none;
+	outline: none;
+}
+.morecontent span {
+	display: none;
+}
+/* mimic the BS Default Button */
+a.morelink{
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-moz-user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	
+	/*color: #333;
+	background-color: #FFF;
+	border-color: #CCC;
+	
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15) inset, 0px 1px 1px rgba(0, 0, 0, 0.075);
+	text-shadow: 0px 1px 0px #FFF;
+	background-image: linear-gradient(to bottom, #FFF 0px, #E0E0E0 100%);
+	background-repeat: repeat-x;*/
+}
+a.morelink:hover {
+	/*background-color: #E0E0E0;
+	background-position: 0px -15px;
+	color: #333;
+	background-color: #E6E6E6;
+	border-color: #ADADAD;*/
+	text-decoration:underline;
+}
+</style>
+</head>
+<body>
+
+    <div class="container-fluid">
+    	<div class="very-dark-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                        <!-- START top navigation -->
+                        <nav class="navbar navbar-inverse">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header kik-logo">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="index.html"><img src="img_kiklos/kiklos_logo_4.jpg" alt="kiklos logo"></a>
+                            </div>
+                        
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>
+                                        <a href="communications_overview.html" role="button">
+                                            Communications </span>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Opinions <!--<span class="badge">2</span> <span class="caret"></span>-->
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Opinion #123</a></li>
+                                            <li><a href="#">Opinion #456</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">View all Opinions</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Notifications <span class="badge">5</span> <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">NAT-VI/004: Objective added</a></li>
+                                            <li><a href="#">ECON-VI/008: New Activity</a></li>
+                                            <li><a href="#">ECON-V/005: Document uploaded</a></li>
+                                            <li><a href="#">ECON-VI/001: New Meeting</a></li>
+                                            <li><a href="#">ECON-VI/003: New Activity</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="notifications.html">View all Notifications</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Tools <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="https://agora.ces-cdr.eu.int:8443/agora/login.do">Agora</a></li>
+                                            <li><a href="http://www.toad.cor.europa.eu/">Members' Portal</a></li>
+                                            <li><a href="http://mycor.cor.europa.eu">myCoR</a></li>
+                                            <li><a href="http://mycor.europa.eu">CoR</a></li>
+                                            <li><a href="http://eur-lex.europa.eu/en/index.htm">EUR-Lex</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-user"></i> <strong>Athanasios Kaskamanidis</strong> <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="profile.html">Profile</a></li>
+                                            <li><a href="#">Logout</a></li>
+                                        </ul>
+                                    </li>
+								</ul>
+                            </div><!-- /.navbar-collapse -->
+                        </nav>    
+                        <!-- END top navigation -->
+                    </div><!-- END col -->
+							
+                    <div class="col-md-2 global_search_box">
+						<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+							Search&nbsp;<i class="fa fa-search" aria-hidden="true"></i>
+						</a>
+                    </div><!-- END col -->
+                </div><!-- END row -->
+				
+                <div class="row">
+					<div class="col-md-12">
+						<div class="collapse" id="collapseExample">
+						
+							<div class="row">
+								<div class="col-md-10">
+									<form>
+										<div class="form-group">
+											<!--<label for="foo"></i>Search the KIKLOS website</label>-->
+											<input type="text" class="form-control" id="foo" placeholder="Enter your search term...">
+										</div>
+										<!--
+										<div class="form-group">
+											<p class="help-block">Example block-level help text here.</p>
+										</div>
+										-->
+									</form>
+								</div>
+								<div class="col-md-2">
+									<a class="btn btn-primary" role="button" href="search_results_wt_meetings.html">Search</a>
+									<button type="submit" class="btn btn-default"><i class="fa fa-times" aria-hidden="true"></i></button>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+                </div><!-- END row -->
+            </div><!-- END container -->
+		</div><!-- END dark blue -->
+    </div><!-- END container-fluid -->
+	
+    <!-- START breadcrumb -->
+    <div class="container-fluid">
+	
+        <div class="ribbon_m-grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
+							<li><a href="commissions.html">Commissions</a><i class="fa fa-angle-right"></i></li>
+							<li class="active">CIVEX</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+	</div>
+    <!-- END breadcrumb -->
+	
+	
+    <div class="container">
+        <div class="row">
+			<div class="col-sm-4 text-center">
+				<br />
+				<h5 class="trim">Commission</h5>
+				<h1 class="trim">CIVEX</h1>
+				<h6>Citizenship, Governance, Institutional and External Affairs</h6>
+			</div>
+			<div class="col-sm-8">
+				<div class="cor_card-body comment more">
+					CIVEX provides the secretariat for the Conference of Regional and Local 
+					Authorities for the Eastern Partnership (CORLEAP), the Euro-Mediterranean Regional and Local Assembly (ARLEM), 
+					the Joint Consultative Committees (JCC) and the Working Groups (WG) with and on the enlargement countries, the 
+					Ukraine Task Force (TF) and the Subsidiarity Monitoring Network. It provides the necessary resources and 
+					instruments for the Committee of the Regions to fully play its advisory role in the EU legislative and political 
+					process in the above-mentioned fields.<br />
+
+					The CIVEX members and the members of CORLEAP, ARLEM, the JCCs, the WGs and the TF Ukraine, supported by the CIVEX 
+					commission secretariat, draft opinions and reports, follow up and monitor their impact after adoption, present 
+					the CoR or partner position on CIVEX work remits in debates and conferences, and meet regularly at commission and 
+					CoR plenary level or with their counterparts in enlargement and neighbourhood countries to discuss, exchange 
+					views and practices, and adopt opinions and reports. <br />
+
+					In addition to supporting the members' work, the CIVEX commission secretariat is responsible for organising the 
+					meetings, hearings and external events of the CIVEX commission and of CORLEAP, ARLEM, the JCCs, the WGs, and the 
+					Ukraine TF on decentralised cooperation and of the Subsidiarity Steering Group (SSG) and Subsidiarity Expert Group 
+					(SEG) in the relevant policy fields. It also manages the Subsidiarity Monitoring Network; monitoring the 
+					principles of subsidiarity and proportionality throughout the EU policy and law-making process, and for 
+					coordinating CoR participation in the REFIT platform.
+				</div>
+			</div>
+		</div>
+		<!-- END row -->
+		
+		<br />
+		
+        <div class="row">
+			<!-- START either: timeline/cards/bubbles -->
+			<div class="col-sm-4">
+				
+				<!-- 
+						<i class="icon-big fa fa-leaf lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-random lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-university lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-bolt lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-globe lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-group lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-truck lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-bar-chart lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-industry lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-exchange lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-home lead" aria-hidden="true"></i>
+						<i class="icon-big fa fa-graduation-cap lead" aria-hidden="true"></i>
+
+				-->
+				
+				<!-- START subcategory 1 -->
+				<div class="cor_card">
+					<a href="details_comm_01_1.html">
+						<div class="cor_card-heading turquoise">
+							<div class="row">
+								<!--
+								<div class="col-sm-12">
+									<h6><i class="icon-big fa fa-leaf" aria-hidden="true" title="Agriculture & maritime and consumer policies"></i></h6>
+								</div>
+								-->
+								<div class="col-sm-12">
+									<h3 title="Agriculture & maritime and consumer policies">
+										<i class="icon-big fa fa-leaf" aria-hidden="true"></i>
+										<i class="fa fa-gavel" style="background:#fff; color:#333; border-radius: 25px; padding:5px; font-size:0.85em;" title="Opinion"></i> ENVE-VI/005
+									</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Roby BIWER</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						  Animal welfare
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Susanna Sjöström</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 14/08/2016</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 1 -->
+				
+				<!-- START subcategory 2 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading brown">
+							<div class="row">
+								<div class="col-sm-12">
+									<h3 title="External relations, enlargement and neighbourhood policy">
+										<i class="icon-big fa fa-exchange" aria-hidden="true"></i>
+										<i class="fa fa-gavel" style="background:#fff; color:#333; border-radius: 25px; padding:5px; font-size:0.85em;" title="Opinion"></i> ENVE-VI/005
+									CIVEX-V/025</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Responsible <strong>Carsten Brauns</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						 Communication from the Commission - increasing the impact of EU development policy: an agenda for change (communication) 
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Roby BIWER</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2016</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 2 -->
+				
+				<!-- START subcategory 2 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading green">
+							<div class="row">
+								<div class="col-sm-12">
+									<h3 title="Cohesion policy"><i class="icon-big fa fa-random" aria-hidden="true"></i>
+										<i class="fa fa-gavel" style="background:#fff; color:#333; border-radius: 25px; padding:5px; font-size:0.85em;" title="Opinion"></i> ENVE-VI/005
+									IVEX VI/010</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Gordon Modro</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						  An Alpine macro-regional strategy for the European Union 
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Chantal Fontaine </strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 11/02/2016</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 2 -->
+				
+				<!-- START subcategory 3 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading l-blue">
+							<div class="row">
+								<div class="col-sm-12">
+									<h6><i class="icon-big fa fa-globe" aria-hidden="true"></i> Environment</h6>
+								</div>
+								<div class="col-sm-12">
+									<h3>ENVE-VI/005</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Responsible <strong>George-Bogdan Marinescu </strong></h5>
+						</div>
+						<div class="cor_card-body">
+						  Combatting Radicalisation and Violent Extremism: Prevention mechanisms at local and regional level 
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Bartolomeus (Bart) SOMERS</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ACTIVE</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 3 -->
+				
+				<!-- START subcategory 4 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading pink">
+							<div class="row">
+								<div class="col-sm-12">
+									<h6><i class="icon-big fa fa-home" aria-hidden="true"></i> Justice & Home Affairs</h6>
+								</div>
+								<div class="col-sm-12">
+									<h3>CIVEX-VI/013</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Responsible <strong>Vincenzo BIANCO  (PES) </strong></h5>
+						</div>
+						<div class="cor_card-body">
+						  Proposal for a Regulation of the European Parliament and of the Council establishing the criteria and mechanisms 
+						  for determining the Member State responsible for examining an application for international protection lodged in one 
+						  of the Member States by a third-country national or a stateless person (recast)
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Bartolomeus (Bart) SOMERS</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ACTIVE</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 4 -->
+				
+			</div>    
+				
+			<div class="col-sm-4">
+			
+				<!-- START subcategory 2 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading brown">
+							<div class="row">
+								<!--
+								<div class="col-sm-12">
+									<h6><i class="icon-big fa fa-exchange" aria-hidden="true"></i> External relations, enlargement and neighbourhood policy</h6>
+								</div>
+								-->
+								<div class="col-sm-12">
+									<h3 title="External relations, enlargement and neighbourhood policy"><i class="icon-big fa fa-exchange" aria-hidden="true"></i>
+										<i class="fa fa-gavel" style="background:#fff; color:#333; border-radius: 25px; padding:5px; font-size:0.85em;" title="Opinion"></i> ENVE-VI/005
+									CIVEX-V/025</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Responsible <strong>Carsten Brauns</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						 Communication from the Commission - increasing the impact of EU development policy: an agenda for change (communication) 
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Roby BIWER</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2016</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 2 -->
+
+				<!-- START subcategory 4 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading d-grey">
+							<div class="row">
+								<div class="col-sm-12">
+									<h3 title="Enterprises & Industries"><i class="icon-big fa fa-industry" aria-hidden="true"></i>
+										<i class="fa fa-bullhorn" style="background:#fff; color:#333; border-radius: 25px; padding:5px; font-size:0.85em;" title="Opinion"></i> ENVE-VI/005
+									CIVEX VI/008</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						 Protection of refugees in their areas of origin: a new perspective 2016.
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ACTIVE</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 4 -->
+				
+				<!-- START subcategory 5 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading purp">
+							<div class="row">
+								<div class="col-sm-12">
+									<h3 title="Constitutional & interinstitunial affairs"><i class="icon-big fa fa-institution" aria-hidden="true"></i>
+										<i class="fa fa-comments" style="background:#fff; color:#333; border-radius: 25px; padding:5px; font-size:0.85em;" title="Opinion"></i> ENVE-VI/005
+									CIVEX VI/008</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						Communication from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions - Internet policy and governance: Europe's role in shaping the future of internet governance 
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ACTIVE</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 5 -->
+				
+				<!-- START subcategory 6 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading red">
+							<h6>Economy & Finance</h6>
+							<h3>CIVEX VI/005</h3>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						Joint Consultation Paper - Towards a new European Neighbourhood Policy
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ACTIVE</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 6 -->
+				
+				<!-- START subcategory 7 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading red">
+							<h6>Economy & Finance</h6>
+							<h3>CIVEX VI/006</h3>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						Joint Consultation Paper - Towards a new European Neighbourhood Policy
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ACTIVE</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 7 -->
+				
+			</div>    
+				
+			<div class="col-sm-4">
+				
+				<!-- START subcategory 7 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading red">
+							<div class="row">
+								<!--
+								<div class="col-sm-12">
+									<h6><i class="icon-big fa fa-bar-chart" aria-hidden="true"></i> Economy & Finance</h6>
+								</div>
+								-->
+								<div class="col-sm-12">
+									<h3 title="Economy & Finance"><i class="icon-big fa fa-bar-chart" aria-hidden="true"></i>
+										<i class="fa fa-comments" style="background:#fff; color:#333; border-radius: 25px; padding:5px; font-size:0.85em;" title="Opinion"></i> ENVE-VI/005
+									CIVEX VI/004</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						  Resolution on "Improving the functioning of the European Union: Lisbon Treaty and beyond"  
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ACTIVE</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 7 -->
+				
+				<!-- START subcategory 8 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading d-green">
+							<div class="row">
+								<div class="col-sm-12">
+									<h3 title="Education and Culture"><i class="icon-big fa fa-graduation-cap" aria-hidden="true"></i>
+										<i class="fa fa-bullhorn" style="background:#fff; color:#333; border-radius: 25px; padding:5px; font-size:0.85em;" title="Opinion"></i> ENVE-VI/005
+									CIVEX VI/004</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						Communication from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions - Better regulation for better results - An EU agenda.
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Hans JANSSEN</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> ACTIVE</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 8 -->
+				
+				<!-- START subcategory 9 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading orange">
+							<div class="row">
+								<div class="col-sm-12">
+									<h3 title="Energy"><i class="icon-big fa fa-flash" aria-hidden="true"></i>
+										<i class="fa fa-comments" style="background:#fff; color:#333; border-radius: 25px; padding:5px; font-size:0.85em;" title="Opinion"></i> ENVE-VI/005
+									CIVEX VI/004</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Responsible <strong>Carsten Brauns</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						 Contribution to the fitness check on the EU Birds and Habitats Directives
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Roby BIWER</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2016</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 9 -->
+				
+				<!-- START subcategory 2 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading brown">
+							<div class="row">
+								<div class="col-sm-12">
+									<h6><i class="icon-big fa fa-exchange" aria-hidden="true"></i> External relations, enlargement and neighbourhood policy</h6>
+								</div>
+								<div class="col-sm-12">
+									<h3>CIVEX-V/025</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Responsible <strong>Carsten Brauns</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						 Communication from the Commission - increasing the impact of EU development policy: an agenda for change (communication) 
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Roby BIWER</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2016</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 2 -->
+
+				<!-- START subcategory 10 -->
+				<div class="cor_card">
+					<a href="comm_opinion_detail.html">
+						<div class="cor_card-heading brown">
+							<div class="row">
+								<div class="col-sm-12">
+									<h6><i class="icon-big fa fa-exchange" aria-hidden="true"></i> External relations, enlargement and neighbourhood policy</h6>
+								</div>
+								<div class="col-sm-12">
+									<h3>CIVEX-VI/008</h3>
+								</div>
+							</div>
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Responsible <strong>Carsten Brauns</strong></h5>
+						</div>
+						<div class="cor_card-body">
+						 Communication from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions - EU Enlargement Strategy 
+						</div>
+						<div class="ribbon_l-grey">
+							<h5>Rapporteur <strong>Roby BIWER</strong></h5>
+						</div>
+						<div class="cor_card-footer">
+							<table class="table">
+								<tbody>
+									<tr>
+										<td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2016</td>
+										<td class="cor_card-status text-right">ACTIVE <span class="glyphicon glyphicon-flag" aria-hidden="true"></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</a> 
+				</div>
+				<!-- END subcategory 10 -->
+
+                            
+                    </div>
+                    <!-- END row -->
+                </div>
+                <!-- END container -->
+        </div>
+        <!-- END col -->
+    </div>
+    <!-- END row -->	<footer class="footer">
+		<div class="container">
+        	<div class="row">
+            	<div class="col-sm-4">
+<p class="text-muted">                        <a href="about.html">About Kiklos</a>&nbsp;&verbar;&nbsp;
+                        <a href="glossary.html">Glossary</a>&nbsp;&verbar;&nbsp;
+<a href="mailto:kiklos@cor.europa.eu?Subject=Hello%20KIKLOS team" target="_top">Contact us</a>&nbsp;&verbar;&nbsp;
+                    </p>
+                </div>
+            	<div class="col-sm-8 text-right">
+                    <p class="text-muted text-right">
+                        Last update: 11/08/2016 &nbsp;&verbar;&nbsp;Powered by the European Committee of the Regions &copy;2016
+                    </p>
+                </div>
+            </div>
+		</div>
+	</footer>
+
+
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+	var showChar = 550;
+	var ellipsestext = "...";
+	var moretext = "more";
+	var lesstext = "less";
+	$('.more').each(function() {
+		var content = $(this).html();
+
+		if(content.length > showChar) {
+
+			var c = content.substr(0, showChar);
+			var h = content.substr(showChar-1, content.length - showChar);
+
+			var html = c + '<span class="moreelipses">'+ellipsestext+'</span>&nbsp;<span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">'+moretext+'</a></span>';
+
+			$(this).html(html);
+		}
+
+	});
+
+	$(".morelink").click(function(){
+		if($(this).hasClass("less")) {
+			$(this).removeClass("less");
+			$(this).html(moretext);
+		} else {
+			$(this).addClass("less");
+			$(this).html(lesstext);
+		}
+		$(this).parent().prev().toggle();
+		$(this).prev().toggle();
+		return false;
+	});
+});
+</script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "02-webpack-start",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.17.2"
+  },
+  "devDependencies": {
+    "file-loader": "^0.9.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js --progress --colors",
+    "start": "webpack --config webpack.config.js --progress --colors --watch"
+  },
+  "keywords": [],
+  "author": "dan dohotaru",
+  "license": "ISC"
+}

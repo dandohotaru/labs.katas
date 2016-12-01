@@ -1,0 +1,794 @@
+/* 
+Title	:	web-style-guide.css
+Purpose	:	These styles give shape to the Web Style Style. 
+			Copy these styles in other CSS files to give shape to your project.
+			When the project is mature, do not link to this file again.
+Date	: 	20160614
+Author	: 	Peter De Cock
+Content	:	
+
+
+
+
+
+
+
+
+*/
+
+
+.wsg_pad {
+	padding:20px
+}
+.wsg_dark {
+	background-color:#444;
+}
+.wsg_light {
+	background-color:#fff;
+	border-radius: 4px;
+}
+.wsg_blue {
+	background-color: CornflowerBlue;
+	border-radius: 4px;
+	color:white;
+	padding:7px;
+}
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1. color palette 
+(see kiklos.css)
+
+*/
+
+/* 2. body */
+/* Sticky footer styles */
+
+/*
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  /*margin-bottom: 60px;*/
+/*
+  }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  /*height: 60px;*/
+  /*background-color: #f5f5f5;*/
+/*}
+	.footer p {
+	  line-height: 1.2em;
+	}
+body {
+	background:#fff; /* white */ 
+	/*background: url(../img_chart/des_guide_pattern_05.jpg);*/
+/*}*/
+
+/* 3. font usage */
+/*
+@font-face {
+	font-family: 'Armata';
+	src: url('Armata.eot');
+	src: 
+		url('../fonts/Armata-Regular?#iefix') format('embedded-opentype'),
+		url('../fonts/Armata-Regular.woff') format('woff'),
+		url('../fonts/Armata-Regular.ttf') format('truetype'),
+		url('../fonts/Armata-Regular.svg#Asfalto') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* 4. BS Override - CSS - Typography */
+/*
+h1 {
+	border-bottom:none;
+	color:#5191cd; /* blue */
+	/*font: 42px/50px 'Armata', Arial, sans-serif;
+	letter-spacing: 0; 
+	margin: 10px;
+	padding: 10px 0;
+}
+		h1 {
+		  /*animation-duration: 1s;
+		  animation-name: slidein;*/
+		/*}
+		
+		@keyframes slidein {
+		  from {
+			margin-left: 100%;
+			width: 300%; 
+		  }
+		
+		  to {
+			margin-left: 0%;
+			width: 100%;
+		  }
+		}
+		
+		@keyframes slidein {
+		  0% {
+			transform: scale(0.1);
+			opacity: 0;
+		  }
+		  60% {
+			transform: scale(1.02);
+			opacity: 1;
+		  }
+		  100% {
+			transform: scale(1);
+		  }
+		}
+
+h2 {
+	border-bottom:1px solid #b0d5f2;
+	color:#5191cd; /* blue */
+	/*font: 33px/40px 'Armata', Arial, sans-serif;
+	letter-spacing: 0;
+	margin: 10px;
+	padding: 10px 0;
+}
+h3 {
+	border-bottom:1px solid #b0d5f2;
+	color:#5191cd; /* blue */
+	/*font: 30px/45px 'Armata', Arial, sans-serif;
+	letter-spacing: 0;
+	margin: 10px;
+	padding: 5px 0;
+}
+	h3 a {
+		color: #F26C4F;	/* orange */
+	/*}
+
+h4 {
+	color:#5191cd; /* blue */
+	/*font: 24px/30px 'Armata', Arial, sans-serif;
+	letter-spacing: 0;
+	margin: 5px 10px;
+	padding: 10px 0;
+	text-transform:uppercase;
+}
+h5 {
+	border-bottom: 1px solid #ccc;
+	color:#333; /* dark grey */
+	/*font: 17px/20px 'Armata', Arial, sans-serif;
+	letter-spacing: 0.1em;
+	margin: 10px;
+	padding: 5px 0;
+	text-transform:uppercase;
+}
+h6 {
+	border-bottom: none;
+	font: 14px/18px 'Armata', Arial, sans-serif;
+	letter-spacing:0.14em;
+	margin: 5px 10px;
+	padding: 5px 0;
+	text-transform:uppercase;
+	word-spacing:0.7em;
+}
+
+p {
+	color:#444;
+	font-size:15px;
+	letter-spacing:.001em;
+	line-height:1.6em;
+	margin: 10px;
+	padding: 10px 0;
+	word-spacing:.06em;
+}
+blockquote {
+	background: url(../img_chart/des_guide_pattern_01.jpg);
+	border-left: 5px solid #5191cd; /* blue */
+	/*font: 20px/30px 'Armata', Arial, sans-serif;letter-spacing: 0; color:#fff;
+	margin:25px 0;
+}
+blockquote footer {
+	color:#fff;
+	text-align:right;
+	font-style:italic;
+}
+
+/* horizontal rule */
+hr.hor-rule{
+	border-color: #e8e8e8;
+	height: 1px;
+	margin: 25px 20px;
+}
+/* prism yellow */
+.prism-pattern-beige {
+	background: url(../img_chart/des_guide_pattern_beige.jpg);
+	color:#032e40; /* blue very dark */
+}
+.prism-beige {
+	background:#fff8e1; /* beige */
+	color:#032e40; /* blue very dark */
+}
+	.prism-beige:hover {
+		background:#fffae3; /* beige:hover */
+	}
+	.prism-beige p,
+	.prism-beige h1,
+	.prism-beige h2,
+	.prism-beige h3,
+	.prism-beige h4,
+	.prism-beige h5,
+	.prism-beige h6 {color:#032e40;} /* blue very dark */
+
+/* prism yellow */
+.prism-pattern-yellow {
+	background: url(../img_chart/des_guide_pattern_yellow.jpg);
+	color:#032e40; /* blue very dark */
+}
+.prism-yellow {
+	background:#f9cc7a; /* yellow */
+	color:#032e40; /* blue very dark */
+}
+	.prism-yellow:hover {
+		background:#ffe08e; /* yellow:hover */
+	}
+	.prism-yellow p,
+	.prism-yellow h1,
+	.prism-yellow h2,
+	.prism-yellow h3,
+	.prism-yellow h4,
+	.prism-yellow h5,
+	.prism-yellow h6 {color:#032e40;} /* blue very dark */
+
+/* prism orange */
+.prism-pattern-orange {
+	background: url(../img_chart/des_guide_pattern_orange.jpg);
+	color:#032e40; /* blue very dark */
+}
+.prism-orange {
+	background:#ed6d50; /* orange */
+	color:#fff; /* white */
+}
+	.prism-orange:hover {
+		background:#ef7e65; /* orange:hover */
+	}
+	.prism-orange p,
+	.prism-orange h1,
+	.prism-orange h2,
+	.prism-orange h3,
+	.prism-orange h4,
+	.prism-orange h5,
+	.prism-orange h6 {color:#fff;} /* white */
+
+/* prism red */
+.prism-pattern-red {
+	background: url(../img_chart/des_guide_pattern_red.jpg);
+	color:#032e40; /* blue very dark */
+}
+.prism-red {
+	background:#ea5349; /* red */
+	color:#fff; /* white */
+}
+	.prism-red:hover {
+		background:#ec665f; /* red:hover */
+	}
+	.prism-red p,
+	.prism-red h1,
+	.prism-red h2,
+	.prism-red h3,
+	.prism-red h4,
+	.prism-red h5,
+	.prism-red h6 {color:#fff;} /* white */
+
+/* prism purple */
+.prism-pattern-purple {
+	background: url(../img_chart/des_guide_pattern_purple.jpg);
+	color:#032e40; /* blue very dark */
+}
+.prism-purple {
+	background:#35345e; /* purple */
+	color:#fff; /* white */
+}
+	.prism-purple:hover {
+		background:#494871; /* purple:hover */
+	}
+	.prism-purple p,
+	.prism-purple h1,
+	.prism-purple h2,
+	.prism-purple h3,
+	.prism-purple h4,
+	.prism-purple h5,
+	.prism-purple h6 {color:#fff;} /* white */
+
+
+/* prism blue very dark*/
+.prism-pattern-blue-very-dark {
+	background: url(../img_chart/des_guide_pattern_blue-very-dark.jpg);
+	color:#032e40; /* blue very dark */
+}
+.prism-blue-very-dark {
+	background:#032e40; /* blue very dark */
+	color:#fff; /* white */
+}
+	.prism-blue-very-dark:hover {
+		background:#174153; /* blue very dark:hover */
+	}
+	.prism-blue-very-dark p,
+	.prism-blue-very-dark h1,
+	.prism-blue-very-dark h2,
+	.prism-blue-very-dark h3,
+	.prism-blue-very-dark h4,
+	.prism-blue-very-dark h5,
+	.prism-blue-very-dark h6 {color:#fff;} /* white */
+
+/* prism blue dark */
+.prism-pattern-blue-dark {
+	background: url(../img_chart/des_guide_pattern_blue-dark.jpg);
+	color:#032e40; /* blue very dark */
+}
+
+.prism-blue-dark {
+	background:#1c335e; /* blue dark */
+	color:#fff; /* white */
+}
+	.prism-blue-dark p,
+	.prism-blue-dark h1,
+	.prism-blue-dark h2,
+	.prism-blue-dark h3,
+	.prism-blue-dark h4,
+	.prism-blue-dark h5,
+	.prism-blue-dark h6 {color:#fff;} /* white */
+
+/* prism blue */
+.prism-pattern-blue {
+	background: url(../img_chart/des_guide_pattern_blue.jpg);
+	color:#032e40; /* blue very dark */
+}
+.prism-blue {
+	background:#428dcb; /* blue */
+	color:#fff; /* white */
+}
+	.prism-blue p,
+	.prism-blue h1,
+	.prism-blue h2,
+	.prism-blue h3,
+	.prism-blue h4,
+	.prism-blue h5,
+	.prism-blue h6 {color:#fff;} /* white */
+
+/* prism blue */
+
+/* #369;	/* blue dark */					/* #3d70a3; /* blue:hover */
+/* #5191cd; /* blue */						/* #5b9bd7; /* blue:hover */
+/* #b0d5f2; /* blue light */				/* #badffc; /* light blue:hover */
+
+.prism-pattern-blue {
+	background: url(../img_chart/des_guide_pattern_blue-med.jpg);
+	color:#369; /* blue dark */
+}
+.prism-blue{
+	background:#5191cd; /* blue */
+	color:#b0d5f2; /* blue light */
+}
+	.prism-blue p,
+	.prism-blue h1,
+	.prism-blue h2,
+	.prism-blue h3,
+	.prism-blue h4,
+	.prism-blue h5,
+	.prism-blue h6 {color:#369;} /* blue dark */
+
+/* prism blue light */
+.prism-pattern-blue-light {
+	background: url(../img_chart/des_guide_pattern_blue-light.jpg);
+	color:#5191cd; /* blue */
+}
+.prism-blue-light {
+	background:#dcf0ff; /* light blue */
+	color:#369; /* blue dark */
+}
+	.prism-blue-light p,
+	.prism-blue-light h1,
+	.prism-blue-light h2,
+	.prism-blue-light h3,
+	.prism-blue-light h4,
+	.prism-blue-light h5,
+	.prism-blue-light h6 {color:#369; /* blue dark */}
+
+/* prism grey */
+.prism-pattern-grey {
+	background: url(../img_chart/des_guide_pattern_grey.jpg);
+	color:#ccc; /* grey */
+}
+.prism-grey {
+	background:#ccc; /* grey */
+	color:#222; /* grey dark */
+}
+	.prism-grey p,
+	.prism-grey h1,
+	.prism-grey h2,
+	.prism-grey h3,
+	.prism-grey h4,
+	.prism-grey h5,
+	.prism-grey h6 {color:#ccc; /* grey */}
+
+/* prism light grey */
+.prism-pattern-grey {
+	background: url(../img_chart/des_guide_pattern_grey-light.jpg);
+	color:#e8e8e8; /* grey light */
+}
+.prism-grey-light {
+	background:#e8e8e8; /* grey light */
+	color:#333; /* grey dark */
+}
+	.prism-grey-light p,
+	.prism-grey-light h1,
+	.prism-grey-light h2,
+	.prism-grey-light h3,
+	.prism-grey-light h4,
+	.prism-grey-light h5,
+	.prism-grey-light h6 {color:#ccc; /* grey */}
+
+
+
+/* 5. BS Override - ??? - bs-callout bs-callout-danger */
+/* this comes from doc.min.css */
+.bs-callout{
+	padding:15px;
+	margin:20px 0;
+	border:1px solid #eee;
+	border-left-width:5px;
+	border-radius:3px
+}
+.bs-callout h4 {
+	margin-top:0;
+	margin-bottom:5px;
+}
+.bs-callout p:last-child {
+	margin-bottom:0;
+	padding:0;
+}
+.bs-callout code {
+	border-radius:3px;
+}
+.bs-callout+.bs-callout {
+	margin-top:-5px;
+}
+
+	.bs-callout.bs-callout-danger,
+	.bs-callout.bs-callout-info,
+	.bs-callout.bs-callout-warning {
+		background-color: #fafafa;
+		border-top: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+	}
+
+/* warning */
+.bs-callout-warning {
+	border-left-color:#aa6708;
+}
+.bs-callout-warning h4{
+	color:#aa6708;
+}
+	.bs-callout.bs-callout-warning {
+		border-bottom: 6px solid #f9cc7a; /* yellow */;
+		color: #f9cc7a; /* yellow */;
+	}
+	.bs-callout.bs-callout-warning p {
+		color: #f9cc7a; /* yellow */
+	}
+	.bs-callout.bs-callout-warning h1,
+	.bs-callout.bs-callout-warning h2,
+	.bs-callout.bs-callout-warning h3,
+	.bs-callout.bs-callout-warning h4,
+	.bs-callout.bs-callout-warning h5,
+	.bs-callout.bs-callout-warning h6 {
+		color: #f9cc7a; /* yellow */
+		margin-bottom: 0px;
+		padding-bottom: 0px;
+	}
+	
+/* info */
+.bs-callout-info {
+	border-left-color:#1b809e;
+}
+.bs-callout-info h4 {
+	color:#1b809e;
+}
+	.bs-callout.bs-callout-info {
+		border-bottom: 6px solid #5191cd;
+		color: #5191cd;
+	}
+	.bs-callout.bs-callout-info p {
+		color: #5191cd;
+	}
+	.bs-callout.bs-callout-info h1,
+	.bs-callout.bs-callout-info h2,
+	.bs-callout.bs-callout-info h3,
+	.bs-callout.bs-callout-info h4,
+	.bs-callout.bs-callout-info h5,
+	.bs-callout.bs-callout-info h6 {
+		color: #5191cd;
+		margin-bottom: 0px;
+		padding-bottom: 0px;
+	}
+
+/* danger */
+.bs-callout-danger {
+	border-left-color:#ce4844;
+}
+.bs-callout-danger h4 {
+	color:#ce4844;
+}
+	.bs-callout.bs-callout-danger {
+		border-bottom: 6px solid #900;
+		color: #990000;
+	}
+	.bs-callout.bs-callout-danger p {
+		color: #990000;
+	}
+	.bs-callout.bs-callout-danger h1,
+	.bs-callout.bs-callout-danger h2,
+	.bs-callout.bs-callout-danger h3,
+	.bs-callout.bs-callout-danger h4,
+	.bs-callout.bs-callout-danger h5,
+	.bs-callout.bs-callout-danger h6 {
+		color: #990000;
+		margin-bottom: 0px;
+		padding-bottom: 0px;
+	}
+
+/* BS Override - Components - Navbar */
+
+/* #fafafa;	/* white */						
+/* #e8e8e8;	/* grey light */						
+/* #ccc;	/* grey */						
+/* #333;	/* grey dark */						
+/* #369;	/* blue dark */					/* #3d70a3; /* blue:hover */
+/* #5191cd; /* blue */						/* #5b9bd7; /* blue:hover */
+/* #b0d5f2; /* blue light */				/* #badffc; /* light blue:hover */
+
+/*(optional blue)*/
+/* #002f41; /* blue very dark  */
+
+/* dark navbar */
+.navbar-inverse {
+    background-color: #002f41; /* very dark blue */
+    border: none;
+}
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:focus, 
+.navbar-inverse .navbar-nav > .active > a:hover {
+    color: #fff; /* white */
+    background-color: #369;	/* blue dark */
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #b0d5f2; /* blue light */
+}
+.navbar-inverse .navbar-brand {
+    color: #b0d5f2; /* blue light */
+}
+.navbar-toggle collapsed {
+    background-color: #e9ce54;	/* yellow */
+}
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:hover {
+    background-color: #e9ce54;	/* yellow */
+}
+.navbar-inverse .navbar-toggle:hover .icon-bar {
+    background-color: #002f41; /* blue very dark  */
+}
+button.navbar-toggle {
+    background-color: #e9ce54;	/* yellow */
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+    background-color: #5191cd; /* blue */
+}
+.dropdown-menu > .active > a, 
+.dropdown-menu > .active > a:focus, 
+.dropdown-menu > .active > a:hover {
+    color: #fff; /* white */
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #369; /* blue dark */
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu li.active a {
+    color: #fff; /* white */
+}
+.dropdown.open a.dropdown-toggle ul.dropdown-menu li a  {
+    color: #fff !important; /* white */
+}
+
+/* BS overrides - Components - Jumbotron */
+.jumbotron {
+	color:#222;
+	/*background: url(img/gc_style_guide-example.jpg);*/
+	background: url(../img_chart/des_guide_pattern_06.jpg);
+	margin-bottom:5px;
+	margin:-15px;
+}
+.container .jumbotron {
+	border-radius:0;
+	margin-top:50px;
+	padding:25px;
+}
+.jumbotron p {
+	font: 25px/35px 'Armata', Arial, sans-serif;letter-spacing: 0; /*color:#5191cd; /* dark blue */
+	margin:10px 0 0 0;
+	padding:1px;
+}
+.jumbotron h1, .jumbotron h2, .jumbotron h1 a {
+	text-shadow: 2px 2px 4px #a38813; /* dark orange */
+}
+.jumbotron h1 {
+	border:none;
+	color:#fff;
+	font-size: 50px;
+	line-height:1.0em;
+	margin:5px 10px;
+	padding:5px;
+}
+.jumbotron h2 {
+	color:#fff;
+	border:none;
+	margin:5px 10px;
+	padding:5px;
+}
+ .jumbotron p {
+	color:#002f41;	/* dark blue */
+	margin:5px 10px;
+	padding:5px;
+}
+
+/* BS overrides - CSS - Helper Classes */
+p.bg-warning{
+	padding:10px;
+}
+
+/* ??? */
+.caption {
+	color:#5191cd;	/* dark */
+	margin:5px 10px;
+	padding:0;
+	text-transform:uppercase;
+}
+
+/* BS overrides - CSS - Button */
+.btn {
+	text-decoration:none;
+}
+/* bg-primary */
+.bg-primary {
+	background: -webkit-linear-gradient(#6db6f2, #5191cd); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#6db6f2, #5191cd); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#6db6f2, #5191cd); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#6db6f2, #5191cd); /* Standard syntax */
+	padding:15px;
+}
+
+/* wells */
+.well-lg {
+	background: -webkit-linear-gradient(#6db6f2, #5191cd); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#6db6f2, #5191cd); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#6db6f2, #5191cd); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#6db6f2, #5191cd); /* Standard syntax */
+	color:#333;
+	font-size:1.7em;
+	text-shadow: 0 1px 1px #fafafa;
+}
+.well-sm {
+	background:#fff; 
+	box-shadow: 1px 1px 12px #ccc;
+	margin:0 0 15px 0;
+	padding:0;
+}
+	.well-sm p{
+		line-height:1.4em;
+		margin:0;
+		padding:8px;
+	}
+	.well-sm h2, .well-sm h3, .well-sm h4{
+		border:none;
+		font-size:1.2em;
+		line-height:1.2em;
+		margin:5px;
+		padding:4px 4px 0 4px;
+	}
+	.well-sm h6{
+		line-height:1em;
+		margin:5px;
+		padding:10px 4px 0 4px;
+	}
+
+
+.panel .panel-heading{
+	background:#e8e8e8; /* grey */ 
+}
+/* textual links */
+a {
+  background: transparent;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+p a {
+	text-decoration:underline;
+}
+
+
+/* BS CSS - Forms */
+.form-horizontal .control-label {
+	padding-top: 0;
+}
+.control-label {
+	font-weight: normal;
+}
+
+/* select text */
+::-moz-selection { /* Code for Firefox */
+	background:#6BBAE7;	/* blue */
+	color: #fff;
+}
+::selection {
+	background:#F26C4F;	/* orange */
+}
+
+footer {
+	background: #F26C4F;	/* orange */
+	background: #002F41; /* cobolt very dark blue */
+}
+footer .container {
+	background: #F26C4F;	/* orange */
+	background: #002F41; /* cobolt very dark blue */
+	color:#fff;
+}
+footer .container .text-muted {
+	color:#b0d5f2; /* blue light */
+}
+
+/* additional template styles */
+.btn-slab {
+	margin:0 0 15px 0;
+	padding:15px;
+}
+	.btn-slab a:hover {
+		text-decoration:none;
+	}
+	.btn-slab p {
+		margin:10px;
+		padding:0;
+	}
+	.btn-slab h2, .btn-slab h3, .btn-slab h4 {
+		font-weight:bold;
+		margin:10px;
+		padding:0;
+	}
+	.btn-slab h6 {
+		margin:10px 10px 0 10px;
+		padding:5px 0 0 0;
+	}
+	/* light blue */
+	.btn-slab.prism-blue-light:hover {
+		background: #badffc; /* light blue:hover */
+	}

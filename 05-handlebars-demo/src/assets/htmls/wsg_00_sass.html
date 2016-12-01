@@ -1,0 +1,456 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="ico/favicon.ico">
+		<title>KIKLOS -  CSS Animation</title>
+		
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Bootstrap Theme - Web Style Guide -->
+		<link href="css-theme-web-style-guide/web-style-guide.css" rel="stylesheet">
+		
+		<!-- Bootstrap Theme - Kiklos CSS -->
+		<link href="css-kiklos/kiklos_bootstrap.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_brand.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_layout.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_modules.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_transit.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_typography.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_media-queries.css" rel="stylesheet">
+<!-- Bootstrap Theme - font awesome -->
+		<link href="css/font-awesome.css" rel="stylesheet">
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+			
+<!-- START techday 
+ * COLOUR SCHEME 
+ 
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+-->
+<style type="text/css">
+
+</style>
+<!-- END techday -->
+			
+			
+	</head>
+
+	<body>
+	
+		<div class="container-fluid wsg_light">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text-center">
+						<br />
+						<a class="btn btn-default" href="wsg_00_techday.html">
+							&lt;&lt; Back to Techday
+						</a>
+						<br />
+						<br />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+		
+			<br />
+
+			<!-- START row -->
+			<div class="row">
+			
+				<!-- START col -->
+				<div class="col-md-6 col-md-offset-3 ">
+					<!-- START techday -->
+					<h1>SASS</h1>
+                    <ul>
+                    	<li>SASS stands for Syntactically Awesome Stylesheets</li>
+                    	<li>Sasscript is a scripting language that is interpreted into CSS. Easy inclusion in rails, Compass or Sass-only projects.</li>
+                    	<li>It still uses curly craces and semicolosn instead of indentation and seperate lines. Files receive a .scss extension.</li>
+                    	<li>Sass is coded in Ruby, but also works in PHP, JAVA and C.</li>
+                    	<li>Sasscript provide the following mechanisms: variable, nesting, mixins and selector inheritance.</li>
+                        <li>Organise your CSS better, save time...</li>
+                        <li>makes large and complicated stylesheets clearer to understand and easier to maintain</li>
+                    </ul>
+					<h2>Variables </h2>
+                    <p>Sasscript supports the following data types: Numbers, Strings, Colors and Booleans.
+Variables can be arguments to or resutls from one or several available functions.</p>
+					<h6>Example:</h6>
+<pre>
+$primary-color: #3bbfce;
+$margin: 16px;
+
+.content-navigation {
+  border-color: $primary-color;
+  color: darken($primary-color, 10%);
+}
+
+.border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+  border-color: $primary-color;
+}
+
+</pre>
+					<h6>The SASS style</h6>
+<pre>
+$primary-color: #3bbfce
+$margin: 16px
+
+.content-navigation
+  border-color: $primary-color
+  color: darken($primary-color, 10%)
+
+.border
+  padding: $margin/2
+  margin:  $margin/2
+  border-color: $primary-color
+
+
+</pre>
+					<h6>Would compile to:</h6>
+<pre>
+.content-navigation {
+  border-color: #3bbfce;
+  color: #2b9eab;
+}
+
+.border {
+  padding: 8px;
+  margin: 8px;
+  border-color: #3bbfce;
+}
+</pre>
+
+					<h2>Nesting</h2>
+                    <p>CSS does support logical nesting, but the code blocks themselves are not nested. Sass allows the nested code to be inserted within each other.</p>
+                    <p>The selectors are nested inside the table selector. This is a great way to organize your CSS and make it more readable</p>
+                    <p>Three Levels Deep</p>
+					<h6>SASS style</h6>
+<pre>
+table.hl 
+  margin: 2em 0
+  td.ln 
+    text-align: right
+  
+li 
+  font: 
+    family: serif
+    weight: bold
+    size: 1.3em
+</pre>
+					<h6>SCSS style</h6>
+<pre>
+table.hl {
+  margin: 2em 0;
+  td.ln {
+    text-align: right;
+  }
+}
+
+li {
+  font: {
+    family: serif;
+    weight: bold;
+    size: 1.3em;
+  }
+}
+</pre>
+					<h6>Would compile to:</h6>
+<pre>
+table.hl {
+  margin: 2em 0;
+}
+table.hl td.ln {
+  text-align: right;
+}
+
+li {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+</pre>
+					<h2>Mixins</h2>
+                    <p>CSS does not support mixins. Any repeated code must be repeated in each location. A mixin is a section of code that contains any valid Sass code. Whenever a mixin is called, the result of translating the mixin is inserted at the calling location. Mixins allow for efficient and clean code repetitions, as well as easy alteration of code.</p>
+					<h6>SASS style</h6>
+<pre>
+@mixin table-base {
+  th {
+    text-align: center;
+    font-weight: bold;
+  }
+  td, th {
+    padding: 2px;
+  }
+}
+
+#data {
+  @include table-base;
+}
+</pre>
+					<h6>SCSS style</h6>
+<pre>
+=table-base
+  th
+    text-align: center
+    font-weight: bold
+  td, th
+    padding: 2px
+
+#data
+  +table-base
+</pre>
+					<h6>Would compile to:</h6>
+<pre>
+#data th {
+  text-align: center;
+  font-weight: bold;
+}
+#data td, #data th {
+  padding: 2px;
+}
+</pre>
+					<h2>Loops</h2>
+                    <p>Sass allows for iterating over variables using @for, @each and @while, which can be used to apply different styles to elements with similar classes or ids.</p>
+					<h6>SASS style</h6>
+<pre>
+$squareCount: 3
+@for $i from 1 through $squareCount 
+  #square-#{$i} 
+   background-color: red
+   width: 50px * $i
+   height: 120px / $i
+</pre>
+					<h6>Would compile to:</h6>
+<pre>
+#square-1 {
+  background-color: red;
+  width: 50px;
+  height: 120px;
+}
+
+#square-2 {
+  background-color: red;
+  width: 100px;
+  height: 60px;
+}
+
+#square-3 {
+  background-color: red;
+  width: 150px;
+  height: 40px;
+}
+</pre>
+					<h2>Arguments</h2>
+                    <p>Mixins also support arguments</p>
+<pre>
+=left($dist) 
+  float: left
+  margin-left: $dist
+
+#data 
+  +left(10px
+
+Would compile to:
+#data {
+  float: left;
+  margin-left: 10px;
+}
+</pre>
+					<h6>In combination</h6>
+<pre>
+=table-base
+  th
+    text-align: center
+    font-weight: bold
+  td, th 
+    padding: 2px
+
+=left($dist) 
+  float: left
+  margin-left: $dist
+
+#data 
+  +left(10px)
+  +table-base
+</pre>
+					<h6>Would compile to:</h6>
+<pre>
+#data {
+  float: left;
+  margin-left: 10px;
+}
+#data th {
+  text-align: center;
+  font-weight: bold;
+}
+#data td, #data th {
+  padding: 2px;
+}
+</pre>
+					<h2>Selector inheritance</h2>
+                    <p>While CSS3 supports the Document Object Model (DOM) hierarchy, it does not allow selector inheritance. In Sass, inheritance is achieved by inserting a line inside of a code block that uses the @extend keyword and references another selector. The extended selector's attributes are applied to the calling selector.[4]</p>
+<pre>
+.error
+  border: 1px #f00
+  background: #fdd
+
+.error.intrusion 
+  font-size: 1.3em
+  font-weight: bold
+
+.badError 
+  @extend .error
+  border-width: 3px
+
+Would compile to:
+
+.error, .badError {
+  border: 1px #f00;
+  background: #fdd;
+}
+
+.error.intrusion,
+.badError.intrusion {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.badError {
+  border-width: 3px;
+}
+</pre>
+
+
+
+					<h2>Import</h2>
+                    <p>CSS has an import option that lets you split your CSS into smaller, more maintainable portions. The only drawback is that each time you use @import in CSS it creates another HTTP request. Sass builds on top of the current CSS @import but instead of requiring an HTTP request, Sass will take the file that you want to import and combine it with the file you're importing into so you can serve a single CSS file to the web browser.</p>
+					<h6>SCSS style</h6>
+
+<pre>
+// _reset.scss
+
+html,
+body,
+ul,
+ol {
+   margin: 0;
+  padding: 0;
+}
+</pre>
+<pre>
+@import 'reset';
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+</pre>
+					<p>Notice we're using @import 'reset'; in the base.scss file. When you import a file you don't need to include the file extension .scss. Sass is smart and will figure it out for you. When you generate the CSS you'll get:</p>
+					<h6>CSS style</h6>
+
+<pre>
+html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+</pre>
+
+					<h2>Operators</h2>
+					<p>Doing math in your CSS is very helpful. Sass has a handful of standard math operators like +, -, *, /, and %. </p>
+					<h6>SCSS Syntax</h6>
+
+<pre>
+html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+</pre>
+                    
+                    
+					<h2>Partials</h2>
+                    <p>You can create partial Sass files that contain little snippets of CSS that you can include in other Sass files. This is a great way to modularize your CSS and help keep things easier to maintain. A partial is simply a Sass file named with a leading underscore. You might name it something like _partial.scss. The underscore lets Sass know that the file is only a partial file and that it should not be generated into a CSS file. Sass partials are used with the @import directive.</p>
+                    <p>This could help me with the bloated transit CSS file I use now to pass on the 'temporary proposals' to the developers.</p>
+                    
+                    
+                    
+                    
+                    
+                    
+					<h2>Watch some YouTube</h2>
+                    <p>Plenty of tutorials out there (made by geeks:))</p>
+                    <ul>
+                    	<li><a href="https://www.youtube.com/watch?v=ok3y4E5NEmw">Learn SASS in 5 minutes - PART 1 (youtube)</a></li>
+                    	<li><a href="https://www.youtube.com/watch?v=wz3kElLbEHE">SASS Tutorial on (youtube)</a></li>
+                        
+                        
+                    </ul>
+                    <h2>Install</h2>
+                    <p><a href="http://sass-lang.com/install">Install Sass</a></p>
+                    <h3>Windows</h3>
+                    <p>Before you start using Sass you will need to install Ruby. The fastest way to get Ruby on your Windows computer is to use <strong>Ruby Installer</strong>. It's a single-click installer that will get everything set up for you super fast.<br />
+    The installer will also install a Ruby command line powershell application that will let you use the Ruby libraries.</p>
+    
+    				<div class="alert alert-danger" role="alert"><strong>Next</strong>: We failed to install Ruby due to the restictions in our proxey setttings (or something similar...)</div>
+                    
+                    <h3>Tutorial Time</h3>
+                    <ul>
+                    	<li><a href="https://codepen.io/search/pens?q=sass&limit=all&type=type-pens">Codepen</a></li>
+                    	<li><a href="https://scotch.io/tutorials/getting-started-with-sass">getting-started-with-sass</a></li>
+                    	<li><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">all the SASS functions</a></li>
+                    	<li><a href="https://css-tricks.com/sass-style-guide/">css-tricks</a></li>
+                    	<li><a href=" https://codepen.io/search/pens?q=scss&limit=all&order=popularity&depth=everything&show_forks=false">SCSS exzamples on Codepen</a></li>
+                        
+                       
+                        
+                    </ul>
+                    
+                    
+                    <h2>To do's...</h2>
+                    <ul>
+                    	<li><a href="http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/">Knowing when to use @extend versus @include (it can be a little tricky)</a></li>
+                    </ul>
+					<!-- END techday -->
+                    
+                    <br /><br /><br /><br />
+				</div>
+				<!-- END col -->
+			</div>
+			<!-- END row -->
+							
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+		
+	</body>
+	</html>
