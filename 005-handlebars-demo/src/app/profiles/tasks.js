@@ -1,7 +1,7 @@
 var TasksComponent = (function (loader) {
 
-    var build = function () {
-        return loader.load(["/app/shared/tasks.hbs", "/api/tasks.json"])
+    var init = function () {
+        return loader.load(["/app/profiles/tasks.hbs", "/api/tasks.json"])
             .then(function ([view, tasks]) {
                 var html = view(tasks);
                 return html;
@@ -12,6 +12,6 @@ var TasksComponent = (function (loader) {
     };
 
     return {
-        build: build
+        init: init
     }
 });

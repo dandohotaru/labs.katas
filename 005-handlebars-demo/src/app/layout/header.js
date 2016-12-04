@@ -1,12 +1,12 @@
 var HeaderComponent = (function (loader) {
 
-    var build = function () {
-        return loader.load(["/app/shared/header.hbs", "/api/notificatios.json"])
+    var init = function (user) {
+        return loader.load(["/app/layout/header.hbs", "/api/notificatios.json"])
             .then(function ([view, notifications]) {
                 var context = {
                     user: {
-                        firstName: "John",
-                        lastName: "Doe"
+                        firstName: user.firstName,
+                        lastName: user.lastName
                     },
                     notifications: notifications
                 };
@@ -18,6 +18,6 @@ var HeaderComponent = (function (loader) {
     };
 
     return {
-        build: build
+        init: init
     }
 });

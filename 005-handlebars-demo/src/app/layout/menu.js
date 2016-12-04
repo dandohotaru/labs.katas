@@ -1,7 +1,7 @@
 var MenuComponent = (function (loader) {
 
-    var build = function () {
-        return loader.load(["/app/shared/menu.hbs", "/api/themes.json", "/api/commissions.json"])
+    var init = function () {
+        return loader.load(["/app/layout/menu.hbs", "/api/themes.json", "/api/commissions.json"])
             .then(function ([view, themes, commissions]) {
                 var context = {
                     themes: _.map(themes.themes, function (p) {
@@ -28,6 +28,6 @@ var MenuComponent = (function (loader) {
     };
 
     return {
-        build: build
+        init: init
     }
 });

@@ -3,7 +3,7 @@ $(document).ready(function () {
     var loader = new Loader();
 
     // Header
-    loader.load(["/app/shared/header.hbs", "/api/notificatios.json"])
+    loader.load(["/app/layout/header.hbs", "/api/notificatios.json"])
         .then(function ([view, notifications]) {
             var context = {
                 user: {
@@ -19,7 +19,7 @@ $(document).ready(function () {
         });
 
     // Menu
-    loader.load(["/app/shared/menu.hbs", "/api/themes.json", "/api/commissions.json"])
+    loader.load(["/app/layout/menu.hbs", "/api/themes.json", "/api/commissions.json"])
         .then(function ([view, themes, commissions]) {
             var context = {
                 themes: _.map(themes.themes, function (p) {
@@ -45,7 +45,7 @@ $(document).ready(function () {
         });
 
     // Footer
-    loader.load(["/app/shared/footer.hbs"])
+    loader.load(["/app/layout/footer.hbs"])
         .then(function ([view]) {
             var html = view({
                 lastUpdate: "4th of December 2016"

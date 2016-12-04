@@ -1,7 +1,7 @@
 var ArticleComponent = (function (loader) {
 
-    var build = function () {
-        return loader.load(["/app/shared/article.hbs"])
+    var init = function () {
+        return loader.load(["/app/layout/article.hbs"])
             .then(function ([view]) {
                 var html = view({
                     title: "What is Lorem Ipsum?",
@@ -14,6 +14,6 @@ var ArticleComponent = (function (loader) {
     };
 
     return {
-        build: build
+        init: init
     }
 });

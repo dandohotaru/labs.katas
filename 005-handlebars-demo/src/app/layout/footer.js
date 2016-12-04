@@ -1,7 +1,7 @@
 var FooterComponent = (function (loader) {
 
-    var build = function () {
-        return loader.load(["/app/shared/footer.hbs"])
+    var init = function () {
+        return loader.load(["/app/layout/footer.hbs"])
             .then(function ([view]) {
                 var html = view({
                     lastUpdate: "4th of December 2016"
@@ -13,6 +13,6 @@ var FooterComponent = (function (loader) {
     };
 
     return {
-        build: build
+        init: init
     }
 });
