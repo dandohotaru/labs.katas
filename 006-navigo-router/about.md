@@ -1,5 +1,13 @@
 # Notes
 
+## Academy
+https://github.com/TelerikAcademy/JavaScript-Fundamentals
+https://github.com/TelerikAcademy/JavaScript-Applications
+
+https://github.com/owolp/Telerik-Academy
+https://github.com/ivaylokenov/Telerik-Academy-Courses
+https://github.com/dentia/TelerikAcademy
+
 ## Others
 director
 https://github.com/flatiron/director
