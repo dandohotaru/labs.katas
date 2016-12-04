@@ -1,96 +1,80 @@
 
 $(document).ready(function () {
 
-    var headerLoader = $.get("/app/shared/header.hbs");
-    var menuLoader = $.get("/app/shared/menu.hbs");
-    var footerLoader = $.get("/app/shared/footer.hbs");
-    var notificationsLoader = $.getJSON("/api/notificatios.json");
-    var themesLoader = $.getJSON("/api/themes.json");
-    var commissionsLoader = $.getJSON("/api/commissions.json");
-
     var loader = new Loader();
 
-    loader.load(["/app/shared/tasks.hbs"])
-        .then(function ([view]) {
-            var html = view({
-                tasks: [
-                    { name: "one" },
-                    { name: "two" },
-                    { name: "three" },
-                ]
-            });
-            $("#temp").html(html);
+    // Header
+    loader.load(["/app/shared/header.hbs", "/api/notificatios.json"])
+        .then(function ([view, notifications]) {
+            var context = {
+                user: {
+                    firstName: "John",
+                    lastName: "Doe"
+                },
+                notifications: notifications
+            };
+            var html = view(context);
+            $("#header").html(html);
         }).catch(function (error) {
             console.error(error);
         });
 
+    // Menu
+    loader.load(["/app/shared/menu.hbs", "/api/themes.json", "/api/commissions.json"])
+        .then(function ([view, themes, commissions]) {
+            var context = {
+                themes: _.map(themes.themes, function (p) {
+                    return {
+                        id: p.id,
+                        name: p.name,
+                        counter: p.subthemes.length,
+                        url: "browse/cards.html?themeId=" + p.id
+                    };
+                }),
+                commissions: _.map(commissions, function (p) {
+                    return {
+                        name: p.name,
+                        counter: Math.floor((Math.random() * 100) + 1),
+                        url: "browse/cards.html?commission=" + p.name
+                    };
+                })
+            };
+            var html = view(context);
+            $("#menu").html(html);
+        }).catch(function (error) {
+            console.error(error);
+        });
+
+    // Content
+    loader.load(["/app/shared/article.hbs"])
+        .then(function ([view]) {
+            var html = view({
+                title: "What is Lorem Ipsum?",
+                body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            });
+            $("#content").html(html);
+        }).catch(function (error) {
+            console.error(error);
+        });
+
+    // Tasks
     loader.load(["/app/shared/tasks.hbs", "/api/tasks.json"])
-        .then(function ([view, data]) {
-            var html = view(data);
+        .then(function ([view, tasks]) {
+            var html = view(tasks);
             $("#tasks").html(html);
         })
         .catch(function (error) {
             console.error(error);
         });
 
-
-    $.when(headerLoader, menuLoader, footerLoader, notificationsLoader, themesLoader, commissionsLoader)
-        .done(function (headerResult, menuResult, footerResult, notificationsResult, themesResult, commissionsResult) {
-
-            // Header
-            var notificationsData = notificationsResult[0];
-            var headerPartial = $($.parseHTML(headerResult[0])).filter("#header-partial").html();
-            var headerTemplate = Handlebars.compile(headerPartial);
-            var headerMarkup = headerTemplate({
-                user: {
-                    firstName: "John",
-                    lastName: "Doe"
-                },
-                notifications: notificationsData
+    // Footer
+    loader.load(["/app/shared/footer.hbs"])
+        .then(function ([view]) {
+            var html = view({
+                lastUpdate: "4th of December 2016"
             });
-            $("#header").html(headerMarkup);
-
-            // Menu
-            var themesData = _.map(themesResult[0].themes, function (p) {
-                return {
-                    id: p.id,
-                    name: p.name,
-                    counter: p.subthemes.length,
-                    url: "browse/cards.html?themeId=" + p.id
-                };
-            });
-            var commissionsData = _.map(commissionsResult[0], function (p) {
-                return {
-                    name: p.name,
-                    counter: Math.floor((Math.random() * 100) + 1),
-                    url: "browse/cards.html?commission=" + p.name
-                };
-            });
-            var menuHtml = $($.parseHTML(menuResult[0])).filter("#menu-partial").html();
-            var menuTemplate = Handlebars.compile(menuHtml);
-            $("#menu").html(menuTemplate({
-                themes: themesData,
-                commissions: commissionsData,
-            }));
-
-            // Content
-            var context = {
-                title: "What is Lorem Ipsum?",
-                body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-            };
-            var source = $("#entry-template").html();
-            var template = Handlebars.compile(source);
-            var markup = template(context);
-            $("#entry").html(markup);
-
-            // Footer
-            var footerHtml = $($.parseHTML(footerResult[0])).filter("#footer-partial").html();
-            var footerTemplate = Handlebars.compile(footerHtml);
-            $("#footer").html(footerTemplate({
-                lastUpdate: "30th of November 2016"
-            }));
-
-        }).fail(function (error) {
+            $("#footer").html(html);
+        }).catch(function (error) {
             console.error(error);
         });
 });

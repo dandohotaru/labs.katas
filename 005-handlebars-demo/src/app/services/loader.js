@@ -1,11 +1,13 @@
 var Loader = (function () {
 
-    function hbs(url) {
+    function loadHbs(url) {
         var promise = new Promise(function (resolve, reject) {
+            console.time(url);
             $.get(url)
                 .done(function (html) {
                     var template = Handlebars.compile(html);
                     resolve(template);
+                    console.timeEnd(url);
                 })
                 .fail(reject);
         });
@@ -13,10 +15,14 @@ var Loader = (function () {
         return promise;
     };
 
-    function json(url) {
+    function loadJson(url) {
         var promise = new Promise(function (resolve, reject) {
+            console.time(url);
             $.getJSON(url)
-                .done(resolve)
+                .done(function(response){
+                    console.timeEnd(url);
+                    return resolve(response);
+                })
                 .fail(reject);
         });
 
@@ -30,9 +36,9 @@ var Loader = (function () {
 
         var promises = _.map(urls, function (url) {
             if (_.includes(url, ".hbs"))
-                return hbs(url);
+                return loadHbs(url);
             if (_.includes(url, ".json"))
-                return json(url);
+                return loadJson(url);
             throw "The url cannot be handled: " + url;
         });
 

@@ -1,80 +1,95 @@
 $(document).ready(function () {
 
-    var headerLoader = $.get("/app/shared/header.hbs");
-    var menuLoader = $.get("/app/shared/menu.hbs");
-    var footerLoader = $.get("/app/shared/footer.hbs");
-    var notificationsLoader = $.getJSON("/api/notificatios.json");
-    var themesLoader = $.getJSON("/api/themes.json");
-    var commissionsLoader = $.getJSON("/api/commissions.json");
-    var opinionsLoader = $.getJSON("/api/opinions.json");
+    var loader = new Loader();
 
-    $.when(headerLoader, menuLoader, footerLoader, notificationsLoader, themesLoader, commissionsLoader, opinionsLoader)
-        .done(function (headerResult, menuResult, footerResult, notificationsResult, themesResult, commissionsResult, opinionsResult) {
-
-            // Header
-            var notificationsData = notificationsResult[0];
-            var headerPartial = $($.parseHTML(headerResult[0])).filter("#header-partial").html();
-            var headerTemplate = Handlebars.compile(headerPartial);
-            var headerMarkup = headerTemplate({
+    // Header
+    loader.load(["/app/shared/header.hbs", "/api/notificatios.json"])
+        .then(function ([view, notifications]) {
+            var context = {
                 user: {
                     firstName: "John",
                     lastName: "Doe"
                 },
-                notifications: notificationsData
-            });
-            $("#header").html(headerMarkup);
+                notifications: notifications
+            };
+            var html = view(context);
+            $("#header").html(html);
+        }).catch(function (error) {
+            console.error(error);
+        });
 
-            // Menu
-            var themesData = _.map(themesResult[0].themes, function (p) {
-                return {
-                    id: p.id,
-                    name: p.name,
-                    counter: p.subthemes.length,
-                    url: "opinions/cards.html?themeId=" + p.id
-                };
-            });
-            var commissionsData = _.map(commissionsResult[0], function (p) {
-                return {
-                    name: p.name,
-                    counter: Math.floor((Math.random() * 100) + 1),
-                    url: "browse/cards.html?commission=" + p.name
-                };
-            });
-            var menuHtml = $($.parseHTML(menuResult[0])).filter("#menu-partial").html();
-            var menuTemplate = Handlebars.compile(menuHtml);
-            $("#menu").html(menuTemplate({
-                themes: themesData,
-                commissions: commissionsData,
-            }));
+    // Menu
+    loader.load(["/app/shared/menu.hbs", "/api/themes.json", "/api/commissions.json"])
+        .then(function ([view, themes, commissions]) {
+            var context = {
+                themes: _.map(themes.themes, function (p) {
+                    return {
+                        id: p.id,
+                        name: p.name,
+                        counter: p.subthemes.length,
+                        url: "browse/cards.html?themeId=" + p.id
+                    };
+                }),
+                commissions: _.map(commissions, function (p) {
+                    return {
+                        name: p.name,
+                        counter: Math.floor((Math.random() * 100) + 1),
+                        url: "browse/cards.html?commission=" + p.name
+                    };
+                })
+            };
+            var html = view(context);
+            $("#menu").html(html);
+        }).catch(function (error) {
+            console.error(error);
+        });
 
-            // Filters
-            var themesFilters = _.map(themesResult[0].themes, function (p) {
-                return {
-                    id: p.id,
-                    name: p.name,
-                    subthemes: _.map(p.subthemes, function(s){
-                        return {
-                            id: s.id,
-                            name: s.name,
-                        }
-                    })
-                };
+    // Footer
+    loader.load(["/app/shared/footer.hbs"])
+        .then(function ([view]) {
+            var html = view({
+                lastUpdate: "4th of December 2016"
             });
-            var filtersSource = $("#themes-filters-template").html();
-            var filtersTemplate = Handlebars.compile(filtersSource);
-            var filtersMarkup = filtersTemplate({
-                themes: themesFilters,
-            });
-            $("#filters").html(filtersMarkup);
+            $("#footer").html(html);
+        }).catch(function (error) {
+            console.error(error);
+        });
 
-            // Content
-            var parse = function(date){
+    // Filters
+    loader.load(["/api/themes.json"])
+        .then(function ([themes]) {
+            var source = $("#themes-filters-template").html();
+            var view = Handlebars.compile(source);
+            var html = view({
+                themes: _.map(themes.themes, function (p) {
+                    return {
+                        id: p.id,
+                        name: p.name,
+                        subthemes: _.map(p.subthemes, function (s) {
+                            return {
+                                id: s.id,
+                                name: s.name,
+                            }
+                        })
+                    };
+                })
+            });
+            $("#filters").html(html);
+        }).catch(function (error) {
+            console.error(error);
+        });
+
+    // Opinions
+    loader.load(["/api/opinions.json"])
+        .then(function ([opinions]) {
+
+            var parse = function (date) {
                 var actual = new Date(date);
-                var output = actual.getDate() + "/" +  (actual.getMonth() + 1) + "/" + actual.getFullYear();
+                var output = actual.getDate() + "/" + (actual.getMonth() + 1) + "/" + actual.getFullYear();
                 return output;
             };
 
-            var sorted = _.sortBy(opinionsResult[0].opinions, function(p){
+            var sorted = _.sortBy(opinions.opinions, function (p) {
                 return new Date(p.adoption);
             }).reverse();
             var filtered = _.take(sorted, 100);
@@ -92,7 +107,7 @@ $(document).ready(function () {
                     url: p.url,
                     rapporteur: p.rapporteur ? p.rapporteur.firstName + " " + p.rapporteur.lastName : null,
                     responsible: p.responsible ? p.responsible.firstName + " " + p.responsible.lastName : null,
-                    group: p.politicalGroup ? p.politicalGroup.abbreviation : null 
+                    group: p.politicalGroup ? p.politicalGroup.abbreviation : null
 
                     // commissions: 
                     //     id: c.bodyId,
@@ -101,33 +116,20 @@ $(document).ready(function () {
                     //     name: c.name
                 };
             });
-            var cardSource   = $("#opinion-card-template").html();
-            var cardTemplate = Handlebars.compile(cardSource);
-            var cardMarkup = cardTemplate({
-                cards: opinionsData,
+
+            var source = $("#opinion-card-template").html();
+            var view = Handlebars.compile(source);
+            var html = view({
+                cards: opinionsData
             });
-            $("#cards").html(cardMarkup);
-
-
-
-            // Footer
-            var footerHtml = $($.parseHTML(footerResult[0])).filter("#footer-partial").html();
-            var footerTemplate = Handlebars.compile(footerHtml);
-            $("#footer").html(footerTemplate({
-                lastUpdate: "30th of November 2016"
-            }));
+            $("#cards").html(html);
 
             $('.grid').colcade({
                 columns: '.grid-col',
                 items: '.grid-item'
             });
-
-        }).fail(function (error) {
+        }).catch(function (error) {
             console.error(error);
         });
 
-    
-
 });
-
-
