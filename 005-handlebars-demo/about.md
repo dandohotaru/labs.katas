@@ -146,6 +146,14 @@ Handlebars, loading external template files
 http://stackoverflow.com/questions/26643503/handlebars-loading-external-template-files
 
 
+## Patterns
+4 JavaScript Design Patterns You Should Know
+https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know
+
+JavaScript Module Pattern: In-Depth
+http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
+
+
 ## Gulp
 How to Modularize HTML Using Template Engines and Gulp
 https://zellwk.com/blog/nunjucks-with-gulp/
