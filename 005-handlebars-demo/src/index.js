@@ -10,27 +10,27 @@ $(document).ready(function () {
 
     var loader = new Loader();
 
-    var context = {
+    loader.load(["/app/shared/tasks.hbs"])
+        .then(function ([view]) {
+            var html = view({
                 tasks: [
                     { name: "one" },
                     { name: "two" },
                     { name: "three" },
                 ]
-            };
-    loader.bind("/app/shared/tasks.hbs", context)
-        .then(function (html) {
+            });
             $("#temp").html(html);
         }).catch(function (error) {
-            console.info(error);
+            console.error(error);
         });
 
     loader.load(["/app/shared/tasks.hbs", "/api/tasks.json"])
-        .then(function([view, data]) {
+        .then(function ([view, data]) {
             var html = view(data);
             $("#tasks").html(html);
         })
         .catch(function (error) {
-            console.info(error);
+            console.error(error);
         });
 
 

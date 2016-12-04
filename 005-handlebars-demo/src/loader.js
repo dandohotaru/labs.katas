@@ -23,21 +23,6 @@ var Loader = (function () {
         return promise;
     };
 
-    function bind(url, context) {
-
-        var promise = new Promise(function (resolve, reject) {
-            $.get(url)
-                .done(function (schema) {
-                    var template = Handlebars.compile(schema);
-                    var html = template(context);
-                    resolve(html);
-                })
-                .fail(reject);
-        });
-
-        return promise;
-    };
-
     function load(urls) {
         var valid = urls instanceof Array;
         if (!valid)
@@ -55,7 +40,6 @@ var Loader = (function () {
     };
 
     return {
-        bind: bind,
         load: load,   
     }
 });
