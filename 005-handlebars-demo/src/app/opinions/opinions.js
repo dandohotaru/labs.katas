@@ -3,57 +3,26 @@ $(document).ready(function () {
     var loader = new Loader();
 
     // Header
-    loader.load(["/app/layout/header.hbs", "/api/notificatios.json"])
-        .then(function ([view, notifications]) {
-            var context = {
-                user: {
-                    firstName: "John",
-                    lastName: "Doe"
-                },
-                notifications: notifications
-            };
-            var html = view(context);
-            $("#header").html(html);
-        }).catch(function (error) {
-            console.error(error);
-        });
-
+    var user = {
+        firstName: "John", 
+        lastName: "Doe"
+    };
+    var header = new HeaderComponent(loader);
+    header.init(user).then(function(html) {
+        $("#header").html(html);
+    });
+    
     // Menu
-    loader.load(["/app/layout/menu.hbs", "/api/themes.json", "/api/commissions.json"])
-        .then(function ([view, themes, commissions]) {
-            var context = {
-                themes: _.map(themes.themes, function (p) {
-                    return {
-                        id: p.id,
-                        name: p.name,
-                        counter: p.subthemes.length,
-                        url: "browse/cards.html?themeId=" + p.id
-                    };
-                }),
-                commissions: _.map(commissions, function (p) {
-                    return {
-                        name: p.name,
-                        counter: Math.floor((Math.random() * 100) + 1),
-                        url: "browse/cards.html?commission=" + p.name
-                    };
-                })
-            };
-            var html = view(context);
-            $("#menu").html(html);
-        }).catch(function (error) {
-            console.error(error);
-        });
+    var menu = new MenuComponent(loader);
+    menu.init().then(function(html) {
+        $("#menu").html(html);
+    });
 
     // Footer
-    loader.load(["/app/layout/footer.hbs"])
-        .then(function ([view]) {
-            var html = view({
-                lastUpdate: "4th of December 2016"
-            });
-            $("#footer").html(html);
-        }).catch(function (error) {
-            console.error(error);
-        });
+    var footer = new FooterComponent(loader);
+    footer.init().then(function(html) {
+        $("#footer").html(html);
+    });
 
     // Filters
     loader.load(["/api/themes.json"])
