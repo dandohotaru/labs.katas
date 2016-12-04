@@ -1,10 +1,10 @@
 var Loader = (function () {
 
-    function load(templateUrl) {
+    function hbs(url) {
         var promise = new Promise(function (resolve, reject) {
-            $.get(templateUrl)
-                .done(function (templateHtml) {
-                    var template = Handlebars.compile(templateHtml);
+            $.get(url)
+                .done(function (html) {
+                    var template = Handlebars.compile(html);
                     resolve(template);
                 })
                 .fail(reject);
@@ -13,26 +13,49 @@ var Loader = (function () {
         return promise;
     };
 
-    function bind(templateUrl, jsonUrl) {
+    function json(url) {
+        var promise = new Promise(function (resolve, reject) {
+            $.getJSON(url)
+                .done(resolve)
+                .fail(reject);
+        });
 
-        var hbs = _.includes(templateUrl, ".hbs");
-        var json = _.includes(jsonUrl, ".json");
-        var tmp = _.includes(jsonUrl, ".tmp");
+        return promise;
+    };
 
-        var promisses = [
-            load(templateUrl),
-            new Promise(function (resolve, reject) {
-                $.getJSON(jsonUrl)
-                    .done(resolve)
-                    .fail(reject);
-            })
-        ];
+    function bind(url, context) {
 
-        return Promise.all(promisses)
+        var promise = new Promise(function (resolve, reject) {
+            $.get(url)
+                .done(function (schema) {
+                    var template = Handlebars.compile(schema);
+                    var html = template(context);
+                    resolve(html);
+                })
+                .fail(reject);
+        });
+
+        return promise;
+    };
+
+    function load(urls) {
+        var valid = urls instanceof Array;
+        if (!valid)
+            throw "the urls are expected to be an array of urls";
+
+        var promises = _.map(urls, function (url) {
+            if (_.includes(url, ".hbs"))
+                return hbs(url);
+            if (_.includes(url, ".json"))
+                return json(url);
+            throw "The url cannot be handled: " + url;
+        });
+
+        return Promise.all(promises);
     };
 
     return {
-        load: load,
         bind: bind,
+        load: load,   
     }
 });
