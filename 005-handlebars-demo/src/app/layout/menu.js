@@ -2,7 +2,7 @@ var MenuComponent = (function (loader) {
 
     var init = function () {
         return loader.load(["/app/layout/menu.hbs", "/api/themes.json", "/api/commissions.json"])
-            .then(function ([view, themes, commissions]) {
+            .then(function ([template, themes, commissions]) {
                 var context = {
                     themes: _.map(themes.themes, function (p) {
                         return {
@@ -20,6 +20,7 @@ var MenuComponent = (function (loader) {
                         };
                     })
                 };
+                var view = Handlebars.compile(template);
                 var html = view(context);
                 return html;
             }).catch(function (error) {

@@ -49,8 +49,8 @@ $(document).ready(function () {
         });
 
     // Opinions
-    loader.load(["/api/opinions.json"])
-        .then(function ([opinions]) {
+    loader.load(["/app/opinions/opinion-list.hbs", "/app/opinions/opinion-card.hbs", "/api/opinions.json"])
+        .then(function ([listTemplate, cardTemplate, opinions]) {
 
             var parse = function (date) {
                 var actual = new Date(date);
@@ -77,17 +77,12 @@ $(document).ready(function () {
                     rapporteur: p.rapporteur ? p.rapporteur.firstName + " " + p.rapporteur.lastName : null,
                     responsible: p.responsible ? p.responsible.firstName + " " + p.responsible.lastName : null,
                     group: p.politicalGroup ? p.politicalGroup.abbreviation : null
-
-                    // commissions: 
-                    //     id: c.bodyId,
-                    //     short: c.short,
-                    //     abbreviation: c.abbreviation,
-                    //     name: c.name
                 };
             });
 
-            var source = $("#opinion-card-template").html();
-            var view = Handlebars.compile(source);
+            var view = Handlebars.compile(listTemplate);
+            Handlebars.registerPartial("opinion-card", cardTemplate);
+
             var html = view({
                 cards: opinionsData
             });

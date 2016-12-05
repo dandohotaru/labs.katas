@@ -4,9 +4,8 @@ var Loader = (function () {
         var promise = new Promise(function (resolve, reject) {
             console.time(url);
             $.get(url)
-                .done(function (html) {
-                    var template = Handlebars.compile(html);
-                    resolve(template);
+                .done(function (response) {
+                    resolve(response);
                     console.timeEnd(url);
                 })
                 .fail(reject);
@@ -19,7 +18,7 @@ var Loader = (function () {
         var promise = new Promise(function (resolve, reject) {
             console.time(url);
             $.getJSON(url)
-                .done(function(response){
+                .done(function (response) {
                     console.timeEnd(url);
                     return resolve(response);
                 })
@@ -46,6 +45,6 @@ var Loader = (function () {
     };
 
     return {
-        load: load,   
+        load: load,
     }
 });
