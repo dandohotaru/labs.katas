@@ -13,33 +13,28 @@ $(() => {
 
   router
     .on(() => {
-      print("home page");
-      
+      print("home alone");
     })
-    .on("home", (params, query) => {
-      print(query);
-      router.navigate('products/list');
-    })
-    .on("test", (params, query) => {
-      print(query);
+    .on("products/list", () => {
+      print("products page");
     })
     .on("settings", (params, query) => {
       print(query);
     })
     .on("quit", (params, query) => {
       print(query);
-    })
-    .on("products/list", () => {
-      print("display all the products");
+      router.navigate('products/list');
     })
     .on({
-      "book/:id/note/:noteId": print, 
-      "book/:id": params => print(params),
-      "book/:id/note/:noteId": print,
-      //"*": () => print("home") // all routs lead to home page
+      "book/:id/note/:noteId": (params, query) => print(params),
+      "book/:id": (params, query) => print(params),
+      "book*": (params, query) => {
+        print(query);
+      },
     })
     .notFound((query) => {
       print("i give up");
     })
     .resolve();
 })
+
