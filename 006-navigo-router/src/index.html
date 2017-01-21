@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title></title>
   <meta charset="utf-8" />
@@ -21,11 +22,75 @@
   -->
 
 </head>
+
 <body>
 
-  <h1>
-    <a href="/">Home</a>
-  </h1>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <a class="navbar-brand" href="/" data-navigo>Home</a>
+    <ul class="nav navbar-nav">
+      <li id="breweriesMenu">
+        <a href="breweries" data-navigo>Breweries</a>
+      </li>
+      <li id="beersMenu">
+        <a href="beers" data-navigo>Beers</a>
+      </li>
+      <li id="settingsMenu">
+        <a href="settings" data-navigo>Settings</a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav pull-right">
+      <li id="accountMenu">
+        <a href="account" data-navigo>Account</a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <div id="alertBox" class="alert alert-danger" style="display: none">
+    <a class="close" onclick="$('.alert').hide()">×</a>  
+    <text id="alertText">Sample</text>
+  </div>
+
+  <div class="container">
+
+    <div id="homePanel" class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Home</h3>
+      </div>
+      <div class="panel-body">
+        Whatever
+      </div>
+    </div>
+
+    <div id="breweriesPanel" class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Breweries</h3>
+      </div>
+      <div class="panel-body">
+        Some breweries
+      </div>
+    </div>
+
+    <div id="beersPanel" class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Beers</h3>
+      </div>
+      <div class="panel-body">
+        Some beers
+      </div>
+    </div>
+
+    <div id="accountPanel" class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Account</h3>
+      </div>
+      <div class="panel-body">
+        Account stuff
+      </div>
+    </div>
+
+  </div>
 
 
   <h3>Static paths</h3>
@@ -51,4 +116,12 @@
   <div id="result"></div>
 
 </body>
+
 </html>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    console.log("ready!");
+    $("#beersPanel").removeClass();
+  });
+</script>

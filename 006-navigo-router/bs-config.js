@@ -4,5 +4,6 @@ module.exports = {
   "server": {
     "baseDir": "src",
     "routes": { "/": "./" }
-  }
+  },
+  notify: false
 };

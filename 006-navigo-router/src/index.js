@@ -1,5 +1,4 @@
-// import { jquery } from "jquery"
-
+//import { jquery as $ } from "jquery";
 
 $(() => {
   const result = $("#result");
@@ -11,19 +10,44 @@ $(() => {
     console.log(message);
   }
 
+  function notify(type, message){
+    $("#alertBox").removeClass();
+    $("#alertBox").addClass(`alert alert-${type}`);
+    $("#alertBox").show();
+    $("#alertText").html(message);
+  }
+
+  function load(context) {
+
+    var options = ["home", "breweries", "beers", "account"];
+
+    options.filter(item => item != context).forEach(item => {
+      $(`#${item}Panel`).hide();
+      $(`#${item}Menu`).removeClass("active");
+    });
+
+    options.filter(item => item == context).forEach(item => {
+      $(`#${item}Panel`).show();
+      $(`#${item}Menu`).addClass("active");
+    });
+  }
+
   router
     .on(() => {
-      print("home alone");
+      load("home");
     })
-    .on("products/list", () => {
-      print("products page");
+    .on("breweries", () => {
+      load("breweries");
+    })
+    .on("beers", (params, query) => {
+      load("beers");
     })
     .on("settings", (params, query) => {
-      print(query);
+      notify("warning", "Context not implemented, falling back to default");
+      router.navigate("home");
     })
-    .on("quit", (params, query) => {
-      print(query);
-      router.navigate('products/list');
+    .on("account", (params, query) => {
+      load("account");
     })
     .on({
       "book/:id/note/:noteId": (params, query) => print(params),
