@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8" />
+
+  <!--<script src="/node_modules/systemjs/dist/system.js"></script>-->
+  <!--<script src="/js/system-config.js"></script>-->
+
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/node_modules/lodash/lodash.min.js"></script>
+  <script src="/node_modules/navigo/lib/navigo.js"></script>
+  <script src="index.js"></script>
+
+  <!--<script>
+      System.import('main');
+  </script>
+  -->
+
+</head>
+<body>
+
+  <h1>
+    <a href="/">Test</a>
+  </h1>
+
+  <h1>
+    <a href="home">Home</a>
+  </h1>
+
+  <h3>Static paths</h3>
+  <a href="test?context=test" data-navigo>Test</a><br />
+  <a href="settings?context=settings" data-navigo>Settings</a><br />
+  <a href="quit?context=quit" data-navigo>Quit</a><br />
+  <hr />
+
+  <h3>Products</h3>
+  <a href="products/list" data-navigo>Products</a><br />
+  <hr />
+
+  <h3>Dynamic paths</h3>
+  <a href="book/1" data-navigo>Book1</a><br />
+  <a href="book/2" data-navigo>Book2</a><br />
+  <a href="book/3/note/1" data-navigo>Note1</a><br />
+  <a href="book/3/note/2" data-navigo>Note2</a><br />
+  <hr />
+
+  <h3>Query strings</h3>
+  <a href="test?framework=qunit" data-navigo>Test</a><br />
+  <a href="book1/?title=HelpMe" data-navigo>Book1</a><br />
+  <a href="book/3/note/1?body=LOL" data-navigo>Note1</a><br />
+  <hr />
+
+  <h3>Output</h3>
+  <div id="result"></div>
+
+</body>
+</html>
