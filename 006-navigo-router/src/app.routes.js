@@ -2,7 +2,7 @@ var RoutingConfig = (function (notifier, router) {
 
     function load(context) {
 
-        var options = ["home", "breweries", "beers", "search", "account"];
+        var options = ["home", "breweries", "beers", "search", "account", "dragons"];
 
         options.filter(item => item != context).forEach(item => {
             $(`#${item}Panel`).hide();
@@ -22,7 +22,13 @@ var RoutingConfig = (function (notifier, router) {
                 load("home");
             })
             .notFound((query) => {
-                notifier.error("There is no handler for given route");
+                router.navigate("dragons");
+            })
+            .on({
+                "dragons": (params, query) => {
+                    notifier.error("There is no handler for given route");
+                    load("dragons");
+                }
             })
             .on({ // Breweries
                 "breweries": (params, query) => {
@@ -89,7 +95,7 @@ var RoutingConfig = (function (notifier, router) {
                 },
             })
             .on({ // Search
-                "search": (params, query) => {
+                "search*": (params, query) => {
                     var data = {
                         search: query,
                     };

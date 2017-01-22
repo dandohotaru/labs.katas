@@ -44,7 +44,7 @@ var NotificationService = (function () {
     var error = function (content) {
         var message = parse(content);
         toastr.error(message);
-        console.error(message);
+        console.warn(message);
     };
 
     return {
