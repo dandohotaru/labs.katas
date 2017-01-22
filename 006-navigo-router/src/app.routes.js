@@ -1,10 +1,8 @@
-var RoutingConfig = (function (notifier) {
-
-    var router = new Navigo(null, false);
+var RoutingConfig = (function (notifier, router) {
 
     function load(context) {
 
-        var options = ["home", "breweries", "beers", "account"];
+        var options = ["home", "breweries", "beers", "search", "account"];
 
         options.filter(item => item != context).forEach(item => {
             $(`#${item}Panel`).hide();
@@ -22,6 +20,9 @@ var RoutingConfig = (function (notifier) {
         router
             .on(() => {
                 load("home");
+            })
+            .notFound((query) => {
+                notifier.error("There is no handler for given route");
             })
             .on({ // Breweries
                 "breweries": (params, query) => {
@@ -87,19 +88,26 @@ var RoutingConfig = (function (notifier) {
                     load("beers");
                 },
             })
-            .on("settings", (params, query) => {
-                notifier.warning("Context not implemented, falling back to homepage");
-                router.navigate("/");
+            .on({ // Search
+                "search": (params, query) => {
+                    var data = {
+                        search: query,
+                    };
+                    notifier.info(data);
+                    load("search");
+                }
             })
-            .on("search", (params, query) => {
-                notifier.info(query);
+            .on({ // Settings
+                "settings": (params, query) => {
+                    notifier.warning("Feature not implemented, falling back to homepage");
+                    router.navigate("/");
+                }
             })
-            .on("account", (params, query) => {
-                load("account");
-                notifier.success("Let's assume your account is not needed at this stage");
-            })
-            .notFound((query) => {
-                notifier.error("There is no handler for given route");
+            .on({ // Account
+                "account": (params, query) => {
+                    load("account");
+                    notifier.success("Let's assume your account is not needed at this stage");
+                }
             })
             .resolve();
     }

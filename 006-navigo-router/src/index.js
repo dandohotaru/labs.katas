@@ -2,8 +2,17 @@
 $(() => {
 
   var notifier = new NotificationService();
-  var routes = new RoutingConfig(notifier);
+  var router = new Navigo(null, false);
+  var routes = new RoutingConfig(notifier, router);
   routes.init();
+  
+  $("#searchForm").on("submit", function (e) {
+      var term = $("#searchBox").val();
+      router.navigate(`/search?q=${term}`);
+      e.preventDefault();
+      return false;
+  });
+
 
 })
 
