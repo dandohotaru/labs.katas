@@ -3,7 +3,7 @@ module.exports = {
   "files": ["./src/**/*.{html,htm,css,js}"],
   "server": {
     "baseDir": "src",
-    "routes": { "/": "./" }
+    "routes": { "/node_modules": "node_modules" }
   },
   notify: false
 };
