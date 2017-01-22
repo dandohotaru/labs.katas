@@ -6,7 +6,7 @@ var NotificationService = (function () {
         "positionClass": "toast-bottom-right",
         "showDuration": "300",
         "hide Duration": "500",
-        "timeOut": "3000",
+        "timeOut": "4000",
         "extendedTimeOut": "1000",
         "showEasing": "swing",
         "hideEasing": "linear",
@@ -14,22 +14,35 @@ var NotificationService = (function () {
         "hideMethod": "fadeOut"
     };
 
-    var info = function (message) {
+    var parse = function(content){
+        var message = content instanceof Object 
+            ? JSON.stringify(content)
+            : typeof content === 'string'
+                ? content
+                : "n/a"
+        return message;
+    }
+
+    var info = function (content) {
+        var message = parse(content);
         toastr.info(message);
         console.debug(message);
     };
 
-    var success = function (message) {
+    var success = function (content) {
+        var message = parse(content);
         toastr.success(message);
         console.log(message);
     };
 
-    var warning = function (message) {
+    var warning = function (content) {
+        var message = parse(content);
         toastr.warning(message);
         console.warn(message);
     };
 
-    var error = function (message) {
+    var error = function (content) {
+        var message = parse(content);
         toastr.error(message);
         console.error(message);
     };
