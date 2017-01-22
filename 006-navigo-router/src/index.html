@@ -51,40 +51,46 @@
   </nav>
 
   <div id="alertBox" class="alert alert-danger" style="display: none">
-    <a class="close" onclick="$('.alert').hide()">×</a>  
+    <a class="close" onclick="$('.alert').hide()">×</a>
     <text id="alertText">Sample</text>
   </div>
 
   <div class="container">
 
-    <div id="homePanel" class="panel panel-info">
+    <div id="homePanel" class="panel panel-info" style="display: none">
       <div class="panel-heading">
         <h3 class="panel-title">Home</h3>
       </div>
       <div class="panel-body">
-        Whatever
+        <h4>Begone nothing to see here</h4>
+        <h5>If I were you you I would pick another menu item</h5>
       </div>
     </div>
 
-    <div id="breweriesPanel" class="panel panel-default">
+    <div id="breweriesPanel" class="panel panel-default" style="display: none">
       <div class="panel-heading">
         <h3 class="panel-title">Breweries</h3>
       </div>
       <div class="panel-body">
-        Some breweries
+        <a href="breweries/list" data-navigo>List all breweries</a><br />
+        <a href="breweries?country=belgium" data-navigo>Filter by country</a><br />
+        <a href="breweries/1" data-navigo>Expand details level</a><br />
+        <a href="breweries/1/beers?q=ruby" data-navigo>Expand beers level</a><br />
+        <a href="breweries/1/beers/2" data-navigo>Expand beer level</a><br />
       </div>
     </div>
 
-    <div id="beersPanel" class="panel panel-default">
+    <div id="beersPanel" class="panel panel-default" style="display: none">
       <div class="panel-heading">
         <h3 class="panel-title">Beers</h3>
       </div>
       <div class="panel-body">
-        Some beers
+        <a href="beers?q=trapiste" data-navigo>Search by term</a><br />
+        <a href="beers/1" data-navigo>Expand details level</a><br />
       </div>
     </div>
 
-    <div id="accountPanel" class="panel panel-default">
+    <div id="accountPanel" class="panel panel-default" style="display: none">
       <div class="panel-heading">
         <h3 class="panel-title">Account</h3>
       </div>
@@ -95,36 +101,12 @@
 
   </div>
 
-
-  <h3>Static paths</h3>
-  <a href="products/list" data-navigo>Products</a><br />
-  <a href="settings?context=settings" data-navigo>Settings</a><br />
-  <a href="quit?context=quit" data-navigo>Quit</a><br />
-  <hr />
-
-  <h3>Dynamic paths</h3>
-  <a href="book/1" data-navigo>Book1</a><br />
-  <a href="book/2" data-navigo>Book2</a><br />
-  <a href="book/3/note/1" data-navigo>Note1</a><br />
-  <a href="book/3/note/2" data-navigo>Note2</a><br />
-  <hr />
-
-  <h3>Query strings</h3>
-  <a href="book/1?framework=qunit" data-navigo>Book1</a><br />
-  <a href="book/3/note/1?body=Wazzup" data-navigo>Note1</a><br />
-  <a href="book?title=Nothing" data-navigo>Search</a><br />
-  <hr />
-
-  <h3>Output</h3>
-  <div id="result"></div>
-
 </body>
 
 </html>
 
 <script type="text/javascript">
   $(document).ready(function () {
-    console.log("ready!");
-    //$("#beersPanel").removeClass();
+    console.log("whaddup?");
   });
 </script>

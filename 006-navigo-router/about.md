@@ -28,3 +28,7 @@ JavaScript Routes
 grapnel
 https://github.com/baseprime/grapnel
 The smallest isomorphic JavaScript router with named parameters, HTML5 pushState, and middleware support 
+
+## Modules
+Mastering the Module Pattern
+https://toddmotto.com/mastering-the-module-pattern/

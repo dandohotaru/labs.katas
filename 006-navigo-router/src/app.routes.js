@@ -35,6 +35,7 @@ var RoutingConfig = (function (notifier) {
             })
             .on("account", (params, query) => {
                 load("account");
+                notifier.success("Let's assume your account is not needed at this stage");
             })
             .on({
                 "book/:id/note/:noteId": (params, query) => {
