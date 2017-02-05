@@ -21,6 +21,7 @@ var RoutingConfig = (function (router, notifier, loader) {
         { name: "home", build: () => new HomeComponent(loader, notifier) },
         { name: "dragons", build: () => new DragonsComponent(loader, notifier) },
         { name: "breweries", build: () => new BreweriesComponent(loader, notifier) },
+        { name: "beers", build: () => new BeersComponent(loader, notifier) },
     ];
 
     function resolve(name) {
@@ -81,26 +82,13 @@ var RoutingConfig = (function (router, notifier, loader) {
             })
             .on({ // Beers
                 "beers": (params, query) => {
-                    var data = {
-                        beers: "all",
-                    };
-                    notifier.info(data);
-                    load("beers");
+                    resolve("beers");
                 },
                 "beers/search": (params, query) => {
-                    var data = {
-                        beers: "search",
-                        by: query,
-                    };
-                    notifier.info(data);
-                    load("beers");
+                    resolve("beers").search(query);
                 },
                 "beers/:beerId": (params, query) => {
-                    var data = {
-                        beer: params.beerId,
-                    };
-                    notifier.info(data);
-                    load("beers");
+                    resolve("beers").details(params);
                 },
             })
             .on({ // Search
