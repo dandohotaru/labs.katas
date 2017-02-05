@@ -22,6 +22,7 @@ var RoutingConfig = (function (router, notifier, loader) {
         { name: "dragons", build: () => new DragonsComponent(loader, notifier) },
         { name: "breweries", build: () => new BreweriesComponent(loader, notifier) },
         { name: "beers", build: () => new BeersComponent(loader, notifier) },
+        { name: "search", build: () => new SearchComponent(loader, notifier) },
     ];
 
     function resolve(name) {
@@ -93,11 +94,7 @@ var RoutingConfig = (function (router, notifier, loader) {
             })
             .on({ // Search
                 "search*": (params, query) => {
-                    var data = {
-                        search: query,
-                    };
-                    notifier.info(data);
-                    load("search");
+                    resolve("search").search(query);
                 }
             })
             .on({ // Settings
