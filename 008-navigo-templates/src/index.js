@@ -2,8 +2,9 @@
 $(() => {
 
   var notifier = new NotificationService();
+  var loader = new TemplateService();
   var router = new Navigo(null, false);
-  var routes = new RoutingConfig(notifier, router);
+  var routes = new RoutingConfig(router, notifier, loader);
   routes.init();
 
   $("#searchForm").on("submit", function (e) {
@@ -19,7 +20,6 @@ $(() => {
     e.preventDefault();
     return false;
   });
-
 
 })
 

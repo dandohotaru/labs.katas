@@ -15,12 +15,16 @@
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/node_modules/toastr/build/toastr.min.js"></script>
-  <script src="/node_modules/lodash/lodash.min.js"></script>
+  <script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
   <script src="/node_modules/navigo/lib/navigo.js"></script>
 
   <script src="./shared/notification.service.js"></script>
+  <script src="./shared/template.service.js"></script>
   <script src="app.routes.js"></script>
   <script src="index.js"></script>
+
+  <script src="./home/home.component.js"></script>
+  <script src="./home/dragons.component.js"></script>
 
   <!--<script>
       System.import('main');
@@ -85,7 +89,9 @@
   <!-- Content -->
   <div class="container">
 
-    <div id="homePanel" class="panel panel-info" style="display: none">
+    <div id="templateId"></div>
+
+    <!--<div id="homePanel" class="panel panel-info" style="display: none">
       <div class="panel-heading">
           <h3 class="panel-title">Home</h3>
       </div>
@@ -93,7 +99,7 @@
           <h4>Begone, nothing to see here</h4>
           <h5>If I were you, I would pick another menu item <small>(hint)</small></h5>
       </div>
-    </div>
+    </div>-->
 
     <div id="breweriesPanel" class="panel panel-default" style="display: none">
       <div class="panel-heading">
@@ -135,16 +141,7 @@
       </div>
     </div>
 
-    <div id="dragonsPanel" class="panel panel-warning" style="display: none">
-      <div class="panel-heading">
-          <h3 class="panel-title">here be dragons</h3>
-      </div>
-      <div class="panel-body">
-        <small>
-          roam somewhere else
-        </small>
-      </div>
-    </div>
+
 
   </div>
 

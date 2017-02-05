@@ -1,4 +1,4 @@
-var RoutingConfig = (function (notifier, router) {
+var RoutingConfig = (function (router, notifier, loader) {
 
     function load(context) {
 
@@ -15,19 +15,30 @@ var RoutingConfig = (function (notifier, router) {
         });
     }
 
+    var kernel = [
+        { path: "home", build: () => new HomeComponent(loader, notifier) },
+        { path: "dragons", build: () => new DragonsComponent(loader, notifier) },
+    ];
+
+    function resolve(path) {
+        var component = kernel
+            .find(mapping => mapping.path == path)
+            .build();
+        return component;
+    }
+
     function init() {
 
         router
-            .on(() => {
-                load("home");
-            })
             .notFound((query) => {
                 router.navigate("dragons");
             })
+            .on(() => {
+                resolve("home").init();
+            })
             .on({
                 "dragons": (params, query) => {
-                    notifier.error("There is no handler for given route");
-                    load("dragons");
+                    resolve("dragons").init();
                 }
             })
             .on({ // Breweries
