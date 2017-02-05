@@ -23,6 +23,7 @@ var RoutingConfig = (function (router, notifier, loader) {
         { name: "breweries", build: () => new BreweriesComponent(loader, notifier) },
         { name: "beers", build: () => new BeersComponent(loader, notifier) },
         { name: "search", build: () => new SearchComponent(loader, notifier) },
+        { name: "account", build: () => new AccountComponent(loader, notifier) },
     ];
 
     function resolve(name) {
@@ -105,8 +106,7 @@ var RoutingConfig = (function (router, notifier, loader) {
             })
             .on({ // Account
                 "account": (params, query) => {
-                    load("account");
-                    notifier.success("Let's assume your account is not needed at this stage");
+                    resolve("account").action(params, query);
                 }
             })
             .resolve();
