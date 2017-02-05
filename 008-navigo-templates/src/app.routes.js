@@ -1,24 +1,9 @@
 var RoutingConfig = (function (router, notifier, loader) {
 
-    function load(context) {
-
-        var options = ["home", "breweries", "beers", "search", "account", "dragons"];
-
-        options.filter(item => item != context).forEach(item => {
-            $(`#${item}Panel`).hide();
-            $(`#${item}Menu`).removeClass("active");
-        });
-
-        options.filter(item => item == context).forEach(item => {
-            $(`#${item}Panel`).show();
-            $(`#${item}Menu`).addClass("active");
-        });
-    }
-
     var mappings = [];
 
     var builders = [
-        { name: "menu", build: () => new MenuComponent(loader) },
+        { name: "menu", build: () => new MenuComponent(loader, router) },
         { name: "home", build: () => new HomeComponent(loader, notifier) },
         { name: "dragons", build: () => new DragonsComponent(loader, notifier) },
         { name: "breweries", build: () => new BreweriesComponent(loader, notifier) },
