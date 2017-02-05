@@ -1,12 +1,14 @@
-var MenuComponent = (function (loader, router) {
+var MenuComponent = (function (router, loader) {
 
     var init = function () {
 
         return loader.load(["/home/menu.component.hbs"])
             .then(function ([template]) {
+
                 var render = Handlebars.compile(template);
                 var view = render();
                 $("#menuId").html(view);
+                router.updatePageLinks();
 
                 $("#searchForm").on("submit", function (e) {
 

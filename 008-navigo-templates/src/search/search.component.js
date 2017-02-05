@@ -1,4 +1,4 @@
-var SearchComponent = (function (loader, notifier) {
+var SearchComponent = (function (router, loader, notifier) {
 
     var init = function () {
 
@@ -7,6 +7,7 @@ var SearchComponent = (function (loader, notifier) {
                 var render = Handlebars.compile(template);
                 var view = render();
                 $("#templateId").html(view);
+                router.updatePageLinks();
             })
             .catch(function (error) {
                 console.error(error);

@@ -1,4 +1,4 @@
-var DragonsComponent = (function (loader, notifier) {
+var DragonsComponent = (function (router, loader, notifier) {
 
     var init = function () {
 
@@ -8,6 +8,7 @@ var DragonsComponent = (function (loader, notifier) {
                 var render = Handlebars.compile(template);
                 var view = render();
                 $("#templateId").html(view);
+                router.updatePageLinks();
 
                 notifier.error("There is no handler for given route");
             })

@@ -3,13 +3,13 @@ var RoutingConfig = (function (router, notifier, loader) {
     var mappings = [];
 
     var builders = [
-        { name: "menu", build: () => new MenuComponent(loader, router) },
-        { name: "home", build: () => new HomeComponent(loader, notifier) },
-        { name: "dragons", build: () => new DragonsComponent(loader, notifier) },
-        { name: "breweries", build: () => new BreweriesComponent(loader, notifier) },
-        { name: "beers", build: () => new BeersComponent(loader, notifier) },
-        { name: "search", build: () => new SearchComponent(loader, notifier) },
-        { name: "account", build: () => new AccountComponent(loader, notifier) },
+        { name: "menu", build: () => new MenuComponent(router, loader) },
+        { name: "home", build: () => new HomeComponent(router, loader, notifier) },
+        { name: "dragons", build: () => new DragonsComponent(router, loader, notifier) },
+        { name: "breweries", build: () => new BreweriesComponent(router, loader, notifier) },
+        { name: "beers", build: () => new BeersComponent(router, loader, notifier) },
+        { name: "search", build: () => new SearchComponent(router, loader, notifier) },
+        { name: "account", build: () => new AccountComponent(router, loader, notifier) },
     ];
 
     function resolve(name) {
@@ -22,17 +22,13 @@ var RoutingConfig = (function (router, notifier, loader) {
                 throw "Make sure there is mapping defined for " + name;
 
             var component = builder.build();
-            component.init().then(function(){
-                router.updatePageLinks();
-            });
+            component.init();
             mappings.push({ name, component });
             return component;
         }
         else {
             var component = mapping.component;
-            component.init().then(function(){
-                router.updatePageLinks();
-            });
+            component.init();
             return component;
         }
     }

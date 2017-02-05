@@ -1,4 +1,4 @@
-var HomeComponent = (function (loader, notifier) {
+var HomeComponent = (function (router, loader, notifier) {
 
     var init = function () {
 
@@ -10,6 +10,7 @@ var HomeComponent = (function (loader, notifier) {
                     userName: "John Doe"
                 });
                 $("#templateId").html(view);
+                router.updatePageLinks();
 
                 notifier.success("Welcome to a magnificent seven demo");
             })
