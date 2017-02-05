@@ -15,16 +15,37 @@ var RoutingConfig = (function (router, notifier, loader) {
         });
     }
 
-    var kernel = [
-        { path: "home", build: () => new HomeComponent(loader, notifier) },
-        { path: "dragons", build: () => new DragonsComponent(loader, notifier) },
+    var mappings = [];
+
+    var builders = [
+        { name: "home", build: () => new HomeComponent(loader, notifier) },
+        { name: "dragons", build: () => new DragonsComponent(loader, notifier) },
+        { name: "breweries", build: () => new BreweriesComponent(loader, notifier) },
     ];
 
-    function resolve(path) {
-        var component = kernel
-            .find(mapping => mapping.path == path)
-            .build();
-        return component;
+    function resolve(name) {
+        // ToDo: Refactor tired logic
+
+        var mapping = mappings.find(p => p.name == name);
+        if (mapping == null) {
+            var builder = builders.find(p => p.name == name);
+            if (builder == null)
+                throw "Make sure there is mapping defined for " + name;
+
+            var component = builder.build();
+            component.init().then(function(){
+                router.updatePageLinks();
+            });
+            mappings.push({ name, component });
+            return component;
+        }
+        else {
+            var component = mapping.component;
+            component.init().then(function(){
+                router.updatePageLinks();
+            });
+            return component;
+        }
     }
 
     function init() {
@@ -34,51 +55,28 @@ var RoutingConfig = (function (router, notifier, loader) {
                 router.navigate("dragons");
             })
             .on(() => {
-                resolve("home").init();
+                resolve("home");
             })
             .on({
                 "dragons": (params, query) => {
-                    resolve("dragons").init();
+                    resolve("dragons");
                 }
             })
             .on({ // Breweries
                 "breweries": (params, query) => {
-                    var data = {
-                        breweries: "all",
-                    };
-                    notifier.info(data);
-                    load("breweries");
+                    resolve("breweries");
                 },
                 "breweries/search": (params, query) => {
-                    var data = {
-                        breweries: "search",
-                        by: query,
-                    };
-                    notifier.info(data);
-                    load("breweries");
+                    resolve("breweries").search(query);
                 },
                 "breweries/:breweryId": (params, query) => {
-                    var data = {
-                        brewery: params.breweryId,
-                    };
-                    notifier.info(data);
-                    load("breweries");
+                    resolve("breweries").details(params);
                 },
                 "breweries/:breweryId/beers": (params, query) => {
-                    var data = {
-                        brewery: params.breweryId,
-                        beers: "all",
-                    };
-                    notifier.info(data);
-                    load("breweries");
+                    resolve("breweries").beers(params);
                 },
                 "breweries/:breweryId/beers/:beerId": (params, query) => {
-                    var data = {
-                        brewery: params.breweryId,
-                        beer: params.beerId,
-                    };
-                    notifier.info(data);
-                    load("breweries");
+                    resolve("breweries").beer(params);
                 },
             })
             .on({ // Beers
