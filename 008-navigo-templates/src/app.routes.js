@@ -18,6 +18,7 @@ var RoutingConfig = (function (router, notifier, loader) {
     var mappings = [];
 
     var builders = [
+        { name: "menu", build: () => new MenuComponent(loader) },
         { name: "home", build: () => new HomeComponent(loader, notifier) },
         { name: "dragons", build: () => new DragonsComponent(loader, notifier) },
         { name: "breweries", build: () => new BreweriesComponent(loader, notifier) },
@@ -58,6 +59,7 @@ var RoutingConfig = (function (router, notifier, loader) {
                 router.navigate("dragons");
             })
             .on(() => {
+                resolve("menu");
                 resolve("home");
             })
             .on({
