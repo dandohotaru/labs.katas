@@ -1,24 +1,21 @@
 {
-  "name": "labs.katas",
-  "version": "0.1.0",
-  "description": "individual training exercises in programming and other software crafts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dandohotaru/labs.katas.git"
+  "name": "01-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.26.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   },
-  "keywords": [
-    "labs",
-    "crafts",
-    "kata"
-  ],
-  "author": "Dan Dohotaru",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dandohotaru/labs.katas/issues"
-  },
-  "homepage": "https://github.com/dandohotaru/labs.katas#readme",
-  "main": "index.js",
   "scripts": {
-    "test": "test"
-  }
+    "build": "webpack --config webpack.config.js --progress --colors",
+    "start": "webpack --config webpack.config.js --progress --colors --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
