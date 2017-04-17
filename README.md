@@ -4,7 +4,9 @@ A [system][1] of individual training exercises in programming and other software
 
 # Katas
 
-katatbd: tbd
+katatbd: 
+tbd
+
 [kata007](https://github.com/dandohotaru/labs.katas/tree/kata007): 
 navigo routing with templates
 
