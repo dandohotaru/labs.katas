@@ -1,0 +1,24 @@
+{
+  "name": "labs.katas",
+  "version": "0.1.0",
+  "description": "individual training exercises in programming and other software crafts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandohotaru/labs.katas.git"
+  },
+  "keywords": [
+    "labs",
+    "crafts",
+    "kata"
+  ],
+  "author": "Dan Dohotaru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dandohotaru/labs.katas/issues"
+  },
+  "homepage": "https://github.com/dandohotaru/labs.katas#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  }
+}
