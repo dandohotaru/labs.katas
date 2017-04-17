@@ -19,6 +19,11 @@
   "homepage": "https://github.com/dandohotaru/labs.katas#readme",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "dev": "lite-server --baseDir ./src --watch",
+    "start": "lite-server" 
+  },
+  "dependencies": {
+    "colcade": "^0.2.0",
+    "lite-server": "^2.3.0"
   }
 }
