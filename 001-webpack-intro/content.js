@@ -1,1 +1,0 @@
-module.exports = "Here be dragons from content.js.";
