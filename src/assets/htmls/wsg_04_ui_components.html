@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+	<title>KIKLOS -  The Web Style Guide - Design Principles</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Bootstrap Theme - Web Style Guide -->
+	<link href="css-theme-web-style-guide/web-style-guide.css" rel="stylesheet">
+    
+	<!-- Bootstrap Theme - Kiklos CSS -->
+	<link href="css-kiklos/kiklos_bootstrap.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_brand.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_layout.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_modules.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_transit.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_typography.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_media-queries.css" rel="stylesheet">
+<!-- Bootstrap Theme - font awesome -->
+	<link href="css/font-awesome.css" rel="stylesheet">
+    
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+        
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="wsg_index.html">home</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Web style guide <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="wsg_01_introduction.html" title="welcome page">introduction</a></li>	
+							<li><a href="wsg_02_look_and_feel.html" title="brand design rules">look and feel</a></li>
+							<li><a href="wsg_03_layout.html" title="layout">layout</a></li>
+							<li><a href="wsg_04_ui_components.html" title="BS snippets">UI components</a></li>
+							<li class="active"><a href="wsg_05_typography.html" title="fonts and stuff">typography</a></li>	
+							<li><a href="wsg_06_ui_ideas.html" title="great screenshots">UI ideas</a></li>	
+							<li><a href="wsg_07_best_practices.html" title="tips and tricks">best practices</a></li>	
+							<li><a href="wsg_08_design_principles.html" title="rules on how to design">design principles</a></li>	
+							<li><a href="wsg_09_sitemap.html" title="overview of all the webpages">sitemap</a></li>	
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BS CSS <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="wsg_bs_css_grid_system.html">grid system</a></li>
+							<li><a href="wsg_bs_css_typography.html">typography</a></li>
+							<li><a href="wsg_bs_css_code.html">code</a></li>
+							<li><a href="wsg_bs_css_tables.html">tables</a></li>
+							<li><a href="wsg_bs_css_forms.html">forms</a></li>
+							<li><a href="wsg_bs_css_buttons.html">buttons</a></li>
+							<li><a href="wsg_bs_css_images.html">images</a></li>
+							<li><a href="wsg_bs_css_helper_classes.html">helper classes</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BS components <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="wsg_bs_components_glyphicons.html">glyphicons</a></li>
+							<li><a href="wsg_bs_components_dropdowns.html">dropdowns</a></li>
+							<li><a href="wsg_bs_components_button_groups.html">button groups</a></li>
+							<li><a href="wsg_bs_components_button_dropdowns.html">button dropdowns</a></li>
+							<li><a href="wsg_bs_components_input_groups.html">input groups</a></li>
+							<li><a href="wsg_bs_components_navs.html">navs</a></li>
+							<li><a href="wsg_bs_components_navbar.html">navbars</a></li>
+							<li><a href="wsg_bs_components_breadcrumbs.html">breadcrumbs</a></li>
+							<li><a href="wsg_bs_components_pagination.html">pagination</a></li>
+							<li><a href="wsg_bs_components_labels.html">labels</a></li>
+							<li><a href="wsg_bs_components_badges.html">badges</a></li>
+							<li><a href="wsg_bs_components_jumbotron.html">jumbotron</a></li>
+							<li><a href="wsg_bs_components_page_header.html">page header</a></li>
+							<li><a href="wsg_bs_components_thumbnails.html">thumbnails</a></li>
+							<li><a href="wsg_bs_components_alerts.html">alerts</a></li>
+							<li><a href="wsg_bs_components_progress_bars.html">progress bars</a></li>
+							<li><a href="wsg_bs_components_media_object.html">media object</a></li>
+							<li><a href="wsg_bs_components_list_group.html">list group</a></li>
+							<li><a href="wsg_bs_components_panels.html">panels</a></li>
+							<li><a href="wsg_bs_components_responsive_embed.html">responsive embed</a></li>
+							<li><a href="wsg_bs_components_wells.html">wells</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BS javascript <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="wsg_bs_javascript_modals.html">modals</a></li>
+							<li><a href="wsg_bs_javascript_dropdown.html">dropdown</a></li>
+							<li><a href="wsg_bs_javascript_scrollspy.html">scrollspy</a></li>
+							<li><a href="wsg_bs_javascript_tab.html">tab</a></li>
+							<li><a href="wsg_bs_javascript_tooltip.html">tooltip</a></li>
+							<li><a href="wsg_bs_javascript_popover.html">popover</a></li>
+							<li><a href="wsg_bs_javascript_alert.html">alert</a></li>
+							<li><a href="wsg_bs_javascript_buttons.html">buttons</a></li>
+							<li><a href="wsg_bs_javascript_collapse.html">collapse</a></li>
+							<li><a href="wsg_bs_javascript_carousel.html">carousel</a></li>
+							<li><a href="wsg_bs_javascript_affix.html">affix</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BS template <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="wsg_bs_template_starter.html">starter</a></li>
+							<li><a href="wsg_bs_template_blog.html">blog</a></li>
+							<li><a href="wsg_bs_template_theme.html">theme</a></li>
+							<li><a href="wsg_bs_template_carousel.html">carousel</a></li>
+							<li><a href="wsg_bs_template_cover.html">cover</a></li>
+							<li><a href="wsg_bs_template_dashboard.html">dashboard</a></li>
+							<li><a href="wsg_bs_template_grid.html">grid</a></li>
+							<li><a href="wsg_bs_template_jumbotron.html">jumbotron</a></li>
+							<li><a href="wsg_bs_template_jumbotron_narrow.html">jumbotron narrow</a></li>
+							<li><a href="wsg_bs_template_justified_nav.html">justified nav</a></li>
+							<li><a href="wsg_bs_template_navbar.html">navbar</a></li>
+							<li><a href="wsg_bs_template_navbar_fixed_top.html">navbar fixed top</a></li>
+							<li><a href="wsg_bs_template_navbar_static_top.html">navbar static top</a></li>
+							<li><a href="wsg_bs_template_non_responsive.html">non responsive</a></li>
+							<li><a href="wsg_bs_template_offcanvas.html">offcanvas</a></li>
+							<li><a href="wsg_bs_template_signin.html">signin</a></li>
+							<li><a href="wsg_bs_template_sticky_footer.html">sticky footer</a></li>
+							<li><a href="wsg_bs_template_sticky_footer_navbar.html">sticky footer navbar</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="index.html">KIKLOS</a></li>
+							<li><a href="wsg_00_techday.html">Techday</a></li>
+						</ul>
+					</li>
+				</ul>
+
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<div class="container">
+        <br><br><br>
+        <h1>User Interface Components</h1>
+
+		<div class="row">
+			<div class="col-sm-12">
+
+				<!-- START h1 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h1>Heading 1</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 1</strong> - normal style</p>
+						<code>&lt;h1&gt;Heading 1&lt;/h1&gt;</code>
+					</div>
+				</div>
+				<!-- END h1 -->
+
+				<!-- START h2 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h2>Heading 2</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 2</strong> - normal style</p>
+						<code>&lt;h2&gt;Heading 2&lt;/h2&gt;</code>
+					</div>
+				</div>
+				<!-- END h2 -->
+
+				<!-- START h3 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h3>Heading 3</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 3</strong> - normal style</p>
+						<code>&lt;h3&gt;Heading 3&lt;/h3&gt;</code>
+					</div>
+				</div>
+				<!-- END h3 -->
+
+				<!-- START h4 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h4>Heading 4</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 4</strong> - normal style</p>
+						<code>&lt;h4&gt;Heading 4&lt;/h4&gt;</code>
+					</div>
+				</div>
+				<!-- END h4 -->
+
+				<!-- START h5 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h5>Heading 5</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 5</strong> - normal style</p>
+						<code>&lt;h5&gt;Heading 5&lt;/h5&gt;</code>
+					</div>
+				</div>
+				<!-- END h5 -->
+
+				<!-- START h6 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h6>Heading 6</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 6</strong> - normal style</p>
+						<code>&lt;h6&gt;Heading 6&lt;/h6&gt;</code>
+					</div>
+				</div>
+				<!-- END h6 -->
+
+				<!-- START h1 + small -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h1>Heading 1 <small>with a subtext</small></h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 1 with a small tag</strong> - normal style</p>
+						<code>&lt;h1&gt;Heading 1&lt;/h1&gt;&lt;small&gt;subtext&lt;/small&gt;</code>
+					</div>
+				</div>
+				<!-- END h1 + small  -->
+
+				<!-- START h1 dark -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h1 class="dark">Heading 1</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 1</strong> - dark style</p>
+						<code>&lt;h1 class="dark"&gt;Heading 1&lt;/h1&gt;</code>
+					</div>
+				</div>
+				<!-- END h1 dark -->
+
+				<!-- START h2 dark -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h2 class="dark">Heading 2</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 2</strong> - dark style</p>
+						<code>&lt;h2 class="dark"&gt;Heading 2&lt;/h2&gt;</code>
+					</div>
+				</div>
+				<!-- END h2 dark -->
+
+				<!-- START h3 dark -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h3 class="dark">Heading 3</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 3</strong> - dark style</p>
+						<code>&lt;h3 class="dark"&gt;Heading 3&lt;/h3&gt;</code>
+					</div>
+				</div>
+				<!-- END h3 dark -->
+
+				<!-- START h4 dark -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h4 class="dark">Heading 4</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 4</strong> - dark style</p>
+						<code>&lt;h4 class="dark"&gt;Heading 4&lt;/h4&gt;</code>
+					</div>
+				</div>
+				<!-- END h4 dark -->
+
+				<!-- START h5 dark -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h5 class="dark">Heading 5</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 5</strong> - dark style</p>
+						<code>&lt;h5 class="dark"&gt;Heading 5&lt;/h5&gt;</code>
+					</div>
+				</div>
+				<!-- END h5 dark -->
+
+				<!-- START h6 dark -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<h6 class="dark">Heading 6</h6>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>Heading 6</strong> - dark style</p>
+						<code>&lt;h6 class="dark"&gt;Heading 6&lt;/h6&gt;</code>
+					</div>
+				</div>
+				<!-- END h6 dark -->
+
+				<!-- START paragraph -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+						Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+						lacinia ut. Nullam in consequat nibh. </p>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>paragraph</strong> - normal style</p>
+						<code>&lt;p&gt;paragraph&lt;/p&gt;</code>
+					</div>
+				</div>
+				<!-- END paragraph -->
+
+				<!-- START blockquote -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<blockquote>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+						</blockquote>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>blockquote</strong> - small style</p>
+						<code>&lt;blockquote"&gt;Some famous quote.&lt;/blockquote&gt;</code>
+					</div>
+				</div>
+				<!-- END blockquote-->
+
+				<!-- START well -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well</strong> - normal style. Resetting this allows
+						you to place non-typographical elements in here.</p>
+						<code>&lt;div class="well"&gt;Some text.&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well -->
+
+				<!-- START well p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh. </p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + p</strong> - normal style with a paragraph. Textual content or copy
+						should always recieve formating.</p>
+						<code>&lt;div class="well"&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well p -->
+
+				<!-- START well p h1 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well">
+							<h1>Lorem ipsum dolor sit amet</h1>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + p + h1</strong> - normal style with a heading one and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well p h1 -->
+
+				<!-- START well p h2 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well">
+							<h2>Lorem ipsum dolor sit amet</h2>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + p + h2</strong> - normal style with a heading two and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h2&gt;heading&lt;/h2&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well p h2 -->
+
+				<!-- START well p h3 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well">
+							<h3>Lorem ipsum dolor sit amet</h3>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + p + h3</strong> - normal style with a heading three and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h3&gt;heading&lt;/h3&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well p h3 -->
+
+				<!-- START well p h4 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + p + h4</strong> - normal style with a heading four and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h4&gt;heading&lt;/h4&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well p h4 -->
+
+				<!-- START well p h5 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well">
+							<h5>Lorem ipsum dolor sit amet</h5>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + p + h5</strong> - normal style with a heading five and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h5&gt;heading&lt;/h5&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well p h5 -->
+
+				<!-- START well p h6 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well">
+							<h6>Lorem ipsum dolor sit amet</h6>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + p + h6</strong> - normal style with a heading six and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h6&gt;heading&lt;/h6&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well p h6 -->
+
+				<!-- START well small -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + sm</strong> - normal style</p>
+						<code>&lt;div class="well well-sm"&gt;Some text.&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well small -->
+
+				<!-- START well.small p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh. </p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + sm + p</strong> - small style with a paragraph.</p>
+						<code>&lt;div class="well well-sm"&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.small p -->
+
+				<!-- START well.small p h1 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm">
+							<h1>Lorem ipsum dolor sit amet</h1>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh. </p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + sm + h1 + p</strong> - small style with a heading one and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.small p h1 -->
+
+				<!-- START well.small p h2 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm">
+							<h2>Lorem ipsum dolor sit amet</h2>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh. </p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + sm + h2 + p</strong> - small style with a heading two and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h2&gt;heading&lt;/h2&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.small p h2 -->
+
+				<!-- START well.small p h3 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm">
+							<h3>Lorem ipsum dolor sit amet</h3>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + sm + h3 + p</strong> - small style with a heading three and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h3&gt;heading&lt;/h3&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.small p h3 -->
+
+				<!-- START well.small p h4 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + sm + h4 + p</strong> - small style with a heading four and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h4&gt;heading&lt;/h4&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.small p h4 -->
+
+				<!-- START well.small p h5 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm">
+							<h5>Lorem ipsum dolor sit amet</h5>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + sm + h5 + p</strong> - small style with a heading five and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h5&gt;heading&lt;/h5&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.small p h5 -->
+
+				<!-- START well.small p h6 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm">
+							<h6>Lorem ipsum dolor sit amet</h6>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh. </p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + sm + h6 + p</strong> - small style with a heading six and a paragraph.</p>
+						<code>&lt;div class="well"&gt;&lt;h6&gt;heading&lt;/h6&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.small p h6 -->
+
+				<!-- START well.large -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + large</strong> - normal style</p>
+						<code>&lt;div class="well well-lg"&gt;Some text.&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large -->
+
+				<!-- START well.large + p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh. </p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + lg + p</strong> - large style with a paragraph.</p>
+						<code>&lt;div class="well well-lg"&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + -->
+
+				<!-- START well.dark -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well dark">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + dark</strong> - dark style.</p>
+						<code>&lt;div class="well well-lg"&gt;Some text.&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.dark -->
+
+				<!-- START well.dark + p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well dark">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + dark + p</strong> - dark style with a paragraph.</p>
+						<code>&lt;div class="well dark"&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.dark + -->
+
+				<!-- START well.dark + h1 + p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well dark">
+							<h1>Lorem ipsum dolor sit amet</h1>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + dark + h1 + p</strong> - dark style with a heading and a paragraph.</p>
+						<code>&lt;div class="well dark"&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.dark + h1 + p -->
+
+				<!-- START well.dark + h2 + p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well dark">
+							<h2>Lorem ipsum dolor sit amet</h2>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + dark + h2 + p</strong> - dark style with a heading and a paragraph.</p>
+						<code>&lt;div class="well dark"&gt;&lt;h2&gt;heading&lt;/h2&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.dark + h2 + p -->
+
+				<!-- START well.dark + h3 + p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well dark">
+							<h3>Lorem ipsum dolor sit amet</h3>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + dark + h3 + p</strong> - dark style with a heading and a paragraph.</p>
+						<code>&lt;div class="well dark"&gt;&lt;h3&gt;heading&lt;/h3&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.dark + h3 + p -->
+
+				<!-- START well.dark + h4 + p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well dark">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + dark + h4 + p</strong> - dark style with a heading and a paragraph.</p>
+						<code>&lt;div class="well dark"&gt;&lt;h4&gt;heading&lt;/h4&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.dark + h4 + p -->
+
+				<!-- START well.dark + h5 + p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well dark">
+							<h5>Lorem ipsum dolor sit amet</h5>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + dark + h5 + p</strong> - dark style with a heading and a paragraph.</p>
+						<code>&lt;div class="well dark"&gt;&lt;h5&gt;heading&lt;/h5&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.dark + h5 + p -->
+
+				<!-- START well.dark + h6 + p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well dark">
+							<h6>Lorem ipsum dolor sit amet</h6>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + dark + h6 + p</strong> - dark style with a heading and a paragraph.</p>
+						<code>&lt;div class="well dark"&gt;&lt;h6&gt;heading&lt;/h6&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.dark + h6 + p -->
+
+				<!-- START well + blue -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well blue">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + blue</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;Some text.&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + blue -->
+
+				<!-- START well + blue + p -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well blue">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + blue + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p -->
+
+				<!-- START well + blue + p + h1 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well blue">
+							<h1>Lorem ipsum dolor sit amet</h1>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + blue + h1 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h1 -->
+
+				<!-- START well + blue + p + h2 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well blue">
+							<h2>Lorem ipsum dolor sit amet</h2>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + blue + h2 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h2&gt;heading&lt;/h2&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h2 -->
+
+				<!-- START well + blue + p + h3 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well blue">
+							<h3>Lorem ipsum dolor sit amet</h3>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + blue + h3 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h3&gt;heading&lt;/h3&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h3 -->
+
+				<!-- START well + blue + p + h4 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well blue">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + blue + h4 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h4&gt;heading&lt;/h4&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h4 -->
+
+				<!-- START well + blue + p + h5 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well blue">
+							<h5>Lorem ipsum dolor sit amet</h5>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + blue + h5 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h5&gt;heading&lt;/h5&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h5 -->
+
+				<!-- START well + blue + p + h6 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well blue">
+							<h6>Lorem ipsum dolor sit amet</h6>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + blue + h6 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h6&gt;heading&lt;/h6&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h6 -->
+
+
+				<!-- START well + well-sm + blue -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm blue">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + small + blue</strong> - blue style</p>
+						<code>&lt;div class="well well-sm blue"&gt;Some text.&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + well-sm + blue -->
+
+				<!-- START well.small + blue + p-->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm blue">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + small + blue + p</strong> - blue style</p>
+						<code>&lt;div class="well well-sm blue"&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.small + blue + p -->
+
+				<!-- START well + blue + p + h1 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm blue">
+							<h1>Lorem ipsum dolor sit amet</h1>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + small + blue + h1 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h1 -->
+
+				<!-- START well + blue + p + h2 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm blue">
+							<h2>Lorem ipsum dolor sit amet</h2>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + small + blue + h2 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h2&gt;heading&lt;/h2&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h2 -->
+
+				<!-- START well + blue + p + h3 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm blue">
+							<h3>Lorem ipsum dolor sit amet</h3>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + small + blue + h3 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h3&gt;heading&lt;/h3&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h3 -->
+
+				<!-- START well + blue + p + h4 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm blue">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + small + blue + h4 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h4&gt;heading&lt;/h4&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h4 -->
+
+				<!-- START well + blue + p + h5 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm blue">
+							<h5>Lorem ipsum dolor sit amet</h5>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + small + blue + h5 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h5&gt;heading&lt;/h5&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h5 -->
+
+				<!-- START well + blue + p + h6 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-sm blue">
+							<h6>Lorem ipsum dolor sit amet</h6>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + small + blue + h6 + p</strong> - blue style</p>
+						<code>&lt;div class="well blue"&gt;&lt;h6&gt;heading&lt;/h6&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well + blue + p + h6 -->
+
+				<!-- START well.large + blue -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg blue">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + large + blue</strong> - blue style</p>
+						<code>&lt;div class="well well-lg blue"&gt;Some text.&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + blue -->
+
+				<!-- START well.large + blue + p-->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg blue">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + large + blue + p</strong> - blue style</p>
+						<code>&lt;div class="well well-lg blue"&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + blue + p -->
+
+				<!-- START well.large + blue + p + h1 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg blue">
+							<h1>Lorem ipsum dolor sit amet</h1>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + large + blue + h1 + p</strong> - blue style</p>
+						<code>&lt;div class="well well-lg blue"&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + blue + p + h1 -->
+
+				<!-- START well.large + blue + p + h2 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg blue">
+							<h2>Lorem ipsum dolor sit amet</h2>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + large + blue + h2 + p</strong> - blue style</p>
+						<code>&lt;div class="well well-lg blue"&gt;&lt;h2&gt;heading&lt;/h2&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + blue + p + h2 -->
+
+				<!-- START well.large + blue + p + h3 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg blue">
+							<h3>Lorem ipsum dolor sit amet</h3>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + large + blue + h3 + p</strong> - blue style</p>
+						<code>&lt;div class="well well-lg blue"&gt;&lt;h3&gt;heading&lt;/h3&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + blue + p + h3 -->
+
+				<!-- START well.large + blue + p + h4 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg blue">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + large + blue + h4 + p</strong> - blue style</p>
+						<code>&lt;div class="well well-lg blue"&gt;&lt;h4&gt;heading&lt;/h4&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + blue + p + h4 -->
+
+				<!-- START well.large + blue + p + h5 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg blue">
+							<h5>Lorem ipsum dolor sit amet</h5>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + large + blue + h5 + p</strong> - blue style</p>
+						<code>&lt;div class="well well-lg blue"&gt;&lt;h5&gt;heading&lt;/h5&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + blue + p + h5 -->
+
+				<!-- START well.large + blue + p + h6 -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="well well-lg blue">
+							<h6>Lorem ipsum dolor sit amet</h6>
+							<p>Consectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+							Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+							Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+							lacinia ut. Nullam in consequat nibh.</p>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>well + large + blue + h6 + p</strong> - blue style</p>
+						<code>&lt;div class="well well-lg blue"&gt;&lt;h6&gt;heading&lt;/h6&gt;&lt;p&gt;Some text.&lt;/p&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END well.large + blue + p + h6 -->
+
+				<!-- START panel -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								Lorem ipsum dolor sit ametConsectetur adipiscing elit. Cras blandit porta magna, sit amet ornare orci ullamcorper a. 
+								Etiam at magna lobortis, pulvinar dolor in, vehicula ipsum. Ut in erat vel sapien ultrices dictum consequat et erat. 
+								Aenean eleifend a nulla at efficitur. Sed volutpat a nisl tristique fermentum. Morbi sagittis massa odio, quis cursus est 
+								lacinia ut. Nullam in consequat nibh.
+							</div>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>panel</strong> - normal style</p>
+						<code>&lt;div class="panel panel-default"&gt;&lt;div class="panel panel-body"&gt;panel&lt;/div&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END panel -->
+
+				<!-- START panel -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">Panel heading without title</div>
+							<div class="panel-body">
+								Panel content
+							</div>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>panel</strong> - normal style</p>
+						<code>&lt;div class="panel panel-default"&gt;&lt;div class="panel panel-body"&gt;panel&lt;/div&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END panel -->
+
+				<!-- START panel -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-3">
+
+						<div class="panel panel-default">
+							<div class="panel-heading">Excellent Science</div>
+							<div class="panel-body">
+								<dl>
+									<dt>FET-Open - novel ideas for radically new technologies</dt>
+									<dd>H2020-FETOPEN-2015-CSA</dd>
+								</dl>							
+								<dl>
+									<dt>Deadlines: 31/03/2015 29/09/2015</dt>
+									<dd>Opening Date: 01/10/2014</dd>
+								</dl>							
+							</div>
+						</div>
+
+					</div>
+
+					<!-- example -->
+					<div class="col-sm-3">
+						<div class="panel panel-default">
+							<div class="panel-heading">Panel heading without title</div>
+							<div class="panel-body">
+								Panel content
+							</div>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>panel</strong> - normal style</p>
+						<code>&lt;div class="panel panel-default"&gt;&lt;div class="panel panel-body"&gt;panel&lt;/div&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END panel -->
+
+				<!-- START panel -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-3 dark">
+
+						<div class="panel panel-default">
+							<div class="panel-heading">Excellent Science</div>
+							<div class="panel-body">
+								<dl>
+									<dt>FET-Open - novel ideas for radically new technologies</dt>
+									<dd>H2020-FETOPEN-2015-CSA</dd>
+								</dl>							
+								<div class="panel-footer">
+									<dl>
+										<dt>Deadlines: 31/03/2015 29/09/2015</dt>
+										<dd>Opening Date: 01/10/2014</dd>
+									</dl>	
+								</div>						
+							</div>
+						</div>
+
+					</div>
+
+					<!-- example -->
+					<div class="col-sm-3 dark small">
+
+						<div class="panel panel-default">
+							<div class="panel-heading"><h6>Excellent Science</h6></div>
+							<div class="panel-body">
+								<dl>
+									<dt>FET-Open - novel ideas for radically new technologies</dt>
+									<dt>H2020-FETOPEN-2015-CSA</dt>
+								</dl>							
+								<div class="panel-footer">
+									<dl>
+										<dd><span>Deadlines:</span> 31/03/2015 29/09/2015</dd>
+										<dd><span>Opening Date:</span> 01/10/2014</dd>
+									</dl>	
+								</div>						
+							</div>
+						</div>
+
+					</div>
+					<!-- element -->
+					<div class="col-ld-6">
+						<p>Left: <strong>panel + dark + small</strong></p>
+						<p>Right: <strong>panel + dark</strong></p>
+						<code>&lt;div class="panel panel-default"&gt;&lt;div class="panel panel-body"&gt;panel&lt;/div&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END panel -->
+
+				<!-- START panel -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-3 fresh">
+
+						<div class="panel panel-default">
+							<div class="panel-heading">Excellent Science</div>
+							<div class="panel-body">
+								<dl>
+									<dd>FET-Open - novel ideas for radically new technologies</dd>
+									<dd>H2020-FETOPEN-2015-CSA</dd>
+								</dl>							
+								<div class="panel-footer">
+									<dl>
+										<dd>Deadlines: <strong>31/03/2015 29/09/2015</strong></dd>
+										<dd>Opening Date: <strong>01/10/2014</strong></dd>
+									</dl>	
+								</div>						
+							</div>
+						</div>
+
+					</div>
+
+					<!-- example -->
+					<div class="col-sm-3 fresh small">
+
+						<div class="panel panel-default">
+							<div class="panel-heading"><h6>Excellent Science</h6></div>
+							<div class="panel-body">
+								<dl>
+									<dt>FET-Open - novel ideas for radically new technologies</dt>
+									<dt>H2020-FETOPEN-2015-CSA</dt>
+								</dl>							
+								<div class="panel-footer">
+									<dl>
+										<dd><strong>Deadlines:</strong> 31/03/2015 29/09/2015</dd>
+										<dd><strong>Opening Date:</strong> 01/10/2014</dd>
+									</dl>	
+								</div>						
+							</div>
+						</div>
+
+					</div>
+					<!-- element -->
+					<div class="col-ld-6">
+						<p><strong>panel + fresh + small</strong></p>
+						<code>&lt;div class="panel panel-default"&gt;&lt;div class="panel panel-body"&gt;panel&lt;/div&gt;&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END panel -->
+
+				<!-- START panel -->
+				<div class="row">
+					<!-- example -->
+					<div class="col-sm-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Panel title</h3>
+							</div>
+							<div class="panel-body">
+								Panel content
+							</div>
+						</div>
+					</div>
+					<!-- element -->
+					<div class="col-sm-6">
+						<p><strong>panel</strong> - normal style</p>
+						<code>&lt;div class="panel panel-default"&gt;&lt;div class="panel heading"&gt;&lt;h3 class="panel-title"&gt;Panel title&lt;/h3&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="panel-body"&gt;Panel content&lt;/div&gt;</code>
+					</div>
+				</div>
+				<!-- END panel -->
+
+			</div><!-- END col -->
+		</div><!-- END row -->
+
+	</div><!-- /.container -->
+	
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted text-right">The KIKLOS Styleguide 2016</p>
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

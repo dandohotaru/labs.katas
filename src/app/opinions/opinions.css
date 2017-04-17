@@ -1,0 +1,17 @@
+/*@media (min-width: 768px) { 
+    .custom-nav-left {
+        position: fixed;
+    }
+}*/
+
+.custom-nav-fixed {
+    position: fixed;
+}
+
+.custom-nav-relative {
+    position: relative;
+}
+
+.custom-content {
+    position: relative;
+}

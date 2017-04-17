@@ -1,0 +1,1891 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+	<title>KIKLOS -  Agenda Planning Item</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Bootstrap Theme - Web Style Guide -->
+	<link href="css-theme-web-style-guide/web-style-guide.css" rel="stylesheet">
+    
+	<!-- Bootstrap Theme - Kiklos CSS -->
+	<link href="css-kiklos/kiklos_bootstrap.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_brand.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_layout.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_modules.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_transit.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_typography.css" rel="stylesheet">
+<link href="css-kiklos/kiklos_media-queries.css" rel="stylesheet">
+<!-- Bootstrap Theme - font awesome -->
+	<link href="css/font-awesome.css" rel="stylesheet">
+    
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+<style>
+.wizard {
+    /*margin: 20px auto;*/
+    background: #fff;
+	width:80%; /* pdc */
+}
+
+    /*.wizard .nav-tabs {
+        position: relative;
+        margin: 40px auto;
+        margin-bottom: 0;
+        border-bottom-color: #e0e0e0;
+    }*/
+
+    .wizard > div.wizard-inner {
+        position: relative;
+    }
+
+.connecting-line {
+    height: 2px;
+    background: #e0e0e0;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+
+span.round-tab {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+}
+span.round-tab i{
+    color:#555555;
+}
+.wizard li.active span.round-tab {
+    background: #fff;
+    border: 2px solid #5bc0de;
+    
+}
+.wizard li.active span.round-tab i{
+    color: #6BBAE7; /* light blue */
+}
+
+span.round-tab:hover {
+    color: #333;
+    border: 2px solid #333;
+}
+
+.wizard .nav-tabs > li {
+    width: 25%;
+}
+
+.wizard li:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #5bc0de;
+    transition: 0.1s ease-in-out;
+}
+
+.wizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #5bc0de;
+}
+
+.wizard .nav-tabs > li a {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+}
+
+    .wizard .nav-tabs > li a:hover {
+        background: transparent;
+    }
+
+.wizard .tab-pane {
+    position: relative;
+    padding-top: 50px;
+}
+
+.wizard h3 {
+    margin-top: 0;
+}
+
+@media( max-width : 585px ) {
+
+    .wizard {
+        width: 90%;
+        height: auto !important;
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard .nav-tabs > li a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
+    }
+}
+
+
+
+/* widen the modal window */
+.modal-dialog {
+    width: 80%;
+}
+</style>        
+</head>
+<body>
+
+    <div class="container-fluid">
+    	<div class="very-dark-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10">
+                        <!-- START top navigation -->
+                        <nav class="navbar navbar-inverse">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header kik-logo">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="index.html"><img src="img_kiklos/kiklos_logo_4.jpg" alt="kiklos logo"></a>
+                            </div>
+                        
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+									<li><a href="agenda_planning_item.html">Agenda Planning</a></li>
+                                    <li>
+                                        <a href="communications_overview.html" role="button">
+                                            Comm Plan
+                                        </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Opinions <!--<span class="badge">2</span> <span class="caret"></span>-->
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Opinion #123</a></li>
+                                            <li><a href="#">Opinion #456</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">View all Opinions</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Notifications <span class="badge">5</span> <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">NAT-VI/004: Objective added</a></li>
+                                            <li><a href="#">ECON-VI/008: New Activity</a></li>
+                                            <li><a href="#">ECON-V/005: Document uploaded</a></li>
+                                            <li><a href="#">ECON-VI/001: New Meeting</a></li>
+                                            <li><a href="#">ECON-VI/003: New Activity</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="notifications.html">View all Notifications</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            Tools <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="https://agora.ces-cdr.eu.int:8443/agora/login.do">Agora</a></li>
+                                            <li><a href="http://www.toad.cor.europa.eu/">Members' Portal</a></li>
+                                            <li><a href="http://mycor.cor.europa.eu">myCoR</a></li>
+                                            <li><a href="http://mycor.europa.eu">CoR</a></li>
+                                            <li><a href="http://eur-lex.europa.eu/en/index.htm">EUR-Lex</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-user"></i> <strong>Athanasios Kaskamanidis</strong> <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="profile.html">Profile</a></li>
+                                            <li><a href="#">Logout</a></li>
+                                        </ul>
+                                    </li>
+								</ul>
+                            </div><!-- /.navbar-collapse -->
+                        </nav>    
+                        <!-- END top navigation -->
+                    </div><!-- END col -->
+							
+                    <div class="col-md-2 global_search_box">
+						<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+							Search&nbsp;<i class="fa fa-search" aria-hidden="true"></i>
+						</a>
+                    </div><!-- END col -->
+                </div><!-- END row -->
+				
+                <div class="row">
+					<div class="col-md-12">
+						<div class="collapse" id="collapseExample">
+						
+							<div class="row">
+								<div class="col-md-10">
+									<form>
+										<div class="form-group">
+											<!--<label for="foo"></i>Search the KIKLOS website</label>-->
+											<input type="text" class="form-control" id="foo" placeholder="Enter your search term...">
+										</div>
+                                        										<!--
+										<div class="form-group">
+											<p class="help-block">Example block-level help text here.</p>
+										</div>
+										-->
+									</form>
+								</div>
+								<div class="col-md-2">
+									<a class="btn btn-primary" role="button" href="search_results_wt_meetings.html">Search</a>
+									<button type="submit" class="btn btn-default"><i class="fa fa-times" aria-hidden="true"></i></button>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+                </div><!-- END row -->
+            </div><!-- END container -->
+		</div><!-- END dark blue -->
+    </div><!-- END container-fluid -->
+      
+	<!-- START Main Navigation -->
+    <div class="container-fluid">
+    	<div class="dark-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+        
+                        <nav class="nav nav-pills nav-justified text-center">
+                            <div class="container-fluid">
+                            
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                        
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                <table align="center">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="badge">
+                                                                <i class="fa fa-tags"></i>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            	Themes <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="theme_01.html">Agriculture & maritime and consumer policies <span class="badge">8</span></a></li>
+                                                <li><a href="theme_02.html">Cohesion policy <span class="badge">7</span></a></li>
+                                                <li><a href="theme_03.html">Constitutional & institutional affairs <span class="badge">2</span></a></li>
+                                                <li><a href="theme_04.html">Economics & Finance <span class="badge">4</span></a></li>
+                                                <li><a href="theme_05.html">Education and Culture <span class="badge">4</span></a></li>
+                                                <li><a href="theme_06.html">Energy <span class="badge">6</span></a></li>
+                                                <li><a href="theme_07.html">Enterprises & Industries <span class="badge">11</span></a></li>
+												<li><a href="theme_08.html">Environment <span class="badge">7</span></a></li>
+                                                <li><a href="theme_09.html">External Relations, enlargement and neighbourhood policy <span class="badge">6</span></a></li>
+                                                <li><a href="theme_10.html">Justice & Home Affairs <span class="badge">3</span></a></li>
+                                                <li><a href="theme_11.html">Employment and Social policies <span class="badge">7</span></a></li>
+												<li><a href="theme_12.html">Transport <span class="badge">1</span></a></li>
+												<li role="separator" class="divider"></li>
+                                                <li><a href="themes.html">View all Themes</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                <table align="center">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="badge">
+                                                                <i class="fa fa-institution"></i>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            	Commissions <span class="caret"></span>
+											</a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                <a href="comm_01.html">CIVEX <span class="badge">7</span></a></li>
+                                                <li><a href="comm_02.html">COTER <span class="badge">3</span></a></li>
+                                                <li><a href="comm_03.html">ECON <span class="badge">5</span></a></li>
+                                                <li><a href="comm_04.html">ENVE <span class="badge">2</span></a></li>
+                                                <li><a href="comm_05.html">NAT <span class="badge">6</span></a></li>
+                                                <li><a href="comm_06.html">SEDEC <span class="badge">8</span></a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="commissions.html">View all Commissions</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="timeline.html">
+                                                <table align="center">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="badge">
+                                                                <i class="fa fa-clock-o"></i>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            	Timeline
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>        
+        
+                    </div><!-- END col -->
+                </div><!-- END row -->
+            </div><!-- END container -->
+     	</div><!-- END dark blue -->
+    </div><!-- END container-fluid -->
+	<!-- END Main Navigation -->
+
+    <!-- START ribbon-l-blue -->
+    <div class="container-fluid">
+            
+        <div class="ribbon_m-grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ol class="breadcrumb">
+                            <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
+                            <li class="active">Agenda Planning</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Agenda Planning</h5>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <small>View as:</small> 
+                            <a href="agenda_planning_item.html" class="btn btn-default btn-sm" disabled="disabled"><i class="fa fa-square-o"></i> cards</a>
+                            <a href="agenda_planning_item_table.html" class="btn btn-default btn-sm"><i class="fa fa-table"></i> table</a>
+                            <small>Actions:</small>
+                            <a class="btn btn-primary"  data-toggle="modal" data-target="#myModal_create_API" role="button"><i class="fa fa-plus" aria-hidden="true"></i> Create</a>
+                            <a class="btn btn-default" href="timeline_detail.html"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
+                        </div>
+                    </div>
+                </h3>
+            
+                <div class="col-md-12">
+                        
+                    <!-- START filter and sorting mechanism -->
+                    <div class="col-md-12 text-center">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <h6>Type</h6>
+                                <form>
+                                    <select class="form-control">
+                                        <option>-- select --</option>
+                                        <option>...</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="col-sm-2">
+                                <h6>Status</h6>
+                                <form>
+                                    <select class="form-control">
+                                        <option>-- select --</option>
+                                        <option>...</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="col-sm-2">
+                                <h6>EC's 10 priorities</h6>
+                                <form>
+                                    <select class="form-control">
+                                        <option>-- select --</option>
+                                        <option>...</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="col-sm-2">
+                                <h6>C<span style="text-transform:lowercase">o</span>R's 5 priorities</h6>
+                                <form>
+                                    <select class="form-control">
+                                        <option>-- select --</option>
+                                        <option>...</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="col-sm-2">
+                                <h6>Themes</h6>
+                                <form>
+                                    <select class="form-control">
+                                        <option>-- select --</option>
+                                        <option>...</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="col-sm-2">
+                                <h6>Folder Nr.</h6>
+                                <form>
+                                    <select class="form-control">
+                                        <option>-- select --</option>
+                                        <option>...</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                        <br/>
+        
+                    </div>
+                </div>
+                <!-- END filter and sorting mechanism -->
+                    
+                    <div class="row">
+                    	<div class="col-md-4">
+                            <!-- START agenda planning item -->
+                            <div class="cor_card cor_api_card">
+                                <a href="agenda_planning_item_details.html">
+                                    <div class="cor_card-heading">
+                                        <h4><i class="fa fa-table" aria-hidden="true"></i>Energy Union Package (IV) - Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</h4>
+                                    </div>
+                                    <!--<div class="ribbon_l-grey"><h5>Representative: Anthony Gerard BUCHANAN </h5></div>-->
+                                    <div class="cor_card-body text-left">
+                                    	<div class="row">
+                                        	<div class="col-md-6">
+                                                <dl>
+                                                    <dt>Type</dt>
+                                                    <dd><small>ECWP</small></dd>
+                                                </dl>
+                                            </div>
+                                        	<div class="col-md-6">
+                                              <dl>
+                                                    <dt>Status</dt>
+                                                    <dd><small>Open</small></dd>
+                                                </dl>
+                                            </div>
+                                        	<div class="col-md-12">
+                                              <dl>
+                                                    <dt>Themes</dt>
+                                                    <dd><small><span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:8px; padding-right:8px;"></span> Energy </small>
+                                                    <small><span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment</small></dd>
+                                                    <dt>Juncker's 10 priorities</dt>
+                                                    <dd><small>Climate Action and Energy (3)</small></dd>
+                                                    <dt>CoR's 5 priorities</dt>
+                                                    <dd><small>A fresh start for the European economy (1)<br />The territorial dimension of EU legislation matters (2)</small></dd>
+                                                    <dt>Referral Folder Nr.</dt>
+                                                    <dd>ENVE-VI/027</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="cor_card-footer">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2017</td>
+                                            <td class="text-right">
+                                            
+                                            	<!-- START dropdown with the API Actions -->
+												<nav >
+													<div class="container-fluid">
+														<!-- Brand and toggle get grouped for better mobile display -->
+														<div class="navbar-header">
+															<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-actions" aria-expanded="false">
+																<span class="sr-only">Toggle navigation</span>
+																<span class="icon-bar"></span>
+																<span class="icon-bar"></span>
+																<span class="icon-bar"></span>
+															</button>
+														</div>
+														
+														<!-- Collect the nav links, forms, and other content for toggling -->
+														<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-actions">
+															<ul class="nav navbar-nav navbar-right">
+																<li class="dropdown">
+																	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
+																<ul class="dropdown-menu">
+																<li><a data-toggle="modal" data-target="#myModal_edit_API" role="button"><i class="fa fa-pencil"></i> Edit</a></li>
+																<li><a data-toggle="modal" data-target="#myModal_delete_API" role="button"><i class="fa fa-trash"></i> Delete</a></li>
+																</ul>
+																</li>
+															</ul>
+														</div><!-- /.navbar-collapse -->
+													</div><!-- /.container-fluid -->
+												</nav>                                            
+                                            	<!-- END dropdown with the API Actions -->
+                                            
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END agenda planning item -->
+                            <!-- START agenda planning item -->
+                            <div class="cor_card cor_api_card">
+                                <a href="agenda_planning_item_details.html">
+                                    <div class="cor_card-heading">
+                                        <h4><i class="fa fa-table" aria-hidden="true"></i>Energy Union Package (IV) - Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</h4>
+                                    </div>
+                                    <!--<div class="ribbon_l-grey"><h5>Representative: Anthony Gerard BUCHANAN </h5></div>-->
+                                    <div class="cor_card-body text-left">
+                                    	<div class="row">
+                                        	<div class="col-md-4">
+                                                <dl>
+                                                    <dt>Type</dt>
+                                                    <dd><small>ECWP</small></dd>
+                                                </dl>
+                                            </div>
+                                        	<div class="col-md-4">
+												<dl>
+													<dt>Status</dt>
+                                                    <dd><small>Open</small></dd>
+                                                </dl>
+                                            </div>
+                                        	<div class="col-md-4">
+												<dl>
+                                                    <dt>Referral Folder Nr.</dt>
+                                                    <dd>ENVE-VI/027</dd>
+                                                </dl>
+                                            </div>
+                                        	<div class="col-md-12">
+                                              <dl>
+                                                    <dt>Themes</dt>
+                                                    <dd><small><span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:8px; padding-right:8px;"></span> Energy </small>
+                                                    <small><span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment</small></dd>
+                                                    <dt>Juncker's 10 priorities</dt>
+                                                    <dd><small>Climate Action and Energy (3)</small></dd>
+                                                    <dt>CoR's 5 priorities</dt>
+                                                    <dd><small>A fresh start for the European economy (1)<br />The territorial dimension of EU legislation matters (2)</small></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="cor_card-footer">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2017</td>
+                                            <td class="text-right"><button type="button" class="btn btn-default btn-sm"  data-toggle="modal" data-target="#myModal_edit_API" role="button"><i class="fa fa-pencil"></i> Edit</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END agenda planning item -->
+                            <!-- START agenda planning item -->
+                            <div class="cor_card cor_api_card">
+                                <a href="agenda_planning_item_details.html">
+                                    <div class="cor_card-heading">
+                                        <h4><i class="fa fa-table" aria-hidden="true"></i>Energy Union Package (IV) - Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</h4>
+                                    </div>
+                                    <!--<div class="ribbon_l-grey"><h5>Representative: Anthony Gerard BUCHANAN </h5></div>-->
+                                    <div class="cor_card-body">
+                                        <dl class="dl-horizontal">
+                                            <dt>Type</dt>
+                                            <dd>ECWP</dd>
+                                            <dt>Status</dt>
+                                            <dd>Open</dd>
+                                            <dt>Juncker's 10 priorities</dt>
+                                            <dd>Climate Action and Energy (3)</dd>
+                                            <dt>CoR's 5 priorities</dt>
+                                            <dd>A fresh start for the European economy (1)<br />The territorial dimension of EU legislation matters (2)</dd>
+                                            <dt>Themes</dt>
+                                            <dd><span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:8px; padding-right:8px;"></span> Energy <br /><span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment</dd>
+                                            <dt>Referral Folder Nr.</dt>
+                                            <dd>ENVE-VI/027</dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                                <div class="cor_card-footer">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2017</td>
+                                            <td class="text-right"><button type="button" class="btn btn-default btn-sm"  data-toggle="modal" data-target="#myModal_edit_API" role="button"><i class="fa fa-pencil"></i> Edit</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END agenda planning item -->
+                        </div>
+                    	<div class="col-md-4">
+                            <!-- START agenda planning item -->
+                            <div class="cor_card cor_api_card">
+                                <a href="agenda_planning_item_details.html">
+                                    <div class="cor_card-heading">
+                                        <h4><i class="fa fa-table" aria-hidden="true"></i>Energy Union Package (IV) - Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</h4>
+                                    </div>
+                                    <!--<div class="ribbon_l-grey"><h5>Representative: Anthony Gerard BUCHANAN </h5></div>-->
+                                    <div class="cor_card-body">
+                                        <dl class="dl-horizontal">
+                                            <dt>Type</dt>
+                                            <dd>ECWP</dd>
+                                            <dt>Status</dt>
+                                            <dd>Open</dd>
+                                            <dt>Juncker's 10 priorities</dt>
+                                            <dd>Climate Action and Energy (3)</dd>
+                                            <dt>CoR's 5 priorities</dt>
+                                            <dd>A fresh start for the European economy (1)<br />The territorial dimension of EU legislation matters (2)</dd>
+                                            <dt>Themes</dt>
+                                            <dd><span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:8px; padding-right:8px;"></span> Energy <br /><span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment</dd>
+                                            <dt>Referral Folder Nr.</dt>
+                                            <dd>ENVE-VI/027</dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                                <div class="cor_card-footer">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2017</td>
+                                            <td class="text-right"><button type="button" class="btn btn-default btn-sm"  data-toggle="modal" data-target="#myModal_edit_API" role="button"><i class="fa fa-pencil"></i> Edit</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END agenda planning item -->
+                            <!-- START agenda planning item -->
+                            <div class="cor_card cor_api_card">
+                                <a href="agenda_planning_item_details.html">
+                                    <div class="cor_card-heading">
+                                        <h4><i class="fa fa-table" aria-hidden="true"></i>Energy Union Package (IV) - Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</h4>
+                                    </div>
+                                    <!--<div class="ribbon_l-grey"><h5>Representative: Anthony Gerard BUCHANAN </h5></div>-->
+                                    <div class="cor_card-body">
+                                        <dl class="dl-horizontal">
+                                            <dt>Type</dt>
+                                            <dd>ECWP</dd>
+                                            <dt>Status</dt>
+                                            <dd>Open</dd>
+                                            <dt>Juncker's 10 priorities</dt>
+                                            <dd>Climate Action and Energy (3)</dd>
+                                            <dt>CoR's 5 priorities</dt>
+                                            <dd>A fresh start for the European economy (1)<br />The territorial dimension of EU legislation matters (2)</dd>
+                                            <dt>Themes</dt>
+                                            <dd><span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:8px; padding-right:8px;"></span> Energy <br /><span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment</dd>
+                                            <dt>Referral Folder Nr.</dt>
+                                            <dd>ENVE-VI/027</dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                                <div class="cor_card-footer">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2017</td>
+                                            <td class="text-right"><button type="button" class="btn btn-default btn-sm"  data-toggle="modal" data-target="#myModal_edit_API" role="button"><i class="fa fa-pencil"></i> Edit</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END agenda planning item -->
+                            <!-- START agenda planning item -->
+                            <div class="cor_card cor_api_card">
+                                <a href="agenda_planning_item_details.html">
+                                    <div class="cor_card-heading">
+                                        <h4><i class="fa fa-table" aria-hidden="true"></i>Energy Union Package (IV) - Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</h4>
+                                    </div>
+                                    <!--<div class="ribbon_l-grey"><h5>Representative: Anthony Gerard BUCHANAN </h5></div>-->
+                                    <div class="cor_card-body">
+                                        <dl class="dl-horizontal">
+                                            <dt>Type</dt>
+                                            <dd>ECWP</dd>
+                                            <dt>Status</dt>
+                                            <dd>Open</dd>
+                                            <dt>Juncker's 10 priorities</dt>
+                                            <dd>Climate Action and Energy (3)</dd>
+                                            <dt>CoR's 5 priorities</dt>
+                                            <dd>A fresh start for the European economy (1)<br />The territorial dimension of EU legislation matters (2)</dd>
+                                            <dt>Themes</dt>
+                                            <dd><span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:8px; padding-right:8px;"></span> Energy <br /><span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment</dd>
+                                            <dt>Referral Folder Nr.</dt>
+                                            <dd>ENVE-VI/027</dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                                <div class="cor_card-footer">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2017</td>
+                                            <td class="text-right"><button type="button" class="btn btn-default btn-sm"  data-toggle="modal" data-target="#myModal_edit_API" role="button"><i class="fa fa-pencil"></i> Edit</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END agenda planning item -->
+                        </div>
+                    	<div class="col-md-4">
+                            <!-- START agenda planning item -->
+                            <div class="cor_card cor_api_card">
+                                <a href="agenda_planning_item_details.html">
+                                    <div class="cor_card-heading">
+                                        <h4><i class="fa fa-table" aria-hidden="true"></i>Energy Union Package (IV) - Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</h4>
+                                    </div>
+                                    <!--<div class="ribbon_l-grey"><h5>Representative: Anthony Gerard BUCHANAN </h5></div>-->
+                                    <div class="cor_card-body">
+                                        <dl class="dl-horizontal">
+                                            <dt>Type</dt>
+                                            <dd>ECWP</dd>
+                                            <dt>Status</dt>
+                                            <dd>Open</dd>
+                                            <dt>Juncker's 10 priorities</dt>
+                                            <dd>Climate Action and Energy (3)</dd>
+                                            <dt>CoR's 5 priorities</dt>
+                                            <dd>A fresh start for the European economy (1)<br />The territorial dimension of EU legislation matters (2)</dd>
+                                            <dt>Themes</dt>
+                                            <dd><span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:8px; padding-right:8px;"></span> Energy <br /><span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment</dd>
+                                            <dt>Referral Folder Nr.</dt>
+                                            <dd>ENVE-VI/027</dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                                <div class="cor_card-footer">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2017</td>
+                                            <td class="text-right"><button type="button" class="btn btn-default btn-sm"  data-toggle="modal" data-target="#myModal_edit_API" role="button"><i class="fa fa-pencil"></i> Edit</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END agenda planning item -->
+                            <!-- START agenda planning item -->
+                            <div class="cor_card cor_api_card">
+                                <a href="agenda_planning_item_details.html">
+                                    <div class="cor_card-heading">
+                                        <h4><i class="fa fa-table" aria-hidden="true"></i>Energy Union Package (IV) - Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</h4>
+                                    </div>
+                                    <!--<div class="ribbon_l-grey"><h5>Representative: Anthony Gerard BUCHANAN </h5></div>-->
+                                    <div class="cor_card-body">
+                                        <dl class="dl-horizontal">
+                                            <dt>Type</dt>
+                                            <dd>ECWP</dd>
+                                            <dt>Status</dt>
+                                            <dd>Open</dd>
+                                            <dt>Juncker's 10 priorities</dt>
+                                            <dd>Climate Action and Energy (3)</dd>
+                                            <dt>CoR's 5 priorities</dt>
+                                            <dd>A fresh start for the European economy (1)<br />The territorial dimension of EU legislation matters (2)</dd>
+                                            <dt>Themes</dt>
+                                            <dd><span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:8px; padding-right:8px;"></span> Energy <br /><span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment</dd>
+                                            <dt>Referral Folder Nr.</dt>
+                                            <dd>ENVE-VI/027</dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                                <div class="cor_card-footer">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2017</td>
+                                            <td class="text-right"><button type="button" class="btn btn-default btn-sm"  data-toggle="modal" data-target="#myModal_edit_API" role="button"><i class="fa fa-pencil"></i> Edit</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END agenda planning item -->
+                            <!-- START agenda planning item -->
+                            <div class="cor_card cor_api_card">
+                                <a href="agenda_planning_item_details.html">
+                                    <div class="cor_card-heading">
+                                        <h4><i class="fa fa-table" aria-hidden="true"></i>Energy Union Package (IV) - Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</h4>
+                                    </div>
+                                    <!--<div class="ribbon_l-grey"><h5>Representative: Anthony Gerard BUCHANAN </h5></div>-->
+                                    <div class="cor_card-body">
+                                        <dl class="dl-horizontal">
+                                            <dt>Type</dt>
+                                            <dd>ECWP</dd>
+                                            <dt>Status</dt>
+                                            <dd>Open</dd>
+                                            <dt>Juncker's 10 priorities</dt>
+                                            <dd>Climate Action and Energy (3)</dd>
+                                            <dt>CoR's 5 priorities</dt>
+                                            <dd>A fresh start for the European economy (1)<br />The territorial dimension of EU legislation matters (2)</dd>
+                                            <dt>Themes</dt>
+                                            <dd><span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:8px; padding-right:8px;"></span> Energy <br /><span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment</dd>
+                                            <dt>Referral Folder Nr.</dt>
+                                            <dd>ENVE-VI/027</dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                                <div class="cor_card-footer">
+                                    <table class="table">
+                                        <tr>
+                                            <td class="cor_card-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 30/04/2017</td>
+                                            <td class="text-right"><button type="button" class="btn btn-default btn-sm"  data-toggle="modal" data-target="#myModal_edit_API" role="button"><i class="fa fa-pencil"></i> Edit</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END agenda planning item -->
+                        </div>
+                    </div>
+                    <br />
+          </div>
+                <!-- END col -->
+      </div>
+            <!-- END row -->
+</div>
+        <!-- END container -->
+        
+    </div>
+    <!-- END ribbon-l-blue -->	<footer class="footer">
+		<div class="container">
+        	<div class="row">
+            	<div class="col-sm-4">
+					<p class="text-muted">
+						<a href="about.html">About Kiklos</a>&nbsp;&verbar;&nbsp;
+                        <a href="glossary.html">Glossary</a>&nbsp;&verbar;&nbsp;
+						<a href="mailto:kiklos@cor.europa.eu?Subject=Hello%20KIKLOS team" target="_top">Contact us</a>&nbsp;&verbar;&nbsp;
+                    </p>
+                </div>
+            	<div class="col-sm-8 text-right">
+                    <p class="text-muted text-right">
+                        Last update: 11/08/2016 &nbsp;&verbar;&nbsp;Powered by the European Committee of the Regions &copy;2016
+                    </p>
+                </div>
+            </div>
+		</div>
+	</footer>
+
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	
+	
+<script>
+$(function () {
+        // Remove Search if user Resets Form or hits Escape!
+		$('body, .navbar-collapse form[role="search"] button[type="reset"]').on('click keyup', function(event) {
+			console.log(event.currentTarget);
+			if (event.which == 27 && $('.navbar-collapse form[role="search"]').hasClass('active') ||
+				$(event.currentTarget).attr('type') == 'reset') {
+				closeSearch();
+			}
+		});
+
+		function closeSearch() {
+            var $form = $('.navbar-collapse form[role="search"].active')
+    		$form.find('input').val('');
+			$form.removeClass('active');
+		}
+
+		// Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
+		$(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
+			event.preventDefault();
+			var $form = $(this).closest('form'),
+				$input = $form.find('input');
+			$form.addClass('active');
+			$input.focus();
+
+		});
+		// ONLY FOR DEMO // Please use $('form').submit(function(event)) to track from submission
+		// if your form is ajax remember to call `closeSearch()` to close the search container
+		$(document).on('click', '.navbar-collapse form[role="search"].active button[type="submit"]', function(event) {
+			event.preventDefault();
+			var $form = $(this).closest('form'),
+				$input = $form.find('input');
+			$('#showSearchTerm').text($input.val());
+            closeSearch()
+		});
+    });</script>
+    
+    
+<!-- Modal Create API -->
+<div class="modal fade" id="myModal_create_API" tabindex="-1" role="dialog" aria-labelledby="myModal_create_API">
+    <div class="modal-dialog modal-responsive" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create an Agenda Planning Item</h4>
+            </div>
+            <div class="modal-body">
+                
+                
+                
+<div class="container">
+	<div class="row">
+		<section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form role="form">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                        <h3>Step 1</h3>
+                        <p>Create a new Agenda Planning Item by filling in this form. Step 1 is about lorem ipsum.</p>
+                        
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">ID</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Type</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>ECWP</option>
+                                        <option>REFIT</option>
+                                        <option>CoR WP</option>
+                                        <option>EP Referral</option>
+                                        <option>Presidency Referral</option>
+                                        <option>Council Referral</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Short Title</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="example3" placeholder="lorem">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Full Title</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Document of origin</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="example5" placeholder="lorem">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Date</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="example6" placeholder="lorem">
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <ul class="list-inline pull-right">
+                        	<li><br /><br /></li>
+                            <li>
+                            	<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            	<button type="button" class="btn btn-primary next-step">Save and continue</button>
+							</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                        <h3>Step 2</h3>
+                        <p>This is step 2</p>
+                        <form>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Define the Juncker's 10 priorities</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>Boosting Jobs, Growth and Investment</option>
+                                        <option>A Connected Digital Single Market</option>
+                                        <option>Climate Action and Energy</option>
+                                        <option>A deeper and fairer Internal Market</option>
+                                        <option>A deeper and fairer Economic and Monetary Union</option>
+                                        <option>A reasonable and balanced Free Trade Agreement with the US</option>
+                                        <option>An area of Justice and Fundamental Rights</option>
+                                        <option>A new policy on Migration</option>
+                                        <option>A stronger Global Actor</option>
+                                        <option>A Union of Democratic Change</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Define the CoR's 5 priorities</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>A fresh start for the European economy</option>
+                                        <option>The territorial dimension of EU legislation matters</option>
+                                        <option>A simpler, more connected Europe</option>
+                                        <option>Stability and cooperation within and outside of the European Union</option>
+                                        <option>Europe of the citizens is Europe of the future</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Select a Theme</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>Agriculture & maritime and consumer policies</option>
+                                        <option>Cohesion policy</option>
+                                        <option>Constitutional & institutional affairs</option>
+                                        <option>Economics & Finance</option>
+                                        <option>Education and Culture</option>
+                                        <option>Energy</option>
+                                        <option>Enterprises & Industries</option>
+                                        <option>Environment</option>
+                                        <option>External Relations, enlargement and neighbourhood policy</option>
+                                        <option>Justice & Home Affairs</option>
+                                        <option>Employment and Social policies</option>
+                                        <option>Transport</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Select a Subtheme (how?)</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                        <ul class="list-inline pull-right">
+                        	<li><br /><br /></li>
+                            <li>
+                            	<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button></li>
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+							</li>
+                        </ul>
+                        
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        <h3>Step 3</h3>
+                        <p>This is step 3</p>
+                        <form>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Select a Subtheme (how?)</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Legal Basis Treaty</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>Art.100</option>
+                                        <option>Art.148</option>
+                                        <option>Art.149</option>
+                                        <option>Art.153</option>
+                                        <option>Art.164</option>
+                                        <option>Art.165</option>
+                                        <option>Art.166</option>
+                                        <option>Art.167</option>
+                                        <option>Art.168</option>
+                                        <option>Art.172</option>
+                                        <option>Art.175</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Scheduled adoption by Institution of Origin</label>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Legal Basis RoP</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>For information</option>
+                                        <option>Mandatory</option>
+                                        <option>Optional</option>
+                                        <option>Own-initiative</option>
+                                        <option>Own-initiative/Resolution</option>
+                                        <option>Resolution</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Source</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>Work Program CIVEX</option>
+                                        <option>Work Program COTER</option>
+                                        <option>Work Program ECON</option>
+                                        <option>Work Program ENVE</option>
+                                        <option>Work Program NAT</option>
+                                        <option>Work Program SEDEC</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">CoR Commission</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control">
+                                        <option>CIVEX</option>
+                                        <option>COTER</option>
+                                        <option>ECON</option>
+                                        <option>ENVE</option>
+                                        <option>NAT</option>
+                                        <option>SEDEC</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Referral Short Title</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="example9" placeholder="lorem">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Referral Status</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="disabledInput2" type="text" placeholder="Disabled input here..." disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Opinion Folder Name and Short Title</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="example10" placeholder="lorem">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">Opinion Status</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" id="disabledInput3" type="text" placeholder="Orange = Related Referral Activated" disabled>
+                                </div>
+                            </div>
+						</form>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <h3>Complete</h3>
+                        <p>You have successfully completed all steps.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+</div>                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+               <!-- 
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                
+                
+              <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">ID</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Type</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>ECWP</option>
+                                <option>REFIT</option>
+                                <option>CoR WP</option>
+                                <option>EP Referral</option>
+                                <option>Presidency Referral</option>
+                                <option>Council Referral</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Short Title</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="example3" placeholder="lorem">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Full Title</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Document of origin</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="example5" placeholder="lorem">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Date</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="example6" placeholder="lorem">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Define the Juncker's 10 priorities</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>Boosting Jobs, Growth and Investment</option>
+                                <option>A Connected Digital Single Market</option>
+                                <option>Climate Action and Energy</option>
+                                <option>A deeper and fairer Internal Market</option>
+                                <option>A deeper and fairer Economic and Monetary Union</option>
+                                <option>A reasonable and balanced Free Trade Agreement with the US</option>
+                                <option>An area of Justice and Fundamental Rights</option>
+                                <option>A new policy on Migration</option>
+                                <option>A stronger Global Actor</option>
+                                <option>A Union of Democratic Change</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Define the CoR's 5 priorities</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>A fresh start for the European economy</option>
+                                <option>The territorial dimension of EU legislation matters</option>
+                                <option>A simpler, more connected Europe</option>
+                                <option>Stability and cooperation within and outside of the European Union</option>
+                                <option>Europe of the citizens is Europe of the future</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Select a Theme</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>Agriculture & maritime and consumer policies</option>
+                                <option>Cohesion policy</option>
+                                <option>Constitutional & institutional affairs</option>
+                                <option>Economics & Finance</option>
+                                <option>Education and Culture</option>
+                                <option>Energy</option>
+                                <option>Enterprises & Industries</option>
+                                <option>Environment</option>
+                                <option>External Relations, enlargement and neighbourhood policy</option>
+                                <option>Justice & Home Affairs</option>
+                                <option>Employment and Social policies</option>
+                                <option>Transport</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Select a Subtheme (how?)</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Legal Basis Treaty</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>Art.100</option>
+                                <option>Art.148</option>
+                                <option>Art.149</option>
+                                <option>Art.153</option>
+                                <option>Art.164</option>
+                                <option>Art.165</option>
+                                <option>Art.166</option>
+                                <option>Art.167</option>
+                                <option>Art.168</option>
+                                <option>Art.172</option>
+                                <option>Art.175</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Scheduled adoption by Institution of Origin</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Legal Basis RoP</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>For information</option>
+                                <option>Mandatory</option>
+                                <option>Optional</option>
+                                <option>Own-initiative</option>
+                                <option>Own-initiative/Resolution</option>
+                                <option>Resolution</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Source</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>Work Program CIVEX</option>
+                                <option>Work Program COTER</option>
+                                <option>Work Program ECON</option>
+                                <option>Work Program ENVE</option>
+                                <option>Work Program NAT</option>
+                                <option>Work Program SEDEC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">CoR Commission</label>
+                        <div class="col-sm-8">
+                            <select class="form-control">
+                                <option>CIVEX</option>
+                                <option>COTER</option>
+                                <option>ECON</option>
+                                <option>ENVE</option>
+                                <option>NAT</option>
+                                <option>SEDEC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Referral Short Title</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="example9" placeholder="lorem">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Referral Status</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="disabledInput2" type="text" placeholder="Disabled input here..." disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Opinion Folder Name and Short Title</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="example10" placeholder="lorem">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Opinion Status</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="disabledInput3" type="text" placeholder="Orange = Related Referral Activated" disabled>
+                        </div>
+                    </div>
+                </form>-->
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Modal Edit API -->
+<div class="modal fade" id="myModal_edit_API" tabindex="-1" role="dialog" aria-labelledby="myModal_edit_API">
+    <div class="modal-dialog modal-responsive" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Edit an Agenda Planning Item</h4>
+            </div>
+            <div class="modal-body">
+                <!-- START tab navigation -->
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home">Summary</a></li>
+                        <li><a data-toggle="tab" href="#menu_obj">Political Work</a></li>
+                        <li><a data-toggle="tab" href="#menu_his">History</a></li>
+                    </ul>                            
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table">
+                                        <tr>
+                                            <th><span class="fa fa-calendar"></span> Date</th>
+                                            <td><input type="text" class="form-control"  value="30/04/2017"></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-tag"></span> Full Title</th>
+                                            <td><textarea class="form-control" rows="3" >Energy Union Package (IV) - Revision of the Decision on intergovernmental agreements: the effort sharing decision and integration of the Land Use Change and Forestry sector (LULUF) into the 2030 climate framework</textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-spinner"></span> Status</th>
+                                            <td>
+                                                <div class="radio">
+                                                  <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                                    [Open]
+                                                  </label>
+                                                </div>
+                                                <div class="radio">
+                                                  <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                    [Closed]
+                                                  </label>
+                                                </div>
+                                                <div class="radio disabled">
+                                                  <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                                                    [Something else...]
+                                                  </label>
+                                                </div>
+											</td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-tag"></span> Type</th>
+                                            <td>
+                                                <select class="form-control">
+                                                    <option>ECWP</option>
+                                                    <option>...</option>
+                                                    <option>...</option>
+                                                    <option>...</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-institution"></span> Scheduled adoption by institution of origin</th>
+                                            <td><input type="text" class="form-control"  value="30/04/2017"></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-tag"></span> Themes</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox">  Agriculture & maritime and consumer policies <span class="icon-big fa fa-leaf turquoise" aria-hidden="true" ></span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Cohesion policy <span class="icon-big fa fa-random green" aria-hidden="true"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Constitutional & interinstitunial affairs <span class="icon-big fa fa-institution purp" aria-hidden="true"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Economy & Finance <span class="icon-big fa fa-bar-chart red" aria-hidden="true"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Education and Culture <span class="icon-big fa fa-graduation-cap d-green" aria-hidden="true"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Energy <span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:10px; padding-right:10px;"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Enterprises & Industries <span class="icon-big fa fa-industry d-grey" aria-hidden="true"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Environment <span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  External relations, enlargement and neighbourhood policy <span class="icon-big fa fa-exchange  brown" aria-hidden="true"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Justice and Home Affairs <span class="icon-big fa fa-home pink" aria-hidden="true"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Social policies <span class="icon-big fa fa-group violet" aria-hidden="true"></span> 
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox">  Transport <span class="icon-big fa fa-truck yell" aria-hidden="true"></span> 
+                                                    </label>
+                                                </div>                                            
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-exclamation-circle"></span> Juncker's 10 priorities</th>
+                                            <td>
+                                            	<div class="row">
+                                                	<div class="col-md-4">
+                                                        <input type="checkbox"> Boosting Jobs, Growth and Investment (1)<br />
+                                                        <input type="checkbox"> A Connected Digital Single Market (2)<br />
+                                                        <input type="checkbox"> Climate Action and Energy (3)<br />
+                                                        <input type="checkbox"> A deeper and fairer Internal Market (4)
+                                                    </div>
+                                                	<div class="col-md-4">
+                                                        <input type="checkbox"> A deeper and fairer Economic and Monetary Union (5)<br />
+                                                        <input type="checkbox"> A reasonable and balanced Free Trade Agreement with the US (6)<br />
+                                                        <input type="checkbox"> An area of Justice and Fundamental Rights (7)
+                                                    </div>
+                                                	<div class="col-md-4">
+                                                        <input type="checkbox"> A new policy on Migration (8)<br />
+                                                        <input type="checkbox"> A stronger Global Actor (9)<br />
+                                                        <input type="checkbox"> A Union of Democratic Change (10)
+                                                    </div>
+                                                </div>
+                                           </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-exclamation-circle"></span> CoR's 5 priorities</th>
+                                            <td>
+                                                <input type="checkbox"> A fresh start for the European economy (1) <br />
+                                                <input type="checkbox"> The territorial dimension of EU legislation matters (2)<br />
+                                                <input type="checkbox"> A simpler, more connected Europe (3)<br />
+                                                <input type="checkbox"> Stability and cooperation within and outside of the European Union (4)<br />
+                                                <input type="checkbox"> Europe of the citizens is Europe of the future (5)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-balance-scale"></span> Legal Basis Treaty</th>
+                                            <td>
+                                                <select class="form-control">
+                                                    <option>Art 192 …</option>
+                                                    <option>...</option>
+                                                    <option>...</option>
+                                                    <option>...</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-folder"></span> Referral Folder Nr.</th>
+                                            <td><input type="text" class="form-control"  value="ENVE-VI/027"></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-user"></span> Secretary</th>
+                                            <td><input type="text" class="form-control"  value="usanna Sjöström"></td>
+                                        </tr>
+                                        <tr>
+                                            <th><span class="fa fa-file"></span> Document of Origin</th>
+                                            <td><input type="text" class="form-control"  value="EC new initiative, WP Annex I n°7"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menu_obj" class="tab-pane fade">
+                            <table class="table">
+                                <tr>
+                                    <th><span class="fa fa-calendar"></span> Referral date</th>
+                                    <td><input type="text" class="form-control"  value="30/04/2017"></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fa fa-tag"></span> Referral Short Title</th>
+                                    <td><textarea class="form-control" rows="3" >Energy Union package - Communication from the Commission to the European Parliament and the Council - The Paris Protocol – A blueprint for tackling global climate change beyond 2</textarea></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fa fa-spinner"></span> Referral Status</th>
+                                    <td><input type="text" class="form-control"  value="???"></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fa fa-balance-scale"></span> Legal basis of procedures</th>
+                                    <td><input type="text" class="form-control"  value="???"></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fa fa-folder"></span> Source</th>
+                                    <td><input type="text" class="form-control"  value="???"></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fa fa-institution"></span> CoR Commission</th>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>ENVE</option>
+                                            <option>...</option>
+                                            <option>...</option>
+                                            <option>...</option>
+                                            <option>...</option>
+                                        </select>
+									</td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fa fa-folder"></span> Opinion Folder Name</th>
+                                    <td><input type="text" class="form-control"  value="???"></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fa fa-folder"></span> Opinion Short Title</th>
+                                    <td><input type="text" class="form-control"  value="???"></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fa fa-spinner"></span> Opinion Status</th>
+                                    <td><input type="text" class="form-control"  value="???"></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="fa fa-folder"></span> Themes & Subthemes</th>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-leaf turquoise" aria-hidden="true" ></span> Agriculture & maritime and consumer policies 
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-random green" aria-hidden="true"></span> Cohesion policy 
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-institution purp" aria-hidden="true"></span> Constitutional & interinstitunial affairs
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-bar-chart red" aria-hidden="true"></span> Economy & Finance 
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-graduation-cap d-green" aria-hidden="true"></span> Education and Culture
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-flash orange" aria-hidden="true" style="padding-left:10px; padding-right:10px;"></span> Energy 
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-industry d-grey" aria-hidden="true"></span> Enterprises & Industries 
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-globe l-blue" aria-hidden="true"></span> Environment 
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-exchange  brown" aria-hidden="true"></span> External relations, enlargement and neighbourhood policy 
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-home pink" aria-hidden="true"></span> Justice and Home Affairs 
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-group violet" aria-hidden="true"></span>  Social policies  
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"> <span class="icon-big fa fa-truck yell" aria-hidden="true"></span> Transport
+                                            </label>
+                                        </div>                                            
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="menu_his" class="tab-pane fade">
+                        	<p>Can you alter, edit or delete the history?</p>
+                            <div class="list-group">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <p><small><span class="fa fa-calendar"></span> Date: 09/11/2016 16:58</small></p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p><strong>The agenda planning item (012) has been modified</strong></p>
+                                        </div>
+                                        <div class="col-sm-2 text-right">
+                                            <p><span class="fa fa-user"></span> User: bder</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <p><small><span class="fa fa-calendar"></span> Date: 09/11/2016 16:58</small></p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p><strong>The agenda planning item (013) has been modified</strong></p>
+                                        </div>
+                                        <div class="col-sm-2 text-right">
+                                            <p><span class="fa fa-user"></span> User: bder</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <p><small><span class="fa fa-calendar"></span> Date: 09/11/2016 16:58</small></p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p><strong>The agenda planning item (014) has been modified</strong></p>
+                                        </div>
+                                        <div class="col-sm-2 text-right">
+                                            <p><span class="fa fa-user"></span> User: bder</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <p><small><span class="fa fa-calendar"></span> Date: 09/11/2016 16:58</small></p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p><strong>The agenda planning item (015) has been modified</strong></p>
+                                        </div>
+                                        <div class="col-sm-2 text-right">
+                                            <p><span class="fa fa-user"></span> User: bder</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <p><small><span class="fa fa-calendar"></span> Date: 09/11/2016 16:58</small></p>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <p><strong>The agenda planning item (016) has been modified</strong></p>
+                                        </div>
+                                        <div class="col-sm-2 text-right">
+                                            <p><span class="fa fa-user"></span> User: bder</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>                                
+                        </div>
+                    </div><!-- end tabbed content -->
+                </div>
+                <!-- END tab navigation -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    //Initialize tooltips
+    $('.nav-tabs > li a[title]').tooltip();
+    
+    //Wizard
+    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+        var $target = $(e.target);
+    
+        if ($target.parent().hasClass('disabled')) {
+            return false;
+        }
+    });
+
+    $(".next-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        $active.next().removeClass('disabled');
+        nextTab($active);
+
+    });
+    $(".prev-step").click(function (e) {
+
+        var $active = $('.wizard .nav-tabs li.active');
+        prevTab($active);
+
+    });
+});
+
+function nextTab(elem) {
+    $(elem).next().find('a[data-toggle="tab"]').click();
+}
+function prevTab(elem) {
+    $(elem).prev().find('a[data-toggle="tab"]').click();
+}
+</script>
+  </body>
+</html>

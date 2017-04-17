@@ -1,0 +1,387 @@
+/**
+ * ABOUT
+ * Title................kiklos_brand.css
+ * Author...............Peter De Cock
+ * Creation Date........20160615
+ * Summary..............everything related to the KIKLOS 'brand'
+ *
+ */
+ 
+ /**
+ * COLOUR SCHEME 
+ 
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #73C6EF; /* very l-blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+ 
+ /**
+ * CONTENTS
+ * #styles..............more colours 
+ * #colours.............more colours 
+ * #panel-blue..........more panels 
+ * #panel-blue-2........more panels 
+ * #ribbon..............used in the breadcrumb
+ * #button..............used in the 'unfollow opinion'
+ * #icons...............the Font Awesome icons
+
+
+
+
+/*----------------------------------------
+  #styles
+----------------------------------------*/
+
+/* container - top menu */
+.very-dark-blue {
+	background-color: #0c223b; /* very dark blue */
+}
+/* container - main navigation */
+.dark-blue {
+	background-color: #1d3751; /* dark blue */
+}
+.dark-blue-80  {
+	background-color: #495e73; /* dark-blue */
+}
+.dark-blue-60  {
+	background-color: #758595; /* dark-blue */
+}
+.dark-blue-40  {
+	background-color: #a0abb7; /* dark-blue */
+}
+.dark-blue-20  {
+	background-color: #ccd2d9; /* dark-blue */
+}
+	.dark-blue p,
+	.dark-blue-80 p,
+	.dark-blue-60 p,
+	.dark-blue-40 p	{
+		color: #fafafa;
+		padding:5px 10px;
+	}
+	.dark-blue-20 p	{
+		color: #333;
+		padding:5px 10px;
+	}
+	
+/* logo */
+.cadmium  {
+	background-color: #ee3853; /* red */
+}
+.cadmium-80  {
+	background-color: #f05f75; /* red */
+}
+.cadmium-60  {
+	background-color: #f28696; /* red */
+}
+.cadmium-40  {
+	background-color: #f4acb8; /* red */
+}
+.cadmium-20  {
+	background-color: #f6d3d9; /* red */
+}
+
+	.cadmium  p,
+	.cadmium-80 p,
+	.cadmium-60 p,
+	.cadmium-40 p {
+		color: #fafafa;
+		padding:5px 10px;
+	}
+	.cadmium-20 p {
+		color: #333;
+		padding:5px 10px;
+	}
+
+/* web site colors  */
+.white  {
+	background-color: #fff; /* white */
+}
+.l-grey  {
+	background-color: #f4f4f4; /* l-grey */
+}
+.m-grey  {
+	background-color: #e8e8e8; /* m-grey */
+}
+.l-blue  {
+	background-color: #6BBAE7; /* l-blue */
+}
+.m-blue  {
+	background-color: #4278A0; /* m-blue */
+}
+.d-blue  {
+	background-color: #1d3751; /* d-blue */
+}
+ /* #0c223b; /* very dark blue */
+ /* #1d3751; /* dark blue */
+ /* #4278A0; /* med blue */
+ /* #23527C; /* blue */
+ /* #6BBAE7; /* light blue */
+ /* #ee3853; /* red */
+ /* #ff4569; /* red hover */
+ 
+/* web site colors  */
+.area_white  {
+	background-color: #fff; /* white */
+	border-radius:8px;
+	border:1px solid #ccc;
+}
+
+/*----------------------------------------
+  #colours
+----------------------------------------*/
+
+/* turquoise (agriculture & maritime and consumer policies ) */
+.turquoise {
+	 background-color:#66CCCC; /* turquoise */
+}
+
+/* green (cohesion Policy) */
+.green {
+	 background-color:#99bc53; /* green */
+}
+
+/* purple (constitutional & institutional affairs) */
+.purp {
+	 background-color:#b047c6; /* purple */
+}
+
+/* light blue (environment) */
+.l-blue {
+	 background-color:#6bbae7; /* light blue */
+}
+
+/* red (economics & finance) */
+.red {
+	 background-color:#ee3853; /* red */
+}
+/* orange (energy) */
+.orange {
+	 background-color:#ff8e39; /* orange */
+}
+/* d-grey (enterprises & industries) */
+.d-grey {
+	 background-color:#66574a; /* d-grey */
+}
+/* brown (External relations, enlargement and neighbourhood policy) */
+.brown {
+	 background-color:#d69651; /* brown */
+}
+/* pink (justice and home affairs) */
+.pink {
+	 background-color:#e29cde; /* pink */
+}
+/* violet (social policies) */
+.violet {
+	 background-color:#9494ed; /* violet */
+}
+/* yellow (transport) */
+.yell {
+	 background-color:#ffc050; /* yellow */
+}
+/* d-green (education and culture) */
+.d-green {
+	 background-color:#009678; /* d-green */
+}
+
+.turquoise_alt {
+	 background-color:#74D6D3; /* turquoise */
+}
+.green_alt {
+	 background-color:#a7c65c; /* green */
+}
+.purp_alt {
+	 background-color:#b956d1; /* purp */
+}
+.l-blue_alt {
+	 background-color:#78C4EA; /* l-blue */
+}
+.red_alt {
+	 background-color:#ff4569; /* red */
+}
+.orange_alt {
+	 background-color:#ff9a55; /* orange */
+}
+.d-grey_alt {
+	 background-color:#6d5e52; /* d-grey */
+}
+.brown_alt {
+	 background-color:#dd9d5e; /* brown */
+}
+.pink_alt {
+	 background-color:#e8a7e8; /* pink */
+}
+.violet_alt {
+	 background-color:#9e9eef; /* violet */
+}
+.yell_alt {
+	 background-color:#ffc76e; /* yell */
+}
+.d-green_alt {
+	 background-color:#00A585; /* d-green */
+}
+
+
+
+	
+/*----------------------------------------
+  #panel-blue
+----------------------------------------*/
+.panel-blue	a:focus {
+	text-decoration:none;
+}
+.panel-blue	a:hover {
+	background-color: #5191CD; /* medium blue */
+	color: #5191CD; /* medium blue */
+	text-decoration:none;
+}
+.panel-blue	a:hover .panel .panel-body {
+	background-color: #5191CD; /* medium blue */
+	color: #fff;
+	text-decoration:none;
+}
+.panel-blue	a:hover .panel .panel-footer {
+	background-color: #5191CD; /* medium blue */
+	color: #fff;
+	text-decoration:none;
+}
+
+.peter {
+word-wrap: break-word;         /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
+    width: 100%;
+}
+
+/*----------------------------------------
+  #panel-blue-2
+----------------------------------------*/
+
+.panel-blue-2 h3 {
+	border-bottom:none;
+	color:#fff;
+	font-size:1.2em;
+	letter-spacing:-0.05em;
+	line-height:0.2em;
+	margin:6px 0 -15px 0; 
+	padding:0;
+	text-transform:none;
+}
+
+.panel-blue-2 h4 {
+	font-size:1.2em;
+	line-height:1.5em;
+	margin:0;
+	padding:0 0 5px 0;
+	text-transform:none;
+}
+.panel-blue-2 small {
+	color:#fff;
+}
+.panel-blue-2 .panel-heading {
+	background-color: #5191CD; /* medium blue */
+	color:#fff;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+.panel-blue-2 h4:link,
+.panel-blue-2 h4:focus {
+	text-decoration:none;
+}
+.panel-blue-2 a:hover {
+	text-decoration:none;
+}
+.panel-blue-2 .panel-group {
+	margin:0 0 3px 0;
+}
+.panel-blue-2 .panel {
+	background-color: #fafafa;
+}
+.panel-blue-2 .panel.panel-default{
+	background-color: #e8e8e8;
+	border-color: #e8e8e8;
+}
+.panel-blue-2 .panel-body{
+	background-color: #fff;
+}
+
+
+
+
+/*----------------------------------------
+  #ribbon
+----------------------------------------*/
+
+.ribbon_m-grey {
+	background-color: #ccc; /* grey */
+}
+	.ribbon_m-grey h3 {
+		border:none;
+		color: #333;
+		font-size:1.2em;
+		margin:0;
+		padding:0 0 0 10px; 
+	}
+	.ribbon_m-grey h3 small {
+		color: #333;
+		font-size:0.9em;
+	}
+	.ribbon_m-grey h3 a {
+		border:none;
+		color: #1d3751; /* dark blue */
+	}
+	
+.ribbon_l-grey {
+	background-color: #e8e8e8; /* light grey */
+}
+	.ribbon_m-grey h3 {
+		border:none;
+		color: #333;
+		font-size:1.2em;
+		margin:0;
+		padding:0 0 0 10px; 
+	}
+	.ribbon_m-grey h3 small {
+		color: #333;
+		font-size:0.9em;
+	}
+	.ribbon_m-grey h3 a {
+		border:none;
+		color: #1d3751; /* dark blue */
+	}
+	
+
+
+/*----------------------------------------
+  #button the 'unfollow' buttons
+----------------------------------------*/
+	
+.btn.btn-primary.red {
+	background-color: #ee3853; /* red */
+    margin-bottom:5px;
+}	
+.btn.btn-primary.red:hover {
+	background-color: #ee3853; /* red */
+    margin-bottom:5px;
+}	
+.btn.btn-primary.grey {
+	background-color: #ccc; /* grey */
+	color: #333;
+    margin-bottom:5px;
+}	
+
+
+
+
+/*----------------------------------------
+  #icons
+----------------------------------------*/
+i.fa.lead{
+	font-size:1.7em;
+}	
