@@ -1,24 +1,24 @@
 {
-  "name": "labs.katas",
-  "version": "0.1.0",
-  "description": "individual training exercises in programming and other software crafts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dandohotaru/labs.katas.git"
-  },
-  "keywords": [
-    "labs",
-    "crafts",
-    "kata"
-  ],
-  "author": "Dan Dohotaru",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dandohotaru/labs.katas/issues"
-  },
-  "homepage": "https://github.com/dandohotaru/labs.katas#readme",
+  "name": "006-navigo-router",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server --baseDir ./src --watch",
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.2",
+    "navigo": "^4.0.0",
+    "toastr": "^2.1.2"
+  },
+  "devDependencies": {
+    "lite-server": "^2.2.2"
   }
 }
