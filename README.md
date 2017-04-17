@@ -7,6 +7,9 @@ A [system][1] of individual training exercises in programming and other software
 katatbd: 
 tbd
 
+[kata008](https://github.com/dandohotaru/labs.katas/tree/kata008): 
+masonry style colcade experiments with various scenarios
+
 [kata007](https://github.com/dandohotaru/labs.katas/tree/kata007): 
 navigo routing with templates
 
