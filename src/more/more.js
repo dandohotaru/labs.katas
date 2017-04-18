@@ -13,6 +13,7 @@ document.querySelector('.load-more-button').onclick = function () {
 function makeItem() {
     var item = document.createElement('div');
     item.classList.add('grid-item');
+    item.classList.add('card');
     var height = Math.floor(Math.random() * 400 + 200);
     item.innerHTML = '<img src="http://lorempixel.com/400/' + height + '" />';
     return item;
