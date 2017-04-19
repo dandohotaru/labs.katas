@@ -13,7 +13,6 @@ var Loader = (function () {
         for (var index = 0; index < counter; index++) {
             var height = Math.floor(Math.random() * 400 + 200);
             bricks.push(brick(height));
-            console.log(height);
         }
         return bricks;
     };
