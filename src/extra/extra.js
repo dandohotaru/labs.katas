@@ -6,6 +6,7 @@ var colcade = new Colcade('.grid', {
 function getItem() {
     var item = document.createElement('div');
     item.classList.add('grid-item');
+    item.classList.add('card');
     var letter = 'abc'[Math.floor(Math.random() * 3)];
     item.classList.add('grid-item-' + letter);
     return item;
