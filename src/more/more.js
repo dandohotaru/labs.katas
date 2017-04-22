@@ -15,6 +15,6 @@ document.querySelector('.load-button').onclick = function (event) {
 };
 
 document.querySelector('.reset-button').onclick = function (event) {
-    colcade.layout();
+    colcade.reload();
 };
 
