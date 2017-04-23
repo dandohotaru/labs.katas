@@ -1,5 +1,5 @@
 # About
-navigo routing with handlebars templates handling naive panels
+navigo routing with naive templates handling some dummy panels
 
 # Notes
 
