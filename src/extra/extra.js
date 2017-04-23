@@ -1,30 +1,24 @@
-var colcade = new Colcade('.grid', {
-    columns: '.grid-col',
-    items: '.grid-item'
+var colcade = null;
+var builder = null;
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    builder = new Builder();
+    
+    colcade = new Colcade('.grid', {
+        columns: '.grid-col',
+        items: '.grid-item'
+    });
+
+    colcade.append(builder.wall(4));
 });
 
-function getItem() {
-    var item = document.createElement('div');
-    item.classList.add('grid-item');
-    item.classList.add('card');
-    var letter = 'abc'[Math.floor(Math.random() * 3)];
-    item.classList.add('grid-item-' + letter);
-    return item;
-}
-
-function getItems() {
-    var items = [getItem(), getItem(), getItem()];
-    var hue = [330, 0, 30, 180, 210][Math.floor(Math.random() * 5)];
-    items.forEach(function (item) {
-        item.style.background = 'hsl(' + hue + ', 90%, 50%)';
-    });
-    return items;
+document.querySelector('.prepend-button').onclick = function () {
+    if (colcade)
+        colcade.prepend(builder.wall(2));
 }
 
 document.querySelector('.append-button').onclick = function () {
-    colcade.append(getItems());
+    if (colcade)
+        colcade.append(builder.wall(2));
 }
 
-document.querySelector('.prepend-button').onclick = function () {
-    colcade.prepend(getItems());
-}

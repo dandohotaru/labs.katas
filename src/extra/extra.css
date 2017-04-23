@@ -2,18 +2,18 @@
     background: #09D;
 }
 
-.grid-item-a {
+.size-a {
     height: 60px;
 }
 
-.grid-item-b {
+.size-b {
     height: 100px;
 }
 
-.grid-item-c {
+.size-c {
     height: 160px;
 }
 
 button {
-    font-size: 10px;
+    font-size: 12px;
 }

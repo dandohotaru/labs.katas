@@ -1,4 +1,4 @@
-var Loader = (function () {
+var Builder = (function () {
 
     function brick(height) {
         var element = document.createElement('div');
@@ -9,7 +9,7 @@ var Loader = (function () {
         return element;
     };
 
-    function build(counter) {
+    function wall(counter) {
         var bricks = [];
         for (var index = 0; index < counter; index++) {
             var height = Math.floor(Math.random() * 300 + 100);
@@ -19,6 +19,6 @@ var Loader = (function () {
     };
 
     return {
-        build: build,
+        wall: wall
     }
 });
