@@ -17,7 +17,7 @@ navigo routing with handlebars templates handling beers and breweries
 navigo routing with naive templates handling some dummy panels
 
 [kata005](https://github.com/dandohotaru/labs.katas/tree/kata005): 
-handlebars demo
+handlebars techday with colcade opinions and commission designs 
 
 [kata004](https://github.com/dandohotaru/labs.katas/tree/kata004): 
 webpack flow
