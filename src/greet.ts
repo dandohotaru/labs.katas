@@ -1,3 +1,3 @@
-export function hello(compiler: string) {
-    console.log(`Hello there ${compiler}`);
+export function hello(compiler: string): string {
+    return `Hello there ${compiler}`;
 }

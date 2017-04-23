@@ -21,3 +21,14 @@ npm upgrade -g typescript
 tsc --init
 ```
 
+### Run gulp tasks
+```
+gulp
+```
+
+### Execute program
+```
+node dist/main.js
+```
+
+
