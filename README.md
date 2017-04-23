@@ -1,3 +1,8 @@
 # About
-A [system][1] of individual training exercises in programming and other software crafts
-[1]:https://www.google.be/search?q=define+kata
+javascript compilation with webpack flow and bundles
+
+# Notes
+
+- [Minimal Webpack DllPlugin example](https://gist.github.com/robertknight/058a194f45e77ff95fcd)
+
+- [Optimizing Webpack build times and improving caching with DLL bundles](https://robertknight.github.io/posts/webpack-dll-plugins/)
