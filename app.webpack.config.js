@@ -14,11 +14,11 @@ module.exports = {
       context: '.',
       manifest: require('./dist/vendor-manifest.json'),
     }),
-    // new html({
-    //   filename: "index.html",
-    //   title: "Here be dragons",
-    //   inject: "body",
-    //   hash: "true",
-    // })
+    new html({
+      filename: "index.html",
+      title: "Here be dragons",
+      inject: "body",
+      hash: "true",
+    })
   ]
 };

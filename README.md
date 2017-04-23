@@ -1,5 +1,5 @@
 # About
-javascript compilation with webpack flow and bundles
+javascript bundling with webpack and html plugin
 
 # Notes
 
