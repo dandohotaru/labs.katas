@@ -29,4 +29,4 @@ javascript bundling with webpack and html plugin
 webpack concepts starter playground
 
 [kata001](https://github.com/dandohotaru/labs.katas/tree/kata001): 
-webpack intro
+webpack concepts starter tutorial and guide
