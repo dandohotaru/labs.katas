@@ -20,7 +20,7 @@ navigo routing with naive templates handling some dummy panels
 handlebars techday with colcade opinions and commission designs 
 
 [kata004](https://github.com/dandohotaru/labs.katas/tree/kata004): 
-webpack flow
+gulp flow with typescript compilation and es6 goodies
 
 [kata003](https://github.com/dandohotaru/labs.katas/tree/kata003): 
 webpack build
