@@ -1,3 +1,5 @@
 # About
-A [system][1] of individual training exercises in programming and other software crafts
-[1]:https://www.google.be/search?q=define+kata
+masonry style colcade experiments with various scenarios
+* basic (static layout with html bricks)
+* more (dynamic layout with image bricks)
+* extra (dynamic layout with custom bricks)
