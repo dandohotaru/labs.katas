@@ -1,3 +1,16 @@
-# About
-A [system][1] of individual training exercises in programming and other software crafts
-[1]:https://www.google.be/search?q=define+kata
+# about
+webpack concepts starter playground
+
+# reasons
+https://webpack.js.org/get-started/why-webpack/
+
+# concepts
+https://webpack.js.org/concepts/
+https://webpack.js.org/concepts/entry-points/
+https://webpack.js.org/concepts/output/
+https://webpack.js.org/concepts/loaders/
+https://webpack.js.org/concepts/plugins/
+
+# guides
+https://webpack.js.org/guides/installation/
+https://webpack.js.org/get-started/
