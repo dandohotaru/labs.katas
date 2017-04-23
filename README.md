@@ -23,7 +23,7 @@ handlebars techday with colcade opinions and commission designs
 typescript compilation with gulp flow and browserify
 
 [kata003](https://github.com/dandohotaru/labs.katas/tree/kata003): 
-webpack build
+javascript bundling with webpack and html plugin
 
 [kata002](https://github.com/dandohotaru/labs.katas/tree/kata002): 
 webpack start
