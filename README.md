@@ -14,7 +14,7 @@ masonry style colcade experiments with static and dynamic scenarios
 navigo routing with handlebars templates handling beers and breweries
 
 [kata006](https://github.com/dandohotaru/labs.katas/tree/kata006): 
-navigo routing starter
+navigo routing with handlebars templates handling naive panels
 
 [kata005](https://github.com/dandohotaru/labs.katas/tree/kata005): 
 handlebars demo
