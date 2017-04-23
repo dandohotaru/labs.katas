@@ -1,5 +1,5 @@
 # About
-gulp flow with typescript compilation and es6 goodies
+typescript compilation with gulp flow and browserify
 
 # Notes
 
