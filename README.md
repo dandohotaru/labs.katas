@@ -7,6 +7,9 @@ A [system][1] of individual training exercises in programming and other software
 katatbd: 
 tbd
 
+[kata009](https://github.com/dandohotaru/labs.katas/tree/kata009): 
+typescript bundling with webpack and simple flow
+
 [kata008](https://github.com/dandohotaru/labs.katas/tree/kata008): 
 masonry style colcade experiments with static and dynamic scenarios
 
