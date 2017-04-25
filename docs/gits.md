@@ -13,6 +13,11 @@ git branch [name]
 
 ```
 
+### Publish branch
+```
+git push -u origin [name]
+```
+
 ### Delete branch
 ```
 git branch -d [name]

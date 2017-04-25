@@ -21,7 +21,7 @@
   "scripts": {
     "build": "tsc",
     "bundle": "webpack",
-    "serve": "webpack-dev-server",
+    "serve": "webpack-dev-server --inline",
     "start": "concurrently \"build\" \"npm run bundle\" \"npm run serve\" "
   },
   "devDependencies": {
