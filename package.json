@@ -19,6 +19,17 @@
   "homepage": "https://github.com/dandohotaru/labs.katas#readme",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build": "tsc",
+    "bundle": "webpack",
+    "serve": "webpack-dev-server",
+    "start": "concurrently \"build\" \"npm run bundle\" \"npm run serve\" "
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.1.2",
+    "concurrently": "^3.4.0",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.2.2",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4"
   }
 }
