@@ -1,11 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
 const htmlPlugin = require('html-webpack-plugin');
+const extractPlugin = require('extract-text-webpack-plugin');
 
 var config = {
   context: path.resolve(__dirname, './src'),
   entry: {
-    main: "./main.js",
+    app: "./app.js",
     vendor: "moment"
   },
   output: {
@@ -13,7 +14,7 @@ var config = {
     filename: '[name].[chunkhash].js',
   },
   devServer: {
-    contentBase: __dirname + '/src', // `__dirname` is root of the project
+    contentBase: __dirname + '/src',
   },
   module: {
     rules: [
@@ -25,6 +26,12 @@ var config = {
         test: /\.js$/,
         use: "source-map-loader",
         enforce: "pre"
+      },
+      {
+        test: /\.css$/,
+        use: extractPlugin.extract({
+          use: "css-loader"
+        }),
       }
     ],
   },
@@ -43,7 +50,10 @@ var config = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest'
-    })
+    }),
+    new extractPlugin({
+      filename : 'app.[chunkhash].css'
+    }),
   ]
 };
 
