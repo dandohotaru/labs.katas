@@ -21,17 +21,17 @@ var config = {
       {
         test: /\.tsx?$/,
         use: "awesome-typescript-loader"
-      },
-      {
-        test: /\.js$/,
-        use: "source-map-loader",
-        enforce: "pre"
-      },
+      },    
       {
         test: /\.css$/,
         use: extractPlugin.extract({
           use: "css-loader"
         }),
+      },
+      {
+        test: /\.js$/,
+        use: "source-map-loader",
+        enforce: "pre"
       }
     ],
   },
