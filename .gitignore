@@ -1,8 +1,12 @@
+# packages
 node_modules
+npm-debug.log*
 
+# tooling
+.suo
+.vs/**
+
+# sources
 **/dist
 **/src/**/*.js
 **/src/**/*.map
-
-npm-debug.log*
-
