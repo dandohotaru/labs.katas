@@ -1,9 +1,12 @@
-system-config.js*
+# packages
 node_modules
-**/dist/*
-
 npm-debug.log*
 
-# src/**/*.js
-# src/**/*.map
+# tooling
+.suo
+.vs/**
 
+# sources
+**/dist
+**/src/**/*.js
+**/src/**/*.map
