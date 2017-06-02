@@ -8,5 +8,5 @@ npm-debug.log*
 
 # sources
 **/dist
-**/src/**/*.js
-**/src/**/*.map
+#**/src/**/*.js
+#**/src/**/*.map

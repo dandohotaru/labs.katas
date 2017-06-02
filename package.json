@@ -19,6 +19,18 @@
   "homepage": "https://github.com/dandohotaru/labs.katas#readme",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "clean": "rimraf dist",
+    "bundle": "npm run clean && webpack",
+    "serve": "webpack-dev-server --inline",
+    "start": "npm run bundle && npm run serve"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }
