@@ -1,6 +1,17 @@
-var _ = require('lodash');
+import _ from 'lodash';
 
-var array = [1];
-var other = _.concat(array, 2, [3], [[4]]);
+var runWithLodash = function () {
+    var array = [1];
+    var other = _.concat(array, 2, [3], [[4]]);
 
-console.log(other);
+    console.log(other);
+}
+
+var runWithLambda = function () {
+    var array = [1];
+    var other = array.concat([2, 3, [4]])
+    console.log(other);
+}
+
+runWithLodash();
+runWithLambda();
