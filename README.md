@@ -7,6 +7,9 @@ A [system][1] of individual training exercises in programming and other software
 katatbd: 
 tbd
 
+[kata010](https://github.com/dandohotaru/labs.katas/tree/kata010): 
+javascript bundling with webpack babbel and simple flow
+
 [kata009](https://github.com/dandohotaru/labs.katas/tree/kata009): 
 typescript bundling with webpack and simple flow
 
