@@ -20,7 +20,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "bundle": "npm run clean && webpack",
+    "target:dev": "set NODE_ENV=development",
+    "target:prod": "set NODE_ENV=production",
+    "bundle": "npm run clean && npm run target:dev && webpack",
     "serve": "webpack-dev-server --inline",
     "start": "npm run bundle && npm run serve"
   },

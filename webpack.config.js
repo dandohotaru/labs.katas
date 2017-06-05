@@ -24,7 +24,17 @@ var config = {
     },
     devServer: {
         contentBase: path.resolve(__dirname, './src'),
-    }
+    },
+    devtool: "eval-source-map",
 };
+
+if (process.env.NODE_ENV == "production") {
+  config.devtool = "";
+
+  // Add more configuration for production here like
+  // SASS & CSS loaders
+  // Offline plugin
+  // Etc,
+}
 
 module.exports = config;
