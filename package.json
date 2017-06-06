@@ -23,7 +23,7 @@
     "build": "tsc",
     "bundle": "npm run clean && npm run build && webpack",
     "serve": "webpack-dev-server --inline",
-    "start": "npm run bundle && npm run serve",
+    "start": "npm run clean && npm run serve",
     "guess": "concurrently \"build\" \"npm run bundle\" \"npm run serve\" "
   },
   "devDependencies": {

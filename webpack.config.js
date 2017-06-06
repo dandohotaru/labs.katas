@@ -3,18 +3,16 @@ const webpack = require('webpack');
 const htmlPlugin = require('html-webpack-plugin');
 const extractPlugin = require('extract-text-webpack-plugin');
 
+// Config
 var config = {
   context: path.resolve(__dirname, './src'),
   entry: {
     app: "./app.js",
-    vendor: "moment"
+    vendor: ["moment"]
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].[chunkhash].js',
-  },
-  devServer: {
-    contentBase: __dirname + '/src',
   },
   module: {
     rules: [
@@ -54,7 +52,21 @@ var config = {
     new extractPlugin({
       filename : 'app.[chunkhash].css'
     }),
-  ]
+  ],
+  devServer: {
+    contentBase: path.resolve(__dirname, './src'), 
+  },
+  devtool: "eval-source-map"
 };
 
+// Customize
+var environment = process.env.NODE_ENV ? process.env.NODE_ENV.trim() : "notdefined";
+console.log("Env: " + environment);
+
+if (environment ===  "production") {
+    config.devtool = "";
+    console.log("Maps: disabled");
+}
+
+// Export
 module.exports = config;
