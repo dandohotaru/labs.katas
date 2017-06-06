@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
+// Config
 var config = {
     context: path.resolve(__dirname, './src'),
     entry: {
@@ -28,13 +29,14 @@ var config = {
     devtool: "eval-source-map",
 };
 
-if (process.env.NODE_ENV == "production") {
-  config.devtool = "";
+// Customize
+var environment = process.env.NODE_ENV.trim();
+console.log("Env: " + environment);
 
-  // Add more configuration for production here like
-  // SASS & CSS loaders
-  // Offline plugin
-  // Etc,
+if (environment ===  "production") {
+    config.devtool = "";
+    console.log("Maps: disabled");
 }
 
+// Export
 module.exports = config;
