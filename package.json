@@ -20,10 +20,12 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "bundle:dev": "npm run clean && set NODE_ENV=development && webpack --progress",
-    "bundle:prod": "npm run clean && set NODE_ENV=production && webpack --progress",
-    "serve:dev": "npm run clean && set NODE_ENV=development && webpack-dev-server --inline",
-    "serve:prod": "npm run clean && set NODE_ENV=production && webpack-dev-server --inline",
+    "bundle": "npm run clean && webpack --progress --env.platform=web",
+    "bundle:dev": "npm run bundle -- --env.target=development",
+    "bundle:prod": "npm run bundle -- --env.target=production",
+    "serve": "npm run clean && webpack-dev-server --inline --env.platform=web",
+    "serve:dev": "npm run serve -- --env.target=development",
+    "serve:prod": "npm run serve -- --env.target=production",
     "start": "npm run serve:dev"
   },
   "dependencies": {
