@@ -7,11 +7,16 @@ module.exports = (env = {}) => {
   let config = {
     context: path.resolve(__dirname, './src'),
     entry: {
-      app: './app.js',
+      bundle: './app.js',
+      vendor: [
+        'moment',
+        'lodash',
+      ]
     },
     output: {
       path: path.resolve(__dirname, './dist'),
-      filename: 'bundle.js',
+      //filename: '[name].[chunkhash].js',
+      filename: '[name].js',
     },
     module: {
       rules: [
@@ -48,6 +53,9 @@ module.exports = (env = {}) => {
     },
     plugins: [
       new extractPlugin('styles.css'),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor'
+      })
     ],
     devServer: {
       port: 8080,
