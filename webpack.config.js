@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const extractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = (env = {}) => {
 
@@ -28,10 +29,11 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.css$/,
-          use: [
-            { loader: 'style-loader' },
-            { loader: 'css-loader' }
-          ]
+          use: extractPlugin.extract({
+            use: [
+              { loader: 'css-loader' }
+            ]
+          }),
         },
         {
           test: /\.(png|gif|jpg)$/,
@@ -44,6 +46,9 @@ module.exports = (env = {}) => {
         }
       ]
     },
+    plugins: [
+      new extractPlugin('styles.css'),
+    ],
     devServer: {
       port: 8080,
       contentBase: path.resolve(__dirname, './src'),
