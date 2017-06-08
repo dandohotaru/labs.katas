@@ -21,11 +21,36 @@ module.exports = (env = {}) => {
             loader: 'babel-loader',
             options: { presets: ['es2015'] }
           }]
+        },
+        {
+          test: /\.html$/,
+          loader: 'html-loader'
+        },
+        {
+          test: /\.css$/,
+          use: [
+            { loader: 'style-loader' },
+            { loader: 'css-loader' }
+          ]
+        },
+        {
+          test: /\.(png|gif|jpg)$/,
+          loader: 'url-loader',
+          options: { limit: '25000' }
+        },
+        {
+          test: /\.(ttf|eot|svg)$/,
+          loader: 'file-loader'
         }
       ]
     },
     devServer: {
+      port: 8080,
       contentBase: path.resolve(__dirname, './src'),
+      watchOptions: {
+        aggregateTimeout: 300,
+        poll: 1000
+      }
     },
     devtool: (() => {
       return env.target === "production"

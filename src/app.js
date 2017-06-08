@@ -1,3 +1,4 @@
+import css from './styles.css';
 import _ from 'lodash';
 
 var runWithLodash = function () {
