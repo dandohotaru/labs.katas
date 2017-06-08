@@ -1,6 +1,7 @@
-var moment = require("moment");
-function hello(compiler) {
+import moment from 'moment';
+
+export function hello(compiler) {
     var time = moment().format();
     console.log(time);
-    return "Hello there " + compiler + " (" + time + ")";
+    return `Hello there ${compiler} (${time})`;
 }
