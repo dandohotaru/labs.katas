@@ -9,10 +9,6 @@ module.exports = (env = {}) => {
     context: path.resolve(__dirname, './src'),
     entry: {
       bundle: './app.js',
-      vendor: [
-        'moment',
-        'lodash',
-      ]
     },
     output: {
       path: path.resolve(__dirname, './dist'),
@@ -55,8 +51,14 @@ module.exports = (env = {}) => {
     plugins: [
       new extractPlugin('styles.css'),
       new chunkPlugin({
-        name: 'vendor'
-      })
+        names: 'vendor',
+        minChunks: (module) => {
+          return module.context && module.context.indexOf('node_modules') !== -1;
+        }
+      }),
+      new chunkPlugin({
+        names: 'manifest',
+      }),
     ],
     devServer: {
       port: 8080,
