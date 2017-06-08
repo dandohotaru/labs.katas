@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const extractPlugin = require('extract-text-webpack-plugin');
+const chunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 module.exports = (env = {}) => {
 
@@ -53,7 +54,7 @@ module.exports = (env = {}) => {
     },
     plugins: [
       new extractPlugin('styles.css'),
-      new webpack.optimize.CommonsChunkPlugin({
+      new chunkPlugin({
         name: 'vendor'
       })
     ],
