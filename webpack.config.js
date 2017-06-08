@@ -3,11 +3,6 @@ const webpack = require('webpack');
 
 module.exports = (env = {}) => {
 
-  // Input
-  console.log("Target: " + env.target);
-  console.log("Platform: " + env.platform);
-
-  // Config
   let config = {
     context: path.resolve(__dirname, './src'),
     entry: {
@@ -32,14 +27,16 @@ module.exports = (env = {}) => {
     devServer: {
       contentBase: path.resolve(__dirname, './src'),
     },
-    devtool: "eval-source-map",
+    devtool: (() => {
+      return env.target === "production"
+        ? "hidden-source-map"
+        : "eval-source-map"
+    })(),
   };
 
-  // Customize
-  if (env.target === "production") {
-    config.devtool = "";
-    console.log("Maps: disabled");
-  }
+  console.log(`Target: ${env.target}`);
+  console.log(`Platform: ${env.platform}`);
+  console.log(`Maps: ${config.devtool}`);
 
   return config;
 };
