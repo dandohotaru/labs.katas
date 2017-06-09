@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const htmlPlugin = require('html-webpack-plugin');
 const extractPlugin = require('extract-text-webpack-plugin');
 const chunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
@@ -12,8 +13,7 @@ module.exports = (env = {}) => {
     },
     output: {
       path: path.resolve(__dirname, './dist'),
-      //filename: '[name].[chunkhash].js',
-      filename: '[name].js',
+      filename: '[name].[chunkhash].js',
     },
     module: {
       rules: [
@@ -49,7 +49,9 @@ module.exports = (env = {}) => {
       ]
     },
     plugins: [
-      new extractPlugin('styles.css'),
+      new extractPlugin({
+        filename : 'styles.[chunkhash].css',
+      }),
       new chunkPlugin({
         names: 'vendor',
         minChunks: (module) => {
@@ -59,12 +61,18 @@ module.exports = (env = {}) => {
       new chunkPlugin({
         names: 'manifest',
       }),
+      new htmlPlugin({
+        title: 'Demo',
+        favicon: './assets/favicon.ico',
+        template: './index.html',
+        inject: 'body',
+      }),
     ],
     devServer: {
       port: 8080,
       contentBase: path.resolve(__dirname, './src'),
       watchOptions: {
-        aggregateTimeout: 300,
+        aggregateTimeout: 500,
         poll: 1000
       }
     },
