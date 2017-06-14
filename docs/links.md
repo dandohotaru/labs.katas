@@ -10,7 +10,8 @@
 ### Waterfall the world beauty.
 `https://github.com/Mystist/bootstrap-waterfall`
 
-### Lightweight and independent Pinterest-like cascading grid layout library http://bricklayer.js.org
+### Lightweight and independent Pinterest-like cascading grid layout library 
+`http://bricklayer.js.org`
 `https://github.com/ademilter/bricklayer`
 `https://github.com/ademilter/bricklayer/wiki/Quick-Start`
 `https://jsfiddle.net/totn2yL0/7/`
