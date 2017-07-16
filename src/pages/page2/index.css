@@ -2,49 +2,45 @@
   font-family: "Roboto", sans-serif;
 }
 
-body { 
-    min-height:3000px;
-}
-
-.custom1 {
+.navbar-toggle {
   display: block;
   cursor: pointer;
 }
 
-.off-canvas > .cstm-shade {
+.off-canvas > .custom-shade {
   width: 0;
   height: 0;
   position: fixed;
   top: 0;
   left: 0;
-  transition: background 0.5s ease, width 0s ease 0.5s, height 0s ease 0.5s;
+  transition: background 0.1s ease, width 0s ease 0.1s, height 0s ease 0.1s;
 }
 
 .off-canvas > input[type="checkbox"] {
   display: none;
 }
 
-.off-canvas > input[type="checkbox"]:checked ~ .cstm-shade {
+.off-canvas > input[type="checkbox"]:checked ~ .custom-shade {
   background: rgba(0, 0, 0, 0.75);
   width: 100%;
   height: 100%;
-  transition: background 0.5s ease;
+  transition: background 0.1s ease;
 }
 
-.off-canvas > .cstm-shade > .cstm-navi {
+.off-canvas > .custom-shade > .custom-navi {
   background: white;
   width: 300px;
   height: 100%;
   position: fixed;
-  right: -300px;
-  transition: right 0.5s ease;
+  left: -300px;
+  transition: left 0.1s ease;
 }
 
-.off-canvas > input[type="checkbox"]:checked ~ .cstm-shade > .cstm-navi {
-  right: 0;
+.off-canvas > input[type="checkbox"]:checked ~ .custom-shade > .custom-navi {
+  left: 0;
 }
 
-.cstm-navi-content {
+.custom-navi-content {
   padding: 20px;
   padding-top: 80px;
 }
