@@ -35,6 +35,7 @@
     font-size: 1.1em;
     display: block;
 }
+
 #sidebar ul li a:hover {
     color: #7386D5;
     background: #fff;
@@ -58,6 +59,7 @@ a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     font-family: 'Glyphicons Halflings';
     font-size: 0.6em;
 }
+
 a[aria-expanded="true"]::before {
     content: '\e260';
 }
@@ -69,11 +71,11 @@ ul ul a {
     background: #6d7fcc;
 }
 
-ul.CTAs {
+ul.extra {
     padding: 20px;
 }
 
-ul.CTAs a {
+ul.extra a {
     text-align: center;
     font-size: 0.9em !important;
     display: block;
