@@ -1,6 +1,4 @@
-system-config.js*
-src/**/*.js
-src/**/*.map
+.vs
 node_modules
 **/dist/*
 

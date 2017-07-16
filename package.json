@@ -1,0 +1,20 @@
+{
+  "name": "labs.katas",
+  "version": "1.0.0",
+  "license": "ISC",
+  "description": "bootstrap off-canvas samples with sidebars",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dandohotaru/labs.katas.git"
+  },
+  "scripts": {
+    "start": "lite-server -c browser.sync.js"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
