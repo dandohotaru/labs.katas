@@ -1,22 +1,18 @@
-/*
- * Style tweaks
- * --------------------------------------------------
- */
-html,
-body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
+/* Style tweaks */
+html, body {
+  /* Prevent scroll on narrow devices */
+  overflow-x: hidden; 
 }
+
 body {
   padding-top: 70px;
 }
+
 footer {
   padding: 30px 0;
 }
 
-/*
- * Off Canvas
- * --------------------------------------------------
- */
+/* Off Canvas */
 @media screen and (max-width: 767px) {
   .row-offcanvas {
     position: relative;
