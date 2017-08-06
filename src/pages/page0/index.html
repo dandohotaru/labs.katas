@@ -34,14 +34,23 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-        </div>
+        </div>  
     </nav>
 
     <div class="container">
+        
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            <strong>Info:</strong> 
+            Some info
+        </div>
+        
 
+        <!-- Canvas -->
         <div class="row row-offcanvas row-offcanvas-left">
 
-            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            <!-- Sidebar -->
+            <div id="sidebar" class="col-xs-6 col-sm-3 col-md-3 col-lg-2 sidebar-offcanvas">
                 <div class="list-group">
                     <a href="#" class="list-group-item active">Link</a>
                     <a href="#" class="list-group-item">Link</a>
@@ -51,21 +60,31 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-9">
-                <p class="pull-left visible-xs">
-                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+            <!-- Content -->
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10"> 
+
+                <p class="pull-left">
+                    <button 
+                        id="toggleLeft"
+                        type="button" 
+                        class="btn btn-primary btn-xs" 
+                        data-toggle="offcanvas">
                         Toggle
                     </button>
                 </p>
 
-                <p class="pull-right visible-xs">
-                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">
+                <p class="pull-right">
+                    <button 
+                        id="toggleRight"
+                        type="button" 
+                        class="btn btn-primary btn-xs" 
+                        data-toggle="offcanvas">
                         Toggle
                     </button>
                 </p>
-
+                
                 <div class="jumbotron">
-                    <h1>Hello, world!</h1>
+                    <h3>Testing</h3>
                     <p>
                         This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport
                         sizes to see it in action.
