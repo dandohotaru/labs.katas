@@ -58,6 +58,17 @@ footer {
   .sidebar-offcanvas.active {
     visibility: visible;
   }
+
+  /* Triggers */
+  .pull-left .sidebar-trigger {
+    position: relative;
+    left: -20px;
+  }
+
+  .pull-right .sidebar-trigger {
+    position: relative;
+    left: 20px;
+  }
  }
 
 /* Media  */
