@@ -1,7 +1,7 @@
 /* Style tweaks */
 html, body {
   /* Prevent scroll on narrow devices */
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 body {
@@ -13,65 +13,70 @@ footer {
 }
 
 /* Off Canvas */
- @media screen and (min-width: 320px) { 
-  .row-offcanvas {  
-    position: relative;   
+ @media screen and (min-width: 320px) {
+  .row-offcanvas {
+    position: relative;
     -webkit-transition: all .2s ease-out;
          -o-transition: all .2s ease-out;
             transition: all .2s ease-out;
   }
 
+  /* Right */
   .row-offcanvas-right {
     right: 0;
   }
 
+  .row-offcanvas-right .sidebar-offcanvas {
+    right: -50%;
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%;
+  }
+
+  /* Left */
   .row-offcanvas-left {
     left: 0;
   }
 
-  .row-offcanvas-right
-  .sidebar-offcanvas {
-    right: -50%; /* 6 columns */
-  }
-
-  .row-offcanvas-left
-  .sidebar-offcanvas {
-    left: -50%; /* 6 columns */
-  }
-
-  .row-offcanvas-right.active {
-    right: 50%; /* 6 columns */
+  .row-offcanvas-left .sidebar-offcanvas {
+    left: -50%;
   }
 
   .row-offcanvas-left.active {
-    left: 50%; /* 6 columns */
+    left: 50%;
   }
 
+  /* Side */
   .sidebar-offcanvas {
     position: absolute;
     top: 0;
-    width: 50%; /* 6 columns */
+    width: 50%;
+    visibility: hidden;
+  }
+
+  .sidebar-offcanvas.active {
+    visibility: visible;
   }
  }
 
-
 /* Media  */
-/* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
+  /* Custom, iPhone Retina */
 }
 
-/* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
+  /* Extra Small Devices, Phones */
 }
 
-/* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
+  /* Small Devices, Tablets */
 }
 
-/* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
+  /* Medium Devices, Desktops */
 }
 
-/* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
+  /* Large Devices, Wide Screens */
 }

@@ -4,10 +4,12 @@ $(document).ready(function () {
     // });
 
     $('#toggleLeft').click(function () {
-        $('.row-offcanvas').toggleClass('active')
+        $('.row-offcanvas').toggleClass('active');
+        $('.sidebar-offcanvas').toggleClass('active');
     });
 
     $('#toggleRight').click(function () {
-        $('.row-offcanvas').toggleClass('active')
+        $('.row-offcanvas').toggleClass('active');
+        $('.sidebar-offcanvas').toggleClass('active');
     });
 });
