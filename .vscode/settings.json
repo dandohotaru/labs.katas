@@ -1,11 +1,23 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+    "css.lint.emptyRules": "ignore",
     "files.exclude": {
         "**/.git": true,
+        "**/dist": false,
+        "./dev": true,
+        "./acc": true,
+        "./prod": true,
+        "**/node_modules": true,
         "**/.DS_Store": true,
         "**/*.js.map": true,
         "**/*.js": {
             "when": "$(basename).ts"
         }
-    }
+    },
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${activeEditorLong}",
+    "editor.codeLens": true,
+    "editor.minimap.enabled": false,
+    "editor.formatOnPaste": true,
+    "workbench.editor.showIcons": true,
+    "editor.tabSize": 2
 }

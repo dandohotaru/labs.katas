@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="/src/app/tasks/tasks.component.css">
+
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-6">
+    <h4 class="title">Some tasks</h4>
+    <ul>
+      {{#each tasks}}
+      <li>
+        {{name}}
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>

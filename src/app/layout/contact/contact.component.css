@@ -1,0 +1,69 @@
+body {
+  padding-top:50px;
+}
+
+.flip {
+  -webkit-perspective: 800;   
+  perspective: 800;
+  position: relative;
+  text-align: center;
+}
+
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+  transform: rotatey(-180deg);
+}
+
+.flip .card {
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  background: transparent;
+  border: 1px lightgray solid;
+  box-shadow: 0px 2px 4px 0px lightgray;
+  margin-bottom: 10px;
+}
+
+.flip .card:hover {
+  border: 1px orange solid;
+  box-shadow: 0px 8px 16px 0px orange;
+  cursor: pointer;
+}
+
+.flip .card .face {
+  -webkit-backface-visibility: hidden ;
+  backface-visibility: hidden ;
+  z-index: 2;
+}
+
+.flip .card .front {
+   z-index: 1;
+}
+
+.flip .card .img {
+   position: relaitve;
+   width: 270px;
+   height: 178px;
+   z-index: 1;
+   border: 2px solid #000;
+}
+
+.flip .card .back {
+  padding-top: 10%;
+  -webkit-transform: rotatey(-180deg);
+  transform: rotatey(-180deg);
+}
+
+.flip .card .back h4 {
+  padding: 10px;
+}
+
+.flip .glyphicon {
+  padding: 5px
+}
+
+.inner {
+  padding-bottom: 10px;
+}
+
