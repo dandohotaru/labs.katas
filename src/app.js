@@ -33,7 +33,7 @@ export class Startup {
       .on(() => {
         new TasksComponent().init(this.content);
       })
-      .on('/', () => {
+      .on('/tasks', () => {
         new TasksComponent().init(this.content);
       })
       .on('/todos', () => {

@@ -1,4 +1,5 @@
 import template from "./header.component.hbs";
+import styles from "./header.component.css";
 
 export class HeaderComponent {
 
