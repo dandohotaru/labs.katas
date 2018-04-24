@@ -114,8 +114,3 @@
     font-size:14px;
 }
 
-@media (max-width: 460px){
-    body{
-        display: none;
-    }
-}
