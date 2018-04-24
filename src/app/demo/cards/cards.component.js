@@ -1,4 +1,4 @@
-import template from "./contact.component.hbs";
+import template from "./cards.component.hbs";
 import $ from 'jquery';
 
 export class ContactComponent {

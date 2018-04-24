@@ -1,14 +1,14 @@
 
 import 'bootstrap';
 import Navigo from "navigo";
-import { TasksComponent } from "./app/tasks/tasks.component";
 import { HeaderComponent } from "./app/layout/header/header.component";
 import { FooterComponent } from "./app/layout/footer/footer.component";
-import { PetsComponent } from "./app/sample/pets.component";
-import { ContactComponent } from "./app/layout/contact/contact.component";
-import { AboutComponent } from "./app/layout/about/about.component";
-import { ProfileComponent } from './app/layout/profile/profile.component';
-import { TimelineComponent } from './app/timeline/timeline.component';
+import { TasksComponent } from "./app/demo/tasks/tasks.component";
+import { PetsComponent } from "./app/demo/animals/animals.component";
+import { ContactComponent } from "./app/demo/cards/cards.component";
+import { AboutComponent } from "./app/demo/todos/todos.component";
+import { ProfileComponent } from './app/demo/profile/profile.component';
+import { TimelineComponent } from './app/demo/timeline/timeline.component';
 
 var header = new HeaderComponent("header");
 header.init();
@@ -39,7 +39,7 @@ router
   .on('/lolcatz', ()=> {
     new PetsComponent().init(".root");
   })
-  .on('/samples/timeline', () => {
+  .on('/timeline', () => {
     new TimelineComponent("root").init();
   })
   .resolve();

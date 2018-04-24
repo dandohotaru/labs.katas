@@ -1,4 +1,4 @@
-import template from "./about.component.hbs";
+import template from "./todos.component.hbs";
 import $ from 'jquery';
 
 export class AboutComponent {

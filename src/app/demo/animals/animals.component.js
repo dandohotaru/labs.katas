@@ -1,6 +1,6 @@
-import template from "./pets.component.hbs";
-import styles from "./pets.component.css";
-import data from "./pets.component.json";
+import template from "./animals.component.hbs";
+import styles from "./animals.component.css";
+import data from "./animals.component.json";
 
 export class PetsComponent {
 
