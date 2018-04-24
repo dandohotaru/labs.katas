@@ -36,9 +36,10 @@ git config --global user.name "John Doe Global"
 git config --system user.name "John Doe System"
 ```
 
-### cache credentials at repo level
+### cache credentials at repo level [wiki](https://help.github.com/articles/caching-your-github-password-in-git/)
 ```
 git config credential.helper wincred
+git config --global credential.helper wincred
 ```
 
 
