@@ -1,7 +1,7 @@
 import template from "./cards.component.hbs";
 import $ from 'jquery';
 
-export class ContactComponent {
+export class CardsComponent {
 
   init(){
     var container = $(".root");

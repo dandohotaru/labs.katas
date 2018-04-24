@@ -1,8 +1,10 @@
-import { StaticComponent } from "../../shared/components/static.component";
 import template from "./footer.component.hbs";
+import styles from "./footer.component.css";
 
-export class FooterComponent extends StaticComponent {
-  constructor(selector) {
-    super(selector, template);
+export class FooterComponent {
+  
+  init(selector) {
+    var container = document.querySelector(selector);
+    container.innerHTML = template();
   }
 }

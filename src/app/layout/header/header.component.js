@@ -1,20 +1,17 @@
-import { StaticComponent } from "../../shared/components/static.component";
 import template from "./header.component.hbs";
-import { EPIPE } from "constants";
 
-export class HeaderComponent extends StaticComponent {
-  constructor(selector) {
-    super(selector, template);
-  }
+export class HeaderComponent {
 
-  init() {
-    super.init();
+  init(selector) {
+    var container = document.querySelector(selector);
+    container.innerHTML = template();
 
     let items = document.querySelectorAll(".menu .navbar li");
     let anchors = document.querySelectorAll(".menu a[data-navigo]");
 
-    Array.from(anchors).forEach(anchor => {
+    anchors.forEach(anchor => {
       anchor.addEventListener("click", event => {
+        
         // Remove active from existing
         items.forEach(p => p.classList.remove("active"));
 

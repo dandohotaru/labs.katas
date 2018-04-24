@@ -1,7 +1,7 @@
 import template from "./todos.component.hbs";
 import $ from 'jquery';
 
-export class AboutComponent {
+export class ToDosComponent {
   init() {
     $(".root").html(template());
 
