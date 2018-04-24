@@ -10,7 +10,7 @@ export class HeaderComponent extends StaticComponent {
   init() {
     super.init();
 
-    let items = document.querySelectorAll(".navbar li");
+    let items = document.querySelectorAll(".menu .navbar li");
     let anchors = document.querySelectorAll("a[data-navigo]");
 
     anchors.forEach(anchor => {

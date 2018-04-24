@@ -1,0 +1,13 @@
+.content-footer {
+  padding-top: 10px;
+}
+
+.content-footer p {
+	color: #6d6d6d;
+    font-size: 12px;
+    text-align: center;
+}
+.content-footer p a {
+	color: inherit;
+	font-weight: bold;
+}

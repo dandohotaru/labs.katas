@@ -1,18 +1,77 @@
 <link rel="stylesheet" type="text/css" href="/src/app/tasks/tasks.component.css">
 
 <div class="row">
-  <div class="col-sm-3">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Demo Tasks</div>
+      <ul class="list-group">
+        {{#each tasks}}
+        <li class="list-group-item">
+           {{name}}
+          <div class="material-switch pull-right">
+            <input id="someSwitchOptionDefault{{id}}" name="someSwitchOption001" type="checkbox" />
+            <label for="someSwitchOptionDefault{{id}}" class="label-default"></label>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-sm-3">
+    </div>
   </div>
-  <div class="col-sm-6">
-    <h4 class="title">Some tasks</h4>
-    <ul>
-      {{#each tasks}}
-      <li>
-        {{name}}
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-  <div class="col-sm-3">
+</div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Material Switch</div>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          Default
+          <div class="material-switch pull-right">
+            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox" />
+            <label for="someSwitchOptionDefault" class="label-default"></label>
+          </div>
+        </li>
+        <li class="list-group-item">
+          Primary
+          <div class="material-switch pull-right">
+            <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox" />
+            <label for="someSwitchOptionPrimary" class="label-primary"></label>
+          </div>
+        </li>
+        <li class="list-group-item">
+          Success
+          <div class="material-switch pull-right">
+            <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox" />
+            <label for="someSwitchOptionSuccess" class="label-success"></label>
+          </div>
+        </li>
+        <li class="list-group-item">
+          Info
+          <div class="material-switch pull-right">
+            <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox" />
+            <label for="someSwitchOptionInfo" class="label-info"></label>
+          </div>
+        </li>
+        <li class="list-group-item">
+          Warning
+          <div class="material-switch pull-right">
+            <input id="someSwitchOptionWarning" name="someSwitchOption001" type="checkbox" />
+            <label for="someSwitchOptionWarning" class="label-warning"></label>
+          </div>
+        </li>
+        <li class="list-group-item">
+          Danger
+          <div class="material-switch pull-right">
+            <input id="someSwitchOptionDanger" name="someSwitchOption001" type="checkbox" />
+            <label for="someSwitchOptionDanger" class="label-danger"></label>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
