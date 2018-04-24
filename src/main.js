@@ -36,7 +36,7 @@ router
   .on('/profile', function () {
     new ProfileComponent("root").init();
   })
-  .on('/samples/pets', ()=> {
+  .on('/lolcatz', ()=> {
     new PetsComponent("root").init();
   })
   .on('/samples/timeline', () => {
