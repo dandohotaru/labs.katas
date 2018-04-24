@@ -1,10 +1,15 @@
-<link rel="stylesheet" type="text/css" href="/src/app/sample/custom.css">
-
-{{#each pets}}
+<link rel="stylesheet" type="text/css" href="/src/app/sample/custom.css"> {{#each pets}}
 <div class="pet">
 
   {{!-- Left --}}
   <div class="photo-column">
+
+    <img src="{{photo}}">
+  </div>
+
+  {{!-- Right --}}
+  <div class="info-column">
+
     <h3>
       {{name}}
       <span class="species">({{species}})</span>
@@ -12,11 +17,6 @@
     <p>
       Age: {{calculateAge birthYear}}
     </p>
-    <img src="{{photo}}">
-  </div>
-
-  {{!-- Right --}}
-  <div class="info-column">
 
     <h4 class="headline-bar">
       Favorite Foods

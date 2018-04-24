@@ -11,12 +11,18 @@ export class HeaderComponent extends StaticComponent {
     super.init();
 
     let items = document.querySelectorAll(".menu .navbar li");
-    let anchors = document.querySelectorAll("a[data-navigo]");
+    let anchors = document.querySelectorAll(".menu a[data-navigo]");
 
-    anchors.forEach(anchor => {
+    Array.from(anchors).forEach(anchor => {
       anchor.addEventListener("click", event => {
+        // Remove active from existing
         items.forEach(p => p.classList.remove("active"));
-        anchor.closest("li").classList.add("active");
+
+        // Append active for current
+        let closest = anchor.closest("li");
+        if (closest)
+          closest.classList.add("active");
+
         console.log(`${anchor.href} clicked`);
       });
     });

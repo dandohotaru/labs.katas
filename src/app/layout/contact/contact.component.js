@@ -3,12 +3,6 @@ import $ from 'jquery';
 
 export class ContactComponent {
 
-  selector;
-
-  constructor(selector) {
-    this.selector = selector;
-  }
-
   init(){
     var container = $(".root");
     container.html(template());

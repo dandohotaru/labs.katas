@@ -2,15 +2,33 @@
   "tasks": [
     {
       "id": 1,
-      "name": "This is the first one "
+      "name": "Startup a local server",
+      "info": "lite-server, concurrently"
     },
     {
       "id": 2,
-      "name": "This is the second one"
+      "name": "Setup solution for transpiling",
+      "info": "babel, webpack, polyfills"
     },
     {
       "id": 3,
-      "name": "This is the final one"
+      "name": "Setup external layout dependencies",
+      "info": "jquery, bootstrap, font-awesome"
+    },
+    {
+      "id": 4,
+      "name": "Setup router navigation",
+      "info": "navigo"
+    },
+    {
+      "id": 5,
+      "name": "Implement static views duplicated markup",
+      "info": "html, css"
+    },
+    {
+      "id": 6,
+      "name": "Implement dynamic views handlebars markup",
+      "info": "handlebars"
     }
   ]
 }

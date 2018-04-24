@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require("path");
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: ['babel-polyfill', "./src/main.js"],
   resolve: {
     modules: [
       path.resolve(__dirname, "src"),
