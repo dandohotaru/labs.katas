@@ -1,13 +1,13 @@
 import template from "./cards.component.hbs";
+import styles from "./cards.component.css";
 import $ from 'jquery';
 
 export class CardsComponent {
 
-  init(){
-    var container = $(".root");
-    container.html(template());
+  init(selector){
+    $(selector).html(template());
 
-    $('.flip').hover(function () {
+    $('.flip').click(function () {
       $(this).find('.card').toggleClass('flipped');
     });
   }

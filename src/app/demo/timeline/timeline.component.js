@@ -1,10 +1,10 @@
 import template from "./timeline.component.hbs";
+import styles from "./timeline.component.css";
 import $ from 'jquery';
 
 export class TimelineComponent {
 
-  init(){
-    var container = $(".root");
-    container.html(template());
+  init(selector){
+    $(selector).html(template());
   }
 }

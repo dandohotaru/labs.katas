@@ -1,9 +1,11 @@
 import template from "./todos.component.hbs";
+import styles from "./todos.component.css";
 import $ from 'jquery';
 
 export class ToDosComponent {
-  init() {
-    $(".root").html(template());
+
+  init(selector) {
+    $(selector).html(template());
 
     $('.star').on('click', function () {
       $(this).toggleClass('star-checked');

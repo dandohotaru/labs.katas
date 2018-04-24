@@ -25,18 +25,18 @@ router
     new TasksComponent().init(".root");
   })
   .on('/todos', function () {
-    new ToDosComponent("root").init();
+    new ToDosComponent().init(".root");
   })
   .on('/cards', function () {
-    new CardsComponent("root").init();
+    new CardsComponent().init(".root");
   })
   .on('/profile', function () {
-    new ProfileComponent("root").init();
+    new ProfileComponent().init(".root");
   })
   .on('/animals', ()=> {
     new AnimalsComponent().init(".root");
   })
   .on('/timeline', () => {
-    new TimelineComponent("root").init();
+    new TimelineComponent().init(".root");
   })
   .resolve();
