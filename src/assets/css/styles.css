@@ -1,6 +1,7 @@
 /* General */
 body {
   font-family: Helvetica, sans-serif;
+  background-color: white;
 }
 
 body > .container {
