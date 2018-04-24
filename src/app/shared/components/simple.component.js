@@ -16,6 +16,4 @@ export class SimpleComponent {
       container = document.getElementsByClassName(this.selector)[0];
     container.innerHTML = this.template(this.datasource);
   }
-  
-
 }

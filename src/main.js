@@ -22,10 +22,10 @@ console.log(root);
 
 router
   .on(() => {
-    new TasksComponent("root").init();
+    new TasksComponent().init(".root");
   })
   .on('/', function () {
-    new TasksComponent("root").init();
+    new TasksComponent().init(".root");
   })
   .on('/about', function () {
     new AboutComponent("root").init();
@@ -37,7 +37,7 @@ router
     new ProfileComponent("root").init();
   })
   .on('/lolcatz', ()=> {
-    new PetsComponent("root").init();
+    new PetsComponent().init(".root");
   })
   .on('/samples/timeline', () => {
     new TimelineComponent("root").init();

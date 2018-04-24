@@ -3,32 +3,38 @@
     {
       "id": 1,
       "name": "Startup a local server",
-      "info": "lite-server, concurrently"
+      "info": "lite-server, concurrently",
+      "class": "label-default"
     },
     {
       "id": 2,
       "name": "Setup solution for transpiling",
-      "info": "babel, webpack, polyfills"
+      "info": "babel, webpack, polyfills",
+      "class": "label-primary"
     },
     {
       "id": 3,
       "name": "Setup external layout dependencies",
-      "info": "jquery, bootstrap, font-awesome"
+      "info": "jquery, bootstrap, font-awesome",
+      "class": "label-success"
     },
     {
       "id": 4,
       "name": "Setup router navigation",
-      "info": "navigo"
+      "info": "navigo",
+      "class": "label-info"
     },
     {
       "id": 5,
       "name": "Implement static views duplicated markup",
-      "info": "html, css"
+      "info": "html, css",
+      "class": "label-warning"
     },
     {
       "id": 6,
       "name": "Implement dynamic views handlebars markup",
-      "info": "handlebars"
+      "info": "handlebars",
+      "class": "label-danger"
     }
   ]
 }

@@ -1,8 +1,10 @@
 import template from "./tasks.component.hbs";
-import { DynamicComponent } from "../shared/components/dynamic.component";
+import datasource from "./tasks.component.json";
 
-export class TasksComponent extends DynamicComponent {
-  constructor(selector) {
-    super(selector, template, "./src/app/tasks/tasks.component.json");
+export class TasksComponent  {
+  
+  init(selector) {
+    var container = document.querySelector(selector);
+    container.innerHTML = template(datasource);
   }
 }
