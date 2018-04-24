@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 document.querySelector('.prepend-button').onclick = function () {
     if (colcade)
-        colcade.prepend(builder.wall(2));
+        colcade.prepend(builder.wall(3));
 }
 
 document.querySelector('.append-button').onclick = function () {
     if (colcade)
-        colcade.append(builder.wall(2));
+        colcade.append(builder.wall(3));
 }
 
