@@ -37,3 +37,30 @@ https://bootsnipp.com/snippets/BDWlD
 https://bootsnipp.com/snippets/4Pqn
 
 https://bootsnipp.com/snippets/x8dgm
+
+
+## Timelines
+https://codepen.io/jenniferperrin/pen/xfwab !
+
+https://codepen.io/mmil/pen/lxvhu
+
+https://bootsnipp.com/snippets/featured/timeline-21-with-images-and-responsive !
+
+https://bootsnipp.com/snippets/featured/timeline-responsive
+
+https://gist.github.com/J2TeaM/c6a998c0dd898ed171333c897e54d2eb
+
+https://codepen.io/flursh/pen/FJmen
+
+https://codepen.io/search/pens?q=timeline&page=1&order=popularity&depth=everything&show_forks=false
+
+https://codepen.io/paulhbarker/pen/apvGdv !
+
+https://codepen.io/samerpik/pen/OVKyVZ
+
+https://codepen.io/brady_wright/pen/NNOvrW
+
+https://codepen.io/mathiesjanssen/pen/ggeBKm
+
+https://codepen.io/geedmo/pen/AohDr !
+
