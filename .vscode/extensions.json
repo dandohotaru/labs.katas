@@ -6,6 +6,7 @@
 		"formulahendry.auto-close-tag",
 		"formulahendry.auto-rename-tag",
 		"wcwhitehead.bootstrap-3-snippets",
-		"ecmel.vscode-html-css"
+		"ecmel.vscode-html-css",
+		"andrejunges.handlebars"
 	]
 }

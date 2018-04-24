@@ -9,7 +9,6 @@ export class TimelineComponent {
   groups;
 
   init(selector) {
-    $(selector).html(template(data));
 
     // Enrich
     data.records.forEach(p => {
@@ -22,7 +21,21 @@ export class TimelineComponent {
     });
 
     // Group
+    let index = 0;
     this.groups = data.records
+      .sort((a, b) => {
+        return a.stamp
+          ? b.stamp
+            ? +a.stamp - +b.stamp
+            : 1
+          : -1
+      })
+      .reduce((results, current) => {
+        current.position = index % 2 == 0 ? "left" : "right";
+        results.push(current);
+        index++;
+        return results;
+      }, [])
       .reduce((results, current) => {
         var result = results.find(p => p.value == current.group.value);
         if (result) {
@@ -43,6 +56,6 @@ export class TimelineComponent {
         return a.value.localeCompare(b.value);
       });
 
-    console.log(this.groups);
+    $(selector).html(template(this.groups));
   }
 }
