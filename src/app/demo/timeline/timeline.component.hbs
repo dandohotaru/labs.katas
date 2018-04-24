@@ -1,3 +1,5 @@
+<!-- ... -->
+
 <div class="row">
   <div class="col-md-12 col-sm-12 col-xs-12">
 
@@ -11,21 +13,22 @@
 
         {{#each items}}
         <div class="timeline-article content-{{position}}-container">
-          <!-- ... -->
+          
           <div class="content-date">
             <span>{{day stamp}}</span>
           </div>
           
           <div class="meta-date"></div>
+
           <div class="content-box">
             <div class="image-part">
-              <img src="/src/app/demo/timeline/img/man01.png">
+              <img src="{{image}}">
             </div>
             <div class="title-description">
               <h1>{{name}}</h1>
               <br>
               <p>
-                {{description}}
+                {{dup description}}
               </p>
             </div>
           </div>
