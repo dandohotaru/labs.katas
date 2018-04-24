@@ -7,6 +7,9 @@ A [system][1] of individual training exercises in programming and other software
 katatbd: 
 tbd
 
+[kata012](https://github.com/dandohotaru/labs.katas/tree/kata012): 
+es6 babel webpack handlebars navigo bootstrap components design spa
+
 [kata011](https://github.com/dandohotaru/labs.katas/tree/kata011): 
 bootstrap off-canvas samples with sidebars
 
