@@ -21,7 +21,7 @@ export class HeaderComponent {
         if (closest)
           closest.classList.add("active");
 
-        console.log(`${anchor.href} clicked`);
+        console.debug(`${anchor.href} clicked`);
       });
     });
   }
