@@ -1,21 +1,36 @@
-This is simply a working example of how to integrate the Handlebars templating solution into a typical webpack workflow.
+# About
 
-# You Need webpack First!
-Make sure you have webpack installed globally on your machine.
+This is a working sample project meant to showcase handlebars templating into a typical webpack workflow
 
-` npm install webpack -g`
+Goals
 
-For additional help see [the official webpack site](https://webpack.github.io/).
+- [x] setup a scalable templating solution to be used for design experiments
+- [x] rely on modern javascript workflows and language syntax
+- [X] code a single page application without a javascript framework 
 
-After cloning this repo and CD'ing into the project folder be sure to run `npm install`
 
-Then, whenever you want to bundle everything up simply run `webpack` 
+# Topics
 
-Celebrate.
+> javascript
 
-# Data
-## Pets
+> es6 | es2015
+
+> babel 6
+
+> webpack 4
+
+> handlebars 4
+
+> bootstrap 3
+
+> navigo 7
+
+
+# Setup
+
 ```
-/src/assets/json/pets-data.json
-learnwebcode.github.io/json-example/pets-data.json
+git clone [url] [project]
+cd [project]
+npm install
+npm start
 ```
