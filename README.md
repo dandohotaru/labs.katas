@@ -7,6 +7,7 @@ Goals
 - [x] setup a scalable templating solution to be used for design experiments
 - [x] rely on modern javascript workflows and language syntax
 - [X] code a single page application without a javascript framework 
+- [] configure webpack to run application from the dist folder
 
 
 # Topics

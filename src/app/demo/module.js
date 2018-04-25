@@ -16,9 +16,6 @@ export class DemoModule {
 
   register() {
     this.router
-      .on(() => {
-        new TasksComponent().init(this.content);
-      })
       .on('/tasks', () => {
         new TasksComponent().init(this.content);
       })

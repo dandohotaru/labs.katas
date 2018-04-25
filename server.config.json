@@ -1,9 +1,6 @@
 {
   "port": 3001,
   "open": false,
-  "files": [
-    "./src/**/*.{html,htm,css,js,hbs,json}"
-  ],
   "server": {
     "baseDir": "./"
   }
