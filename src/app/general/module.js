@@ -2,7 +2,7 @@ import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { LostComponent } from "./lost/lost.component";
 
-export class LayoutModule {
+export class GeneralModule {
 
   router;
   content = ".root";

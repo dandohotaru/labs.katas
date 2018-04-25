@@ -1,7 +1,7 @@
 
 import 'bootstrap';
 import Navigo from "navigo";
-import { LayoutModule } from './app/layout/module';
+import { GeneralModule } from './app/general/module';
 import { DemoModule } from "./app/demo/module";
 
 export class Startup {
@@ -14,7 +14,7 @@ export class Startup {
   }
 
   start() {
-    new LayoutModule(this.router).register();
+    new GeneralModule(this.router).register();
     new DemoModule(this.router).register();
 
     this.router.resolve();
