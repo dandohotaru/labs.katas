@@ -3,6 +3,8 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
         <div class="panel-body">
+
+          {{!-- Filters --}}
           <div class="pull-right">
             <div class="btn-group">
               <button type="button" class="btn btn-success btn-filter" data-target="done">Done</button>
@@ -12,14 +14,17 @@
             </div>
           </div>
 
+          {{!-- Tasks --}}
           <div class="table-container">
             <table class="table table-filter">
               <tbody>
-                <tr data-status="done">
+                
+                {{#each tasks}}
+                <tr data-status="{{status}}">
                   <td>
                     <div class="ckbox">
-                      <input type="checkbox" id="checkbox1">
-                      <label for="checkbox1"></label>
+                      <input type="checkbox" id="checkbox{{id}}">
+                      <label for="checkbox{{id}}"></label>
                     </div>
                   </td>
                   <td>
@@ -30,131 +35,21 @@
                   <td>
                     <div class="media">
                       <a href="#" class="pull-left">
-                        <img src="/src/app/demo/todos/img/if_boy_403024.png" class="media-photo">
+                        <img src="{{image}}" class="media-photo">
                       </a>
                       <div class="media-body">
-                        <span class="media-meta pull-right">April 23, 2018</span>
+                        <span class="media-meta pull-right">{{date stamp}}</span>
                         <h4 class="title">
-                          Lorem Impsum
-                          <span class="pull-right done">(Done)</span>
+                          {{title}}
+                          <span class="pull-right done">({{status}})</span>
                         </h4>
-                        <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+                        <p class="summary">{{summary}}</p>
                       </div>
                     </div>
                   </td>
                 </tr>
-                <tr data-status="pending">
-                  <td>
-                    <div class="ckbox">
-                      <input type="checkbox" id="checkbox3">
-                      <label for="checkbox3"></label>
-                    </div>
-                  </td>
-                  <td>
-                    <a href="javascript:;" class="star">
-                      <i class="glyphicon glyphicon-star"></i>
-                    </a>
-                  </td>
-                  <td>
-                    <div class="media">
-                      <a href="#" class="pull-left">
-                        <img src="/src/app/demo/todos/img/if_boy_403024.png" class="media-photo">
-                      </a>
-                      <div class="media-body">
-                        <span class="media-meta pull-right">April 23, 2018</span>
-                        <h4 class="title">
-                          Lorem Impsum
-                          <span class="pull-right pending">(Pending)</span>
-                        </h4>
-                        <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr data-status="canceled">
-                  <td>
-                    <div class="ckbox">
-                      <input type="checkbox" id="checkbox2">
-                      <label for="checkbox2"></label>
-                    </div>
-                  </td>
-                  <td>
-                    <a href="javascript:;" class="star">
-                      <i class="glyphicon glyphicon-star"></i>
-                    </a>
-                  </td>
-                  <td>
-                    <div class="media">
-                      <a href="#" class="pull-left">
-                        <img src="/src/app/demo/todos/img/if_boy_403024.png" class="media-photo">
-                      </a>
-                      <div class="media-body">
-                        <span class="media-meta pull-right">April 23, 2018</span>
-                        <h4 class="title">
-                          Lorem Impsum
-                          <span class="pull-right canceled">(Canceled)</span>
-                        </h4>
-                        <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr data-status="done" class="selected">
-                  <td>
-                    <div class="ckbox">
-                      <input type="checkbox" id="checkbox4" checked>
-                      <label for="checkbox4"></label>
-                    </div>
-                  </td>
-                  <td>
-                    <a href="javascript:;" class="star star-checked">
-                      <i class="glyphicon glyphicon-star"></i>
-                    </a>
-                  </td>
-                  <td>
-                    <div class="media">
-                      <a href="#" class="pull-left">
-                        <img src="/src/app/demo/todos/img/if_boy_403024.png" class="media-photo">
-                      </a>
-                      <div class="media-body">
-                        <span class="media-meta pull-right">April 23, 2018</span>
-                        <h4 class="title">
-                          Lorem Impsum
-                          <span class="pull-right done">(Done)</span>
-                        </h4>
-                        <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr data-status="pending">
-                  <td>
-                    <div class="ckbox">
-                      <input type="checkbox" id="checkbox5">
-                      <label for="checkbox5"></label>
-                    </div>
-                  </td>
-                  <td>
-                    <a href="javascript:;" class="star">
-                      <i class="glyphicon glyphicon-star"></i>
-                    </a>
-                  </td>
-                  <td>
-                    <div class="media">
-                      <a href="#" class="pull-left">
-                        <img src="/src/app/demo/todos/img/if_boy_403024.png" class="media-photo">
-                      </a>
-                      <div class="media-body">
-                        <span class="media-meta pull-right">April 23, 2018</span>
-                        <h4 class="title">
-                          Lorem Impsum
-                          <span class="pull-right pending">(Pending)</span>
-                        </h4>
-                        <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
+                 {{/each}}
+
               </tbody>
             </table>
           </div>

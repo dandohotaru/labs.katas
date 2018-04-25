@@ -1,7 +1,7 @@
 import { TasksComponent } from "./tasks/tasks.component";
 import { AnimalsComponent } from "./animals/animals.component";
 import { CardsComponent } from "./cards/cards.component";
-import { ToDosComponent } from "./todos/todos.component";
+import { TodosComponent } from "./todos/todos.component";
 import { ProfileComponent } from './profile/profile.component';
 import { TimelineComponent } from './timeline/timeline.component';
 
@@ -20,7 +20,7 @@ export class DemoModule {
         new TasksComponent().init(this.content);
       })
       .on('/todos', () => {
-        new ToDosComponent().init(this.content);
+        new TodosComponent().init(this.content);
       })
       .on('/cards', () => {
         new CardsComponent().init(this.content);

@@ -1,0 +1,49 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Lorem ipsum 1",
+      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "status": "done",
+      "alias": "johnd",
+      "image": "/src/app/demo/todos/img/if_boy_403024.png",
+      "stamp": "2018-04-01T09:00:00+02:00"
+    },
+    {
+      "id": 2,
+      "title": "Lorem ipsum",
+      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "status": "pending",
+      "alias": "jimd",
+      "image": "/src/app/demo/todos/img/if_boy_403024.png",
+      "stamp": "2018-04-05T09:00:00+02:00"
+    },
+    {
+      "id": 3,
+      "title": "Lorem ipsum",
+      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "status": "canceled",
+      "alias": "janed",
+      "image": "/src/app/demo/todos/img/if_boy_403024.png",
+      "stamp": "2018-04-03T09:00:00+02:00"
+    },
+    {
+      "id": 4,
+      "title": "Lorem ipsum",
+      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "status": "done",
+      "alias": "jackd",
+      "image": "/src/app/demo/todos/img/if_boy_403024.png",
+      "stamp": "2018-04-02T09:00:00+02:00"
+    },
+    {
+      "id": 5,
+      "title": "Lorem ipsum",
+      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "status": "pending",
+      "alias": "jild",
+      "image": "/src/app/demo/todos/img/if_boy_403024.png",
+      "stamp": "2018-04-07T09:00:00+02:00"
+    }
+  ]
+}

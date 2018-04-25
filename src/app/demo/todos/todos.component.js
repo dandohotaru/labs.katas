@@ -1,12 +1,22 @@
 import template from "./todos.component.hbs";
 import styles from "./todos.component.css";
+import data from "./todos.component.json";
+import moment from 'moment';
 import $ from 'jquery';
 
-export class ToDosComponent {
+export class TodosComponent {
 
   init(selector) {
-    $(selector).html(template());
 
+    // Enrich
+    data.tasks.forEach(p => {
+      p.stamp = moment(p.stamp).toDate();
+    });
+
+    // Bind
+    $(selector).html(template(data));
+
+    // Handlers
     $('.star').on('click', function () {
       $(this).toggleClass('star-checked');
     });
