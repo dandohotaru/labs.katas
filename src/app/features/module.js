@@ -10,7 +10,7 @@ export class FeaturesModule {
   }
 
   register() {
-    
+
     this.router
       .on('/kik0000', () => {
         new SampleComponent().init(this.content);
