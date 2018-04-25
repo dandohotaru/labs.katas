@@ -2,8 +2,8 @@
   "tasks": [
     {
       "id": 1,
-      "title": "Lorem ipsum 1",
-      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "title": "Habitant rhoncus rutrum in vivamus euismod feugiat senectus",
+      "summary": "Egestas quisque fringilla lorem cubilia arcu, varius elementum est suscipit potenti, malesuada semper sapien a in mauris nullam sed sapien litora magna",
       "status": "done",
       "alias": "johnd",
       "image": "/src/app/demo/todos/img/if_boy_403024.png",
@@ -11,8 +11,8 @@
     },
     {
       "id": 2,
-      "title": "Lorem ipsum",
-      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "title": "Libero inceptos etiam id mollis ullamcorper",
+      "summary": "Interdum eleifend nisi iaculis ultrices aenean nisi hac, nullam vitae platea praesent nisi fames quisque mattis, a ante scelerisque inceptos et aliquet tellus aliquet libero nulla ornare ullamcorper aliquam commodo iaculis tortor",
       "status": "pending",
       "alias": "jimd",
       "image": "/src/app/demo/todos/img/if_boy_403024.png",
@@ -20,8 +20,8 @@
     },
     {
       "id": 3,
-      "title": "Lorem ipsum",
-      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "title": "Et nisl cursus sem id fermentum dolor placerat curabitur",
+      "summary": "Commodo in aenean donec condimentum platea gravida eget aliquet tortor facilisis dapibus erat, quam praesent dictum proin sed varius lorem ut inceptos faucibus sodales sollicitudin urna curae tempor bibendum augue cubilia",
       "status": "canceled",
       "alias": "janed",
       "image": "/src/app/demo/todos/img/if_boy_403024.png",
@@ -29,8 +29,8 @@
     },
     {
       "id": 4,
-      "title": "Lorem ipsum",
-      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "title": "Imperdiet phasellus lobortis urna",
+      "summary": "Massa tortor ullamcorper adipiscing aliquam donec sem rutrum sapien eleifend augue nostra",
       "status": "done",
       "alias": "jackd",
       "image": "/src/app/demo/todos/img/if_boy_403024.png",
@@ -38,8 +38,8 @@
     },
     {
       "id": 5,
-      "title": "Lorem ipsum",
-      "summary": "Ut enim ad minim veniam, quis nostrud exercitation...",
+      "title": "Tempor blandit volutpat varius auctor elit donec cubilia euismod",
+      "summary": "Conubia mattis curabitur ligula curabitur placerat torquent commodo porta cubilia sollicitudin",
       "status": "pending",
       "alias": "jild",
       "image": "/src/app/demo/todos/img/if_boy_403024.png",

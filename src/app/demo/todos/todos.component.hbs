@@ -20,37 +20,17 @@
               <tbody>
                 
                 {{#each tasks}}
-                <tr data-status="{{status}}">
-                  <td>
-                    <div class="ckbox">
-                      <input type="checkbox" id="checkbox{{id}}">
-                      <label for="checkbox{{id}}"></label>
-                    </div>
-                  </td>
-                  <td>
-                    <a href="javascript:;" class="star">
-                      <i class="glyphicon glyphicon-star"></i>
-                    </a>
-                  </td>
-                  <td>
-                    <div class="media">
-                      <a href="#" class="pull-left">
-                        <img src="{{image}}" class="media-photo">
-                      </a>
-                      <div class="media-body">
-                        <span class="media-meta pull-right">{{date stamp}}</span>
-                        <h4 class="title">
-                          {{title}}
-                          <span class="pull-right done">({{status}})</span>
-                        </h4>
-                        <p class="summary">{{summary}}</p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                 {{/each}}
+                  {{> task.partial}}
+                {{/each}}
 
               </tbody>
+
+              <caption style="caption-side: bottom">
+                <small class="pull-right">
+                  <a href="http://www.randomtext.me/#/lorem/ol-5/4-9" target="blank">Lorem Ipsum</a>
+                </small>
+              </caption>
+              
             </table>
           </div>
         </div>
