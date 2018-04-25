@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "code": "one",
+      "name": "Item number one"
+    },
+    {
+      "id": 2,
+      "code": "two",
+      "name": "Item number two"
+    },
+    {
+      "id": 3,
+      "code": "three",
+      "name": "Item number three"
+    }
+  ]
+}
