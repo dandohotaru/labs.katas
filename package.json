@@ -2,11 +2,17 @@
   "name": "labs.katas",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "url": "https://github.com/dandohotaru/labs.katas/tree/kata012"
+  },
   "main": "index.js",
   "scripts": {
+    "build:dev": "webpack --config webpack.dev.js",
+    "build:prod": "webpack --config webpack.prod.js",
     "build": "webpack --mode development --watch",
     "serve": "lite-server --config=server.config.json",
-    "start": "concurrently --kill-others \"npm run build\" \"npm run serve\""
+    "start": "concurrently --kill-others \"npm run build\" \"npm run serve\"",
+    "profile": "webpack --config webpack.prod.js --profile --json > stats.json"
   },
   "author": "",
   "license": "ISC",
@@ -23,12 +29,19 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.19",
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
     "handlebars-loader": "^1.5.0",
+    "html-webpack-plugin": "^3.2.0",
     "lite-server": "^2.3.0",
+    "sass-loader": "7.0.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "webpack-dev-server": "^3.1.3",
+    "webpack-cli": "^2.0.14",
+    "webpack-merge":"^4.1.2"
   }
 }

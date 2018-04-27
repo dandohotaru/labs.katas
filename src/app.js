@@ -1,5 +1,9 @@
 
 import 'bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
+import "./assets/css/styles.css";
+
 import Navigo from "navigo";
 import { GeneralModule } from './app/general/module';
 import { FeaturesModule } from "./app/features/module";
