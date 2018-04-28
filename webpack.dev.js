@@ -4,6 +4,7 @@ const common = require('./webpack.shared.js')
 
 module.exports = merge(common, {
   mode: 'development',
+  watch: true,
   devServer: {
     hot: true
   },
