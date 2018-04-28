@@ -2,6 +2,7 @@ const path = require("path")
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -18,10 +19,14 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Demo app',
-      template: 'index.html',
+      template: './src/app.html',
       filename: 'index.html',
       meta: { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
     }),
+    new CopyWebpackPlugin([{
+      from: 'src/assets/img',
+      to: 'assets/img'
+    }]),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
@@ -46,7 +51,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jp(e*)g|gif)$/,
         use: [
           {
             loader: 'file-loader'
@@ -59,7 +64,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'fonts/'
+            outputPath: 'assets/fonts'
           }
         }],
       }

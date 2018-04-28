@@ -5,20 +5,20 @@
       "species" : "Cat",
       "favFoods" : ["wet food", "dry food", "<strong>any</strong> food"],
       "birthYear" : 2016,
-      "photo" : "/src/app/demo/animals/img/image1.jpg"
+      "photo" : "./assets/img/animals/image1.jpg"
     },
     {
       "name" : "Barksalot",
       "species" : "Dog",
       "birthYear" : 2008,
-      "photo" : "/src/app/demo/animals/img/image2.jpg"
+      "photo" : "./assets/img/animals/image2.jpg"
     },
     {
       "name" : "Meowsalot",
       "species" : "Cat",
       "favFoods" : ["tuna", "catnip", "celery"],
       "birthYear" : 2012,
-      "photo" : "/src/app/demo/animals/img/image3.jpg"
+      "photo" : "./assets/img/animals/image3.jpg"
     },
     {
       "name": "Alleycat",
@@ -28,7 +28,7 @@
         "celery"
       ],
       "birthYear": 2012,
-      "photo": "/src/app/demo/animals/img/image3.jpg"
+      "photo": "./assets/img/animals/image3.jpg"
     }
   ]
 }
