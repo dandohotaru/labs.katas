@@ -9,9 +9,9 @@
   "scripts": {
     "build:dev": "webpack --config webpack.dev.js --watch false",
     "build:prod": "webpack --config webpack.prod.js",
-    "serve": "lite-server --config=server.config.json",
-    "open": "webpack-dev-server --config webpack.dev.js --open",
-    "start": "concurrently --kill-others \"npm run build:dev\" \"npm run serve\""
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "lite": "lite-server --config=server.config.json",
+    "server": "concurrently --kill-others \"npm run build:dev\" \"npm run serve\""
   },
   "author": "",
   "license": "ISC",
