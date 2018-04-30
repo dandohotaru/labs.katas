@@ -9,11 +9,24 @@ module.exports = {
     app: './src/app.js'
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    filename: '[name].bundle.js'
   },
   stats: {
     colors: true
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /node_modules/,
+          chunks: "initial",
+          name: "vendor",
+          priority: 10,
+          enforce: true
+        }
+      }
+    },
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),

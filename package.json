@@ -7,12 +7,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack --config webpack.dev.js",
+    "build:dev": "webpack --config webpack.dev.js --watch false",
     "build:prod": "webpack --config webpack.prod.js",
-    "build": "webpack --mode development --watch",
     "serve": "lite-server --config=server.config.json",
-    "start": "concurrently --kill-others \"npm run build:dev\" \"npm run serve\"",
-    "profile": "webpack --config webpack.prod.js --profile --json > stats.json"
+    "start": "concurrently --kill-others \"npm run build:dev\" \"npm run serve\""
   },
   "author": "",
   "license": "ISC",

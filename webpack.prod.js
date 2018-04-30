@@ -4,6 +4,9 @@ const common = require('./webpack.shared.js')
 
 module.exports = merge(common, {
   mode: 'production',
+  plugins: [
+    new ExtractTextPlugin('style.css')
+  ],
   module: {
     rules: [
       {
@@ -21,8 +24,5 @@ module.exports = merge(common, {
         })
       }
     ]
-  },
-  plugins: [
-    new ExtractTextPlugin('style.css')
-  ]
+  }
 })
