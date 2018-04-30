@@ -1,17 +1,16 @@
-const webpack = require('webpack');
-const path = require("path");
+const path = require("path")
+const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  entry: ['babel-polyfill', "./src/app.js"],
-  resolve: {
-    modules: [
-      path.resolve(__dirname, "src"),
-      "node_modules"
-    ]
+  entry: {
+    app: './src/app.js'
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].js",
+    filename: '[name].bundle.js'
   },
   stats: {
     colors: true
@@ -19,12 +18,6 @@ module.exports = {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        commons: {
-          chunks: "initial",
-          minChunks: 2,
-          maxInitialRequests: 5,
-          minSize: 0,
-        },
         vendor: {
           test: /node_modules/,
           chunks: "initial",
@@ -33,44 +26,61 @@ module.exports = {
           enforce: true
         }
       }
-    }
+    },
   },
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      title: 'Demo app',
+      template: './src/app.html',
+      filename: 'index.html',
+      meta: { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+    }),
+    new CopyWebpackPlugin([{
+      from: 'src/assets/img',
+      to: 'assets/img'
+    }]),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    })
+  ],
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" }
-        ]
-      },
-      {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
         }
       },
       {
         test: /\.hbs$/,
         use: [{
           loader: "handlebars-loader",
-          options: { 
-            helperDirs: path.resolve(__dirname, "./src/app/shared/helpers") 
+          options: {
+            helperDirs: path.resolve(__dirname, "./src/app/shared/helpers")
           }
         }]
+      },
+      {
+        test: /\.(png|jp(e*)g|gif)$/,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/fonts'
+          }
+        }],
       }
     ]
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
-    })
-  ],
-  devtool: 'source-map',
-  watch: true
-};
-
-// output > publicPath: '/'
-// resolve > extensions: ['.ts', '.js', '.json'],
+  }
+}

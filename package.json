@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack --config webpack.dev.js --watch false",
+    "build:dev": "webpack --config webpack.dev.js --watch true",
     "build:prod": "webpack --config webpack.prod.js",
     "serve": "lite-server --config=server.config.json",
     "start": "concurrently --kill-others \"npm run build:dev\" \"npm run serve\""

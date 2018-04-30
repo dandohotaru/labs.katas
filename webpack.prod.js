@@ -1,6 +1,6 @@
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const common = require('./webpack.shared.js')
+const common = require('./webpack.config.js')
 
 module.exports = merge(common, {
   mode: 'production',
