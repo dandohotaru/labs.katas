@@ -5,27 +5,68 @@
       "type": "node",
       "request": "launch",
       "name": "build",
-      "program": "${workspaceFolder}/node_modules/.bin/webpack-cli",
+      "program": "${workspaceFolder}/node_modules/webpack-cli/bin/webpack.js",
       "args": [
         "--config",
         "webpack.dev.js"
       ],
-      "autoAttachChildProcesses": true,
       "stopOnEntry": true,
       "outFiles": [
-        "${workspaceFolder}/dist/app.bundle.js"
+        "${workspaceFolder}/dist/*"
       ],
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "webpack-dev-server",
-      "program": "${workspaceRoot}/node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-      "cwd": "${workspaceFolder}",
+      "name": "start",
+      "program": "${workspaceFolder}/node_modules/webpack-dev-server/bin/webpack-dev-server.js",
       "args": [
         "--config",
         "webpack.dev.js"
       ],
+      "outFiles": [
+        "${workspaceFolder}/dist/*"
+      ],
+      "cwd": "${workspaceFolder}",
+      "autoAttachChildProcesses": true,
+      "stopOnEntry": false,
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${webRoot}/../*",
+        "webpack:///./*": "${webRoot}/../*",
+        "webpack:///src/*": "${webRoot}/../src/*",
+        "webpack:///./~/*": "${webRoot}/../node_modules/*"
+      }
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "lite",
+      "url": "http://localhost:3001",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/dist",
+      "sourceMaps": true,
+      "disableNetworkCache": true,
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${webRoot}/../*",
+        "webpack:///./*": "${webRoot}/../*",
+        "webpack:///src/*": "${webRoot}/../src/*",
+        "webpack:///./~/*": "${webRoot}/../node_modules/*"
+      }
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceRoot}/dist",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///*": "${workspaceRoot}/../*",
+        "webpack:///./*": "${workspaceRoot}/../*",
+        "webpack:///src/*": "${workspaceRoot}/../src/*",
+        "webpack:///./~/*": "${workspaceRoot}/../node_modules/*"
+      }
     }
   ],
   "compounds": []
