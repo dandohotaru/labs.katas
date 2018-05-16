@@ -6,8 +6,8 @@ This is a working sample project meant to showcase handlebars templating into a 
 
 - [x] setup a scalable templating solution to be used for design experiments
 - [x] rely on modern javascript workflows and language syntax
-- [X] code a single page application without a javascript framework 
-- [ ] configure server and webpack to run application from the dist folder
+- [x] code a single page application without a javascript framework 
+- [x] configure server and webpack to run application from the dist folder
 
 
 # Topics

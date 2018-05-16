@@ -41,6 +41,10 @@ module.exports = {
       from: 'src/assets/img',
       to: 'assets/img'
     }]),
+    new CopyWebpackPlugin([{
+      from: 'src/assets/iis',
+      to: './'
+    }]),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
