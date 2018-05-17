@@ -1,0 +1,149 @@
+{
+  "records": [
+    {
+      "id": 4106,
+      "contract": "activity",
+      "stamp": "2018-05-22T00:00:00+02:00",
+      "tags": [
+        {
+          "context": "content",
+          "key": "activity",
+          "value": "activity"
+        },
+        {
+          "context": "stage",
+          "key": "impact",
+          "value": "Impact"
+        }
+      ],
+      "title": "European Network for Rural Development ",
+      "description": "Seminar of the European Network for Rural Development (ENRD) Thematic Group on ‘Smart Villages’: Revitalising rural services through social and digital innovation.\n\nThe event will be opened by Phil Hogan, EU Commissioner for Agriculture and Rural Development. \n\nThe Seminar will:\nenable an exchange of experiences in the implementation of social and digital innovation in rural services;\nexplore the role of rural and other policies in creating an enabling environment for Smart Villages.",
+      "type": "Rapporteurs activities",
+      "start": "2018-05-22T00:00:00+02:00",
+      "end": "2018-05-22T00:00:00+02:00",
+      "opinion": {
+        "id": 25312,
+        "folder": "NAT-VI/025",
+        "title": "Revitalisation of rural areas through Smart Villages ",
+        "activation": "2017-07-11T00:00:00+02:00",
+        "adoption": "2017-12-01T00:00:00+01:00"
+      },
+      "representative": {
+        "personId": 2032204,
+        "firstName": "John",
+        "lastName": "Doe",
+        "aliasName": "jdoe"
+      },
+      "commissions": [
+        {
+          "id": 2018540,
+          "name": "6th Mandate - Commission for Natural Resources (NAT)",
+          "short": "6th Mandate - Commission NAT",
+          "abbreviation": "NAT-VI"
+        }
+      ],
+      "themes": [
+        {
+          "id": 101,
+          "name": "Agriculture, Maritime and Consumer policies",
+          "themes": [
+            {
+              "id": 117,
+              "name": "Rural development"
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "name": "Cohesion Policy",
+          "themes": [
+            {
+              "id": 130,
+              "name": "Cross-border and territorial cooperation"
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "name": "Economy and Finance",
+          "themes": [
+            {
+              "id": 221,
+              "name": "Long-term strategy for investment, growth and jobs (renewed Europe 2020)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3364291,
+      "contract": "document",
+      "stamp": "2018-05-02T17:07:35+02:00",
+      "tags": [
+        {
+          "context": "content",
+          "key": "document",
+          "value": "Document"
+        },
+        {
+          "context": "stage",
+          "key": "working",
+          "value": "Political Work"
+        }
+      ],
+      "title": "PGDG - 37 amendments_Local and regional incentives to promote healthy and sustainable diets ",
+      "publication": "2018-05-02T17:07:35+02:00",
+      "followup": null,
+      "committee": "CDR",
+      "year": 2018,
+      "number": 435,
+      "version": {
+        "part": 0,
+        "number": 0,
+        "type": "AMC",
+        "suffix": "TRA",
+        "language": "EN",
+        "status": "FIN"
+      },
+      "file": {
+        "name": "COR-2018-00435-00-00-AMC-TRA-EN.docx",
+        "url": "http://api.documents.eu/COR-2018-00435-00-00-AMC-TRA-EN.docx"
+      },
+      "referral": {
+        "id": 25512,
+        "folder": "NAT-VI",
+        "short": "Local and regional incentives to promote healthy and sustainable diets ",
+        "activation": "2017-11-29T00:00:00+01:00",
+        "adoption": "2018-07-04T00:00:00+02:00"
+      },
+      "commissions": [
+        {
+          "id": 2018540,
+          "name": "6th Mandate - Commission for Natural Resources (NAT)",
+          "short": "6th Mandate - Commission NAT",
+          "abbreviation": "NAT-VI"
+        }
+      ],
+      "themes": [
+        {
+          "id": 101,
+          "name": "Agriculture, Maritime and Consumer policies",
+          "themes": [
+            {
+              "id": 119,
+              "name": "Consumer policy"
+            },
+            {
+              "id": 118,
+              "name": "Public health"
+            },
+            {
+              "id": 115,
+              "name": "Food production"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

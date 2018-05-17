@@ -1,9 +1,10 @@
 import { SampleComponent } from "./kik0000/sample.component";
+import { RecordsComponent } from "./kik0001/records.component";
 
 export class FeaturesModule {
 
   router;
-  content = ".root";
+  outlet = ".root";
 
   constructor(router) {
     this.router = router;
@@ -13,10 +14,10 @@ export class FeaturesModule {
 
     this.router
       .on('/kik0000', () => {
-        new SampleComponent().init(this.content);
+        new SampleComponent().init(this.outlet);
       })
       .on('/kik0001', () => {
-        console.log(`Todo: ${window.location.href}`);
+        new RecordsComponent().init(this.outlet);
       })
       .on('/kik0002', () => {
         console.log(`Todo: ${window.location.href}`);
