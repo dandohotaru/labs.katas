@@ -1,0 +1,86 @@
+
+<div  class="timeline panel">
+
+  <div  class="header">
+    <div  class="icons">
+      {{#each themes}}
+        <span class="tag purple" title="{{name}}">
+          <i class="fa fa-globe"></i>
+        </span>
+      {{/each}}
+    </div>
+    <div  class="row">
+      <div  class="col-md-9 col-sm-9 col-xs-9 info">
+        <a  href="/activities/101">
+          <span>{{title}}</span>
+        </a>
+      </div>
+      <div  class="col-md-3 col-sm-3 col-xs-3 type">
+        <i  class="fa fa-comments"></i>
+        <small>{{contract}}</small>
+      </div>
+    </div>
+  </div>
+
+  <div  class="body">
+    <div  class="row">
+      <div  class="col-md-12">
+        <div  class="collapse in" id="more-activity-{{id}}" aria-expanded="true">
+          <ul  class="list-group">
+            <li  class="list-group-item">
+              <strong>Description: </strong> 
+              {{description}}
+            </li>
+            <li  class="list-group-item">
+              <strong>Type: </strong> 
+              {{type}}
+            </li>
+            <li  class="list-group-item">
+              <strong>Opinion: </strong> 
+              <small>{{opinion.folder}} - </small>{{opinion.title}}
+            </li>
+            <li  class="list-group-item">
+              <strong>Representative: </strong> 
+              {{representative.firstName}} {{representative.lastName}}
+            </li>
+            <li  class="list-group-item">
+              <div  style="display: flex">
+                <div  style="flex: 0 0 10%">
+                  <strong>Commissions: </strong>
+                </div>
+                <div  style="flex: 1">
+                  {{#each commissions}}
+                  <section>
+                    <small>{{abbreviation}} -</small>
+                    {{short}}
+                  </section>
+                   {{/each}}
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div  class="row">
+      <div  class="col-md-12">
+        <div class="notes">
+          {{!-- notes --}}
+        </div>
+      </div>
+    </div>
+
+    <div  class="row">
+      <div  class="col-md-10">
+        {{!-- commands --}}
+      </div>
+      <div  class="col-md-2 text-right">
+        <a  class="more" data-toggle="collapse" href="#more-activity-{{id}}" aria-expanded="true">
+          <i  class="fa fa-lg fa-caret-down" title="More details"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
