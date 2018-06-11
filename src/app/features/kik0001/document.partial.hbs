@@ -1,34 +1,81 @@
-<div>
-  <small title="{{id}}">{{contract}}</small>
-  {{stamp}}
-</div>
+<div class="timeline panel">
 
-<div class="row">
-  <div class="col-xs-8">
+  <div class="header">
+    <div class="icons">
+      {{#each themes}}
+      <span class="tag teal" title="{{name}}">
+        <i class="fa fa-leaf"></i>
+      </span>
+      {{/each}}
+    </div>
+    <div class="row">
+      <div class="col-md-9 col-sm-9 col-xs-9 info">
+        <a href="/documents/{{id}}">
+          <span>{{title}}</span>
+        </a>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-3 type">
+        <i class="fa fa-file-text-o" title="{{contract}}"></i>
+      </div>
+    </div>
   </div>
-  <div class="col-xs-4">
-    <small class="pull-right" title="{{id}}">{{contract}}</small>
-  </div>
-</div>
 
-<div class="row">
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <tbody>
-        <tr>
-          <td>
-            <small>Title</small>
-          </td>
-          <td>{{title}}</td>
-        </tr>
-        <tr>
-          <td>
-            <small>Committee</small>
-          </td>
-          <td>{{committee}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="body">
+
+    {{!-- More --}}
+    <div class="row">
+      <div class="col-md-10">
+        {{!-- commands --}}
+      </div>
+      <div class="col-md-2 text-right">
+        <a class="more" href="#more-document-{{id}}" data-toggle="collapse" aria-expanded="true">
+          <i class="fa fa-lg fa-caret-down" title="More details"></i>
+        </a>
+      </div>
+    </div>
+
+    {{!-- Extra --}}
+    <div class="row">
+      <div class="col-md-12">
+        <div class="collapse in" id="more-document-{{id}}">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <strong>File: </strong>
+              <a href="{{file.url}}">{{file.name}}</a>
+            </li>
+            <li class="list-group-item">
+              <strong>Referral: </strong>
+              <small>{{referral.folder}} - </small>{{referral.short}}
+            </li>
+            <li class="list-group-item">
+              <div style="display: flex">
+                <div style="flex: 0 0 10%">
+                  <strong>Commissions: </strong>
+                </div>
+                <div style="flex: 1">
+                  {{#each commissions}}
+                  <section>
+                    <small>{{abbreviation}} -</small>
+                    {{short}}
+                  </section>
+                  {{/each}}
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Notes --}}
+    <div class="row">
+      <div class="col-md-12">
+        <div class="notes">
+          {{!-- todo --}}
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>
