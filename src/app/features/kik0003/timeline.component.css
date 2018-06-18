@@ -1,5 +1,6 @@
 .timeline {
-  width: 600px;
-  height: 400px;
-  border: 1px solid lightgray;
+  border: 1px solid lightblue;
+  /* height: 100%;
+  width: 100%; */
+  align-items: stretch;
 }
