@@ -1,5 +1,6 @@
 import { SampleComponent } from "./kik0000/sample.component";
 import { RecordsComponent } from "./kik0001/records.component";
+import { TimelineComponent } from "./kik0002/timeline.component";
 
 export class FeaturesModule {
 
@@ -20,6 +21,9 @@ export class FeaturesModule {
         new RecordsComponent().init(this.outlet);
       })
       .on('/kik0002', () => {
+        new TimelineComponent().init(this.outlet);
+      })
+      .on('/kik0003', () => {
         console.log(`Todo: ${window.location.href}`);
       });
 
