@@ -22,7 +22,13 @@ export class TimelineComponent {
 
   load(element) {
     var data = new DataSet(records);
+
     var options = {
+      height: '300px',
+      min: new Date(2013, 0, 1), 
+      max: new Date(2014, 0, 1), 
+      zoomMin: moment.duration(1, 'days').asMilliseconds(),
+      zoomMax: moment.duration(3, 'months').asMilliseconds(),
       onInitialDrawComplete: () => {
         this.trace("loaded");
       },
