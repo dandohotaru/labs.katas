@@ -6,9 +6,9 @@ import { HomeComponent } from "./home/home.component";
 export class GeneralModule {
 
   router;
+  header = ".header";
   content = ".root";
-  header = "#header";
-  footer = "#footer";
+  footer = ".footer";
 
   constructor(router) {
     this.router = router;
