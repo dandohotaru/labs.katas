@@ -2,6 +2,7 @@ import moment from 'moment';
 import template from "./timeline.component.hbs";
 import styles from "./timeline.component.css";
 import records from "./records.json";
+import meetup from "./meetup.json";
 
 import { DataSet, Timeline } from 'vis/index-timeline-graph2d';
 import 'vis/dist/vis-timeline-graph2d.min.css';
@@ -11,7 +12,6 @@ export class TimelineComponent {
   timeline;
 
   init(selector) {
-
     var container = document.querySelector(selector);
     container.innerHTML = template();
 
@@ -21,12 +21,22 @@ export class TimelineComponent {
   }
 
   load(element) {
-    var data = new DataSet(records);
+    var events = meetup.events.map(p => {
+      var item = {
+        id: p.id,
+        content: p.name,
+        start: new Date(p.local_date),
+        end: null,
+
+      };
+      return item;
+    });
+    var data = new DataSet(events);
 
     var options = {
-      height: '300px',
-      min: new Date(2013, 0, 1), 
-      max: new Date(2014, 0, 1), 
+      height: '600px',
+      min: new Date(2018, 0, 1), 
+      max: new Date(2019, 0, 1), 
       zoomMin: moment.duration(1, 'days').asMilliseconds(),
       zoomMax: moment.duration(3, 'months').asMilliseconds(),
       onInitialDrawComplete: () => {
@@ -61,11 +71,11 @@ export class TimelineComponent {
     document.getElementById('moveRight').onclick = () => this.move(-0.2);
 
     this.timeline.on('rangechange', (properties) => {
-      this.trace('rangechange', properties);
+      //this.trace('rangechange', properties);
     });
 
     this.timeline.on('rangechanged', (properties) => {
-      this.trace('rangechanged', properties);
+      //this.trace('rangechanged', properties);
     });
 
     this.timeline.on('select', (properties) => {
@@ -73,23 +83,23 @@ export class TimelineComponent {
     });
 
     this.timeline.on('click', (properties) => {
-      this.trace('click', properties);
+      //this.trace('click', properties);
     });
 
     this.timeline.on('doubleClick', (properties) => {
-      this.trace('doubleClick', properties);
+      //this.trace('doubleClick', properties);
     });
 
     this.timeline.on('contextmenu', (properties) => {
-      this.trace('contextmenu', properties);
+      //this.trace('contextmenu', properties);
     });
 
     this.timeline.on('mouseDown', (properties) => {
-      this.trace('mouseDown', properties);
+      //this.trace('mouseDown', properties);
     });
 
     this.timeline.on('mouseUp', (properties) => {
-      this.trace('mouseUp', properties);
+      //this.trace('mouseUp', properties);
     });
 
   }
