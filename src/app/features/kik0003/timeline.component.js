@@ -1,7 +1,7 @@
 import moment from 'moment';
 import template from "./timeline.component.hbs";
+import partial from "./record.partial.hbs";
 import styles from "./timeline.component.css";
-import records from "./records.json";
 import meetup from "./meetup.json";
 
 import { DataSet, Timeline } from 'vis/index-timeline-graph2d';
@@ -11,13 +11,14 @@ export class TimelineComponent {
 
   timeline;
   events;
+  current;
 
   init(selector) {
 
     this.events = meetup.events;
 
     var container = document.querySelector(selector);
-    container.innerHTML = template();
+    container.innerHTML = template(this);
 
     var element = container.querySelector(".timeline");
     this.load(element);
@@ -108,8 +109,10 @@ export class TimelineComponent {
   }
 
   select(id) {
-    var event = this.events.find(p => p.id == id);
-    console.log(event);
+    this.current = this.events.find(p => p.id == id);
+
+    var element = document.querySelector(".current");
+    element.innerHTML = partial(this.current);
   }
 
   trace(event, data) {
