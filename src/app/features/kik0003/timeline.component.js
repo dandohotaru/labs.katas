@@ -58,6 +58,7 @@ export class TimelineComponent {
     document.getElementById('zoomIn').onclick = () => this.zoom(0.2);
     document.getElementById('zoomOut').onclick = () => this.zoom(-0.2);
     document.getElementById('moveLeft').onclick = () => this.move(0.2);
+    document.getElementById('moveCenter').onclick = () => this.move(0);
     document.getElementById('moveRight').onclick = () => this.move(-0.2);
 
     this.timeline.on('select', (properties) => {
@@ -99,13 +100,20 @@ export class TimelineComponent {
   }
 
   move(percentage) {
-    var range = this.timeline.getWindow();
-    var interval = range.end - range.start;
+    if (percentage == 0) {
+      this.timeline.moveTo(new Date(), { animation: true }, (props) => {
+        console.log("movedTo", props);
+      });
+    }
+    else {
+      var range = this.timeline.getWindow();
+      var interval = range.end - range.start;
 
-    this.timeline.setWindow({
-      start: range.start.valueOf() - interval * percentage,
-      end: range.end.valueOf() - interval * percentage
-    });
+      this.timeline.setWindow({
+        start: range.start.valueOf() - interval * percentage,
+        end: range.end.valueOf() - interval * percentage
+      });
+    }
   }
 
   select(id) {
