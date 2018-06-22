@@ -1,8 +1,8 @@
 import moment from 'moment';
-import template from "./timeline.component.hbs";
-import partial from "./record.partial.hbs";
 import styles from "./timeline.component.css";
-import meetup from "./meetup.json";
+import TimelineView from "./timeline.component.hbs";
+import DetailsView from "./record.partial.hbs";
+import TimelineData from "./meetup.json";
 
 import { DataSet, Timeline } from 'vis/index-timeline-graph2d';
 import 'vis/dist/vis-timeline-graph2d.min.css';
@@ -15,10 +15,10 @@ export class TimelineComponent {
 
   init(selector) {
 
-    this.events = meetup.events;
+    this.events = TimelineData.events;
 
     var container = document.querySelector(selector);
-    container.innerHTML = template(this);
+    container.innerHTML = TimelineView(this);
 
     var element = container.querySelector(".timeline");
     this.load(element);
@@ -31,22 +31,77 @@ export class TimelineComponent {
         let location = p.venue
           ? `${p.venue.name}, ${p.venue.city}`
           : "TBD";
+        let content = `
+          <span class="item">
+            <span class="name">${p.name}</span>
+            <span class="counter">${p.yes_rsvp_count}</span>
+          </span>
+        `
         return {
           id: p.id,
           start: new Date(p.local_date),
           end: null,
-          content: p.name,
+          content: content,
           title: location,
+          type: "box",
         };
       });
-    var data = new DataSet(projections);
+
+    var data = new DataSet(projections, {
+      type: { 
+        start: 'Date', 
+        end: 'Date', 
+      }
+    });
+
+    var facets =
+      {
+        visibility: this.events
+          .filter(p => !!p.visibility)
+          .reduce((results, current) => {
+            let found = results.find(p => p == current.visibility);
+            if (!found) {
+              results.push(current.visibility);
+            }
+            return results;
+          }, []),
+        cities: this.events
+          .filter(p => !!p.venue && !!p.venue.city)
+          .reduce((results, current) => {
+            let found = results.find(p => p == current.venue.city);
+            if (!found) {
+              results.push(current.venue.city);
+            }
+            return results;
+          }, [])
+          .sort((a, b) => a.localeCompare(b)),
+        limits: this.events
+          .filter(p => !!p.rsvp_limit)
+          .reduce((results, current) => {
+            let found = results.find(p => p == current.rsvp_limit);
+            if (!found) {
+              results.push(current.rsvp_limit);
+            }
+            return results;
+          }, [])
+          .sort((a, b) => a - b),
+      };
+
+    console.log(facets);
 
     var options = {
+      stack: true,
       height: '600px',
+      orientation: 'top',
       min: new Date(2018, 0, 1),
       max: new Date(2019, 0, 1),
       zoomMin: moment.duration(1, 'days').asMilliseconds(),
       zoomMax: moment.duration(2, 'months').asMilliseconds(),
+      dataAttributes: ['visibility'],
+      margin: {
+        item: 10, 
+        axis: 5,
+      },
       onInitialDrawComplete: () => {
         this.trace("loaded");
       },
@@ -120,7 +175,7 @@ export class TimelineComponent {
     this.current = this.events.find(p => p.id == id);
 
     var element = document.querySelector(".current");
-    element.innerHTML = partial(this.current);
+    element.innerHTML = DetailsView(this.current);
   }
 
   trace(event, data) {
