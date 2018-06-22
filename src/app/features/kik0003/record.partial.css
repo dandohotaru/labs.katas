@@ -1,0 +1,33 @@
+/* .timeline .record {
+  background: transparent;
+  border: 1px lightgray solid;
+  box-shadow: 0px 2px 4px 0px lightgray;
+  margin-bottom: 10px;
+}
+
+.timeline .record:hover {
+  border: 1px orange solid;
+  box-shadow: 0px 8px 16px 0px orange;
+} */
+
+.timeline .record.content > .name {
+  font-size: 14px;
+}
+
+.timeline .record.content > .counter {
+  font-size: 12px;
+  color: lightsalmon;
+}
+
+.timeline .record.template {
+}
+
+.vis.timeline .item {
+  border-color: #acacac;
+  background-color: #efefef;
+  box-shadow: 5px 5px 10px rgba(128,128,128, 0.3);
+}
+
+
+
+

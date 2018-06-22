@@ -1,11 +1,15 @@
 import moment from 'moment';
-import styles from "./timeline.component.css";
-import TimelineView from "./timeline.component.hbs";
-import DetailsView from "./record.partial.hbs";
-import TimelineData from "./meetup.json";
-
+import formatter from 'moment-duration-format';
 import { DataSet, Timeline } from 'vis/index-timeline-graph2d';
 import 'vis/dist/vis-timeline-graph2d.min.css';
+
+import TimelineData from "./meetup.json";
+import TimelineStyles from "./timeline.component.css";
+import TimelineView from "./timeline.component.hbs";
+import RecordView from "./record.partial.hbs";
+import RecordStyles from "./record.partial.css";
+import DetailsView from "./details.partial.hbs";
+import DetailsStyles from "./details.partial.css";
 
 export class TimelineComponent {
 
@@ -28,22 +32,43 @@ export class TimelineComponent {
   load(element) {
     var projections = this.events
       .map(p => {
-        let location = p.venue
-          ? `${p.venue.name}, ${p.venue.city}`
-          : "TBD";
+
+        let stamp = moment(p.local_date, "YYYY-MM-DD")
+        let start = stamp.toDate();
+        let end = p.duration 
+          ? stamp.add(p.duration, "milliseconds").toDate() 
+          : null;
+
+        let venue = p.venue 
+          ? {
+            name: p.venue.name,
+            address: p.venue.address_1,
+            city: p.venue.city,
+            country: p.venue.localized_country_name,
+          }
+          : null;
+
+        let duration = p.duration
+          ? moment.duration(p.duration).format("h [hours]")
+          : null;
+
         let content = `
-          <span class="item">
+          <span class="record content">
             <span class="name">${p.name}</span>
             <span class="counter">${p.yes_rsvp_count}</span>
           </span>
-        `
+        `;
+
         return {
           id: p.id,
-          start: new Date(p.local_date),
-          end: null,
-          content: content,
-          title: location,
           type: "box",
+          content: content,
+          start: start,
+          end: end,
+          name: p.name,
+          link: p.link,
+          venue: venue,
+          duration: duration,
         };
       });
 
@@ -105,6 +130,7 @@ export class TimelineComponent {
       onInitialDrawComplete: () => {
         this.trace("loaded");
       },
+      template: RecordView,
     };
     this.timeline = new Timeline(element, data, options);
   }

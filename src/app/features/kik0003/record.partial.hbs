@@ -1,6 +1,10 @@
 {{#if this}}
-<div class="details card">
+<div class="record template">
   <ul>
+    <li>
+      <label>Id</label>
+       {{id}}
+    </li>
     <li>
       <label>Name</label>
       <a href="{{link}}" target="_blank">
@@ -8,30 +12,19 @@
       </a>
     </li>
     <li>
+      <label>Duration</label>
+       {{duration}}
+    </li>
+    {{!-- <li>
       <label>Date</label>
       <span>{{local_date}} {{local_time}}</span>
-    </li>
-    <li>
-      <label>Confirmed</label>
-      <span>{{yes_rsvp_count}}</span>
-    </li>
-    <li>
-      <label>Waiting</label>
-      <span>{{waitlist_count}}</span>
-    </li>
+    </li> --}}
     <li>
       <label>Venue</label>
       <div>{{name}}</div>
-      <div>{{address_1}}</div>
+      <div>{{address}}</div>
       <div>{{city}}</div>
-      <div>
-        <small>{{country}}</small>
-        {{localized_country_name}}
-      </div>
-    </li>
-    <li>
-      <label>Description</label>
-      <div>{{{description}}}</div>
+      <small>{{country}}</small>
     </li>
   </ul>
 </div>
