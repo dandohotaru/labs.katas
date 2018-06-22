@@ -1,15 +1,26 @@
-/* .timeline .record {
-  background: transparent;
-  border: 1px lightgray solid;
+
+/* Custom */
+.vis-item {
+  border-color: #97b0f8;
+  background-color: white;
   box-shadow: 0px 2px 4px 0px lightgray;
   margin-bottom: 10px;
 }
 
-.timeline .record:hover {
-  border: 1px orange solid;
+.vis-item:hover {
+  border-color: orange;
   box-shadow: 0px 8px 16px 0px orange;
-} */
+}
 
+.vis-item.vis-line {
+  opacity: 0.5;
+}
+
+.vis-item.vis-dot {
+  opacity: 0.5;
+}
+
+/* Content */
 .timeline .record.content > .name {
   font-size: 14px;
 }
@@ -19,15 +30,38 @@
   color: lightsalmon;
 }
 
-.timeline .record.template {
+/* Colors */
+.purple {
+  background: #BA68C8;
 }
 
-.vis.timeline .item {
-  border-color: #acacac;
-  background-color: #efefef;
-  box-shadow: 5px 5px 10px rgba(128,128,128, 0.3);
+.green {
+  background: #52A43A;
 }
 
+.yellow {
+  background: #F7AA17;
+}
 
+.red {
+  background: #EF5350;
+}
 
+/* Template */
+.record {
+}
+
+.record .card {
+  max-width: 180px;
+}
+
+.record .card .content .venue .name {
+}
+
+/* General */
+.wrap {
+  white-space: pre-line;
+  /* overflow-wrap: break-word; */
+  /* word-wrap: break-word; */
+}
 

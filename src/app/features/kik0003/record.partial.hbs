@@ -1,31 +1,57 @@
 {{#if this}}
-<div class="record template">
-  <ul>
-    <li>
-      <label>Id</label>
-       {{id}}
-    </li>
-    <li>
-      <label>Name</label>
-      <a href="{{link}}" target="_blank">
-        {{name}}
-      </a>
-    </li>
-    <li>
-      <label>Duration</label>
-       {{duration}}
-    </li>
-    {{!-- <li>
-      <label>Date</label>
-      <span>{{local_date}} {{local_time}}</span>
-    </li> --}}
-    <li>
-      <label>Venue</label>
-      <div>{{name}}</div>
-      <div>{{address}}</div>
-      <div>{{city}}</div>
-      <small>{{country}}</small>
-    </li>
-  </ul>
+<div class="record">
+  <div class="card">
+
+    <div class="sider purple"></div>
+
+    <div class="info">
+      <div class="date">
+        Date
+        <div>{{date}}</div>
+      </div>
+      <div class="time">
+        Time
+        <div>{{time}}</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+      <div class="title">
+        <a href="{{link}}" target="-blank" class="wrap">
+          {{name}}
+        </a>
+      </div>
+
+      {{#if venue}}
+      <div class="venue wrap">
+        <div class="venue">Venue</div>
+        <div class="name">{{venue.name}}</div>
+        <div class="address">{{venue.address}}</div>
+        <div class="city">{{venue.city}}</div>
+      </div>
+      {{/if}}
+
+      {{#if audience}}
+      <div class="participants">
+        <div>Confirmed</div>
+        <div class="value">{{audience.confirmed}}</div>
+      </div>
+
+      <div class="waiting">
+        <div>Waiting</div>
+        <div class="value">{{audience.waiting}}</div>
+      </div>
+
+      <div class="limit">
+        <div>Limit</div>
+        <div class="value">{{audience.limit}}</div>
+      </div>
+      {{/if}}
+
+    </div>
+  </div>
+
 </div>
 {{/if}}

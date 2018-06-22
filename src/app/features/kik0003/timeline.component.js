@@ -34,9 +34,14 @@ export class TimelineComponent {
       .map(p => {
 
         let stamp = moment(p.local_date, "YYYY-MM-DD")
+        let date = stamp.format("DD MMM");
+        let time = stamp.format("HH:MM");
         let start = stamp.toDate();
         let end = p.duration 
           ? stamp.add(p.duration, "milliseconds").toDate() 
+          : null;
+        let duration = p.duration
+          ? moment.duration(p.duration).format("h [hours]")
           : null;
 
         let venue = p.venue 
@@ -48,9 +53,11 @@ export class TimelineComponent {
           }
           : null;
 
-        let duration = p.duration
-          ? moment.duration(p.duration).format("h [hours]")
-          : null;
+        let audience = {
+          confirmed: p.yes_rsvp_count,
+          waiting: p.rsvp_limit,
+          limit: p.rsvp_limit,
+        }
 
         let content = `
           <span class="record content">
@@ -62,13 +69,16 @@ export class TimelineComponent {
         return {
           id: p.id,
           type: "box",
-          content: content,
+          
           start: start,
           end: end,
+          date: date,
+          time: time,
+          duration: duration,
           name: p.name,
           link: p.link,
           venue: venue,
-          duration: duration,
+          audience: audience,
         };
       });
 
@@ -133,6 +143,11 @@ export class TimelineComponent {
       template: RecordView,
     };
     this.timeline = new Timeline(element, data, options);
+
+    let today = moment();
+    let start = today.startOf("week").toDate();
+    let end = today.endOf("week").toDate();
+    this.timeline.setWindow(start, end);
   }
 
   listen() {
