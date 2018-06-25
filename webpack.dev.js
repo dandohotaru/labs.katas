@@ -11,6 +11,7 @@ module.exports = merge(common, {
     port: 8080,
     stats: "minimal",
     watchContentBase: true,
+    historyApiFallback: true,
     open: false,
     hot: false
   },
