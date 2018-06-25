@@ -20,6 +20,11 @@
   opacity: 0.5;
 }
 
+.vis-item .vis-item-content {
+  white-space: normal;
+}
+
+
 /* Content */
 .timeline .record.content > .name {
   font-size: 14px;
@@ -30,22 +35,6 @@
   color: lightsalmon;
 }
 
-/* Colors */
-.purple {
-  background: #BA68C8;
-}
-
-.green {
-  background: #52A43A;
-}
-
-.yellow {
-  background: #F7AA17;
-}
-
-.red {
-  background: #EF5350;
-}
 
 /* Template */
 .record {
@@ -55,12 +44,25 @@
   max-width: 180px;
 }
 
+.record .card .info {
+  display: flex;
+}
+
+.record .card .info .date {
+  flex: 0 0 65%;
+}
+
+.record .card .info .time {
+  flex: 1;
+}
+
 .record .card .content .venue .name {
 }
 
+
 /* General */
 .wrap {
-  white-space: pre-line;
+  /* white-space: pre-line; */
   /* overflow-wrap: break-word; */
   /* word-wrap: break-word; */
 }

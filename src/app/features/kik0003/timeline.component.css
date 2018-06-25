@@ -28,3 +28,21 @@
   padding-right: 5px;
   cursor: pointer;
 }
+
+
+/* Colors */
+.purple {
+  background: #BA68C8;
+}
+
+.green {
+  background: #52A43A;
+}
+
+.yellow {
+  background: #F7AA17;
+}
+
+.red {
+  background: #EF5350;
+}
