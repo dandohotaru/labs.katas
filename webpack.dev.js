@@ -6,6 +6,9 @@ const common = require('./webpack.config.js')
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'source-map',
+  output: {
+    publicPath: '/',
+  },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     port: 8080,
