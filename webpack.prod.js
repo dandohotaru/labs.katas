@@ -1,28 +1,34 @@
-const merge = require('webpack-merge')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const common = require('./webpack.config.js')
+const merge = require('webpack-merge');
+const common = require('./webpack.config.js');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(common, {
   mode: 'production',
+  output: {
+    publicPath: '/',
+  },
   plugins: [
-    new ExtractTextPlugin('style.css')
+    new MiniCssExtractPlugin({
+      filename: "[name].bundle.css",
+    })
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader']
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
-      }
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ]
+      },
     ]
   }
 })
