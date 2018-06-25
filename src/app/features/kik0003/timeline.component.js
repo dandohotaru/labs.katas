@@ -33,9 +33,7 @@ export class TimelineComponent {
     var projections = this.events
       .map(p => {
 
-        let stamp = moment(p.local_date, "YYYY-MM-DD")
-        let date = stamp.format("DD MMM");
-        let time = stamp.format("HH:MM");
+        let stamp = moment(`${p.local_date} ${p.local_time}`, "YYYY-MM-DD HH:mm");
         let start = stamp.toDate();
         let end = p.duration 
           ? stamp.add(p.duration, "milliseconds").toDate() 
@@ -69,11 +67,8 @@ export class TimelineComponent {
         return {
           id: p.id,
           type: "box",
-          
           start: start,
           end: end,
-          date: date,
-          time: time,
           duration: duration,
           name: p.name,
           link: p.link,
