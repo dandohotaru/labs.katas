@@ -135,7 +135,9 @@ export class TimelineComponent {
       onInitialDrawComplete: () => {
         this.trace("loaded");
       },
-      template: RecordView,
+      template: (record) => {
+        return RecordView(record);
+      },
     };
     this.timeline = new Timeline(element, data, options);
 
