@@ -34,19 +34,12 @@ export class ClustersComponent {
     let options = {
       template: (item) => {
         return item.count
-          ? ("<span>" + item.count + " event" + ((item.count > 1)
-            ? 's'
-            : '') + "</span>")
+          ? `<span>${item.count} events</span>`
           : item.content;
       }
     }
 
-    this.timeline = new Timeline(
-      element,
-      [],
-      groups,
-      options
-    );
+    this.timeline = new Timeline(element, [], groups, options);
 
     this.service = new ClustersService(this.timeline);
     this.timeline.setItems(this.service.clusters(items));

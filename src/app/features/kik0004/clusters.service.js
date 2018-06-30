@@ -33,6 +33,7 @@ export class ClustersService {
 
     // Use the scale information from timeline api in order to know how to cluster data
     var diff = this.delta(start, end);
+    console.log(diff);
 
     if (diff.months > 12 * 2) {
       return 'year';
