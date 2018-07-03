@@ -12,39 +12,45 @@ footer {
 
 
 /* Offcanvas */
-@media screen and (max-width: 767px) {
-  .offcanvas {
-    position: relative;
-    transition: all .15s ease-out;
-  }
+.offcanvas {
+  position: relative;
+  transition: all .15s ease-out;
+}
 
-  .offcanvas.right {
-    right: 0;
-  }
+/* Side */
+.offcanvas .sidebar {
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
 
-  .offcanvas.left {
-    left: 0;
-  }
+/* Right */
+.offcanvas.right {
+  right: 0;
+}
 
-  .offcanvas.right .sidebar {
-    right: -50%;
-  }
+.offcanvas.right .sidebar {
+  right: -50%;
+  display: none;
+}
 
-  .offcanvas.right.active {
-    right: 50%;
-  }
+.offcanvas.right.active {
+  right: 50%;
+}
 
-  .offcanvas.left .sidebar {
-    left: -50%;
-  }
+.offcanvas.right.active .sidebar {
+  display: block;
+}
 
-  .offcanvas.left.active {
-    left: 50%;
-  }
+/* Left */
+.offcanvas.left {
+  left: 0;
+}
 
-  .sidebar {
-    position: absolute;
-    top: 0;
-    width: 50%;
-  }
+.offcanvas.left .sidebar {
+  left: -50%;
+}
+
+.offcanvas.left.active {
+  left: 50%;
 }
