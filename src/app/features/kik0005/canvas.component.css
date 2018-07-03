@@ -1,3 +1,8 @@
+/* General */
+html, body {
+   overflow-x: hidden;
+}
+
 /* Offcanvas */
 .offcanvas {
   position: relative;
