@@ -2,10 +2,7 @@ import moment from 'moment';
 
 export class ClustersService {
 
-  timeline;
-
-  constructor(timeline) {
-    this.timeline = timeline;
+  constructor() {
   }
 
   delta(start, end) {
@@ -30,8 +27,7 @@ export class ClustersService {
   }
 
   scale(start, end) {
-
-    // Use the scale information from timeline api in order to know how to cluster data
+    // Use the range information in order to know how to cluster data
     var diff = this.delta(start, end);
     console.log(diff);
 
@@ -52,9 +48,7 @@ export class ClustersService {
     }
   }
 
-  clusters(data) {
-    var range = this.timeline.getWindow();
-
+  clusters(data, range) {
     var scale = this.scale(range.start, range.end);
 
     var group = data

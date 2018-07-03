@@ -39,10 +39,11 @@ export class ClustersComponent {
       }
     }
 
-    this.timeline = new Timeline(element, [], groups, options);
+    this.service = new ClustersService();
 
-    this.service = new ClustersService(this.timeline);
-    this.timeline.setItems(this.service.clusters(items));
+    this.timeline = new Timeline(element, [], groups, options);
+    var range = this.timeline.getWindow();
+    this.timeline.setItems(this.service.clusters(items, range));
   }
 
   listen() {
@@ -57,7 +58,8 @@ export class ClustersComponent {
 
     this.timeline.on('rangechanged', (properties) => {
       let items = this.records['items'];
-      this.timeline.setItems(this.service.clusters(items));
+      var range = this.timeline.getWindow();
+      this.timeline.setItems(this.service.clusters(items, range));
     });
 
     this.timeline.on('click', (properties) => {
