@@ -3,6 +3,7 @@ import { RecordsComponent } from "./kik0001/records.component";
 import { NetworkComponent } from "./kik0002/network.component";
 import { TimelineComponent } from "./kik0003/timeline.component";
 import { ClustersComponent } from "./kik0004/clusters.component";
+import { CanvasComponent } from "./kik0005/canvas.component";
 
 export class FeaturesModule {
 
@@ -32,6 +33,9 @@ export class FeaturesModule {
         new ClustersComponent().init(this.outlet);
       })
       .on('/kik0005', () => {
+        new CanvasComponent().init(this.outlet);
+      })
+      .on('/kik0006', () => {
         console.log(`Todo: ${window.location.href}`);
       });
 
