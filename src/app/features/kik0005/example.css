@@ -13,36 +13,36 @@ footer {
 
 /* Offcanvas */
 @media screen and (max-width: 767px) {
-  .row-offcanvas {
+  .offcanvas {
     position: relative;
     transition: all .15s ease-out;
   }
 
-  .row-offcanvas-right {
+  .offcanvas.right {
     right: 0;
   }
 
-  .row-offcanvas-left {
+  .offcanvas.left {
     left: 0;
   }
 
-  .row-offcanvas-right .sidebar-offcanvas {
+  .offcanvas.right .sidebar {
     right: -50%;
   }
 
-  .row-offcanvas-right.active {
+  .offcanvas.right.active {
     right: 50%;
   }
 
-  .row-offcanvas-left .sidebar-offcanvas {
+  .offcanvas.left .sidebar {
     left: -50%;
   }
 
-  .row-offcanvas-left.active {
+  .offcanvas.left.active {
     left: 50%;
   }
 
-  .sidebar-offcanvas {
+  .sidebar {
     position: absolute;
     top: 0;
     width: 50%;
