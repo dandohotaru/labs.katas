@@ -27,19 +27,16 @@
   display: block;
 }
 
-.offcanvas.left {
-  left: 0;
-}
+@media screen and (max-width: 480px) {
+  .offcanvas .sidebar {
+    width: 100%;
+  }
 
-.offcanvas.left.active {
-  left: 50%;
-}
+  .offcanvas.right.active {
+    right: 100%;
+  }
 
-.offcanvas.left .sidebar {
-  left: -50%;
-  display: none;
-}
-
-.offcanvas.left.active .sidebar {
-  display: block;
+  .offcanvas.right .sidebar {
+    right: -100%;
+  }
 }
