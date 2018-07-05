@@ -17,28 +17,30 @@ export class ClustersService {
     var diff = end.getTime() - start.getTime();
 
     // Convert back to components and return
-    return {
+    var result = {
       years: Math.round(diff / year),
       months: Math.round(diff / month),
       days: Math.round(diff / day),
       hours: Math.round(diff / hour),
       minutes: Math.round(diff / minute)
     };
+
+    return result;
   }
 
   scale(start, end) {
     // Use the range information in order to know how to cluster data
-    var diff = this.delta(start, end);
-    if (diff.months > 12 * 2) {
+    var difference = this.delta(start, end);
+    if (difference.months > 12 * 2) {
       return 'year';
     }
-    else if (diff.days > 31) {
+    else if (difference.days > 31) {
       return 'month';
     }
-    else if (diff.hours > 24) {
+    else if (difference.hours > 24) {
       return 'day';
     }
-    else if (diff.minutes > 60) {
+    else if (difference.minutes > 60) {
       return 'hour';
     }
     else {

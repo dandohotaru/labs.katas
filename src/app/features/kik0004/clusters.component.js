@@ -61,13 +61,27 @@ export class ClustersComponent {
     document.getElementById('zoomIn').onclick = () => this.zoom(0.2);
     document.getElementById('zoomOut').onclick = () => this.zoom(-0.2);
 
+    document.getElementById('scaleDay').onclick = () => { this.timeline.setOptions({ timeAxis: { scale: 'day', step: 1 }, }); };
+    document.getElementById('scaleWeek').onclick = () => { this.timeline.setOptions({ timeAxis: { scale: 'day', step: 7 }, }); };
+    document.getElementById('scaleMonth').onclick = () => { this.timeline.setOptions({ timeAxis: { scale: 'month', step: 1 }, }); };
+    document.getElementById('scaleQuarter').onclick = () => { this.timeline.setOptions({ timeAxis: { scale: 'month', step: 3 }, }); };
+    document.getElementById('scaleYear').onclick = () => { this.timeline.setOptions({ timeAxis: { scale: 'year', step: 1 }, }); };
+
     this.timeline.on('select', (properties) => {
     });
 
     this.timeline.on('rangechange', (properties) => {
+
     });
 
     this.timeline.on('rangechanged', (properties) => {
+      let temp = {
+        scale: this.timeline.timeAxis.step.scale,
+        step: this.timeline.timeAxis.step.step,
+        bla: this.timeline.timeAxis.step,
+      };
+      console.log(temp);
+
       let items = this.records['items'];
       let range = {
         start: properties.start,
@@ -88,4 +102,6 @@ export class ClustersComponent {
       this.timeline.zoomOut(Math.abs(percentage));
     }
   }
+
+ 
 }
