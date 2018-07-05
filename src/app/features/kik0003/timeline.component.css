@@ -5,23 +5,23 @@
 
 
 /* Menu */
-.menu {
+.timeline .menu {
   position: absolute;
   margin: 10px;
   z-index: 9999;
 }
 
-.menu.left {
+.timeline .menu.left {
   top: -40px;
   left: 0;
 }
 
-.menu.right {
+.timeline .menu.right {
   top: -40px;
   right: 0;
 }
 
-.menu > i {
+.timeline .menu > i {
   opacity: 0.7;
   font-size: 18px;
   padding-left: 5px;
