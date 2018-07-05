@@ -22,3 +22,16 @@
   padding-right: 5px;
   cursor: pointer;
 }
+
+/* Custom */
+.vis-time-axis .vis-grid.vis-saturday,
+.vis-time-axis .vis-grid.vis-sunday {
+  background: lightcyan;
+}
+
+.vis-item {
+  border-color: #97b0f8;
+  background-color: white;
+  box-shadow: 0px 2px 4px 0px lightgray;
+  margin-bottom: 10px;
+}

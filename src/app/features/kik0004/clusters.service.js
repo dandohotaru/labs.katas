@@ -29,8 +29,6 @@ export class ClustersService {
   scale(start, end) {
     // Use the range information in order to know how to cluster data
     var diff = this.delta(start, end);
-    console.log(diff);
-
     if (diff.months > 12 * 2) {
       return 'year';
     }
@@ -49,6 +47,13 @@ export class ClustersService {
   }
 
   clusters(data, range) {
+
+    var one = moment(range.start);
+    var two = moment(range.end);
+    let diff = two.diff(one, 'days');
+    console.log(range);
+    console.log(`${diff}`);
+
     var scale = this.scale(range.start, range.end);
 
     var group = data

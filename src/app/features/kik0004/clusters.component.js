@@ -32,7 +32,17 @@ export class ClustersComponent {
     var items = this.records['items'];
 
     let options = {
-      template: (item) => {
+      stack: true,
+      orientation: 'top',
+      showCurrentTime: true,
+      moveable: true,
+      min: new Date(2016, 0, 1),
+      max: new Date(2017, 0, 1),
+      start: new Date(2016, 8, 1),
+      end: new Date(2016, 10, 1),
+      zoomMin: moment.duration(1, 'days').asMilliseconds(),
+      zoomMax: moment.duration(6, 'months').asMilliseconds(),
+      template: (item, element, data) => {
         return item.count
           ? `<span>${item.count} events</span>`
           : item.content;
@@ -43,7 +53,8 @@ export class ClustersComponent {
 
     this.timeline = new Timeline(element, [], groups, options);
     var range = this.timeline.getWindow();
-    this.timeline.setItems(this.service.clusters(items, range));
+    let clusters = this.service.clusters(items, range);
+    this.timeline.setItems(clusters);
   }
 
   listen() {
@@ -58,8 +69,12 @@ export class ClustersComponent {
 
     this.timeline.on('rangechanged', (properties) => {
       let items = this.records['items'];
-      var range = this.timeline.getWindow();
-      this.timeline.setItems(this.service.clusters(items, range));
+      let range = {
+        start: properties.start,
+        end: properties.end
+      };
+      let clusters = this.service.clusters(items, range);
+      this.timeline.setItems(clusters);
     });
 
     this.timeline.on('click', (properties) => {
