@@ -27,7 +27,7 @@ export class ClustersComponent {
 
   load(element) {
 
-    var groups = this.records['groups'].filter(p=>p.id == 1);
+    var groups = this.records['groups'].filter(p => p.content == "Football");
     var items = this.records['items'];
 
     let options = {
@@ -53,7 +53,11 @@ export class ClustersComponent {
 
     this.timeline = new Timeline(element, [], groups, options);
     var range = this.timeline.getWindow();
-    let clusters = this.service.clusters(items, range);
+    let temp = {
+      scale: this.timeline.timeAxis.step.scale,
+      step: this.timeline.timeAxis.step.step,
+    };
+    let clusters = this.service.clusters(items, range, temp.scale);
     this.timeline.setItems(clusters);
   }
 
@@ -97,7 +101,6 @@ export class ClustersComponent {
       let temp = {
         scale: this.timeline.timeAxis.step.scale,
         step: this.timeline.timeAxis.step.step,
-        bla: this.timeline.timeAxis.step,
       };
       console.log(temp);
 
@@ -106,7 +109,7 @@ export class ClustersComponent {
         start: properties.start,
         end: properties.end
       };
-      let clusters = this.service.clusters(items, range);
+      let clusters = this.service.clusters(items, range, temp.scale);
       this.timeline.setItems(clusters);
     });
 

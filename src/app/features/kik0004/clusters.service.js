@@ -6,23 +6,19 @@ export class ClustersService {
   }
 
   delta(start, end) {
-    var second = 1000;
-    var minute = second * 60;
-    var hour = minute * 60;
-    var day = hour * 24;
-    var month = day * 31;
-    var year = month * 12;
 
-    // Convert both dates to milliseconds
-    var diff = end.getTime() - start.getTime();
+    let left = moment(start);
+    let right = moment(end);
+    let difference = right.diff(left);
+    var duration = moment.duration(difference);
 
-    // Convert back to components and return
     var result = {
-      years: Math.round(diff / year),
-      months: Math.round(diff / month),
-      days: Math.round(diff / day),
-      hours: Math.round(diff / hour),
-      minutes: Math.round(diff / minute)
+      years: duration.as("years"),
+      months: duration.as("months"),
+      weeks: duration.as("weeks"),
+      days: duration.as("days"),
+      hours: duration.as("hours"),
+      minutes: duration.as("minutes"),
     };
 
     return result;
@@ -30,17 +26,25 @@ export class ClustersService {
 
   scale(start, end) {
     // Use the range information in order to know how to cluster data
-    var difference = this.delta(start, end);
-    if (difference.months > 12 * 2) {
+    let duration = this.delta(start, end);
+    console.log(duration);
+
+    if (duration.years > 1) {
       return 'year';
     }
-    else if (difference.days > 31) {
+    else if (duration.months > 3) {
+      return 'quarter';
+    }
+    else if (duration.months > 1) {
       return 'month';
     }
-    else if (difference.hours > 24) {
+    else if (duration.weeks > 1) {
+      return 'week';
+    }
+    else if (duration.days > 1) {
       return 'day';
     }
-    else if (difference.minutes > 60) {
+    else if (duration.hours > 1) {
       return 'hour';
     }
     else {
@@ -48,17 +52,17 @@ export class ClustersService {
     }
   }
 
-  clusters(data, range) {
-
-    var one = moment(range.start);
-    var two = moment(range.end);
+  clusters(data, range, temp) {
+ 
+    let one = moment(range.start);
+    let two = moment(range.end);
     let diff = two.diff(one, 'days');
-    console.log(range);
-    console.log(`${diff}`);
+    //console.log({ start: one.format("YYMMDD"), end: two.format("YYMMDD"), diff: diff});
 
     var scale = this.scale(range.start, range.end);
+    console.log(scale);
 
-    var group = data
+    var groups = data
       .reduce((output, current) => {
         var found = output.find(p => p.key == current.group);
         if (found) {
@@ -81,16 +85,27 @@ export class ClustersService {
 
     var result = {};
 
+    // var formatByScale = {
+    //   year: 'Y',
+    //   quarter: 'Q',
+    //   month: 'Y-M',
+    //   week: 'WW',
+    //   weekday: 'Y-M-week-W',
+    //   day: 'Y-M-day-D',
+    //   hour: 'Y-M-D-H',
+    //   second: 'Y-M-D-H-m'
+    // };
+
     var formatByScale = {
       year: 'Y',
-      month: 'Y-M',
-      weekday: 'Y-M-week-W',
-      day: 'Y-M-day-D',
-      hour: 'Y-M-D-H',
-      second: 'Y-M-D-H-m'
+      quarter: 'YYMMWW',
+      month: 'YYMMDD',
+      week: 'YYMMDD',
+      day: 'YYMMDDHH',
+      hour: 'YYMMDDHHmm',
     };
 
-    group.forEach((items, i) => {
+    groups.forEach((items, i) => {
       items.forEach((item, j) => {
         var index = moment(item.start).format(formatByScale[scale]) + '-group' + item.group;
 
@@ -99,7 +114,7 @@ export class ClustersService {
             count: 1,
             items: [],
             group: item.group,
-            start: item.start
+            start: item.start,
           };
         }
 
