@@ -15,47 +15,69 @@ export class ClustersService {
       segment: moment.duration(difference / 50),
     };
     let span = {
-      minutes: this.round(duration.span.minutes()),
-      hours: this.round(duration.span.hours()),
-      days: this.round(duration.span.days()),
-      months: this.round(duration.span.months()),
       years: this.round(duration.span.years()),
+      months: this.round(duration.span.months()),
+      weeks: this.round(duration.span.weeks()),
+      days: this.round(duration.span.days()),
+      hours: this.round(duration.span.hours()),
+      minutes: this.round(duration.span.minutes()),
+    };
+    let spanx = {
+      years: this.round(duration.span.asYears()),
+      months: this.round(duration.span.asMonths()),
+      weeks: this.round(duration.span.asWeeks()),
+      days: this.round(duration.span.asDays()),
+      hours: this.round(duration.span.asHours()),
+      minutes: this.round(duration.span.asMinutes()),
     };
     let unit = {
-      minutes: this.round(duration.segment.minutes()),
-      hours: this.round(duration.segment.hours()),
-      days: this.round(duration.segment.days()),
-      months: this.round(duration.segment.months()),
       years: this.round(duration.segment.years()),
+      months: this.round(duration.segment.months()),
+      weeks: this.round(duration.segment.weeks()),
+      days: this.round(duration.segment.days()),
+      hours: this.round(duration.segment.hours()),
+      minutes: this.round(duration.segment.minutes()),
+    };
+    let unitx = {
+      years: this.round(duration.segment.asYears()),
+      months: this.round(duration.segment.asMonths()),
+      weeks: this.round(duration.segment.asWeeks()),
+      days: this.round(duration.segment.asDays()),
+      hours: this.round(duration.segment.asHours()),
+      minutes: this.round(duration.segment.asMinutes()),
     };
 
     // Print
     document.getElementById("span-nice").innerText = duration.span.humanize();
     document.getElementById("span-json").innerText = JSON.stringify(span, null, 2);
+    document.getElementById("span-total").innerText = JSON.stringify(spanx, null, 2);
     document.getElementById("unit-nice").innerText = duration.segment.humanize();
     document.getElementById("unit-json").innerText = JSON.stringify(unit, null, 2);
-    document.getElementById("unit-total").innerText = JSON.stringify({
-      minutes: this.round(duration.segment.as("minutes")),
-      hours: this.round(duration.segment.as("hours")),
-      days: this.round(duration.segment.as("days")),
-      months: this.round(duration.segment.as("months")),
-      years: this.round(duration.segment.as("years")),
-    }, null, 2);
+    document.getElementById("unit-total").innerText = JSON.stringify(unitx, null, 2);
 
-    // Pair
-    if (duration.span.as("years") > 1) {
+    // Match
+    if (spanx.years >= 1) {
       return { span: 'year', format: "YYMM" };
     }
-    else if (duration.span.as("months") > 3) {
-      return { span: 'quarter', format: "YYMMWW" };
+    else if (spanx.months >= 9) {
+      return { span: 'yearhealf', format: "YYMM" };
     }
-    else if (duration.span.as("months") > 1) {
+    else if (spanx.months >= 6) {
+      return { span: 'yearhealf', format: "YYWW" };
+    }
+    else if (spanx.months >= 3) {
+      return { span: 'quarter', format: "YYWW" };
+    }
+    else if (spanx.months >= 1) {
       return { span: 'month', format: "YYMMDD" };
     }
-    else if (duration.span.as("weeks") > 1) {
+    else if (spanx.weeks >= 3) {
       return { span: 'week', format: "YYMMDD" };
     }
-    else if (duration.span.as("days") > 1) {
+    else if (spanx.weeks >= 1) {
+      return { span: 'week', format: "YYMMDDHH" };
+    }
+    else if (spanx.days >= 1) {
       return { span: 'day', format: "YYMMDDHH" };
     }
     else {
@@ -65,14 +87,7 @@ export class ClustersService {
 
   clusters(data, range, temp) {
  
-    let one = moment(range.start);
-    let two = moment(range.end);
-    let diff = two.diff(one, 'days');
-    //console.log({ start: one.format("YYMMDD"), end: two.format("YYMMDD"), diff: diff});
-
-    var scale = this.scale(range);
-    console.log(scale);
-
+    // Groups
     var groups = data
       .reduce((output, current) => {
         var found = output.find(p => p.key == current.group);
@@ -93,9 +108,13 @@ export class ClustersService {
         return p.items;
       });
 
+    // Scale
+    var scale = this.scale(range);
+    console.info(scale);
+    console.log(moment().format(scale.format));
 
+    // Results
     var result = {};
-
     groups.forEach((items, i) => {
       items.forEach((item, j) => {
         var index = moment(item.start).format(scale.format) + '-group' + item.group;

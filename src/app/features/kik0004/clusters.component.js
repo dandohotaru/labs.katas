@@ -45,7 +45,7 @@ export class ClustersComponent {
       template: (item, element, data) => {
         // ToDo: Move markup to dedicated template [DanD]
         let many = (group)=> {
-          return `<span>${group.count} events</span>`;
+          return `<span class="badge">${group.count}</span> events`;
         };
         
         let some = (group)=>{
@@ -122,7 +122,7 @@ export class ClustersComponent {
         scale: this.timeline.timeAxis.step.scale,
         step: this.timeline.timeAxis.step.step,
       };
-      console.log(temp);
+      //console.log(temp);
 
       let items = this.records['items'];
       let range = {
