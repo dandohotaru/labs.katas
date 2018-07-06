@@ -3,6 +3,10 @@ import formatter from 'moment-duration-format';
 import { DataSet, Timeline } from 'vis/index-timeline-graph2d';
 import 'vis/dist/vis-timeline-graph2d.min.css';
 
+import GroupView from "./group.partial.hbs";
+import GroupStyles from "./group.partial.css";
+import ItemView from "./item.partial.hbs";
+import ItemStyles from "./item.partial.css";
 import ClustersData from "./records.json";
 import ClustersView from "./clusters.component.hbs";
 import ClustersStyles from "./clusters.component.css";
@@ -43,28 +47,10 @@ export class ClustersComponent {
       zoomMin: moment.duration(1, 'days').asMilliseconds(),
       zoomMax: moment.duration(1, 'years').asMilliseconds(),
       template: (item, element, data) => {
-        // ToDo: Move markup to dedicated template [DanD]
-        let many = (group)=> {
-          return `<span class="badge">${group.count}</span> events`;
-        };
-        
-        let some = (group)=>{
-          let result = "";
-          group.items.forEach(item=>{
-            let markup = `
-              <div>
-                <strong>${item.content}</strong>
-              </div>
-            `;
-            result = result.concat(markup);
-          })
-          return result;
-        }
-
         return item.count
           ? item.count <= 2
-            ? some(item)
-            : many(item)
+            ? ItemView(item)
+            : GroupView(item)
           : item.content;
       }
     }
@@ -88,6 +74,14 @@ export class ClustersComponent {
 
     document.getElementById('zoomOut').onclick = () => {
       this.zoom(-0.2);
+    };
+
+    document.getElementById('focusIn').onclick = () => {
+      // ToDo: to be implemented [DanD]
+    };
+
+    document.getElementById('focusOut').onclick = () => {
+      // ToDo: to be implemented [DanD]
     };
 
     document.getElementById('scaleDay').onclick = () => { 

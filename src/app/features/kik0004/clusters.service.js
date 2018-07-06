@@ -6,7 +6,8 @@ export class ClustersService {
   }
 
   scale(range) {
-    // Calculate
+
+    // Compute
     let start = moment(range.start);
     let end = moment(range.end);
     let difference = end.diff(start);
@@ -47,7 +48,7 @@ export class ClustersService {
       minutes: this.round(duration.segment.asMinutes()),
     };
 
-    // Print
+    // Render
     document.getElementById("span-nice").innerText = duration.span.humanize();
     document.getElementById("span-json").innerText = JSON.stringify(span, null, 2);
     document.getElementById("span-total").innerText = JSON.stringify(spanx, null, 2);
@@ -55,33 +56,33 @@ export class ClustersService {
     document.getElementById("unit-json").innerText = JSON.stringify(unit, null, 2);
     document.getElementById("unit-total").innerText = JSON.stringify(unitx, null, 2);
 
-    // Match
+    // Rules
     if (spanx.years >= 1) {
-      return { span: 'year', format: "YYMM" };
+      return { span: 'one-year+', format: "YYMM" };
     }
     else if (spanx.months >= 9) {
-      return { span: 'yearhealf', format: "YYMM" };
+      return { span: 'nine-months+', format: "YYMM" };
     }
     else if (spanx.months >= 6) {
-      return { span: 'yearhealf', format: "YYWW" };
+      return { span: 'six-months+', format: "YYWW" };
     }
     else if (spanx.months >= 3) {
-      return { span: 'quarter', format: "YYWW" };
+      return { span: 'three-months+', format: "YYWW" };
     }
     else if (spanx.months >= 1) {
-      return { span: 'month', format: "YYMMDD" };
+      return { span: 'one-month+', format: "YYMMDD" };
     }
     else if (spanx.weeks >= 3) {
-      return { span: 'week', format: "YYMMDD" };
+      return { span: 'three-week+', format: "YYMMDD" };
     }
     else if (spanx.weeks >= 1) {
-      return { span: 'week', format: "YYMMDDHH" };
+      return { span: 'one-week+', format: "YYMMDDHH" };
     }
     else if (spanx.days >= 1) {
-      return { span: 'day', format: "YYMMDDHH" };
+      return { span: 'one-day+', format: "YYMMDDHH" };
     }
     else {
-      return { span: 'hour', format: "YYMMDDHHmm" };
+      return { span: 'one-day-', format: "YYMMDDHHmm" };
     }
   }
 
@@ -111,7 +112,10 @@ export class ClustersService {
     // Scale
     var scale = this.scale(range);
     console.info(scale);
-    console.log(moment().format(scale.format));
+    console.debug(moment().format(scale.format));
+
+    document.getElementById("rule-name").innerText = scale.span;
+    document.getElementById("rule-format").innerText = scale.format;
 
     // Results
     var result = {};

@@ -1,0 +1,7 @@
+.clusters.group .badge {
+  background-color: rgb(158, 206, 224);
+}
+
+.clusters.group .label {
+  border-radius: 1em;
+}
