@@ -5,14 +5,14 @@ export class ClustersService {
   constructor() {
   }
 
-  delta(start, end) {
+  delta(range) {
 
-    let left = moment(start);
-    let right = moment(end);
-    let difference = right.diff(left);
+    let start = moment(range.start);
+    let end = moment(range.end);
+    let difference = end.diff(start);
     var duration = moment.duration(difference);
 
-    var result = {
+    return {
       years: duration.as("years"),
       months: duration.as("months"),
       weeks: duration.as("weeks"),
@@ -20,35 +20,29 @@ export class ClustersService {
       hours: duration.as("hours"),
       minutes: duration.as("minutes"),
     };
-
-    return result;
   }
 
-  scale(start, end) {
-    // Use the range information in order to know how to cluster data
-    let duration = this.delta(start, end);
+  scale(range) {
+    let duration = this.delta(range);
     console.log(duration);
 
     if (duration.years > 1) {
-      return 'year';
+      return { span: 'year', format: "YYMM"};
     }
     else if (duration.months > 3) {
-      return 'quarter';
+      return { span: 'quarter', format: "YYMMWW" };
     }
     else if (duration.months > 1) {
-      return 'month';
+      return { span: 'month', format: "YYMMDD" };
     }
     else if (duration.weeks > 1) {
-      return 'week';
+      return { span: 'week', format: "YYMMDD" };
     }
     else if (duration.days > 1) {
-      return 'day';
-    }
-    else if (duration.hours > 1) {
-      return 'hour';
+      return { span: 'day', format: "YYMMDDHH" };
     }
     else {
-      return 'second';
+      return { span: 'hour', format: "YYMMDDHHmm" };
     }
   }
 
@@ -59,7 +53,7 @@ export class ClustersService {
     let diff = two.diff(one, 'days');
     //console.log({ start: one.format("YYMMDD"), end: two.format("YYMMDD"), diff: diff});
 
-    var scale = this.scale(range.start, range.end);
+    var scale = this.scale(range);
     console.log(scale);
 
     var groups = data
@@ -85,29 +79,9 @@ export class ClustersService {
 
     var result = {};
 
-    // var formatByScale = {
-    //   year: 'Y',
-    //   quarter: 'Q',
-    //   month: 'Y-M',
-    //   week: 'WW',
-    //   weekday: 'Y-M-week-W',
-    //   day: 'Y-M-day-D',
-    //   hour: 'Y-M-D-H',
-    //   second: 'Y-M-D-H-m'
-    // };
-
-    var formatByScale = {
-      year: 'Y',
-      quarter: 'YYMMWW',
-      month: 'YYMMDD',
-      week: 'YYMMDD',
-      day: 'YYMMDDHH',
-      hour: 'YYMMDDHHmm',
-    };
-
     groups.forEach((items, i) => {
       items.forEach((item, j) => {
-        var index = moment(item.start).format(formatByScale[scale]) + '-group' + item.group;
+        var index = moment(item.start).format(scale.format) + '-group' + item.group;
 
         if (!result[index]) {
           result[index] = {
