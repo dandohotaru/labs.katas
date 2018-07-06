@@ -5,40 +5,34 @@ export class ClustersService {
   constructor() {
   }
 
-  delta(range) {
-
+  scale(range) {
     let start = moment(range.start);
     let end = moment(range.end);
     let difference = end.diff(start);
-    var duration = moment.duration(difference);
+    let duration = moment.duration(difference);
+    console.log(duration.as("days"));
 
-    return {
-      years: duration.as("years"),
-      months: duration.as("months"),
-      weeks: duration.as("weeks"),
-      days: duration.as("days"),
-      hours: duration.as("hours"),
-      minutes: duration.as("minutes"),
-    };
-  }
+    let unit = moment.duration(difference/100);
+    console.log(unit.humanize());
 
-  scale(range) {
-    let duration = this.delta(range);
-    console.log(duration);
+    document.getElementById("range").innerText = duration.humanize();
+    document.getElementById("unit").innerText = unit.humanize();
 
-    if (duration.years > 1) {
-      return { span: 'year', format: "YYMM"};
+
+
+    if (duration.as("years") > 1) {
+      return { span: 'year', format: "YYMM" };
     }
-    else if (duration.months > 3) {
+    else if (duration.as("months") > 3) {
       return { span: 'quarter', format: "YYMMWW" };
     }
-    else if (duration.months > 1) {
+    else if (duration.as("months") > 1) {
       return { span: 'month', format: "YYMMDD" };
     }
-    else if (duration.weeks > 1) {
+    else if (duration.as("weeks") > 1) {
       return { span: 'week', format: "YYMMDD" };
     }
-    else if (duration.days > 1) {
+    else if (duration.as("days") > 1) {
       return { span: 'day', format: "YYMMDDHH" };
     }
     else {
