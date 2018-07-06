@@ -41,10 +41,30 @@ export class ClustersComponent {
       start: new Date(2018, 8, 1),
       end: new Date(2018, 9, 1),
       zoomMin: moment.duration(1, 'days').asMilliseconds(),
-      zoomMax: moment.duration(6, 'months').asMilliseconds(),
+      zoomMax: moment.duration(1, 'years').asMilliseconds(),
       template: (item, element, data) => {
+        // ToDo: Move markup to dedicated template [DanD]
+        let many = (group)=> {
+          return `<span>${group.count} events</span>`;
+        };
+        
+        let some = (group)=>{
+          let result = "";
+          group.items.forEach(item=>{
+            let markup = `
+              <div>
+                <strong>${item.content}</strong>
+              </div>
+            `;
+            result = result.concat(markup);
+          })
+          return result;
+        }
+
         return item.count
-          ? `<span>${item.count} events</span>`
+          ? item.count <= 2
+            ? some(item)
+            : many(item)
           : item.content;
       }
     }

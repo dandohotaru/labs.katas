@@ -10,15 +10,10 @@ export class ClustersService {
     let end = moment(range.end);
     let difference = end.diff(start);
     let duration = moment.duration(difference);
-    console.log(duration.as("days"));
-
-    let unit = moment.duration(difference/100);
-    console.log(unit.humanize());
+    let unit = moment.duration(difference/50);
 
     document.getElementById("range").innerText = duration.humanize();
     document.getElementById("unit").innerText = unit.humanize();
-
-
 
     if (duration.as("years") > 1) {
       return { span: 'year', format: "YYMM" };
