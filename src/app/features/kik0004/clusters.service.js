@@ -6,28 +6,56 @@ export class ClustersService {
   }
 
   scale(range) {
+    // Calculate
     let start = moment(range.start);
     let end = moment(range.end);
     let difference = end.diff(start);
-    let duration = moment.duration(difference);
-    let unit = moment.duration(difference/50);
+    let duration = {
+      span: moment.duration(difference),
+      segment: moment.duration(difference / 50),
+    };
+    let span = {
+      minutes: this.round(duration.span.minutes()),
+      hours: this.round(duration.span.hours()),
+      days: this.round(duration.span.days()),
+      months: this.round(duration.span.months()),
+      years: this.round(duration.span.years()),
+    };
+    let unit = {
+      minutes: this.round(duration.segment.minutes()),
+      hours: this.round(duration.segment.hours()),
+      days: this.round(duration.segment.days()),
+      months: this.round(duration.segment.months()),
+      years: this.round(duration.segment.years()),
+    };
 
-    document.getElementById("range").innerText = duration.humanize();
-    document.getElementById("unit").innerText = unit.humanize();
+    // Print
+    document.getElementById("span-nice").innerText = duration.span.humanize();
+    document.getElementById("span-json").innerText = JSON.stringify(span, null, 2);
+    document.getElementById("unit-nice").innerText = duration.segment.humanize();
+    document.getElementById("unit-json").innerText = JSON.stringify(unit, null, 2);
+    document.getElementById("unit-total").innerText = JSON.stringify({
+      minutes: this.round(duration.segment.as("minutes")),
+      hours: this.round(duration.segment.as("hours")),
+      days: this.round(duration.segment.as("days")),
+      months: this.round(duration.segment.as("months")),
+      years: this.round(duration.segment.as("years")),
+    }, null, 2);
 
-    if (duration.as("years") > 1) {
+    // Pair
+    if (duration.span.as("years") > 1) {
       return { span: 'year', format: "YYMM" };
     }
-    else if (duration.as("months") > 3) {
+    else if (duration.span.as("months") > 3) {
       return { span: 'quarter', format: "YYMMWW" };
     }
-    else if (duration.as("months") > 1) {
+    else if (duration.span.as("months") > 1) {
       return { span: 'month', format: "YYMMDD" };
     }
-    else if (duration.as("weeks") > 1) {
+    else if (duration.span.as("weeks") > 1) {
       return { span: 'week', format: "YYMMDD" };
     }
-    else if (duration.as("days") > 1) {
+    else if (duration.span.as("days") > 1) {
       return { span: 'day', format: "YYMMDDHH" };
     }
     else {
@@ -88,5 +116,9 @@ export class ClustersService {
 
     var temp = Object.keys(result).map(i => result[i]);
     return temp;
+  }
+
+  round(value){
+    return Math.round(value * 10) / 10;
   }
 }
