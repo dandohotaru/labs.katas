@@ -8,12 +8,13 @@ export class ClustersService {
   scale(range) {
 
     // Compute
+    let counter = 25;
     let start = moment(range.start);
     let end = moment(range.end);
     let difference = end.diff(start);
     let duration = {
       span: moment.duration(difference),
-      segment: moment.duration(difference / 50),
+      segment: moment.duration(difference / counter),
     };
     let span = {
       years: this.round(duration.span.years()),
@@ -47,6 +48,23 @@ export class ClustersService {
       hours: this.round(duration.segment.asHours()),
       minutes: this.round(duration.segment.asMinutes()),
     };
+
+    // Slices
+    let slices = Array(counter)
+      .fill().map((value, index) => index + 1)
+      .reduce((accumulator, current, index) => {
+
+        let previous = moment(accumulator[index].date);
+        let date = previous.add(unitx.hours, "hours");
+        accumulator.push({
+          group: current,
+          date: date.toDate(),
+        });
+
+        return accumulator;
+      }, [{ group: 0, date: range.start }]);
+
+    console.log(slices);
 
     // Render
     document.getElementById("span-nice").innerText = duration.span.humanize();

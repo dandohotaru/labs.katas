@@ -36,7 +36,7 @@ export class ClustersComponent {
 
     let options = {
       stack: true,
-      height: '600px',
+      height: '500px',
       orientation: 'top',
       showCurrentTime: true,
       moveable: true,
