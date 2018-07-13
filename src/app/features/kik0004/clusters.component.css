@@ -14,6 +14,11 @@
   left: 0;
 }
 
+.clusters .menu.center {
+  top: -40px;
+  left: 40%;
+}
+
 .clusters .menu.right {
   top: -40px;
   right: 0;

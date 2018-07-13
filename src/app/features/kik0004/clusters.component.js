@@ -68,6 +68,7 @@ export class ClustersComponent {
   }
 
   listen() {
+    // zoom
     document.getElementById('zoomIn').onclick = () => {
       this.zoom(0.2);
     };
@@ -76,6 +77,7 @@ export class ClustersComponent {
       this.zoom(-0.2);
     };
 
+    // focus
     document.getElementById('focusIn').onclick = () => {
       // ToDo: to be implemented [DanD]
     };
@@ -84,6 +86,20 @@ export class ClustersComponent {
       // ToDo: to be implemented [DanD]
     };
 
+    // move
+    document.getElementById('moveLeft').onclick = () => {
+      this.move(0.2);
+    }
+
+    document.getElementById('moveCenter').onclick = () => {
+      this.move(0);
+    }
+
+    document.getElementById('moveRight').onclick = () => {
+      this.move(-0.2);
+    }
+
+    // scale
     document.getElementById('scaleDay').onclick = () => { 
       this.timeline.setOptions({ timeAxis: { scale: 'day', step: 1 }}); 
     };
@@ -136,6 +152,23 @@ export class ClustersComponent {
       this.timeline.zoomIn(percentage);
     } else {
       this.timeline.zoomOut(Math.abs(percentage));
+    }
+  }
+
+  move(percentage) {
+    if (percentage == 0) {
+      this.timeline.moveTo(new Date(), { animation: true }, (props) => {
+        console.log("movedTo", props);
+      });
+    }
+    else {
+      var range = this.timeline.getWindow();
+      var interval = range.end - range.start;
+
+      this.timeline.setWindow({
+        start: range.start.valueOf() - interval * percentage,
+        end: range.end.valueOf() - interval * percentage
+      });
     }
   }
 
