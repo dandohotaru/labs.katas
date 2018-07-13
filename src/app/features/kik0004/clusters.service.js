@@ -8,7 +8,7 @@ export class ClustersService {
   scale(range) {
 
     // Compute
-    let counter = 25;
+    let counter = 50;
     let start = moment(range.start);
     let end = moment(range.end);
     let difference = end.diff(start);
@@ -63,6 +63,7 @@ export class ClustersService {
 
         return accumulator;
       }, [{ group: 0, date: range.start }]);
+    slices.push(range.end);
 
     console.log(slices);
 
@@ -76,31 +77,31 @@ export class ClustersService {
 
     // Rules
     if (spanx.years >= 1) {
-      return { span: 'one-year+', format: "YYMM" };
+      return { span: 'one-year+', format: "YYMM", slices };
     }
     else if (spanx.months >= 9) {
-      return { span: 'nine-months+', format: "YYMM" };
+      return { span: 'nine-months+', format: "YYMM", slices };
     }
     else if (spanx.months >= 6) {
-      return { span: 'six-months+', format: "YYWW" };
+      return { span: 'six-months+', format: "YYWW", slices };
     }
     else if (spanx.months >= 3) {
-      return { span: 'three-months+', format: "YYWW" };
+      return { span: 'three-months+', format: "YYWW", slices };
     }
     else if (spanx.months >= 1) {
-      return { span: 'one-month+', format: "YYMMDD" };
+      return { span: 'one-month+', format: "YYMMDD", slices };
     }
     else if (spanx.weeks >= 3) {
-      return { span: 'three-week+', format: "YYMMDD" };
+      return { span: 'three-week+', format: "YYMMDD", slices };
     }
     else if (spanx.weeks >= 1) {
-      return { span: 'one-week+', format: "YYMMDDHH" };
+      return { span: 'one-week+', format: "YYMMDDHH", slices };
     }
     else if (spanx.days >= 1) {
-      return { span: 'one-day+', format: "YYMMDDHH" };
+      return { span: 'one-day+', format: "YYMMDDHH", slices };
     }
     else {
-      return { span: 'one-day-', format: "YYMMDDHHmm" };
+      return { span: 'one-day-', format: "YYMMDDHHmm", slices };
     }
   }
 
@@ -129,9 +130,6 @@ export class ClustersService {
 
     // Scale
     var scale = this.scale(range);
-    console.info(scale);
-    console.debug(moment().format(scale.format));
-
     document.getElementById("rule-name").innerText = scale.span;
     document.getElementById("rule-format").innerText = scale.format;
 
@@ -139,19 +137,24 @@ export class ClustersService {
     var result = {};
     groups.forEach((items, i) => {
       items.forEach((item, j) => {
-        var index = moment(item.start).format(scale.format) + '-group' + item.group;
+        let date = moment(item.start).toDate();
+        let found = scale.slices.find(p => p.date >= date);
+        if (found) {
+          //var index = moment(item.start).format(scale.format) + '-group' + item.group;
+          var index = found.group + '-group' + item.group;
 
-        if (!result[index]) {
-          result[index] = {
-            count: 1,
-            items: [],
-            group: item.group,
-            start: item.start,
-          };
-        }
+          if (!result[index]) {
+            result[index] = {
+              count: 1,
+              items: [],
+              group: item.group,
+              start: item.start,
+            };
+          }
 
-        result[index].items.push(item);
-        result[index].count++;
+          result[index].items.push(item);
+          result[index].count++;
+        };
       })
     });
 
