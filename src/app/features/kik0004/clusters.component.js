@@ -20,17 +20,17 @@ export class ClustersComponent {
 
   init(selector) {
     this.records = ClustersData;
+    this.service = new ClustersService();
 
     let container = document.querySelector(selector);
     container.innerHTML = ClustersView(this);
-
-    var element = container.querySelector(".clusters");
-    this.load(element);
+    
+    this.load();
     this.listen();
   }
 
-  load(element) {
-
+  load() {
+    var element = document.querySelector(".clusters");
     var groups = this.records['groups'].filter(p => p.content == "Football");
     var items = this.records['items'];
 
@@ -52,19 +52,15 @@ export class ClustersComponent {
             ? ItemView(item)
             : GroupView(item)
           : item.content;
+      },
+      onInitialDrawComplete: () => {
+        console.timeEnd("timeline: render");
       }
     }
 
-    this.service = new ClustersService();
-
+    console.time("timeline: render");
     this.timeline = new Timeline(element, [], groups, options);
-    var range = this.timeline.getWindow();
-    let temp = {
-      scale: this.timeline.timeAxis.step.scale,
-      step: this.timeline.timeAxis.step.step,
-    };
-    let clusters = this.service.clusters(items, range, temp.scale);
-    this.timeline.setItems(clusters);
+    this.timeline.setItems([]);
   }
 
   listen() {
@@ -135,7 +131,10 @@ export class ClustersComponent {
       this.infos(start, end, counter)
 
       let items = this.records['items'];
+
+      console.time("timeline: compute");
       let clusters = this.service.clusters(items, start, end, counter);
+      console.timeEnd("timeline: compute");
       this.timeline.setItems(clusters);
     });
 
