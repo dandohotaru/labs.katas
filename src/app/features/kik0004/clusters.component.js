@@ -44,7 +44,7 @@ export class ClustersComponent {
       max: new Date(2019, 0, 1),
       start: new Date(2018, 8, 1),
       end: new Date(2018, 9, 1),
-      zoomMin: moment.duration(1, 'days').asMilliseconds(),
+      zoomMin: moment.duration(1, 'hours').asMilliseconds(),
       zoomMax: moment.duration(1, 'years').asMilliseconds(),
       template: (item, element, data) => {
         return item.count
@@ -128,18 +128,14 @@ export class ClustersComponent {
     });
 
     this.timeline.on('rangechanged', (properties) => {
-      let temp = {
-        scale: this.timeline.timeAxis.step.scale,
-        step: this.timeline.timeAxis.step.step,
-      };
-      //console.log(temp);
+      // Make counter reacting to user input [DanD]
+      let counter = 50;
+      let start = properties.start;
+      let end = properties.end;
+      this.infos(start, end, counter)
 
       let items = this.records['items'];
-      let range = {
-        start: properties.start,
-        end: properties.end
-      };
-      let clusters = this.service.clusters(items, range, temp.scale);
+      let clusters = this.service.clusters(items, start, end, counter);
       this.timeline.setItems(clusters);
     });
 
@@ -172,5 +168,51 @@ export class ClustersComponent {
     }
   }
 
- 
+  infos(start, end, counter){
+    let round = (value) => Math.round(value * 10) / 10;
+    let difference = moment(end).diff(moment(start));
+    let duration = {
+      range: moment.duration(difference),
+      slice: moment.duration(difference / counter),
+    };
+    let range = {
+      years: round(duration.range.years()),
+      months: round(duration.range.months()),
+      weeks: round(duration.range.weeks()),
+      days: round(duration.range.days()),
+      hours: round(duration.range.hours()),
+      minutes: round(duration.range.minutes()),
+    };
+    let rangex = {
+      years: round(duration.range.asYears()),
+      months: round(duration.range.asMonths()),
+      weeks: round(duration.range.asWeeks()),
+      days: round(duration.range.asDays()),
+      hours: round(duration.range.asHours()),
+      minutes: round(duration.range.asMinutes()),
+    };
+    let slice = {
+      years: round(duration.slice.years()),
+      months: round(duration.slice.months()),
+      weeks: round(duration.slice.weeks()),
+      days: round(duration.slice.days()),
+      hours: round(duration.slice.hours()),
+      minutes: round(duration.slice.minutes()),
+    };
+    let slicex = {
+      years: round(duration.slice.asYears()),
+      months: round(duration.slice.asMonths()),
+      weeks: round(duration.slice.asWeeks()),
+      days: round(duration.slice.asDays()),
+      hours: round(duration.slice.asHours()),
+      minutes: round(duration.slice.asMinutes()),
+    };
+
+    document.getElementById("span-nice").innerText = duration.range.humanize();
+    document.getElementById("span-json").innerText = JSON.stringify(range, null, 2);
+    document.getElementById("span-total").innerText = JSON.stringify(rangex, null, 2);
+    document.getElementById("unit-nice").innerText = duration.slice.humanize();
+    document.getElementById("unit-json").innerText = JSON.stringify(slice, null, 2);
+    document.getElementById("unit-total").innerText = JSON.stringify(slicex, null, 2);
+  }
 }
