@@ -7,8 +7,8 @@ export class HeaderComponent {
     var container = document.querySelector(selector);
     container.innerHTML = template();
 
-    let items = document.querySelectorAll(".menu .navbar li");
-    let anchors = document.querySelectorAll(".menu a[data-navigo]");
+    let items = [...document.querySelectorAll(".menu .navbar li")];
+    let anchors = [...document.querySelectorAll(".menu a[data-navigo]")];
 
     anchors.forEach(anchor => {
       anchor.addEventListener("click", event => {
