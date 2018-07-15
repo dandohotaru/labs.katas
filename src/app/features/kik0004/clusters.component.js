@@ -1,6 +1,6 @@
 import moment from 'moment';
 import formatter from 'moment-duration-format';
-import { DataSet, Timeline } from 'vis/index-timeline-graph2d';
+import { DataSet, Timeline } from 'vis';
 import 'vis/dist/vis-timeline-graph2d.min.css';
 
 import GroupView from "./group.partial.hbs";

@@ -3,7 +3,7 @@ import template from "./network.component.hbs";
 import styles from "./network.component.css";
 import records from "./records.json";
 
-import { DataSet, Network } from 'vis/index-network';
+import { DataSet, Network } from 'vis';
 import 'vis/dist/vis-network.min.css';
 
 export class NetworkComponent {

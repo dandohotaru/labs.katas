@@ -17,9 +17,12 @@ export class HeaderComponent {
         items.forEach(p => p.classList.remove("active"));
 
         // Append active for current
-        let closest = anchor.closest("li");
-        if (closest)
-          closest.classList.add("active");
+        if (anchor.closest)
+        {
+          let closest = anchor.closest("li");
+          if (closest)
+            closest.classList.add("active");
+        }
 
         console.debug(`${anchor.href} clicked`);
       });
