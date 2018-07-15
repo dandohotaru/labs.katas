@@ -11,6 +11,7 @@ import ClustersData from "./records.json";
 import ClustersView from "./clusters.component.hbs";
 import ClustersStyles from "./clusters.component.css";
 import { ClustersService } from "./clusters.service";
+import { EventAggregator } from "./../../shared/events/event.bus";
 
 export class ClustersComponent {
 
@@ -20,10 +21,12 @@ export class ClustersComponent {
   focus = 50;
   start;
   end;
+  bus;
 
   init(selector) {
     this.records = ClustersData;
     this.service = new ClustersService();
+    this.bus = new EventAggregator();
 
     let container = document.querySelector(selector);
     container.innerHTML = ClustersView(this);
@@ -79,12 +82,12 @@ export class ClustersComponent {
     // focus
     document.getElementById('focusIn').onclick = () => {
       this.focus += 5;
-      this.refresh(this.start, this.end, this.focus);
+      this.bus.publish("inputChanged");
     };
 
     document.getElementById('focusOut').onclick = () => {
       this.focus -= 5;
-      this.refresh(this.start, this.end, this.focus);
+      this.bus.publish("inputChanged");
     };
 
     // move
@@ -121,21 +124,20 @@ export class ClustersComponent {
       this.timeline.setOptions({ timeAxis: { scale: 'year', step: 1 } });
     };
 
+    // events
     this.timeline.on('select', (properties) => {
-    });
-
-    this.timeline.on('rangechange', (properties) => {
-
     });
 
     this.timeline.on('rangechanged', (properties) => {
       this.start = properties.start;
       this.end = properties.end;
-      this.infos(this.start, this.end, this.focus);
-      this.refresh(this.start, this.end, this.focus);
+      this.bus.publish("inputChanged");
     });
 
-    this.timeline.on('click', (properties) => {
+    // input
+    this.bus.subscribe("inputChanged", (data) => {
+      this.infos(this.start, this.end, this.focus);
+      this.refresh(this.start, this.end, this.focus);
     });
   }
 
