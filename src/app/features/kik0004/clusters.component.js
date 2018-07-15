@@ -17,6 +17,9 @@ export class ClustersComponent {
   timeline;
   records;
   service;
+  focus = 50;
+  start;
+  end;
 
   init(selector) {
     this.records = ClustersData;
@@ -24,7 +27,7 @@ export class ClustersComponent {
 
     let container = document.querySelector(selector);
     container.innerHTML = ClustersView(this);
-    
+
     this.load();
     this.listen();
   }
@@ -54,11 +57,11 @@ export class ClustersComponent {
           : item.content;
       },
       onInitialDrawComplete: () => {
-        console.timeEnd("timeline: render");
+        console.timeEnd("timeline: init");
       }
     }
 
-    console.time("timeline: render");
+    console.time("timeline: init");
     this.timeline = new Timeline(element, [], groups, options);
     this.timeline.setItems([]);
   }
@@ -75,11 +78,13 @@ export class ClustersComponent {
 
     // focus
     document.getElementById('focusIn').onclick = () => {
-      // ToDo: to be implemented [DanD]
+      this.focus += 5;
+      this.refresh(this.start, this.end, this.focus);
     };
 
     document.getElementById('focusOut').onclick = () => {
-      // ToDo: to be implemented [DanD]
+      this.focus -= 5;
+      this.refresh(this.start, this.end, this.focus);
     };
 
     // move
@@ -96,24 +101,24 @@ export class ClustersComponent {
     }
 
     // scale
-    document.getElementById('scaleDay').onclick = () => { 
-      this.timeline.setOptions({ timeAxis: { scale: 'day', step: 1 }}); 
+    document.getElementById('scaleDay').onclick = () => {
+      this.timeline.setOptions({ timeAxis: { scale: 'day', step: 1 } });
     };
 
-    document.getElementById('scaleWeek').onclick = () => { 
-      this.timeline.setOptions({ timeAxis: { scale: 'day', step: 7 }}); 
+    document.getElementById('scaleWeek').onclick = () => {
+      this.timeline.setOptions({ timeAxis: { scale: 'day', step: 7 } });
     };
 
-    document.getElementById('scaleMonth').onclick = () => { 
-      this.timeline.setOptions({ timeAxis: { scale: 'month', step: 1 }}); 
+    document.getElementById('scaleMonth').onclick = () => {
+      this.timeline.setOptions({ timeAxis: { scale: 'month', step: 1 } });
     };
 
-    document.getElementById('scaleQuarter').onclick = () => { 
-      this.timeline.setOptions({ timeAxis: { scale: 'month', step: 3 }}); 
+    document.getElementById('scaleQuarter').onclick = () => {
+      this.timeline.setOptions({ timeAxis: { scale: 'month', step: 3 } });
     };
 
-    document.getElementById('scaleYear').onclick = () => { 
-      this.timeline.setOptions({ timeAxis: { scale: 'year', step: 1 }}); 
+    document.getElementById('scaleYear').onclick = () => {
+      this.timeline.setOptions({ timeAxis: { scale: 'year', step: 1 } });
     };
 
     this.timeline.on('select', (properties) => {
@@ -124,18 +129,10 @@ export class ClustersComponent {
     });
 
     this.timeline.on('rangechanged', (properties) => {
-      // Make counter reacting to user input [DanD]
-      let counter = 50;
-      let start = properties.start;
-      let end = properties.end;
-      this.infos(start, end, counter)
-
-      let items = this.records['items'];
-
-      console.time("timeline: compute");
-      let clusters = this.service.clusters(items, start, end, counter);
-      console.timeEnd("timeline: compute");
-      this.timeline.setItems(clusters);
+      this.start = properties.start;
+      this.end = properties.end;
+      this.infos(this.start, this.end, this.focus);
+      this.refresh(this.start, this.end, this.focus);
     });
 
     this.timeline.on('click', (properties) => {
@@ -167,7 +164,7 @@ export class ClustersComponent {
     }
   }
 
-  infos(start, end, counter){
+  infos(start, end, counter) {
     let round = (value) => Math.round(value * 10) / 10;
     let difference = moment(end).diff(moment(start));
     let duration = {
@@ -213,5 +210,16 @@ export class ClustersComponent {
     document.getElementById("unit-nice").innerText = duration.slice.humanize();
     document.getElementById("unit-json").innerText = JSON.stringify(slice, null, 2);
     document.getElementById("unit-total").innerText = JSON.stringify(slicex, null, 2);
+  }
+
+  refresh(start, end, counter) {
+    let items = this.records['items'];
+
+    console.time("timeline: compute");
+    let clusters = this.service.clusters(items, start, end, counter);
+    console.timeEnd("timeline: compute");
+    console.time("timeline: render");
+    this.timeline.setItems(clusters);
+    console.timeEnd("timeline: render");
   }
 }
