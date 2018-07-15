@@ -4,24 +4,19 @@
 
 /* Menu */
 .clusters .menu {
-  position: absolute;
   margin: 10px;
-  z-index: 9999;
 }
 
 .clusters .menu.left {
-  top: -40px;
-  left: 0;
+  float: left;
 }
 
 .clusters .menu.center {
-  top: -40px;
-  left: 40%;
+  float: left;
 }
 
 .clusters .menu.right {
-  top: -40px;
-  right: 0;
+  float: right;
 }
 
 .clusters .menu > i {

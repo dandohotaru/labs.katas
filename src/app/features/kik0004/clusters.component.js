@@ -18,16 +18,18 @@ export class ClustersComponent {
   timeline;
   records;
   service;
-  focus = 50;
+  scale = 50;
   start;
   end;
   bus;
 
-  init(selector) {
-    this.records = ClustersData;
+  constructor(){
     this.service = new ClustersService();
     this.bus = new EventAggregator();
+    this.records = ClustersData;
+  }
 
+  init(selector) {
     let container = document.querySelector(selector);
     container.innerHTML = ClustersView(this);
 
@@ -42,7 +44,8 @@ export class ClustersComponent {
 
     let options = {
       stack: true,
-      height: '500px',
+      height: "500px",
+      width: "100%",
       orientation: 'top',
       showCurrentTime: true,
       moveable: true,
@@ -79,31 +82,18 @@ export class ClustersComponent {
       this.zoom(-0.2);
     };
 
-    // focus
-    document.getElementById('focusIn').onclick = () => {
-      this.focus += 5;
-      this.bus.publish("inputChanged");
-    };
-
-    document.getElementById('focusOut').onclick = () => {
-      this.focus -= 5;
-      this.bus.publish("inputChanged");
-    };
-
-    // move
-    document.getElementById('moveLeft').onclick = () => {
-      this.move(0.2);
-    }
-
-    document.getElementById('moveCenter').onclick = () => {
-      this.move(0);
-    }
-
-    document.getElementById('moveRight').onclick = () => {
-      this.move(-0.2);
-    }
-
     // scale
+    document.getElementById('scaleIn').onclick = () => {
+      this.scale += 5;
+      this.bus.publish("inputChanged");
+    };
+
+    document.getElementById('scaleOut').onclick = () => {
+      this.scale -= 5;
+      this.bus.publish("inputChanged");
+    };
+
+    // ruler
     document.getElementById('scaleDay').onclick = () => {
       this.timeline.setOptions({ timeAxis: { scale: 'day', step: 1 } });
     };
@@ -124,6 +114,19 @@ export class ClustersComponent {
       this.timeline.setOptions({ timeAxis: { scale: 'year', step: 1 } });
     };
 
+    // move
+    document.getElementById('moveLeft').onclick = () => {
+      this.move(0.2);
+    }
+
+    document.getElementById('moveCenter').onclick = () => {
+      this.move(0);
+    }
+
+    document.getElementById('moveRight').onclick = () => {
+      this.move(-0.2);
+    }
+
     // events
     this.timeline.on('select', (properties) => {
     });
@@ -136,8 +139,8 @@ export class ClustersComponent {
 
     // input
     this.bus.subscribe("inputChanged", (data) => {
-      this.infos(this.start, this.end, this.focus);
-      this.refresh(this.start, this.end, this.focus);
+      this.infos(this.start, this.end, this.scale);
+      this.refresh(this.start, this.end, this.scale);
     });
   }
 
@@ -206,12 +209,12 @@ export class ClustersComponent {
       minutes: round(duration.slice.asMinutes()),
     };
 
-    document.getElementById("span-nice").innerText = duration.range.humanize();
-    document.getElementById("span-json").innerText = JSON.stringify(range, null, 2);
-    document.getElementById("span-total").innerText = JSON.stringify(rangex, null, 2);
-    document.getElementById("unit-nice").innerText = duration.slice.humanize();
-    document.getElementById("unit-json").innerText = JSON.stringify(slice, null, 2);
-    document.getElementById("unit-total").innerText = JSON.stringify(slicex, null, 2);
+    document.getElementById("range-nice").innerText = duration.range.humanize();
+    document.getElementById("range-json").innerText = JSON.stringify(range, null, 2);
+    document.getElementById("range-total").innerText = JSON.stringify(rangex, null, 2);
+    document.getElementById("slice-nice").innerText = duration.slice.humanize();
+    document.getElementById("slice-json").innerText = JSON.stringify(slice, null, 2);
+    document.getElementById("slice-total").innerText = JSON.stringify(slicex, null, 2);
   }
 
   refresh(start, end, counter) {
