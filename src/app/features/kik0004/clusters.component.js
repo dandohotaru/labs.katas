@@ -17,13 +17,14 @@ export class ClustersComponent {
 
   timeline;
   records;
+  clusters;
   service;
   scale = 50;
   start;
   end;
   bus;
 
-  constructor(){
+  constructor() {
     this.service = new ClustersService();
     this.bus = new EventAggregator();
     this.records = ClustersData;
@@ -39,8 +40,10 @@ export class ClustersComponent {
 
   load() {
     var element = document.querySelector(".clusters");
-    var groups = this.records['groups'].filter(p => p.content == "Football");
-    var items = this.records['items'];
+    var groups = this.records['groups']
+      .filter(p => p.content == "Football");
+    var items = this.records['items']
+      .filter(p => p.group == 1);
 
     let options = {
       stack: true,
@@ -57,7 +60,7 @@ export class ClustersComponent {
       zoomMax: moment.duration(1, 'years').asMilliseconds(),
       template: (item, element, data) => {
         return item.count
-          ? item.count <= 2
+          ? item.count <= 1
             ? ItemView(item)
             : GroupView(item)
           : item.content;
@@ -129,6 +132,10 @@ export class ClustersComponent {
 
     // events
     this.timeline.on('select', (properties) => {
+      if (properties && properties.items && properties.items.length > 0) {
+        let temp = this.clusters.filter(p => properties.items.some(q => p.id == q));
+        console.log(temp);
+      }
     });
 
     this.timeline.on('rangechanged', (properties) => {
@@ -218,13 +225,14 @@ export class ClustersComponent {
   }
 
   refresh(start, end, counter) {
-    let items = this.records['items'];
+    let items = this.records['items']
+      .filter(p => p.group == 1);
 
     console.time("timeline: compute");
-    let clusters = this.service.clusters(items, start, end, counter);
+    this.clusters = this.service.clusters(items, start, end, counter);
     console.timeEnd("timeline: compute");
     console.time("timeline: render");
-    this.timeline.setItems(clusters);
+    this.timeline.setItems(this.clusters);
     console.timeEnd("timeline: render");
   }
 }
