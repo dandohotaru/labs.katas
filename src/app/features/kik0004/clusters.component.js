@@ -27,7 +27,10 @@ export class ClustersComponent {
   constructor() {
     this.service = new ClustersService();
     this.bus = new EventAggregator();
-    this.records = ClustersData;
+    this.groups = ClustersData['groups']
+      .filter(p => p.content == "Football");
+    this.records = ClustersData["items"]
+      .filter(p => p.group == 1);
   }
 
   init(selector) {
@@ -40,10 +43,6 @@ export class ClustersComponent {
 
   load() {
     var element = document.querySelector(".clusters");
-    var groups = this.records['groups']
-      .filter(p => p.content == "Football");
-    var items = this.records['items']
-      .filter(p => p.group == 1);
 
     let options = {
       stack: true,
@@ -71,7 +70,7 @@ export class ClustersComponent {
     }
 
     console.time("timeline: init");
-    this.timeline = new Timeline(element, [], groups, options);
+    this.timeline = new Timeline(element, [], this.groups, options);
     this.timeline.setItems([]);
   }
 
@@ -225,11 +224,8 @@ export class ClustersComponent {
   }
 
   refresh(start, end, counter) {
-    let items = this.records['items']
-      .filter(p => p.group == 1);
-
     console.time("timeline: compute");
-    this.clusters = this.service.clusters(items, start, end, counter);
+    this.clusters = this.service.clusters(this.records, start, end, counter);
     console.timeEnd("timeline: compute");
     console.time("timeline: render");
     this.timeline.setItems(this.clusters);
