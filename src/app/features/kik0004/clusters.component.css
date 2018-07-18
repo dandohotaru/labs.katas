@@ -33,6 +33,10 @@
   background: #F4FCF5;
 }
 
+.vis-time-axis.vis-foreground {
+  background: white;
+}
+
 .vis-item {
   border-color: #97b0f8;
   background-color: white;
@@ -41,8 +45,6 @@
 }
 
 .vis-item:hover {
-  border-color: orange;
-  box-shadow: 0px 8px 16px 0px orange;
 }
 
 .vis-item.vis-line {
