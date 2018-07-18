@@ -32,11 +32,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Demo app',
+      title: 'Designs',
       template: './src/app.html',
       favicon: './src/assets/ico/favicon.ico',
       filename: 'index.html',
-      meta: { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
     }),
     new CopyWebpackPlugin([{
       from: 'src/assets/img',

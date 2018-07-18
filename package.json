@@ -10,6 +10,7 @@
     "build": "webpack --config webpack.dev.js",
     "watch": "webpack --config webpack.dev.js --watch true",
     "release": "webpack --config webpack.prod.js",
+    "staging": "webpack --config webpack.dev.js",
     "start": "webpack-dev-server --config webpack.dev.js",
     "lite": "lite-server --config=server.config.json",
     "serve": "concurrently --kill-others \"npm run watch\" \"npm run lite\""
