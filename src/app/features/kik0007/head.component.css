@@ -1,0 +1,49 @@
+.head {
+  display: flex;
+
+} 
+.intro {
+  flex:1;
+}
+.thematics {
+  flex:2;
+}
+
+.head > .intro > p > i.circle-icon,
+.head > .thematics > p > i.circle-icon {
+  font-size:2em;
+  text-align:center;
+  color: white;
+  border-radius: 50%;
+  padding: 6px; 
+}
+
+.turquoise {
+  background:#66CCCC;
+}
+
+.head > .thematics > p > i.circle-icon {
+  background:grey;
+}
+
+.head > .thematics > ul  {
+  list-style-type: none; 
+  font-size: 12px;
+} 
+
+.head > .thematics > ul > li > a.title {
+  text-align: left;
+}
+
+
+/*media queries*/
+@media screen and (min-width: 200px) and (max-width: 768px) { 
+
+    .head {
+      display: inherit;
+    }
+
+    h3, .head {
+      text-align: center;
+    }
+} 

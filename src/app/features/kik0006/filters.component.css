@@ -1,0 +1,48 @@
+/*toggle*/
+.filters {
+}
+.filters > .toggle {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.filters > .toggle > .btn {
+  background: #b0d5f2;
+  color: #1D3751;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 3px 6px;
+  font-size: 1em;
+}
+.filters > .toggle > .btn.active {
+  background: #1D3751;
+  color: white;
+}
+.filters > ul.pills {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.filters > ul.pills >  li {
+  display: inline;
+}
+.filters > ul.pills > li > a.badge {
+  border: 1px solid #c8c8c8;
+  border-radius: 10px;
+  background: white;
+  color: #777;
+  font-weight: lighter;
+  max-width: 100%;
+}
+.filters > ul.pills > li > a.badge:hover,
+.filters > ul.pills > li > a.badge.active  {
+  background: #c8c8c8;
+  color: #444;
+}
+
+/*media queries*/
+@media screen and (min-width: 200px) and (max-width: 380px) { 
+    .filters > .toggle {
+      padding-left: 0;
+      padding-right: 0;
+    }
+}

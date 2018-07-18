@@ -30,6 +30,30 @@ export class TimelineComponent {
   }
 
   load(element) {
+
+    var colors = [
+      { key: 1, value: "turquoise" },
+      { key: 2, value: "green" },
+      { key: 3, value: "purp" },
+      { key: 4, value: "red" },
+      { key: 5, value: "d-green" },
+      { key: 6, value: "violet" },
+      { key: 7, value: "orange" },
+      { key: 8, value: "d-grey" },
+      { key: 9, value: "l-blue" },
+      { key: 10, value: "brown" },
+      { key: 11, value: "pink" },
+      { key: 12, value: "yell" },
+    ];
+
+    let slice = (collection) => {
+      let alfa = Math.floor(Math.random() * collection.length);
+      let beta = Math.floor(Math.random() * collection.length);
+      let min = alfa >= beta ? beta : alfa;
+      let max = alfa >= beta ? alfa : beta;
+      return collection.slice(min, max);
+    };
+
     var projections = this.events
       .map(p => {
 
@@ -74,6 +98,7 @@ export class TimelineComponent {
           link: p.link,
           venue: venue,
           audience: audience,
+          colors: slice(colors),
         };
       });
 

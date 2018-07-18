@@ -1,54 +1,24 @@
 {{#if this}}
-<div class="record">
-  <div class="card">
 
-    <div class="sider purple"></div>
+<div class="record card">
 
-    <div class="info">
-      <div class="date">
-        <div>{{date start}}</div>
-      </div>
-      <div class="time">
-        <div>{{time start}}</div>
-      </div>
-    </div>
+  {{!-- Header --}}
+  <div class="header">
+    <span class="icons">
+      {{#each colors}}
+      <i class="fa fa-circle {{value}}" aria-hidden="true" title="{{value}}"></i>
+      {{/each}}
+    </span>
+    <span class="type" title="interinstitutional">
+      <i class="fa fa-gavel" aria-hidden="true"></i>
+    </span>
+  </div>
 
-    <div class="divider"></div>
-
-    <div class="content">
-      <div class="title">
-        <a href="{{link}}" target="-blank" class="wrap">
-          {{name}}
-        </a>
-      </div>
-
-      {{!-- {{#if venue}}
-      <div class="venue wrap">
-        <div class="venue">Venue</div>
-        <div class="name">{{venue.name}}</div>
-        <div class="address">{{venue.address}}</div>
-        <div class="city">{{venue.city}}</div>
-      </div>
-      {{/if}} --}}
-
-      {{!-- {{#if audience}}
-      <div class="participants">
-        <div>Confirmed</div>
-        <div class="value">{{audience.confirmed}}</div>
-      </div>
-
-      <div class="waiting">
-        <div>Waiting</div>
-        <div class="value">{{audience.waiting}}</div>
-      </div>
-
-      <div class="limit">
-        <div>Limit</div>
-        <div class="value">{{audience.limit}}</div>
-      </div>
-      {{/if}} --}}
-
-    </div>
+  {{!-- Content --}}
+  <div class="content title">
+    <a href="{{link}}" target="-blank">
+      {{name}}
+    </a>
   </div>
 
 </div>

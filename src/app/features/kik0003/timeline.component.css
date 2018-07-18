@@ -31,18 +31,15 @@
 
 
 /* Colors */
-.purple {
-  background: #BA68C8;
-}
-
-.green {
-  background: #52A43A;
-}
-
-.yellow {
-  background: #F7AA17;
-}
-
-.red {
-  background: #EF5350;
-}
+.turquoise { color: #66CCCC;}
+.green { color: #99bc53;}
+.purp { color: #b047c6;}
+.red { color: #ee3853;}
+.d-green {color: #009678;}
+.violet { color: #9494ed;}
+.orange { color: #ff8e39;}
+.d-grey { color: #66574a;}
+.l-blue { color: #6bbae7;}
+.brown { color: #d69651;}
+.pink { color: #e29cde;}
+.yell {color: #ffc050;}

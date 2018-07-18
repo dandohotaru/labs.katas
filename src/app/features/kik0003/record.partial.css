@@ -2,18 +2,21 @@
 /* Custom */
 .vis-item {
   border-color: #97b0f8;
-  background-color: white;
-  box-shadow: 0px 2px 4px 0px lightgray;
   margin-bottom: 10px;
+  color: #444;
+}
+
+.vis-item.vis-box {
+  border: none;
+  background: none;
+  box-shadow: none; 
 }
 
 .vis-item:hover {
-  border-color: orange;
-  box-shadow: 0px 8px 16px 0px orange;
 }
 
 .vis-item.vis-line {
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .vis-item.vis-dot {
@@ -24,41 +27,48 @@
   white-space: normal;
 }
 
+/* Card */
+.record.card {
+  min-width: 250px;
+  max-width:280px;
+  min-height: 50px;
+  border-radius: 6px;
+  padding: 4px;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: 0px 2px 4px 0px lightgray;
+}
+
+.record.card:hover {
+  box-shadow: 0px 8px 16px 0px #b0d5f2;
+}
+
+/* Header */
+.record.card .header {
+  display: flex;
+  padding: 0;
+}
+
+.record.card .header > .icons {
+  flex-grow: 1; 
+  text-align: left;
+  font-size: 12px;
+}
+
+.record.card .header > .type {
+  width: 25px;
+  text-align: right;
+  font-size: 16px;
+}
 
 /* Content */
-.timeline .record.content > .name {
-  font-size: 14px;
+.record.card .content.title {
+  text-align: left;
 }
 
-.timeline .record.content > .counter {
-  font-size: 12px;
-  color: lightsalmon;
+.record.card .content.title a {
+ color: #444; 
 }
-
-
-/* Template */
-.record {
-}
-
-.record .card {
-  max-width: 180px;
-}
-
-.record .card .info {
-  display: flex;
-}
-
-.record .card .info .date {
-  flex: 0 0 65%;
-}
-
-.record .card .info .time {
-  flex: 1;
-}
-
-.record .card .content .venue .name {
-}
-
 
 /* General */
 .wrap {
@@ -66,4 +76,3 @@
   /* overflow-wrap: break-word; */
   /* word-wrap: break-word; */
 }
-

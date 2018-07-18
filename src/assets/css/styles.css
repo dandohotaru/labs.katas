@@ -28,6 +28,7 @@ body {
 
 .wrapper .root {
   padding-bottom: 20px;
+  max-width: 1170px;
 }
 
 code {

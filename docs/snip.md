@@ -64,3 +64,7 @@ https://codepen.io/mathiesjanssen/pen/ggeBKm
 
 https://codepen.io/geedmo/pen/AohDr !
 
+
+Full height visjs timeline
+https://codepen.io/michiel-huiskens/pen/PPZMxm
+

@@ -4,6 +4,8 @@ import { NetworkComponent } from "./kik0002/network.component";
 import { TimelineComponent } from "./kik0003/timeline.component";
 import { ClustersComponent } from "./kik0004/clusters.component";
 import { CanvasComponent } from "./kik0005/canvas.component";
+import { FiltersComponent } from "./kik0006/filters.component";
+import { HeadComponent } from "./kik0007/head.component";
 
 export class FeaturesModule {
 
@@ -36,6 +38,12 @@ export class FeaturesModule {
         new CanvasComponent().init(this.outlet);
       })
       .on('/kik0006', () => {
+        new FiltersComponent().init(this.outlet);
+      })
+      .on('/kik0007', () => {
+        new HeadComponent().init(this.outlet);
+      })
+      .on('/kik0099', () => {
         console.log(`Todo: ${window.location.href}`);
       });
 
